@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Test</title>
+    <meta charset="UTF-8">
+    <body>
+    <p><oj-bind-text value="{{helloMessage}}"></oj-bind-text></p>
+    <script src="js/libs/require/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: 'js'
+        });
+        require(['main'], function(){
+            let self = this;
+            self.helloMessage = "Hello World";
+        });
+    </script>
+</body>
+</html>

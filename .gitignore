@@ -15,3 +15,5 @@ hybrid/plugins/*
 Thumbs.db
 
 .idea/
+
+src/test.html
