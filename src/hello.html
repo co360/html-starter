@@ -3,17 +3,28 @@
 <head>
     <title>Test</title>
     <meta charset="UTF-8">
-    <body>
-    <p><oj-bind-text value="{{helloMessage}}"></oj-bind-text></p>
-    <script src="js/libs/require/require.js"></script>
-    <script>
-        requirejs.config({
-            baseUrl: 'js'
-        });
-        require(['main'], function(){
-            let self = this;
-            self.helloMessage = "Hello World";
-        });
-    </script>
+<body>
+<p><oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text></p>
+<script src="js/libs/require/require.js"></script>
+<script>
+    requirejs.config({
+        baseUrl: 'js',
+        paths: {
+            'jquery': 'libs/jquery/jquery-3.3.1',
+            'knockout': 'libs/knockout/knockout-3.4.2.debug',
+            'promise': 'libs/es6-promise/es6-promise',
+            'ojL10n': 'libs/oj/v6.2.0/ojL10n',
+            'ojtranslations': 'libs/oj/v6.2.0/resources',
+            'ojs': 'libs/oj/v6.2.0/debug',
+            'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
+        }
+    });
+    require(['jquery', 'knockout', 'ojs/ojcore', 'ojs/ojknockout'], function($, ko){
+        let self = this;
+        self.helloMessage = "Hello World";
+
+        ko.applyBindings(self);
+    });
+</script>
 </body>
 </html>
