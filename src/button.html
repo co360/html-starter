@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Test</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div id='buttons-container'>
+  <oj-button id='button1' on-oj-action='[[buttonClick]]'>Button 1</oj-button>
+  <oj-button id='button2' on-oj-action='[[buttonClick]]'>
+    <span><oj-bind-text value="[[button2Text]]"></oj-bind-text></span>
+  </oj-button>
+  <oj-button id='button3' on-oj-action='[[buttonClick]]' display='icons'>
+    <img slot="startIcon"
+         src="css/images/avatar_24px.png"
+         alt="Button 3"
+         width="16" height="16"/>Button 3
+  </oj-button>
+  <p>
+  <p id="last" class="bold">ID of last button to be clicked:
+    <span id="results"><oj-bind-text value="[[clickedButton]]"></oj-bind-text></span>
+  </p>
+</div>
+
+<script src="js/libs/require/require.js"></script>
+<script>
+  requirejs.config({
+    baseUrl: 'js',
+    paths: {
+      'jquery': 'libs/jquery/jquery-3.3.1',
+      'knockout': 'libs/knockout/knockout-3.4.2.debug',
+      'promise': 'libs/es6-promise/es6-promise',
+      'ojL10n': 'libs/oj/v6.2.0/ojL10n',
+      'ojtranslations': 'libs/oj/v6.2.0/resources',
+      'ojs': 'libs/oj/v6.2.0/debug',
+      'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
+      'customElements': 'libs/webcomponents/custom-elements.min',
+    }
+  });
+  require(['jquery', 'knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function($, ko){
+    var self = this;
+
+    self.button2Text = "Button 2";
+
+    self.clickedButton = ko.observable("(None clicked yet)");
+    self.buttonClick = function(event){
+      self.clickedButton(event.currentTarget.id);
+      return true;
+    };
+
+    ko.applyBindings(self);
+  });
+</script>
+</body>
+</html>
