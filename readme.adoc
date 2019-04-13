@@ -1,0 +1,17 @@
+Oracle JavaScript Extension Toolkit (Oracle JET) is a complete yet modular JavaScript development toolkit helping
+developers build engaging user interfaces. Based on industry standards and popular open-source frameworks,
+Oracle JET further adds advanced functionality and services to help developer build better applications faster.
+
+- https://oraclejet.org
+- https://www.oracle.com/technetwork/developer-tools/jet/overview/index.html
+
+== How to Build and Run This Project
+
+  oject serve
+
+
+== Create new project
+
+  ojet create oject-starter
+
+
