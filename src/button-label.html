@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Test</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div id='button-container'> <oj-button id='button1'>
+  <span><oj-bind-text value="[[buttonLabel]]"></oj-bind-text></span> </oj-button>
+  <br><br>
+  <oj-label for="text-input">Update Button Label:</oj-label>
+  <oj-input-text id="text-input" value="{{buttonLabel}}"></oj-input-text>
+</div>
+
+<script src="js/libs/require/require.js"></script>
+<script>
+  requirejs.config({
+    baseUrl: 'js',
+    paths: {
+      'knockout': 'libs/knockout/knockout-3.4.2.debug',
+      'jquery': 'libs/jquery/jquery-3.3.1',
+      'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
+      'promise': 'libs/es6-promise/es6-promise',
+      'hammerjs': 'libs/hammer/hammer-2.0.8',
+      'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.0',
+      'ojs': 'libs/oj/v6.2.0/debug',
+      'ojL10n': 'libs/oj/v6.2.0/ojL10n',
+      'ojtranslations': 'libs/oj/v6.2.0/resources',
+      'text': 'libs/require/text',
+      'signals': 'libs/js-signals/signals',
+      'customElements': 'libs/webcomponents/custom-elements.min',
+      'proj4': 'libs/proj4js/dist/proj4-src',
+      'css': 'libs/require-css/css',
+      'touchr': 'libs/touchr/touchr'
+    }
+  });
+  require(['jquery', 'knockout', 'ojs/ojcore', 'ojs/ojknockout',
+    'ojs/ojbutton', 'ojs/ojinputtext', 'ojs/ojlabel'], function($, ko){
+    let self = this;
+
+    function ButtonModel() {
+      this.buttonLabel = ko.observable("My Button");
+    }
+    $(function(){
+      ko.applyBindings(new ButtonModel(), document.getElementById('button-container'));
+    });
+
+  });
+</script>
+</body>
+</html>
