@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <head>
+    <title>Web Components - Basic</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="viewport-fit=cover, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="css/images/favicon.ico">
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css" id="css" />
+    <link rel="stylesheet" href="css/demo-card.css">
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'demo-card/loader'],
+        function(oj, ko, $) {
+          function model() {      
+            var self = this;
+            self.employees = [
+              {
+                name: 'Deb Raphaely',
+                avatar: 'https://www.oracle.com/webfolder/technetwork/jet/images/composites/debraphaely.png',
+                title: 'Purchasing Director',
+                work: 5171278899,
+                email: 'deb.raphaely@oracle.com'
+              },
+              {
+                name: 'Adam Fripp',
+                avatar: null,
+                title: 'IT Manager',
+                work: 6501232234,
+                email: 'adam.fripp@oracle.com'
+              }
+            ];
+          }
+
+          $(function() {
+            ko.applyBindings(new model(), document.getElementById('component-container'));
+          });
+
+        });
+    </script>
+  </head>
+  <body>
+
+    <div id="sampleDemo">
+      <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+        
+        <div id="component-container" class="oj-flex oj-sm-flex-items-initial">
+        	
+          <!-- ko foreach: employees -->
+            <demo-card class="oj-flex-item" name="[[name]]" avatar="[[avatar]]" work-title="[[title]]" 
+              work-number="[[work]]" email="[[email]]">
+            </demo-card>
+          <!-- /ko -->
+        </div>
+
+        
+      </div>
+    </div>
+
+  </body>
+</html>

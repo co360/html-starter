@@ -1,42 +1,39 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-  <title>Test</title>
-  <meta charset="UTF-8">
-</head>
-<body>
-
-<p><oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text></p>
-
-<script src="js/libs/require/require.js"></script>
-<script>
-  requirejs.config({
-    baseUrl: 'js',
-    paths: {
-      'knockout': 'libs/knockout/knockout-3.4.2.debug',
-      'jquery': 'libs/jquery/jquery-3.3.1',
-      'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
-      'promise': 'libs/es6-promise/es6-promise',
-      'hammerjs': 'libs/hammer/hammer-2.0.8',
-      'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.0',
-      'ojs': 'libs/oj/v6.2.0/debug',
-      'ojL10n': 'libs/oj/v6.2.0/ojL10n',
-      'ojtranslations': 'libs/oj/v6.2.0/resources',
-      'text': 'libs/require/text',
-      'signals': 'libs/js-signals/signals',
-      'customElements': 'libs/webcomponents/custom-elements.min',
-      'proj4': 'libs/proj4js/dist/proj4-src',
-      'css': 'libs/require-css/css',
-      'touchr': 'libs/touchr/touchr'
-    }
-  });
-  require(['jquery', 'knockout', 'ojs/ojcore', 'ojs/ojknockout'], function($, ko){
-    let self = this;
-
-    self.helloMessage = "Hello World";
-
-    ko.applyBindings(self);
-  });
-</script>
-</body>
+  <head>
+    <title>Web Components - Basic</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="viewport-fit=cover, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="css/images/favicon.ico">
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css" id="css" />
+    
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojlistview'],
+        function(oj, ko, $)
+        {  
+            ko.applyBindings(null, document.getElementById('listview'));   
+        });
+    </script>
+  </head>
+  
+  <body style="margin: 20px">
+     <div id="container">
+        <div class="oj-flex-items-pad">
+            <div class="oj-flex">
+                <h1>OJET Starter and Demos</h1>
+            </div>
+            <div class="oj-flex">
+                <oj-list-view id="listview" aria-label="list with static data">
+                    <ul>
+                        <li><a href="button-demo.html">button-demo.html</a></li>
+                        <li><a href="hello-component.html">hello-component.html</a></li>
+                        <li><a href="demo-card.html">demo-card.html</a></li>
+                    </ul>
+                </oj-list-view>
+            </div>
+        </div>
+    </div>
+    </div>
+  </body>
 </html>

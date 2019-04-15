@@ -1,0 +1,8 @@
+hello-component:not(.oj-complete){
+  visibility: hidden;
+}
+
+hello-component{
+	min-height: 50px;
+	width: 50px;
+}

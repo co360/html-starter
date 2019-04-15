@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <head>
+    <title>Web Components - Basic</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="viewport-fit=cover, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="css/images/favicon.ico">
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css" id="css" />
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+
+  <body>
+    
+        <hello-component></hello-component>
+
+        <script>
+          require(['knockout', 'jquery', 'ojs/ojknockout', 'hello-component/loader'],
+          function(ko, $){ 
+            function model(){
+                var self = this;
+            }
+
+            $(function() {
+                ko.applyBindings(new model());
+            });
+
+          }
+        );
+  </script>
+        
+  </body>
+</html>
