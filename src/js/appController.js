@@ -21,6 +21,13 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout'],
       // User Info used in Global Navigation area
       self.userLogin = ko.observable("john.hancock@oracle.com");
 
+      // Demo Banes - Used by index to create a list if links
+      self.demoNames = [
+        'bind-text', 'button-demo', 'button-label', 'button',
+        'demo-card', 'hello-component', 'index-shell', 'jquery-hello',
+        'knockout-hello', 'ojet-hello'
+      ];
+
       // Footer
       function footerLink(name, id, linkTarget) {
         this.name = name;

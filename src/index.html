@@ -9,10 +9,10 @@
     <script type="text/javascript" src="js/libs/require/require.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script>
-        require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojlistview'],
-        function(oj, ko, $)
+        require(['appController', 'ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojlistview'],
+        function(app, oj, ko, $)
         {  
-            ko.applyBindings(null, document.getElementById('listview'));   
+            ko.applyBindings(app);   
         });
     </script>
   </head>
@@ -26,9 +26,9 @@
             <div class="oj-flex">
                 <oj-list-view id="listview" aria-label="list with static data">
                     <ul>
-                        <li><a href="button-demo.html">button-demo.html</a></li>
-                        <li><a href="hello-component.html">hello-component.html</a></li>
-                        <li><a href="demo-card.html">demo-card.html</a></li>
+                        <oj-bind-for-each data="[[demoNames]]" as="demoName">
+                            <template><li><a :href="[[demoName.data + '.html']]"><oj-bind-text value="[[demoName.data]]"</oj-bind-text></a></li></template>
+                        </oj-bind-for-each>
                     </ul>
                 </oj-list-view>
             </div>
