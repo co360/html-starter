@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+
+<!-- ************************ IMPORTANT INFORMATION ************************************
+  This web basic template is provided as an example of how to configure
+  a JET web application.  It contains the Oracle JET framework and a default
+  requireJS configuration file to show how JET can be setup in a common application.
+  This project template can be used in conjunction with demo code from the JET
+  website to test JET component behavior and interactions.
+
+  Any CSS styling with the prefix "demo-" is for demonstration only and is not
+  provided as part of the JET framework.
+
+  Please see the demos under Cookbook/Patterns/App Shell: Web and the CSS documentation
+  under Support/API Docs/Non-Component Styling on the JET website for more information on how to use 
+  the best practice patterns shown in this template.
+
+  Aria Landmark role attributes are added to the different sections of the application
+  for accessibility compliance. If you change the type of content for a specific
+  section from what is defined, you should also change the role value for that
+  section to represent the appropriate content type.
+  ***************************** IMPORTANT INFORMATION ************************************ -->
+<html lang="en-us">
+  <head>
+    <title>Oracle JET Starter Template - Web Basic</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
+    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+
+  </head>
+  <body class="oj-web-applayout-body">
+
+    <h1>TypeScript Example</h1>
+    <oj-bind-text value="[[helloMessage]]"></oj-bind-text>
+    
+  
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script>
+      
+requirejs.config(
+{
+  baseUrl: 'js',
+
+  // Path mappings for the logical module names
+  // Update the main-release-paths.json for release mode when updating the mappings
+  paths:
+  //injector:mainReleasePaths
+  {
+    'knockout': 'libs/knockout/knockout-3.4.2.debug',
+    'jquery': 'libs/jquery/jquery-3.3.1',
+    'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
+    'promise': 'libs/es6-promise/es6-promise',
+    'hammerjs': 'libs/hammer/hammer-2.0.8',
+    'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.0',
+    'ojs': 'libs/oj/v6.2.0/debug',
+    'ojL10n': 'libs/oj/v6.2.0/ojL10n',
+    'ojtranslations': 'libs/oj/v6.2.0/resources',
+    'text': 'libs/require/text',
+    'signals': 'libs/js-signals/signals',
+    'customElements': 'libs/webcomponents/custom-elements.min',
+    'proj4': 'libs/proj4js/dist/proj4-src',
+    'css': 'libs/require-css/css',
+  }
+  //endinjector
+}
+);
+
+require(['ojs/ojcore', 'knockout', 'ts-gen/HelloViewModel', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu'],
+  function (oj, ko, HelloViewModel, $) { // this callback gets executed when all required modules are loaded
+    
+    $(function() {
+        // Bind your ViewModel for the content of the whole page body.
+        ko.applyBindings(new HelloViewModel());
+    });
+
+  }
+);
+    </script>
+
+  </body>
+
+</html>

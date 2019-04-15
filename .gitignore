@@ -17,3 +17,4 @@ Thumbs.db
 .idea/
 
 src/test.html
+src/js/ts-gen/

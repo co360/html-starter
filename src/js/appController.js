@@ -25,7 +25,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout'],
       self.demoNames = [
         'bind-text', 'button-demo', 'button-label', 'button',
         'demo-card', 'hello-component', 'index-shell', 'jquery-hello',
-        'knockout-hello', 'ojet-hello'
+        'knockout-hello', 'ojet-hello', 'hello-ts'
       ];
 
       // Footer
