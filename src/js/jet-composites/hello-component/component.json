@@ -2,8 +2,8 @@
   "name": "hello-component",
   "version": "1.0.0",
   "jetVersion": "^6.2.0",
-  "displayName": "A user friendly, translatable name of the pack.",
-  "description": "A translatable high-level description for the pack.",
+  "displayName": "A hello-component for testing.",
+  "description": "This component is generated using ojet command.",
   "properties": {
 
   },
