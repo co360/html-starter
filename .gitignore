@@ -16,5 +16,9 @@ Thumbs.db
 
 .idea/
 
+# Ignore generated source and test files
 src/test.html
 src/js/mytsapp/
+
+# Ignore typescript cached build files
+.tscache/
