@@ -1,7 +1,8 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-      "outDir": "./src/js/ts-gen",
+      "rootDir": "./src/typescripts/ts",
+      "outDir": "./src/js",
       "allowJs": false,
       "alwaysStrict": false,
       "target": "es5",
