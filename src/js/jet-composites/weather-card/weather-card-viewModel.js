@@ -1,49 +1,27 @@
-/**
-  Copyright (c) 2015, 2019, Oracle and/or its affiliates.
-  The Universal Permissive License (UPL), Version 1.0
-*/
-'use strict';
-define(
-    ['knockout', 'jquery', 'ojL10n!./resources/nls/weather-card-strings'], function (ko, $, componentStrings) {
-    
-    function ExampleComponentModel(context) {
-        var self = this;
-        
-        //At the start of your viewModel constructor
-        var busyContext = oj.Context.getContext(context.element).getBusyContext();
-        var options = {"description": "CCA Startup - Waiting for data"};
-        self.busyResolve = busyContext.addBusyState(options);
-
-        self.composite = context.element;
-
-        //Example observable
-        self.messageText = ko.observable('Hello from Example Component');
-        self.properties = context.properties;
-        self.res = componentStrings['weather-card'];
-        // Example for parsing context properties
-        // if (context.properties.name) {
-        //     parse the context properties here
-        // }
-
-        //Once all startup and async activities have finished, relocate if there are any async activities
-        self.busyResolve();
-    };
-    
-    //Lifecycle methods - uncomment and implement if necessary 
-    //ExampleComponentModel.prototype.activated = function(context){
-    //};
-
-    //ExampleComponentModel.prototype.connected = function(context){
-    //};
-
-    //ExampleComponentModel.prototype.bindingsApplied = function(context){
-    //};
-
-    //ExampleComponentModel.prototype.disconnect = function(context){
-    //};
-
-    //ExampleComponentModel.prototype.propertyChanged = function(context){
-    //};
-
-    return ExampleComponentModel;
+define(["require", "exports", "knockout", "ojs/ojcontext"], function (require, exports, ko, Context) {
+    "use strict";
+    //import componentStrings = require('ojL10n!./resources/nls/weather-card-strings');
+    var WeatherCardViewModel = /** @class */ (function () {
+        function WeatherCardViewModel(context) {
+            var self = this;
+            var busyContext = Context.getContext(context.element).getBusyContext();
+            var options = { "description": "CCA Startup - Waiting for data" };
+            self.busyResolve = busyContext.addBusyState(options);
+            self.composite = context.element;
+            //Example observable
+            self.messageText = ko.observable('Hello from Example Component');
+            self.properties = context.properties;
+            //self.res = componentStrings['weather-card'];
+            // Example for parsing context properties
+            // if (context.properties.name) {
+            //     parse the context properties here
+            // }
+            //Once all startup and async activities have finished, relocate if there are any async activities
+            self.busyResolve();
+        }
+        return WeatherCardViewModel;
+    }());
+    ;
+    return WeatherCardViewModel;
 });
+//# sourceMappingURL=weather-card-viewModel.js.map
