@@ -13,6 +13,7 @@
     "load-grunt-config": "0.19.2",
     "qunit": "^2.4.1",
     "qunit-reporter-junit": "^1.1.1",
+    "qunitjs": "^2.4.1",
     "typescript": "^3.4.3"
   },
   "engines": {
