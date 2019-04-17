@@ -17,9 +17,9 @@ temp/
 
 .idea/
 
-# Ignore generated source and test files
-src/test.html
-src/js/mytsapp/
+# Ignore test files
+test.*
 
 # Ignore typescript cached build files
 .tscache/
+*.js.map
