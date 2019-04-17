@@ -1,7 +1,6 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "rootDir": "./src/js",
     "allowJs": false,
     "alwaysStrict": false,
     "target": "es5",
@@ -10,13 +9,14 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
-    "module": "amd",
     "checkJs": false,
-    "sourceMap": true,
-    "baseUrl": ".",
+    "module": "amd",
     "moduleResolution": "node",
+    "sourceMap": false,
+    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "ojs/*":["./node_modules/@oracle/oraclejet/dist/types/*"]
+      "ojs/*": ["./node_modules/@oracle/oraclejet/dist/types/*"]
     },
     "lib": ["dom","es5","scripthost", "es2015.core","es2015.collection",
       "es2015","esnext.asynciterable"]

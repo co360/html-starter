@@ -1,6 +1,8 @@
 import ko = require('knockout');
-import Context= require("ojs/ojcontext");
-import Composite= require("ojs/ojcomposite");
+import Context = require("ojs/ojcontext");
+import Composite = require("ojs/ojcomposite");
+
+//TODO: How do we import RequireJS plugin?
 //import componentStrings = require('ojL10n!./resources/nls/weather-card-strings');
 
 class WeatherCardViewModel {
@@ -32,5 +34,5 @@ class WeatherCardViewModel {
         //Once all startup and async activities have finished, relocate if there are any async activities
         self.busyResolve();
 	}
-};
+}
 export = WeatherCardViewModel

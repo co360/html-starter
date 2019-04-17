@@ -25,3 +25,11 @@ https://docs.oracle.com/en/middleware/developer-tools/jet/6.2/develop/requirejs-
 The {{...}} syntax indicates that the element’s value property will be updated in the element’s ViewModel if it’s changed. To prevent the attribute’s value from updating the corresponding ViewModel, use the [[...]] syntax.
 
 NOTE: Please note that there should be no spaces between the braces when using the data bind syntax (e.g. some-attribute="[ [...] ]")
+
+== TypeScript and Gruntfile Setup
+
+The `grunt-ts` plugin does not support `tsconfig.json` "paths" options!
+
+https://github.com/TypeStrong/grunt-ts/issues/339
+
+Due to this, we have to invoke `tsc` and `ojet` separately.

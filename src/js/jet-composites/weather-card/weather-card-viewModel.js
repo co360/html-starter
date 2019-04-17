@@ -1,5 +1,6 @@
 define(["require", "exports", "knockout", "ojs/ojcontext"], function (require, exports, ko, Context) {
     "use strict";
+    //TODO: How do we import RequireJS plugin?
     //import componentStrings = require('ojL10n!./resources/nls/weather-card-strings');
     var WeatherCardViewModel = /** @class */ (function () {
         function WeatherCardViewModel(context) {
@@ -9,7 +10,7 @@ define(["require", "exports", "knockout", "ojs/ojcontext"], function (require, e
             self.busyResolve = busyContext.addBusyState(options);
             self.composite = context.element;
             //Example observable
-            self.messageText = ko.observable('Hello from Example Component');
+            self.messageText = ko.observable('Current Temperature is 89 degree.');
             self.properties = context.properties;
             //self.res = componentStrings['weather-card'];
             // Example for parsing context properties
@@ -21,7 +22,5 @@ define(["require", "exports", "knockout", "ojs/ojcontext"], function (require, e
         }
         return WeatherCardViewModel;
     }());
-    ;
     return WeatherCardViewModel;
 });
-//# sourceMappingURL=weather-card-viewModel.js.map

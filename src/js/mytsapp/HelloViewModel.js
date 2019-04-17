@@ -6,7 +6,5 @@ define(["require", "exports"], function (require, exports) {
         }
         return HelloViewModel;
     }());
-    ;
     return HelloViewModel;
 });
-//# sourceMappingURL=HelloViewModel.js.map
