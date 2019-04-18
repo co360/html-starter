@@ -1,10 +1,4 @@
-define(function(require, exports, module) {
-    console.log("require=");
-    console.log(require);
-    console.log("exports=");
-    console.log(exports);
-    console.log("module=");
-    console.log(module);
+define(function() {
     // We can return just about anything when defining a module.
     let ret0 = {}; // This is same as not return anything.
 
