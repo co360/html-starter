@@ -27,7 +27,11 @@
                 <oj-list-view id="listview" aria-label="list with static data">
                     <ul>
                         <oj-bind-for-each data="[[demoNames]]" as="demoName">
-                            <template><li><a :href="[[demoName.data + '.html']]"><oj-bind-text value="[[demoName.data]]"</oj-bind-text></a></li></template>
+                            <template>
+                                <li>
+                                    <a :href="[['html-components/' + demoName.data + '.html']]"><oj-bind-text value="[[demoName.data]]"></oj-bind-text></a>
+                                </li>
+                            </template>
                         </oj-bind-for-each>
                     </ul>
                 </oj-list-view>
