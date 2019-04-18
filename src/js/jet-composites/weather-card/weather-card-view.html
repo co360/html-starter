@@ -6,19 +6,19 @@
     <template data-oj-as="period">
         <table class="forecast-period" :id="'forecast-period' + [[period.data.number]]">
             <tr>
-                <td><oj-bind-text value="[[eriod.data.name]]"></oj-bind-text></td>
+                <td><oj-bind-text value="[[period.data.name]]"></oj-bind-text></td>
             </tr>
             <tr>
-                <td><oj-bind-text value="[[eriod.data.startTime]]"></oj-bind-text></td>
+                <td><oj-bind-text value="[[period.data.startTime]]"></oj-bind-text></td>
             </tr>
             <tr>
-                <td><oj-bind-text value="[[eriod.data.temperature]]"></oj-bind-text></td>
+                <td><oj-bind-text value="[[period.data.temperature]]"></oj-bind-text></td>
             </tr>
             <tr>
-                <td><oj-bind-text value="[[eriod.data.windSpeed]]"></oj-bind-text></td>
+                <td><oj-bind-text value="[[period.data.windSpeed]]"></oj-bind-text></td>
             </tr>
             <tr>
-                <td><oj-bind-text value="[[eriod.data.shortForecast]]"></oj-bind-text></td>
+                <td><oj-bind-text value="[[period.data.shortForecast]]"></oj-bind-text></td>
             </tr>
         </table>
     </template>
