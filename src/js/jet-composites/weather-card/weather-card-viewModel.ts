@@ -1,4 +1,5 @@
 import ko = require('knockout');
+import $ = require('jquery');
 import Context = require("ojs/ojcontext");
 import Composite = require("ojs/ojcomposite");
 
