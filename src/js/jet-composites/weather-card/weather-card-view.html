@@ -2,7 +2,7 @@
   Copyright (c) 2015, 2019, Oracle and/or its affiliates.
   The Universal Permissive License (UPL), Version 1.0
 -->
-<oj-bind-for-each data='[[weatherForecast.periods]]'>
+<oj-bind-for-each data='[[weatherForecast]]'>
     <template data-oj-as="period">
         <table class="forecast-period" :id="'forecast-period' + [[period.data.number]]">
             <tr>

@@ -1,11 +1,5 @@
-define(["require", "exports", "knockout", "jquery", "ojs/ojcontext"], function (require, exports, ko, $, Context) {
+define(["require", "exports", "jquery", "ojs/ojcontext", "ojs/ojarraydataprovider"], function (require, exports, $, Context, ArrayDataProvider) {
     "use strict";
-    var Forecast = /** @class */ (function () {
-        function Forecast() {
-            this.periods = new Array();
-        }
-        return Forecast;
-    }());
     var WeatherCardViewModel = /** @class */ (function () {
         function WeatherCardViewModel(context) {
             var self = this;
@@ -21,19 +15,19 @@ define(["require", "exports", "knockout", "jquery", "ojs/ojcontext"], function (
             //     parse the context properties here
             // }
             // Get and setup weather data from API
-            self.weatherForecast = ko.observable(this.createWeatherForecast());
+            self.weatherForecast = this.createForecastDataProvider();
             //Once all startup and async activities have finished, relocate if there are any async activities
             self.busyResolve();
         }
-        WeatherCardViewModel.prototype.createWeatherForecast = function () {
-            var forecast = new Forecast();
+        WeatherCardViewModel.prototype.createForecastDataProvider = function () {
+            var forecastPeriods = new Array();
             var api = "https://api.weather.gov/gridpoints/MLB/25,68/forecast";
             $.getJSON(api, function (data) {
                 data.properties.periods.slice(0, 5).forEach(function (period) {
-                    forecast.periods.push(period);
+                    forecastPeriods.push(period);
                 });
             });
-            return forecast;
+            return new ArrayDataProvider(forecastPeriods, { keyAttributes: 'number' });
         };
         return WeatherCardViewModel;
     }());
