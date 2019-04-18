@@ -4,5 +4,5 @@ weather-card:not(.oj-complete){
 
 weather-card{
 	min-height: 50px;
-	width: 50px;
+	width: 500px;
 }

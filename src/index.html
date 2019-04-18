@@ -29,7 +29,7 @@
                         <oj-bind-for-each data="[[demoNames]]" as="demoName">
                             <template>
                                 <li>
-                                    <a :href="[['html/ojet-components/' + demoName.data + '.html']]"><oj-bind-text value="[[demoName.data]]"></oj-bind-text></a>
+                                    <a :href="[['' + demoName.data + '.html']]"><oj-bind-text value="[[demoName.data]]"></oj-bind-text></a>
                                 </li>
                             </template>
                         </oj-bind-for-each>
