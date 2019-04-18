@@ -9,12 +9,19 @@
 </head>
 <body>
     <script src="/js/libs/jquery/jquery-3.3.1.js"></script>
-    <script src="weather-forecast-data.js"></script>
+<!--    <script src="weather-forecast-data.js"></script>-->
     <script>
+        let weatherForecast;
+        let api = "https://api.weather.gov/gridpoints/MLB/25,68/forecast";
+        $.getJSON(api, function(data){ weatherForecast = data; });
         $(function(){
             weatherForecast.properties.periods.slice(0, 5).forEach(function(period) {
+                let dateObj = new Date(period.startTime);
+                let dateString = (dateObj.getMonth()+1) + "-" + dateObj.getDate()  + "-" + dateObj.getFullYear();
+
                 $("tr#name").append(`<td>${period.name}</td>`);
-                //$("tr#icon").append(`<td><img src="${period.icon}"/></td>`);
+                $("tr#date").append(`<td>${dateString}</td>`);
+                $("tr#icon").append(`<td><img src="${period.icon}"/></td>`);
                 $("tr#temperature").append(`<td>${period.temperature} &deg; F</td>`);
                 $("tr#windSpeed").append(`<td>Wind: ${period.windSpeed}</td>`);
                 $("tr#shortForecast").append(`<td>${period.shortForecast}</td>`);
@@ -24,6 +31,8 @@
     </script>
     <table id="weather">
         <tr id="name">
+        </tr>
+        <tr id="date">
         </tr>
         <tr id="temperature">
         </tr>
