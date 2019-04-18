@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<body>
+<script src="/js/libs/require/require.js"></script>
+<script>
+    requirejs.config({
+       baseUrl: "/js"
+    });
+    require(['requirejs-demo/hello'], function(hello){
+        console.log("Module loaded: " + hello);
+        console.log("Module message: " + hello.message);
+    });
+</script>
+</body>
+</html>
