@@ -6,9 +6,9 @@
     requirejs.config({
        baseUrl: "/js"
     });
-    require(['requirejs-demo/hello'], function(hello){
+    require(['requirejs-demo/module-return'], function(mod){
         console.log("Module loaded=");
-        console.log(hello);
+        console.log(mod);
     });
 </script>
 </body>

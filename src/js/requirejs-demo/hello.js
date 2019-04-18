@@ -1,7 +1,11 @@
 define(function(require, exports, module) {
-   console.log("Setting up 'hello-mod' module.");
-   console.log("Args types: " + [typeof require, typeof exports, typeof module]);
-   return {
-       message: "Hello"
-   }
+    console.log("require=");
+    console.log(require);
+    console.log("exports=");
+    console.log(exports);
+    console.log("module=");
+    console.log(module);
+    return {
+        message: "Hello"
+    }
 });
