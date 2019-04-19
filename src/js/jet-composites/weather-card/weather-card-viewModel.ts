@@ -9,6 +9,7 @@ import ArrayDataProvider = require('ojs/ojarraydataprovider');
 //import componentStrings = require('ojL10n!./resources/nls/weather-card-strings');
 
 interface ForecastPeriod {
+	shortDate? : string;
 	startTime: string;
 	number: number;
 	name: string;
@@ -50,12 +51,24 @@ class WeatherCardViewModel {
 
 	createForecastDataProvider(): ArrayDataProvider<number, ForecastPeriod> {
 		let forecastPeriods = new Array<ForecastPeriod>();
-		let api = "https://api.weather.gov/gridpoints/MLB/25,68/forecast";
-		$.getJSON(api, function(data){
-			data.properties.periods.slice(0, 5).forEach( (period: ForecastPeriod) => {
-				forecastPeriods.push(period);
-			});
+		let url = "https://api.weather.gov/gridpoints/MLB/25,68/forecast";
+
+		$.ajax({
+			dataType: "json",
+			url: url,
+			async: false,
+			success: function(data){
+				data.properties.periods.slice(0, 5).forEach( (period: ForecastPeriod) => {
+					let dateObj = new Date(period.startTime);
+					let dateString = (dateObj.getMonth()+1) + "-" + dateObj.getDate()  + "-" + dateObj.getFullYear();
+					period.shortDate = dateString;
+					forecastPeriods.push(period);
+				});
+			}
 		});
+
+		// console.log("forecastPeriods: ");
+		// console.log(forecastPeriods);
 
 		return new ArrayDataProvider(forecastPeriods, {keyAttributes: 'number'});
 	}

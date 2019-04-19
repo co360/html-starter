@@ -21,12 +21,22 @@ define(["require", "exports", "jquery", "ojs/ojcontext", "ojs/ojarraydataprovide
         }
         WeatherCardViewModel.prototype.createForecastDataProvider = function () {
             var forecastPeriods = new Array();
-            var api = "https://api.weather.gov/gridpoints/MLB/25,68/forecast";
-            $.getJSON(api, function (data) {
-                data.properties.periods.slice(0, 5).forEach(function (period) {
-                    forecastPeriods.push(period);
-                });
+            var url = "https://api.weather.gov/gridpoints/MLB/25,68/forecast";
+            $.ajax({
+                dataType: "json",
+                url: url,
+                async: false,
+                success: function (data) {
+                    data.properties.periods.slice(0, 5).forEach(function (period) {
+                        var dateObj = new Date(period.startTime);
+                        var dateString = (dateObj.getMonth() + 1) + "-" + dateObj.getDate() + "-" + dateObj.getFullYear();
+                        period.shortDate = dateString;
+                        forecastPeriods.push(period);
+                    });
+                }
             });
+            // console.log("forecastPeriods: ");
+            // console.log(forecastPeriods);
             return new ArrayDataProvider(forecastPeriods, { keyAttributes: 'number' });
         };
         return WeatherCardViewModel;
