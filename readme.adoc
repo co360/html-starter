@@ -33,3 +33,6 @@ The `grunt-ts` plugin does not support `tsconfig.json` "paths" options!
 https://github.com/TypeStrong/grunt-ts/issues/339
 
 Due to this, we have to invoke `tsc` and `ojet` separately.
+
+This is fixed now! The trick is to setup 'tsconfig' as object with passThrough option set to true!
+
