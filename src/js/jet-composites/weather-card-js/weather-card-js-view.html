@@ -1,0 +1,33 @@
+<!--
+  Copyright (c) 2015, 2019, Oracle and/or its affiliates.
+  The Universal Permissive License (UPL), Version 1.0
+-->
+<table>
+    <tr>
+        <oj-bind-for-each data='[[weatherForecast]]'>
+            <template data-oj-as="period">
+                <td>
+                    <table class="forecast-period" :id="'forecast-period' + [[period.data.number]]">
+                        <tr>
+                            <td><oj-bind-text value="[[period.data.name]]"></oj-bind-text></td>
+                        </tr>
+                        <tr>
+                            <td><oj-bind-text value="[[period.data.shortDate]]"></oj-bind-text></td>
+                        </tr>
+                        <tr>
+                            <td><oj-bind-text value="[[period.data.temperature + '&deg; F']]"></oj-bind-text></td>
+                        </tr>
+                        <tr>
+                            <td><oj-bind-text value="[[period.data.windSpeed]]"></oj-bind-text></td>
+                        </tr>
+                        <!-- TEXT is too long, so disable for now.-->
+                        <!--                <tr>-->
+                        <!--                    <td><oj-bind-text value="[[period.data.shortForecast]]"></oj-bind-text></td>-->
+                        <!--                </tr>-->
+                    </table>
+                </td>
+            </template>
+        </oj-bind-for-each>
+    </tr>
+</table>
+

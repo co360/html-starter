@@ -1,0 +1,8 @@
+weather-card-js:not(.oj-complete){
+  visibility: hidden;
+}
+
+weather-card-js{
+	min-height: 50px;
+	width: 50px;
+}
