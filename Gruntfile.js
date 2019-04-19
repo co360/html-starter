@@ -16,7 +16,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     ts: {
       default : {
-        tsconfig: './tsconfig.json'
+        tsconfig: {
+          tsconfig: './tsconfig.json',
+          passThrough: true
+        }
       }
     }
   });
