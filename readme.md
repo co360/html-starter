@@ -121,3 +121,15 @@ from your working branch (eg: `zemian-jira-12345`) to the "master".
 
 1. Select a Reviewer
 1. Complete the MR.
+
+
+## TEST LIST
+
+1. One
+1. Two
+
+    - Foo: bar
+    - Foo2: bar
+    - Foo3: bar
+
+1. Three
