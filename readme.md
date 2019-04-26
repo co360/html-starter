@@ -113,9 +113,11 @@ from your working branch (eg: `zemian-jira-12345`) to the "master".
 1. On Left Navigation, click "Merge Requests"
 1. Enter Required Info:
 
-    - Repository: KnowledgeUI.git
-    - Target branch: master
-    - Review branch: zemian-jira-12345
+    Repository: KnowledgeUI.git
     
+    Target branch: master
+    
+    Review branch: zemian-jira-12345
+
 1. Select a Reviewer
 1. Complete the MR.
