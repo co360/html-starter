@@ -1,46 +1,17 @@
-## TEST LIST
+## About `ojet-starter` Project
 
-1. One
-1. Two
+This project is setup to explore Oracle JET framework.
 
-    - Foo: bar
-    - Foo2: bar
-    - Foo3: bar
+- http://oraclejet.org
+- https://www.oracle.com/webfolder/technetwork/jet/index.html
 
-1. Three
+## References
 
-
-## TEST LIST 2
-
-1. One
-1. Two
-
-	- Foo: bar
-	- Foo2: bar
-	- Foo3: bar
-
-1. Three
-
-
-## TEST LIST 3
-
-1. One
-1. Two
-
-	- Foo: bar
-	- Foo2: bar
-	- Foo3: bar
-1. Three
-
-## TEST list
-
-1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+- [ODCS Git](https://alm.oraclecorp.com/ec)
+- [VBCS UI](https://idcs-fb7cd79597024dc4a8ddabd92de517fb.identity.c9dev1.oc9qadev.com/ui/v1/signin)
+- [VBCS Docs](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/index.html)
+- [OJET Docs](https://docs.oracle.com/en/middleware/developer-tools/jet/6.2/develop/index.html)
+- [OJET JS API](https://www.oracle.com/webfolder/technetwork/jet/jsdocs/index.html)
+- [OJET TS API](https://docs.oracle.com/en/middleware/developer-tools/jet/6.2/reference-typescript/index.html)
+- [OJET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html)
 
