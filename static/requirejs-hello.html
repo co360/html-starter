@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>HI</p>
+
+<script src="../web/js/libs/require/require.js"></script>
+<script src="js/requirejs-config.js"></script>
+<script>
+    // Note to use "require", not "define"
+    require(['requirejs-hello'], function(hello) {
+        let self = this;
+
+        self.helloMessage = "Hello World";
+        //console.log("jquery selector loaded=" + $);
+
+        hello.jq("p").text(helloMessage);
+    });
+</script>
+</body>
+</html>
