@@ -1,7 +1,7 @@
 define(['knockout'], function (ko) {
-    function ControllerViewModel() {
+    function AppViewModel() {
         let self = this;
         self.helloMessage = ko.observable("Hello KO World");
     }
-    return new ControllerViewModel();
+    return new AppViewModel();
 });

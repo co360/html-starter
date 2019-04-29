@@ -10,7 +10,8 @@
     <script type="text/javascript" src="https://static.oracle.com/cdn/jet/v4.0.0/3rdparty/require/require.js"></script>
     <script src="js/requirejs-config-ojet-cdn.js"></script>
     <script>
-        require(['knockout', 'ojet-hello', 'ojs/ojcore', 'ojs/ojknockout'], function(ko, app) {
+        require(['knockout', 'ojet-hello',
+            'ojs/ojcore', 'ojs/ojknockout'], function(ko, app) {
             ko.applyBindings(app);
         });
     </script>

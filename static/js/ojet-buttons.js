@@ -1,5 +1,5 @@
 define(['knockout'], function (ko) {
-    function ControllerViewModel() {
+    function AppViewModel() {
         let self = this;
 
         self.button2Text = "Button 2";
@@ -10,5 +10,5 @@ define(['knockout'], function (ko) {
             return true;
         };
     }
-    return new ControllerViewModel();
+    return new AppViewModel();
 });
