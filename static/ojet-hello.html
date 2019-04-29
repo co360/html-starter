@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../web/js/libs/require/require.js"></script>
+    <script src="js/requirejs-config-ojet.js"></script>
+    <script>
+        require(['knockout', 'ojet-hello', 'ojs/ojcore', 'ojs/ojknockout'], function(ko, app) {
+            ko.applyBindings(app);
+        });
+    </script>
 </head>
 <body>
 
 <p><oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text></p>
-
-<script src="../web/js/libs/require/require.js"></script>
-<script src="js/requirejs-config-ojet.js"></script>
-<script>
-    require(['knockout', 'ojet-hello', 'ojs/ojcore', 'ojs/ojknockout'], function(ko, app) {
-        ko.applyBindings(app);
-    });
-</script>
 </body>
 </html>

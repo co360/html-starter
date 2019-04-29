@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+
+  <script src="../web/js/libs/require/require.js"></script>
+  <script src="js/requirejs-config-ojet.js"></script>
+  <script>
+    require(['knockout', 'ojet-buttons',
+              'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'],
+            function(ko, app) {
+              ko.applyBindings(app);
+            });
+  </script>
 </head>
 <body>
 
@@ -23,15 +33,5 @@
     <span id="results"><oj-bind-text value="[[clickedButton]]"></oj-bind-text></span>
   </p>
 </div>
-
-<script src="../web/js/libs/require/require.js"></script>
-<script src="js/requirejs-config-ojet.js"></script>
-<script>
-  require(['knockout', 'ojet-buttons',
-    'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'],
-          function(ko, app) {
-    ko.applyBindings(app);
-  });
-</script>
 </body>
 </html>

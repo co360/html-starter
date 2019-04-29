@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
+<head>
+    <script src="../../web/js/libs/require/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: "../js/requirejs-demo"
+        });
+        require(['module-return'], function(mod){
+            console.log("Module loaded=");
+            console.log(mod);
+        });
+    </script>
+</head>
 <body>
-<script src="/js/libs/require/require.js"></script>
-<script>
-    requirejs.config({
-       baseUrl: "/js"
-    });
-    require(['requirejs-demo/module-return'], function(mod){
-        console.log("Module loaded=");
-        console.log(mod);
-    });
-</script>
+<!-- Check console output -->
 </body>
 </html>

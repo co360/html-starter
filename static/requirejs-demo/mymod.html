@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="en">
+<head>
+    <script src="../../web/js/libs/require/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: "../js/requirejs-demo"
+        });
+        require(['mymod'], function(mymod){
+            mymod.start();
+        });
+    </script>
+</head>
 <body>
-<script src="/js/libs/require/require.js"></script>
-<script>
-    requirejs.config({
-       baseUrl: "/js"
-    });
-    require(['requirejs-demo/mymod'], function(mymod){
-        mymod.start();
-    });
-</script>
+<!-- Check console output -->
 </body>
 </html>

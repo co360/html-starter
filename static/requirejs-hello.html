@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script src="../web/js/libs/require/require.js"></script>
+    <script src="js/requirejs-config.js"></script>
+    <script>
+        // Note to use "require", not "define"
+        require(['requirejs-hello'], function(app) {
+            let self = this;
+
+            self.helloMessage = "Hello World";
+            //console.log("jquery selector loaded=" + $);
+
+            appjq("p").text(helloMessage);
+        });
+    </script>
 </head>
 <body>
 
 <p>HI</p>
-
-<script src="../web/js/libs/require/require.js"></script>
-<script src="js/requirejs-config.js"></script>
-<script>
-    // Note to use "require", not "define"
-    require(['requirejs-hello'], function(app) {
-        let self = this;
-
-        self.helloMessage = "Hello World";
-        //console.log("jquery selector loaded=" + $);
-
-        appjq("p").text(helloMessage);
-    });
-</script>
 </body>
 </html>

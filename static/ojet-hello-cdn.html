@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- This is the main css file for the default Alta theme -->
+    <link id="css" rel="stylesheet" href="https://static.oracle.com/cdn/jet/v4.0.0/default/css/alta/oj-alta-min.css" type="text/css"/>
+
+    <!-- RequireJS bootstrap file -->
+    <script type="text/javascript" src="https://static.oracle.com/cdn/jet/v4.0.0/3rdparty/require/require.js"></script>
+    <script src="js/requirejs-config-ojet-cdn.js"></script>
+    <script>
+        require(['knockout', 'ojet-hello', 'ojs/ojcore', 'ojs/ojknockout'], function(ko, app) {
+            ko.applyBindings(app);
+        });
+    </script>
+</head>
+<body>
+<p><oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text></p>
+</body>
+</html>

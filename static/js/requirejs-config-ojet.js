@@ -17,7 +17,7 @@ requirejs.config({
         'proj4': '../../web/js/libs/proj4js/dist/proj4-src',
         'css': '../../web/js/libs/require-css/css',
         'touchr': '../../web/js/libs/touchr/touchr',
-        'persist': '../../web/js/libs/persist/min',
+        'persist': '../../web/js/libs/persist/min'
     },
 
     // Shim configurations for modules that do not expose AMD

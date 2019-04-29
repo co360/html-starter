@@ -1,4 +1,4 @@
-define(['requirejs-demo/util'], function(util) {
+define(['util'], function(util) {
     return {
         MOD_NAME: "mymod",
         start() {

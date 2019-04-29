@@ -7,6 +7,6 @@ requirejs.config({
         'ojL10n': '../../web/js/libs/oj/v6.2.0/ojL10n',
         'ojtranslations': '../../web/js/libs/oj/v6.2.0/resources',
         'ojs': '../../web/js/libs/oj/v6.2.0/debug',
-        'jqueryui-amd': '../../web/js/libs/jquery/jqueryui-amd-1.12.1',
+        'jqueryui-amd': '../../web/js/libs/jquery/jqueryui-amd-1.12.1'
     }
 });
