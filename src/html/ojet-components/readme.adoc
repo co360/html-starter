@@ -1,5 +1,0 @@
-
-== TODO
-
-How can we move those *.html into here?
-Seems like resources won't load properly?
