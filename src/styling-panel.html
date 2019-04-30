@@ -16,8 +16,18 @@
   <script type="text/javascript" src="js/libs/require/require.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script>
-    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function(ko){
+    require(['knockout', 'jquery', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'],
+            function(ko, $){
       function AppViewModel() {
+        let self = this;
+
+        self.panelLeft01CollapseState = false;
+        self.panelCollapseListener = function(event) {
+          self.panelLeft01CollapseState = self.panelLeft01CollapseState ? false : true;
+          console.log("self.panelLeft01CollapseState=" + self.panelLeft01CollapseState);
+          console.log(event);
+          $('#panel-left-01').toggle();
+        }
       }
       ko.applyBindings(new AppViewModel());
     });
@@ -25,57 +35,15 @@
 </head>
 <body>
 
-<h1>Panel</h1>
-<div class="oj-panel">
-  // content
-</div>
-
-<h1>oj-panel-alt3</h1>
-<div class="oj-panel oj-panel-alt3">
-  // content
-</div>
-
-<h1>oj-panel-shadow</h1>
-<div class="oj-panel oj-panel-shadow-md">
-  // content
-</div>
-
-<h1>Drag Handle</h1>
-<div class="oj-panel">
-  <div class="oj-panel-drag-handle" title="Drag to reorder">
-    <span class="oj-panel-drag-icon"></span>
-  </div>
-  <div>panel content</div>
-</div>
-
-<h1>Remove Icon</h1>
-<div class="oj-panel">
-  <oj-button class="oj-panel-remove-button demo-button"
-             chroming="half"
-             display="icons">
-    <span slot="startIcon" class="oj-panel-remove-icon"></span>
-    <span>remove</span>
-  </oj-button>
-  <div>panel content</div>
-</div>
-
-<h1>Resize expand icon</h1>
-<div class="oj-panel">
-  <div>panel content</div>
-  <oj-button class="oj-panel-resize-button demo-button"
-             chroming="half"
-             display="icons">
-    <span slot="startIcon" class="oj-panel-expand-icon"></span>
-    <span>expand</span>
-  </oj-button>
-</div>
-
 <h1>Resize collapse icon</h1>
 <div class="oj-panel">
-  <div>panel content</div>
+  <div id="panel-left-01">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem ducimus eaque explicabo, iste natus nostrum quasi quo vel voluptatibus! Ad aliquam asperiores aspernatur commodi consequuntur harum, ipsa perspiciatis suscipit?
+  </div>
   <oj-button class="oj-panel-resize-button demo-button"
              chroming="half"
-             display="icons">
+             display="icons"
+             on-oj-action='[[panelCollapseListener]]'>
     <span slot="startIcon" class="oj-panel-collapse-icon"></span>
     <span>collapse</span>
   </oj-button>
