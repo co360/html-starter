@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Web Components - Basic</title>
+    <title>Web Components - Demo Card</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="viewport-fit=cover, initial-scale=1.0"/>
     <link rel="icon" type="image/x-icon" href="css/images/favicon.ico">
@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="css/demo-card.css">
 
     <script type="text/javascript" src="js/libs/require/require.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/requirejs-config-ojet.js"></script>
+<!--    <script type="text/javascript" src="js/main.js"></script>-->
+
     <script>
-      require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'demo-card/loader'],
+      require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'jet-composites/demo-card/6.2.0/loader'],
         function(oj, ko, $) {
-          function model() {      
+          function DemoCardAppViewModel() {
             var self = this;
             self.employees = [
               {
@@ -34,7 +36,7 @@
           }
 
           $(function() {
-            ko.applyBindings(new model(), document.getElementById('component-container'));
+            ko.applyBindings(new DemoCardAppViewModel(), document.getElementById('component-container'));
           });
 
         });
