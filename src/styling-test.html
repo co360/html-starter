@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OJET Starter</title>
+  <link rel="icon" href="/css/images/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+  <style>
+    h1 {
+      border-bottom: solid 1px;
+    }
+
+    .km-panel {
+      height: 100vh;
+    }
+    .km-side-panel {
+      background-color: #dddddd;
+    }
+
+  </style>
+
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function(ko){
+      function AppViewModel() {
+      }
+      ko.applyBindings(new AppViewModel());
+    });
+  </script>
+</head>
+<body>
+<p>To test flex layout responses, try changing the browser or screen/device size.</p>
+
+<h1>3 Columns Layout</h1>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-lg-3">
+    <div class="oj-panel km-panel km-side-panel">
+      <oj-button class="oj-panel-remove-button demo-button"
+                 chroming="half"
+                 display="icons">
+        <span slot="startIcon" class="oj-panel-remove-icon"></span>
+        <span>remove</span>
+      </oj-button>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim est reiciendis sed. Adipisci ea excepturi impedit inventore itaque libero, nihil nisi nostrum qui ratione saepe sint sunt veritatis voluptate voluptatibus.
+      </div>
+    </div>
+  </div>
+
+  <div class="oj-flex-item oj-lg-6">
+    <div class="oj-panel km-panel">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam exercitationem, expedita fugiat ipsam labore minus modi molestiae perferendis porro recusandae rerum sunt unde veniam vitae! Iste nobis odit officiis?
+    </div>
+  </div>
+
+  <div class="oj-flex-item oj-lg-3">
+    <div class="oj-panel km-panel km-side-panel">
+      <oj-button class="oj-panel-remove-button demo-button"
+                 chroming="half"
+                 display="icons">
+        <span slot="startIcon" class="oj-panel-remove-icon"></span>
+        <span>remove</span>
+      </oj-button>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet autem debitis deleniti doloribus eaque eius, fugiat illo inventore iure iusto magni nam nesciunt numquam quas reiciendis sunt voluptas voluptate!
+      </div>
+    </div>
+</div>
+
+</body>
+</html>

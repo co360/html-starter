@@ -19,6 +19,7 @@ temp/
 
 # Ignore test files
 test.*
+src/js/style-test.html
 
 # Ignore typescript cached build files
 .tscache/
