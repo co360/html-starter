@@ -6,12 +6,21 @@
   <link rel="icon" href="/css/images/favicon.ico" type="image/x-icon" />
 
   <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
-
   <style>
     h1 {
       border-bottom: solid 1px;
     }
   </style>
+
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function(ko){
+      function AppViewModel() {
+      }
+      ko.applyBindings(new AppViewModel());
+    });
+  </script>
 </head>
 <body>
 <p>To test flex layout responses, try changing the browser or screen/device size.</p>
