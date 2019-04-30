@@ -7,8 +7,6 @@
 /**
  * Example of Require.js boostrap javascript
  */
-/* eslint-disable quote-props */
-
 requirejs.config(
   {
     baseUrl: 'js',
@@ -49,7 +47,12 @@ requirejs.config(
   }
 );
 
-
+/**
+ * A top-level require call executed by the Application.
+ * Although 'ojcore' and 'knockout' would be loaded in any case (they are specified as dependencies
+ * by the modules themselves), we are listing them explicitly to get the references to the 'oj' and 'ko'
+ * objects in the callback
+ */
 require(['ojs/ojcore', 'knockout', 'appController', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu'],
     function (oj, ko, app, $) { // this callback gets executed when all required modules are loaded
 
