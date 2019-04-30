@@ -1,62 +1,23 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Oracle JET Starter Template - Web Basic</title>
+<head>
+  <meta charset="UTF-8">
+  <title>OJET Starter</title>
+  <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
-    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
-
-  </head>
-  <body class="oj-web-applayout-body">
-
-    <h1>TypeScript Example</h1>
-    <oj-bind-text value="[[helloMessage]]"></oj-bind-text>
-    
-  
-    <script type="text/javascript" src="js/libs/require/require.js"></script>
-    <script>
-      
-requirejs.config(
-{
-  baseUrl: 'js',
-
-  // Path mappings for the logical module names
-  // Update the main-release-paths.json for release mode when updating the mappings
-  paths:
-  //injector:mainReleasePaths
-  {
-    'knockout': 'libs/knockout/knockout-3.4.2.debug',
-    'jquery': 'libs/jquery/jquery-3.3.1',
-    'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.1',
-    'promise': 'libs/es6-promise/es6-promise',
-    'hammerjs': 'libs/hammer/hammer-2.0.8',
-    'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.0',
-    'ojs': 'libs/oj/v6.2.0/debug',
-    'ojL10n': 'libs/oj/v6.2.0/ojL10n',
-    'ojtranslations': 'libs/oj/v6.2.0/resources',
-    'text': 'libs/require/text',
-    'signals': 'libs/js-signals/signals',
-    'customElements': 'libs/webcomponents/custom-elements.min',
-    'proj4': 'libs/proj4js/dist/proj4-src',
-    'css': 'libs/require-css/css',
-  }
-  //endinjector
-}
-);
-
-require(['ojs/ojcore', 'knockout', 'mytsapp/HelloViewModel', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu'],
-  function (oj, ko, HelloViewModel, $) { // this callback gets executed when all required modules are loaded
-    
-    $(function() {
-        // Bind your ViewModel for the content of the whole page body.
-        ko.applyBindings(new HelloViewModel());
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/requirejs-config-ojet.js"></script>
+  <script>
+    require(['mytsapp/HelloAppViewModel', 'knockout', 'ojs/ojcore', 'ojs/ojknockout'], function(app, ko){
+      ko.applyBindings(app);
     });
+  </script>
+</head>
+<body>
 
-  }
-);
-    </script>
+<h1>TypeScript Example</h1>
+<oj-bind-text value="[[helloMessage]]"></oj-bind-text>
 
-  </body>
-
+</body>
 </html>

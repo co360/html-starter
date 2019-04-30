@@ -7,9 +7,9 @@ require(['knockout', 'ojs/ojcore', 'ojs/ojknockout',
 
             // Demo Banes - Used by index to create a list if links
             self.demoNames = [
-                'bind-text', 'button-demo', 'button-label', 'button',
-                'demo-card', 'hello-component', 'index-shell', 'hello-ts',
-                'weather-card', 'weather-card-js'
+                'bind-text', 'button', 'hello-ts',
+                'hello-component', 'demo-card',
+                'weather-card-js', 'weather-card'
             ];
         }
 
