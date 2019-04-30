@@ -15,3 +15,8 @@ This project is setup to explore Oracle JET framework.
 - [OJET TS API](https://docs.oracle.com/en/middleware/developer-tools/jet/6.2/reference-typescript/index.html)
 - [OJET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html)
 
+## Media Queries
+
+https://docs.oracle.com//en/middleware/developer-tools/jet/6.2/develop/media-queries.html#GUID-73B2CFA1-91A5-41A4-804F-915481BDB636
+
+Width=large, range=1024-1280, device=tablet landscape, desktop
