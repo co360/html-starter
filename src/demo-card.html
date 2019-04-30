@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/demo-card.css">
 
     <script type="text/javascript" src="js/libs/require/require.js"></script>
-    <script type="text/javascript" src="js/requirejs-config-ojet.js"></script>
+    <!--  <script type="text/javascript" src="js/requirejs-config-ojet-components.js"></script>-->
+    <script type="text/javascript" src="js/main.js"></script>
 
     <script>
-      require(['knockout', 'jquery', 'ojs/ojcore', 'ojs/ojknockout', 'jet-composites/demo-card/6.2.0/loader'],
+      require(['knockout', 'jquery', 'ojs/ojcore', 'ojs/ojknockout', 'demo-card/loader'],
               function(ko, $) {
           function DemoCardAppViewModel() {
             var self = this;

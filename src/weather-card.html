@@ -1,34 +1,25 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Web Components - Basic</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="viewport-fit=cover, initial-scale=1.0"/>
-    <link rel="icon" type="image/x-icon" href="css/images/favicon.ico">
-    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css" id="css" />
+<head>
+  <meta charset="UTF-8">
+  <title>OJET Starter</title>
+  <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
 
-    <script type="text/javascript" src="js/libs/require/require.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-  </head>
-
-  <body>
-    
-        <weather-card></weather-card>
-
-        <script>
-          require(['knockout', 'jquery', 'ojs/ojknockout', 'weather-card/loader'],
-          function(ko, $){ 
-            function model(){
-                var self = this;
-            }
-
-            $(function() {
-                ko.applyBindings(new model());
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    require(['knockout', 'jquery', 'ojs/ojknockout', 'weather-card/loader'],
+            function(ko){
+              function AppViewModel() {
+              }
+              ko.applyBindings(new AppViewModel());
             });
-
-          }
-        );
   </script>
-        
-  </body>
+</head>
+<body>
+
+<weather-card></weather-card>
+
+</body>
 </html>
