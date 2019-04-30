@@ -6,8 +6,8 @@
 /*
  * Your application specific code will go here
  */
-define(['ojs/ojcore', 'knockout', 'ojs/ojknockout'],
-  function(oj, ko) {
+define(['hello-component/loader', 'ojs/ojcore', 'knockout', 'ojs/ojknockout'],
+  function(app, oj, ko) {
      function ControllerViewModel() {
        var self = this;
 
@@ -43,6 +43,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout'],
        ]);
      }
 
-     return new ControllerViewModel();
+     //return new ControllerViewModel();
+     return app;
   }
 );

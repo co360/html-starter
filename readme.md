@@ -20,3 +20,12 @@ This project is setup to explore Oracle JET framework.
 https://docs.oracle.com//en/middleware/developer-tools/jet/6.2/develop/media-queries.html#GUID-73B2CFA1-91A5-41A4-804F-915481BDB636
 
 Width=large, range=1024-1280, device=tablet landscape, desktop
+
+## Questions: Why CCA will not load apart from index?
+
+Looks like "paths" injection only works with "main.js". It
+seems to have been hardcoded by OJET framework? How to use
+another file?
+
+For now, if we are to use anything other than main.js, we
+would need to manually apply the paths setup in "requirejs.config".

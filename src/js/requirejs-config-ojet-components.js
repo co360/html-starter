@@ -16,7 +16,13 @@ requirejs.config({
             'proj4': 'libs/proj4js/dist/proj4-src',
             'css': 'libs/require-css/css',
             'touchr': 'libs/touchr/touchr',
-            'persist': 'libs/persist/min'
+            'persist': 'libs/persist/min',
+
+            // Manually setup custom components
+            'hello-component': 'jet-composites/hello-component/1.0.0',
+            'demo-card': 'jet-composites/demo-card/6.2.0',
+            'weather-card-js': 'jet-composites/weather-card-js/1.0.0',
+            'weather-card': 'jet-composites/weather-card/1.0.0',
         },
 
         // Shim configurations for modules that do not expose AMD
