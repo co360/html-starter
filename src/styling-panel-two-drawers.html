@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OJET Starter</title>
+  <link rel="icon" href="/css/images/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+  <style>
+    .container {
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .drawer {
+      height: 100%;
+      width: 160px;
+      position: absolute;
+      left: -160px;
+      top: 0;
+    }
+
+    .drawer2 {
+      height: 100%;
+      width: 160px;
+      position: absolute;
+      left: -160px;
+      top: 0;
+    }
+
+    .main-content {
+      height: 100%;
+    }
+  </style>
+
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    require(['jquery', 'knockout', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojanimation', 'ojs/ojnavigationlist'],
+            function($, ko)
+            {
+              function SimpleModel()
+              {
+                var self = this;
+
+                var drawer = document.getElementById('drawer');
+                var drawer2 = document.getElementById('drawer2');
+                var content = document.getElementById('content');
+
+                // Keep track of whether the element is expanded
+                self.drawerOut = false;
+                self.drawer2Out = false;
+
+                self.buttonClick = function() {
+                  var drawerWidth = $(drawer).outerWidth();
+                  if (self.drawerOut) {
+                    $(drawer).animate({left: -drawerWidth});
+                    $(content).animate({marginLeft: 0});
+                    self.drawerOut = false;
+                  } else {
+                    $(drawer).animate({left: 0});
+                    $(content).animate({marginLeft: drawerWidth});
+                    self.drawerOut = true;
+                  }
+                };
+
+                self.buttonClick2 = function() {
+                  var drawerWidth = $(drawer2).outerWidth();
+                  if (self.drawer2Out) {
+                    $(drawer2).animate({left: -drawerWidth});
+                    $(content).animate({marginLeft: 0});
+                    self.drawer2Out = false;
+                  } else {
+                    $(drawer2).animate({left: 0});
+                    $(content).animate({marginLeft: drawerWidth});
+                    self.drawer2Out = true;
+                  }
+                };
+              }
+
+              $(function()
+              {
+                ko.applyBindings(new SimpleModel(), document.getElementById('animationDemo'));
+              });
+            });
+  </script>
+</head>
+<body>
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+
+    <div id="animationDemo" class="container">
+
+      <!-- drawer panel -->
+      <div id="drawer" class="oj-panel oj-panel-alt1 drawer">
+        <oj-navigation-list selection='home'>
+          <ul>
+            <li id="home"><a href="#">Home</a></li>
+            <li id="gettingstarted"><a href="#">Getting Started</a></li>
+            <li id="cookbook"><a href="#">Cookbook</a></li>
+            <li id="stylelab"><a href="#">Style Lab</a></li>
+            <li id="library"><a href="#" >Library</a></li>
+          </ul>
+        </oj-navigation-list>
+      </div>
+
+      <!-- content panel -->
+      <div id="content" class="oj-panel oj-panel-alt2 main-content">
+        <oj-button id='nav-button'
+                   on-oj-action='[[buttonClick]]'
+                   display='icons'>
+          <span slot="startIcon" class="oj-fwk-icon-hamburger oj-fwk-icon"></span>
+          Drawer
+        </oj-button>
+        <oj-button id='nav-button2'
+                   on-oj-action='[[buttonClick2]]'
+                   display='icons' style="float: right;">
+          <span slot="startIcon" class="oj-fwk-icon-hamburger oj-fwk-icon"></span>
+          Drawer2
+        </oj-button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum, eget vehicula nibh augue sollicitudin ligula. Sed ullamcorper cursus feugiat. Mauris tristique aliquam dictum. Nulla facilisi. Nulla ut sapien sapien. Phasellus tristique arcu id ipsum mattis id aliquam risus sollicitudin.<p>
+      </div>
+
+      <!-- drawer2 panel -->
+      <div id="drawer2" class="oj-panel oj-panel-alt1 drawer2">
+        <oj-navigation-list>
+          <ul>
+            <li>Notification1</li>
+            <li>Notification2</li>
+            <li>Notification3</li>
+            <li>Notification4</li>
+          </ul>
+        </oj-navigation-list>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+</body>
+</html>
