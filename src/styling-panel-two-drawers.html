@@ -25,7 +25,7 @@
       height: 100%;
       width: 160px;
       position: absolute;
-      left: -160px;
+      right: -160px;
       top: 0;
     }
 
@@ -68,12 +68,12 @@
                 self.buttonClick2 = function() {
                   var drawerWidth = $(drawer2).outerWidth();
                   if (self.drawer2Out) {
-                    $(drawer2).animate({left: -drawerWidth});
-                    $(content).animate({marginLeft: 0});
+                    $(drawer2).animate({right: -drawerWidth});
+                    $(content).animate({marginRight: 0});
                     self.drawer2Out = false;
                   } else {
-                    $(drawer2).animate({left: 0});
-                    $(content).animate({marginLeft: drawerWidth});
+                    $(drawer2).animate({right: 0});
+                    $(content).animate({marginRight: drawerWidth});
                     self.drawer2Out = true;
                   }
                 };
