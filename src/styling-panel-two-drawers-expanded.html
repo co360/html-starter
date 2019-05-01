@@ -10,7 +10,6 @@
     .container {
       height: 340px;
       position: relative;
-      overflow: hidden;
     }
 
     .drawer {
@@ -32,7 +31,7 @@
     .main-content {
       height: 100%;
       left: 160px;
-      right: -500px;
+      margin-right: 320px;
     }
 
   </style>
@@ -72,11 +71,11 @@
                   var drawerWidth = $(drawer2).outerWidth();
                   if (self.drawer2Out) {
                     $(drawer2).animate({right: -drawerWidth});
-                    $(content).animate({marginRight: 0});
+                    $(content).animate({marginRight: drawerWidth});
                     self.drawer2Out = false;
                   } else {
                     $(drawer2).animate({right: 0});
-                    $(content).animate({marginRight: drawerWidth});
+                    $(content).animate({marginRight: drawerWidth * 2});
                     self.drawer2Out = true;
                   }
                 };
