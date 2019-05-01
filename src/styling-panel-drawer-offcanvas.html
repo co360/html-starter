@@ -15,38 +15,39 @@
     require(['jquery', 'knockout', 'ojs/ojcore', 'ojs/ojknockout',
               'ojs/ojbutton', 'ojs/ojanimation', 'ojs/ojnavigationlist', 'ojs/ojoffcanvas'],
             function($, ko, oj){
-              function AppViewModel() {
-                var self = this;
+      function AppViewModel() {
+        var self = this;
 
-                self.startCanvas = {
-                  "displayMode": "push",
-                  "selector": "#startDrawer",
-                  "content": "#mainContent",
-                  "autoDismiss": "none"
-                };
+        self.startCanvas = {
+          "displayMode": "push",
+          "selector": "#startDrawer",
+          "content": "#mainContent",
+          "autoDismiss": "none"
+        };
 
-                self.endCanvas = {
-                  "displayMode": "push",
-                  "selector": "#endDrawer",
-                  "content": "#mainContent",
-                  "autoDismiss": "none"
-                };
+        self.endCanvas = {
+          "displayMode": "push",
+          "selector": "#endDrawer",
+          "content": "#mainContent",
+          "autoDismiss": "none"
+        };
 
-                self.toggleStartDrawer = function() {
-                  return oj.OffcanvasUtils.toggle(self.startCanvas);
-                };
+        self.toggleStartDrawer = function() {
+          return oj.OffcanvasUtils.toggle(self.startCanvas);
+        };
 
-                self.toggleEndDrawer = function() {
-                  return oj.OffcanvasUtils.toggle(self.endCanvas);
-                };
+        self.toggleEndDrawer = function() {
+          return oj.OffcanvasUtils.toggle(self.endCanvas);
+        };
 
-                $(function(){
-                  oj.OffcanvasUtils.toggle(self.startCanvas);
-                  //oj.OffcanvasUtils.toggle(self.endCanvas);
-                });
-              }
-              ko.applyBindings(new AppViewModel());
-            });
+        $(function(){
+          // TODO coming soon
+          //oj.OffcanvasUtils.toggle(self.startCanvas);
+          //oj.OffcanvasUtils.toggle(self.endCanvas);
+        });
+      }
+      ko.applyBindings(new AppViewModel());
+    });
   </script>
 </head>
 <body>
