@@ -8,21 +8,19 @@
   <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
   <style>
     .container {
-      height: 340px;
-      position: relative;
-      overflow: hidden;
+      min-height: 600px;
     }
 
     .drawer {
-      height: 100%;
-      width: 160px;
-      position: absolute;
-      left: -160px;
-      top: 0;
+      min-height: 600px;
+    }
+
+    .drawerRight {
+      min-height: 600px;
     }
 
     .main-content {
-      height: 100%;
+      min-height: 100%;
     }
   </style>
 
@@ -36,10 +34,12 @@
         var self = this;
 
         var drawer = document.getElementById('drawer');
+        var drawerRight = document.getElementById('drawerRight');
         var content = document.getElementById('content');
 
         // Keep track of whether the element is expanded
-        self.drawerOut = false;
+        self.drawerOut = true;
+        self.drawerOutRight = true;
 
         self.buttonClick = function() {
           var drawerWidth = $(drawer).outerWidth();
@@ -53,6 +53,18 @@
             self.drawerOut = true;
           }
         };
+        self.buttonClickForDrawerRight = function() {
+          var drawerWidth = $(drawerRight).outerWidth();
+          if (self.drawerOutRight) {
+            $(drawerRight).animate({left: +drawerWidth});
+            $(content).animate({marginRight: drawerWidth});
+            self.drawerOutRight = false;
+          } else {
+            $(drawerRight).animate({left: -drawerWidth});
+            $(content).animate({marginRight: 0});
+            self.drawerOutRight = true;
+          }
+        };
       }
       ko.applyBindings(new AppViewModel());
     });
@@ -62,10 +74,10 @@
 
 <h1>Resize collapse icon</h1>
 
-<div class="container" id="demo">
+<div class="container oj-flex" id="demo">
 
   <!-- drawer panel -->
-  <div id="drawer" class="oj-panel oj-panel-alt1 drawer">
+  <div id="drawer" class="oj-panel oj-panel-alt1 drawer oj-flex-item oj-lg-3">
     <oj-navigation-list selection='home'>
       <ul>
         <li id="home"><a href="#">Home</a></li>
@@ -78,14 +90,34 @@
   </div>
 
   <!-- content panel -->
-  <div id="content" class="oj-panel oj-panel-alt2 main-content">
+  <div id="content" class="oj-panel oj-panel-alt2 main-content oj-flex-item oj-lg-6">
     <oj-button id='nav-button'
                on-oj-action='[[buttonClick]]'
                display='icons'>
       <span slot="startIcon" class="oj-fwk-icon-hamburger oj-fwk-icon"></span>
       Drawer
     </oj-button>
+    <oj-button id='nav-button2'
+               on-oj-action='[[buttonClickForDrawerRight]]'
+               display='icons'
+               style='float: right'>
+      <span slot="startIcon" class="oj-fwk-icon-hamburger oj-fwk-icon"></span>
+      Drawer
+    </oj-button>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum, eget vehicula nibh augue sollicitudin ligula. Sed ullamcorper cursus feugiat. Mauris tristique aliquam dictum. Nulla facilisi. Nulla ut sapien sapien. Phasellus tristique arcu id ipsum mattis id aliquam risus sollicitudin.<p>
+  </div>
+
+  <!-- drawer panel 2 (right side) -->
+  <div id="drawerRight" class="oj-panel oj-panel-alt1 drawerRight oj-flex-item oj-lg-3">
+    <oj-navigation-list>
+      <ul>
+        <li id="notification1">Notification1</li>
+        <li id="notification2">Notification2</li>
+        <li id="notification3">Notification3</li>
+        <li id="notification4">Notification4</li>
+        <li id="notification5">Notification5</li>
+      </ul>
+    </oj-navigation-list>
   </div>
 
 </div>

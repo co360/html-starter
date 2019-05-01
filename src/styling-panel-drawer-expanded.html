@@ -8,21 +8,21 @@
   <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
   <style>
     .container {
-      height: 340px;
+      height: 100%;
       position: relative;
       overflow: hidden;
     }
 
     .drawer {
-      height: 100%;
-      width: 160px;
-      position: absolute;
-      left: -160px;
-      top: 0;
+      min-height: 600px;
+      width: 300px;
+      /*position: absolute;*/
+      top: 100px;
+      left: 300px;
     }
 
     .main-content {
-      height: 100%;
+      min-height: 600px;
     }
   </style>
 
@@ -39,7 +39,7 @@
         var content = document.getElementById('content');
 
         // Keep track of whether the element is expanded
-        self.drawerOut = false;
+        self.drawerOut = true;
 
         self.buttonClick = function() {
           var drawerWidth = $(drawer).outerWidth();
