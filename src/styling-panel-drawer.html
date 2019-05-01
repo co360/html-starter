@@ -7,67 +7,97 @@
 
   <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
   <style>
-    h1 {
-      border-bottom: solid 1px;
+    .container {
+      height: 340px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .km-panel {
-      height: 100vh;
-    }
-    .km-side-panel {
-      background-color: #dddddd;
+    .drawer {
+      height: 100%;
+      width: 160px;
+      position: absolute;
+      left: -160px;
+      top: 0;
     }
 
+    .main-content {
+      height: 100%;
+    }
   </style>
 
   <script type="text/javascript" src="js/libs/require/require.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script>
-    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function(ko){
-      function AppViewModel() {
-      }
-      ko.applyBindings(new AppViewModel());
-    });
+    require(['jquery', 'knockout', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojanimation', 'ojs/ojnavigationlist'],
+            function($, ko)
+            {
+              function SimpleModel()
+              {
+                var self = this;
+
+                var drawer = document.getElementById('drawer');
+                var content = document.getElementById('content');
+
+                // Keep track of whether the element is expanded
+                self.drawerOut = false;
+
+                self.buttonClick = function() {
+                  var drawerWidth = $(drawer).outerWidth();
+                  if (self.drawerOut) {
+                    $(drawer).animate({left: -drawerWidth});
+                    $(content).animate({marginLeft: 0});
+                    self.drawerOut = false;
+                  } else {
+                    $(drawer).animate({left: 0});
+                    $(content).animate({marginLeft: drawerWidth});
+                    self.drawerOut = true;
+                  }
+                };
+              }
+
+              $(function()
+              {
+                ko.applyBindings(new SimpleModel(), document.getElementById('animationDemo'));
+              });
+            });
   </script>
 </head>
 <body>
-<p>To test flex layout responses, try changing the browser or screen/device size.</p>
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
 
-<h1>3 Columns Layout</h1>
-<div class="oj-flex">
-  <div class="oj-flex-item oj-lg-3">
-    <div class="oj-panel km-panel km-side-panel">
-      <oj-button class="oj-panel-remove-button demo-button"
-                 chroming="half"
-                 display="icons">
-        <span slot="startIcon" class="oj-panel-remove-icon"></span>
-        <span>remove</span>
-      </oj-button>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim est reiciendis sed. Adipisci ea excepturi impedit inventore itaque libero, nihil nisi nostrum qui ratione saepe sint sunt veritatis voluptate voluptatibus.
+    <div id="animationDemo" class="container">
+
+      <!-- drawer panel -->
+      <div id="drawer" class="oj-panel oj-panel-alt1 drawer">
+        <oj-navigation-list selection='home'>
+          <ul>
+            <li id="home"><a href="#">Home</a></li>
+            <li id="gettingstarted"><a href="#">Getting Started</a></li>
+            <li id="cookbook"><a href="#">Cookbook</a></li>
+            <li id="stylelab"><a href="#">Style Lab</a></li>
+            <li id="library"><a href="#" >Library</a></li>
+          </ul>
+        </oj-navigation-list>
       </div>
-    </div>
-  </div>
 
-  <div class="oj-flex-item oj-lg-6">
-    <div class="oj-panel km-panel">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam exercitationem, expedita fugiat ipsam labore minus modi molestiae perferendis porro recusandae rerum sunt unde veniam vitae! Iste nobis odit officiis?
-    </div>
-  </div>
-
-  <div class="oj-flex-item oj-lg-3">
-    <div class="oj-panel km-panel km-side-panel">
-      <oj-button class="oj-panel-remove-button demo-button"
-                 chroming="half"
-                 display="icons">
-        <span slot="startIcon" class="oj-panel-remove-icon"></span>
-        <span>remove</span>
-      </oj-button>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet autem debitis deleniti doloribus eaque eius, fugiat illo inventore iure iusto magni nam nesciunt numquam quas reiciendis sunt voluptas voluptate!
+      <!-- content panel -->
+      <div id="content" class="oj-panel oj-panel-alt2 main-content">
+        <oj-button id='nav-button'
+                   on-oj-action='[[buttonClick]]'
+                   display='icons'>
+          <span slot="startIcon" class="oj-fwk-icon-hamburger oj-fwk-icon"></span>
+          Drawer
+        </oj-button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum, eget vehicula nibh augue sollicitudin ligula. Sed ullamcorper cursus feugiat. Mauris tristique aliquam dictum. Nulla facilisi. Nulla ut sapien sapien. Phasellus tristique arcu id ipsum mattis id aliquam risus sollicitudin.<p>
       </div>
+
     </div>
+
+
   </div>
+</div>
 
 </body>
 </html>

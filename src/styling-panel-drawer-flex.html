@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OJET Starter</title>
+  <link rel="icon" href="/css/images/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+  <style>
+    h1 {
+      border-bottom: solid 1px;
+    }
+
+    .km-panel {
+      height: 100vh;
+    }
+
+    .km-side-panel {
+      background-color: #dddddd;
+    }
+
+  </style>
+
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    require(['knockout', 'jquery', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'],
+            function(ko, $){
+      function AppViewModel() {
+        let self = this;
+        self.leftDrawerOut = true;
+        self.rightDrawerOut = true;
+        self.leftDrawerAction = function(event) {
+          $('#left-drawer').toggle();
+          self.leftDrawerOut  = self.leftDrawerOut ? false : true;
+
+          if (leftDrawerOut) {
+            $('#left-drawer').addClass('oj-lg-3');
+            $('#main-content').removeClass('oj-lg-9');
+            $('#main-content').addClass('oj-lg-6');
+          } else {
+            $('#left-drawer').removeClass('oj-lg-3');
+            $('#main-content').removeClass('oj-lg-6');
+            $('#main-content').addClass('oj-lg-9');
+          }
+
+          //
+          // $('#left-drawer').removeClass('oj-lg-3');
+          // $('#right-drawer').addClass('oj-flex-item oj-lg-3');
+          // $('#main-content').addClass('oj-flex-item oj-lg-6');
+          //
+          // if (self.leftDrawerOut && self.rightDrawerOut) {
+          //   $('#left-drawer').addClass('oj-flex-item oj-lg-3');
+          //   $('#right-drawer').addClass('oj-flex-item oj-lg-3');
+          //   $('#main-content').addClass('oj-flex-item oj-lg-6');
+          // } else if (!self.leftDrawerOut && !self.rightDrawerOut) {
+          //   $('#left-drawer').addClass('oj-flex-item');
+          //   $('#right-drawer').addClass('oj-flex-item');
+          //   $('#main-content').addClass('oj-flex-item oj-lg-12');
+          // } else if (self.leftDrawerOut && !self.rightDrawerOut) {
+          //   $('#left-drawer').addClass('oj-flex-item oj-lg-3');
+          //   $('#right-drawer').addClass('oj-flex-item');
+          //   $('#main-content').addClass('oj-flex-item oj-lg-9');
+          // } else if (!self.leftDrawerOut && self.rightDrawerOut) {
+          //   $('#left-drawer').addClass('oj-flex-item');
+          //   $('#right-drawer').addClass('oj-flex-item oj-lg-3');
+          //   $('#main-content').addClass('oj-flex-item oj-lg-9');
+          // }
+        };
+        self.rightDrawerAction = function(event) {
+          $('#right-drawer').toggle();
+          self.rightDrawerOut  = self.rightDrawerOut ? false : true;
+
+          $('#main-content').css("width: 100%;");
+
+          // if (rightDrawerOut) {
+          //   $('#right-drawer').addClass('oj-lg-3');
+          //   $('#main-content').removeClass('oj-lg-9');
+          //   $('#main-content').addClass('oj-lg-6');
+          // } else {
+          //   $('#right-drawer').removeClass('oj-lg-3');
+          //   $('#main-content').removeClass('oj-lg-6');
+          //   $('#main-content').addClass('oj-lg-9');
+          // }
+
+          //
+          // $('#right-drawer').toggleClass('oj-flex-item');
+          // $('#main-content').toggleClass('oj-flex-item oj-lg-9');
+
+          // if (!self.leftDrawerOut && !self.rightDrawerOut) {
+          //   $('#left-drawer').toggleClass('oj-flex-item');
+          //   $('#right-drawer').toggleClass('oj-flex-item');
+          //   $('#main-content').toggleClass('oj-flex-item oj-lg-12');
+          // } else if (self.leftDrawerOut && self.rightDrawerOut) {
+          //   $('#left-drawer').toggleClass('oj-flex-item oj-lg-3');
+          //   $('#right-drawer').toggleClass('oj-flex-item oj-lg-3');
+          //   $('#main-content').toggleClass('oj-flex-item oj-lg-6');
+          // } else {
+          //   $('#right-drawer').toggleClass('oj-flex-item');
+          //   $('#main-content').toggleClass('oj-flex-item oj-lg-9');
+          // }
+        };
+      }
+      ko.applyBindings(new AppViewModel());
+    });
+  </script>
+</head>
+<body>
+<p>To test flex layout responses, try changing the browser or screen/device size.</p>
+
+<h1>3 Columns Layout</h1>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-lg-3" id="left-drawer">
+    <div class="oj-panel km-panel km-side-panel">
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim est reiciendis sed. Adipisci ea excepturi impedit inventore itaque libero, nihil nisi nostrum qui ratione saepe sint sunt veritatis voluptate voluptatibus.
+      </div>
+    </div>
+  </div>
+
+  <div class="oj-flex-item oj-lg-6" id="main-content">
+    <div class="oj-panel km-panel">
+      <oj-button class="oj-sm-align-self-center oj-start"
+                 chroming="half"
+                 display="icons"
+                 on-oj-action='[[leftDrawerAction]]'>
+        <span slot="startIcon" class="oj-fwk-icon-dots-vertical oj-fwk-icon"></span>
+        <span>Toggle Left Drawer</span>
+      </oj-button>
+      <oj-button class="oj-sm-align-self-center oj-end"
+                 chroming="half"
+                 display="icons"
+                 on-oj-action='[[rightDrawerAction]]'
+                  style="float: right;">
+        <span slot="startIcon" class="oj-fwk-icon-dots-vertical oj-fwk-icon"></span>
+        <span>Toggle Right Drawer</span>
+      </oj-button>
+      <div>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam exercitationem, expedita fugiat ipsam labore minus modi molestiae perferendis porro recusandae rerum sunt unde veniam vitae! Iste nobis odit officiis?
+      </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="oj-flex-item oj-lg-3" id="right-drawer">
+    <div class="oj-panel km-panel km-side-panel">
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet autem debitis deleniti doloribus eaque eius, fugiat illo inventore iure iusto magni nam nesciunt numquam quas reiciendis sunt voluptas voluptate!
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
