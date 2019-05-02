@@ -6,6 +6,10 @@
     <script src="../web/js/libs/jquery/jquery-3.3.1.js"></script>
     <script>
         $(function() {
+            // List of countries
+            // https://restcountries.eu/rest/v2
+
+            // Get a country info
             $.getJSON("https://restcountries.eu/rest/v2/alpha/usa", function(data) {
                 $("pre").text(JSON.stringify(data));
             });
