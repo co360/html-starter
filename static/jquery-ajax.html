@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../web/js/libs/jquery/jquery-3.3.1.js"></script>
+    <script>
+        $(function() {
+            // $.getJSON("https://restcountries.eu/rest/v2/alpha/usa", function(data) {
+            //     $("pre").text(JSON.stringify(data));
+            // });
+
+            // $.getJSON("https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest/content", function(data) {
+            //     $("pre").text(JSON.stringify(data));
+            // });
+
+            $.ajax({
+                url: "https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest/content",
+                    headers: { 'Access-Control-Allow-Origin': '*'},
+                type: 'GET',
+                crossDomain: true,
+                dataType: "json",
+                success: function(data) {
+                    $("pre").text(JSON.stringify(data));
+                }
+            });
+
+            // // With authentication
+            // let username = 'kmtest1';
+            // let password = 'Welcome1';
+            // $.ajax({
+            //     url: "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180",
+            //     headers: { 'Access-Control-Allow-Origin': '*'},
+            //     type: 'GET',
+            //     crossDomain: true,
+            //     dataType: "json",
+            //     beforeSend: function (xhr) {
+            //         xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
+            //     },
+            //     success: function(data) {
+            //         $("pre").text(JSON.stringify(data));
+            //     }
+            // });
+
+        });
+    </script>
+</head>
+<body>
+<pre>AJAX_OUTPUT_HERE</pre>
+</body>
+</html>
