@@ -67,6 +67,17 @@
 
             // Auth Successful
             console.log("KM Login Successful: endUserToken=" + this.endUserToken);
+            console.log("kmauthtoken:");
+            // console.log({
+            //     siteName : this.siteName,
+            //     userToken : this.endUserToken,
+            //     integrationUserToken: this.integrationUserToken
+            // });
+            console.log(JSON.stringify({
+                siteName : this.siteName,
+                userToken : this.endUserToken,
+                integrationUserToken: this.integrationUserToken
+            }));
 
             // Fetch Data
             let endpoint = "/content";
