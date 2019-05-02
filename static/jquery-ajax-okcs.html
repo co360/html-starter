@@ -67,6 +67,24 @@
 
             // Auth Successful
             console.log("KM Login Successful: endUserToken=" + this.endUserToken);
+
+            // Fetch Data
+            let endpoint = "/content";
+            $.ajax({
+                url : this.baseUrl + "/content",
+                method: "GET",
+                dataType: 'json',
+                headers: {
+                    'kmauthtoken' : JSON.stringify({
+                        siteName : this.siteName,
+                        userToken : this.endUserToken,
+                        integrationUserToken: this.integrationUserToken
+                    })
+                }
+            }).done(kmResponse => {
+                console.log(`Fetch ${endpoint} result:`);
+                console.log(kmResponse);
+            });
         });
     </script>
 </head>
