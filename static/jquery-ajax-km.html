@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../web/js/libs/jquery/jquery-3.3.1.js"></script>
+    <script>
+        $(function() {
+            // KM Parameters
+            this.baseUrl = "https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest";
+            this.userName = "kmtest1";
+            this.userPassword = "Welcome1";
+
+            // NOTE: We will use sync mode to perform REST call!
+            let endpoint;
+
+            // Fetch Data Example 1
+            endpoint = "/content";
+            $.ajax({
+                async: false,
+                url : this.baseUrl + endpoint,
+                method: "GET",
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    // xhr.setRequestHeader ("Access-Control-Allow-Origin", "*");
+                },
+                success: function(kmResponse) {
+                    console.log(`Fetch ${endpoint} result:`);
+                    console.log(kmResponse);
+                }
+            });
+
+            // Fetch Data Example 2 - Requires Auth
+            endpoint = "/users/300100092862180";
+            $.ajax({
+                async: false,
+                url : this.baseUrl + endpoint,
+                method: "GET",
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    // xhr.setRequestHeader ("Access-Control-Allow-Origin", "*");
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(this.userName + ":" + this.userPassword));
+                },
+                success: function(kmResponse) {
+                    console.log(`Fetch ${endpoint} result:`);
+                    console.log(kmResponse);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<pre>AJAX_OUTPUT_HERE</pre>
+</body>
+</html>

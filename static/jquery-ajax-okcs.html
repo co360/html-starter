@@ -22,9 +22,9 @@
             $.ajax({
                 async: false,
                 url : this.baseUrl + "/auth/integration/authorize",
+                method: "POST",
                 dataType: 'json',
                 contentType: 'application/json',
-                method: "POST",
                 headers: {
                     'kmauthtoken' : JSON.stringify({
                         siteName : this.siteName
@@ -43,9 +43,9 @@
             $.ajax({
                 async: false,
                 url: this.baseUrl + "/auth/authorize",
+                method: "POST",
                 dataType: 'json',
                 contentType: false,
-                method: "POST",
                 headers: {
                     'kmauthtoken': JSON.stringify({
                         "siteName": this.siteName,
@@ -71,7 +71,7 @@
             // Fetch Data
             let endpoint = "/content";
             $.ajax({
-                url : this.baseUrl + "/content",
+                url : this.baseUrl + endpoint,
                 method: "GET",
                 dataType: 'json',
                 headers: {
