@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OJET Starter</title>
+    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+    <link rel="stylesheet" href="css/samples/cookbook/demo-icon-font.css"/>
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojcheckboxset', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu'],
+            function (oj, ko, $) {
+
+                function ToolbarModel() {
+                    // if the contents of the array can change, then replace the [...] with ko.observableArray([...])
+                    this.drinkValues = [
+                        {id: 'coffee', label: 'Coffee'},
+                        {id: 'tea', label: 'Tea'},
+                        {id: 'milk', label: 'Milk'},
+                    ];
+
+                    // if the contents of the array can change, then replace the [...] with ko.observableArray([...])
+                    this.someButtons = [
+                        {id: 'Library', icon: 'demo-icon-font demo-library-icon-24'},
+                        {id: 'Home', icon: 'demo-icon-font demo-home-icon-24'},
+                        {id: 'Grid', icon: 'oj-fwk-icon-grid oj-fwk-icon'}
+                    ];
+
+                    this.toolbarClassNames = ko.observableArray([]);
+
+                    this.toolbarClasses = ko.computed(function () {
+                        return this.toolbarClassNames().join(" ");
+                    }, this);
+                }
+
+                $(function () {
+                    ko.applyBindings(new ToolbarModel(), document.getElementById('toolbar-container'));
+                });
+
+            });
+    </script>
+</head>
+<body>
+
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+
+        <div id='toolbar-container'>
+
+            <oj-label id='toolbarClassesLabel'>Classes to apply to the toolbar:</oj-label>
+            <oj-checkboxset id='checkboxSet' aria-labelledby='toolbarClassesLabel' value={{toolbarClassNames}}>
+                <oj-option id='topBorder' value='oj-toolbar-top-border'>
+                    .oj-toolbar-top-border (Optional.)
+                </oj-option>
+                <oj-option id='bottomBorder' value='oj-toolbar-bottom-border'>
+                    .oj-toolbar-bottom-border (Optional.)
+                </oj-option>
+                <oj-option id='noChrome' value='oj-toolbar-no-chrome'>
+                    .oj-toolbar-no-chrome (Optional. No effect in Alta theme.)
+                </oj-option>
+            </oj-checkboxset>
+            <br><br>
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+            <!-- This css binding applies the 0 to 3 style classes selected above. -->
+            <oj-toolbar id='myToolbar' aria-label='Editing Toolbar' aria-controls='controlled'
+                        data-bind='css:toolbarClasses'>
+                <oj-button id='chat' display='icons'>
+                    <span slot='startIcon' class='demo-icon-font demo-chat-icon-24'></span>
+                    Chat
+                </oj-button>
+                <oj-button id='paint' display='icons'>
+                    <span slot='startIcon' class='demo-icon-font demo-palette-icon-24'></span>
+                    Paint
+                </oj-button>
+                <oj-button id='bookmark' display='icons' disabled='true'>
+                    <span slot='startIcon' class='demo-icon-font demo-bookmark-icon-16'></span>
+                    Bookmark
+                </oj-button>
+
+                <span role="separator" aria-orientation="vertical" class="oj-toolbar-separator"></span>
+
+                <oj-buttonset-many id="checkWrapper" focus-management="none">
+                    <oj-option id="toggle">
+                        Toggle
+                    </oj-option>
+                </oj-buttonset-many>
+
+                <oj-menu-button id="menuButton">
+                    Menu Button
+                    <oj-menu id="myMenu" slot="menu" style="display:none">
+                        <oj-option id="save" value="Save">
+                            <span class="demo-icon-font demo-palette-icon-24" slot="startIcon"></span>Save
+                        </oj-option>
+                        <oj-option id="zoomin" value="Zoom In">
+                            <span class="oj-fwk-icon oj-fwk-icon-arrow-n" slot="startIcon"></span>Zoom In
+                        </oj-option>
+                        <oj-option id="zoomout" value="Zoom Out">
+                            <span class="demo-icon-font demo-bookmark-icon-16" slot="startIcon"></span>Zoom Out
+                        </oj-option>
+                        <oj-option id="print" value="Print..." disabled="true">
+                            <span class="demo-icon-font demo-chat-icon-24" slot="startIcon"></span>Print...
+                        </oj-option>
+                    </oj-menu>
+                </oj-menu-button>
+
+                <span role="separator" aria-orientation="vertical" class="oj-toolbar-separator"></span>
+
+                <oj-buttonset-one id="drinkset" focus-management="none">
+                    <!-- ko foreach: drinkValues -->
+                    <oj-option value="[[id]]">
+                        <span data-bind="text: label"></span>
+                    </oj-option>
+                    <!-- /ko -->
+                </oj-buttonset-one>
+
+                <span role="separator" aria-orientation="vertical" class="oj-toolbar-separator"></span>
+
+                <oj-buttonset-many id="iconset" display="icons" focus-management="none">
+                    <!-- ko foreach: someButtons -->
+                    <oj-option value="[[id]]">
+                        <span slot="startIcon" data-bind="css: icon"></span>
+                        <span data-bind="text: id"></span>
+                    </oj-option>
+                    <!-- /ko -->
+                </oj-buttonset-many>
+            </oj-toolbar>
+
+            <!-- In a real app, the element referenced by aria-controls would actually be updated in some way by the toolbar. -->
+            <br><br><a id='controlled' href='#'>Element referenced by toolbar's aria-controls</a>
+
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
