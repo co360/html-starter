@@ -2,4 +2,15 @@
   Copyright (c) 2015, 2019, Oracle and/or its affiliates.
   The Universal Permissive License (UPL), Version 1.0
 -->
-<p><oj-bind-text value="{{messageText}}">Hi</oj-bind-text></p>
+
+<!-- NOTE: You MUST use dash-var in html properties, but in component.json
+ and view you must match to use dashVar camel case! -->
+<p>messagetext:
+    <oj-bind-text value="[[$properties.messageText]]"></oj-bind-text>
+</p>
+<p>foo:
+    <oj-bind-text value="[[$properties.foo]]"></oj-bind-text>
+</p>
+<p>bar:
+    <oj-bind-text value="[[$properties.bar]]"></oj-bind-text>
+</p>

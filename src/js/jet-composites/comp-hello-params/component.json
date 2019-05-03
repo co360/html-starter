@@ -5,7 +5,18 @@
   "displayName": "A user friendly, translatable name of the pack.",
   "description": "A translatable high-level description for the pack.",
   "properties": {
-
+    "messageText": {
+      "description": "A hello message",
+      "type": "string"
+    },
+    "foo": {
+      "description": "A test var",
+      "type": "number"
+    },
+    "bar": {
+      "description": "A test var",
+      "type": "string"
+    }
   },
   "methods": {
 

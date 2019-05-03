@@ -31,6 +31,13 @@
                 title: 'IT Manager',
                 work: 6501232234,
                 email: 'adam.fripp@oracle.com'
+              },
+              {
+                name: 'John Smith',
+                avatar: null,
+                title: 'Developer',
+                work: 4073211234,
+                email: 'john.smith@test.oracle.com'
               }
             ];
           }
@@ -48,12 +55,27 @@
       <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
         
         <div id="component-container" class="oj-flex oj-sm-flex-items-initial">
-        	
-          <!-- ko foreach: employees -->
-            <demo-card class="oj-flex-item" name="[[name]]" avatar="[[avatar]]" work-title="[[title]]" 
-              work-number="[[work]]" email="[[email]]">
-            </demo-card>
-          <!-- /ko -->
+
+
+          <!-- Option1: use comment "ko foreach : <var>" -->
+<!--          &lt;!&ndash; ko foreach: employees &ndash;&gt;-->
+<!--            <demo-card class="oj-flex-item" name="[[name]]" avatar="[[avatar]]" work-title="[[title]]" -->
+<!--              work-number="[[work]]" email="[[email]]">-->
+<!--            </demo-card>-->
+<!--          &lt;!&ndash; /ko &ndash;&gt;-->
+
+          <!-- Option2: use 'oj-bind-for-each' -->
+          <oj-bind-for-each data="[[employees]]">
+            <template data-oj-as="emp">
+              <demo-card class="oj-flex-item"
+                         name="[[emp.data.name]]"
+                         avatar="[[emp.data.avatar]]"
+                         work-title="[[emp.data.title]]"
+                         work-number="[[emp.data.work]]"
+                         email="[[emp.data.email]]">
+              </demo-card>
+            </template>
+          </oj-bind-for-each>
         </div>
 
         
