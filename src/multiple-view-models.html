@@ -14,14 +14,28 @@
         let self = this;
         self.helloMessage = "Hello World";
       }
-      ko.applyBindings(new AppViewModel());
+      ko.applyBindings(new AppViewModel(), document.getElementById("container1"));
+    });
+
+    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function(ko){
+      function AppViewModel() {
+        let self = this;
+        self.buttonClick = function(event){
+          console.log((event.currentTarget.id));
+        };
+      }
+      ko.applyBindings(new AppViewModel(), document.getElementById("container2"));
     });
   </script>
 </head>
 <body>
 
-<div id="container">
+<div id="container1">
   <oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text>
+</div>
+
+<div id="container2">
+  <oj-button id='button1' on-oj-action='[[buttonClick]]'>Test</oj-button>
 </div>
 
 </body>
