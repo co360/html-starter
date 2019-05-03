@@ -3,8 +3,13 @@
   The Universal Permissive License (UPL), Version 1.0
 -->
 
-<!-- NOTE: You MUST use dash-var in html properties, but in component.json
- and view you must match to use dashVar camel case! -->
+<!-- NOTE:
+Attribute names are case insensitive. CamelCased properties are mapped to kebab-cased attribute names by
+inserting a dash before the uppercase letter and converting that letter to lower case (e.g. a "chartType"
+property will be mapped to a "chart-type" attribute).
+
+See https://docs.oracle.com/en/middleware/developer-tools/jet/6.2/reference-api/CustomElementOverview.html#ce-proptoattr-section
+ -->
 <p>messagetext:
     <oj-bind-text value="[[$properties.messageText]]"></oj-bind-text>
 </p>
