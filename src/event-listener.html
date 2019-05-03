@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OJET Starter</title>
+    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        require(['jquery', 'knockout', 'ojs/ojbutton', 'ojs/ojlabel', 'ojs/ojknockout'],
+            function ($, ko) {
+                function ViewModel() {
+                    this.message = ko.observable();
+
+                    this.clickListener1 = function (event, data, bindingContext) {
+                        console.log("clickListener1");
+                        console.log(event);
+                        console.log(data);
+                        console.log(bindingContext);
+                        data.message('oj-button is clicked');
+                    };
+
+                    this.clickListener2 = function (event, data, bindingContext) {
+                        console.log("clickListener2");
+                        console.log(event);
+                        console.log(data);
+                        console.log(bindingContext);
+                        data.message('HTML button is clicked');
+                    };
+                }
+
+                $(function () {
+                    ko.applyBindings(new ViewModel(), document.getElementById('demo-container'));
+                });
+            });
+    </script>
+</head>
+<body>
+
+<div id="demo-container">
+    <oj-label for="button1">oj-button element</oj-label>
+    <oj-button id="button1" on-oj-action="[[clickListener1]]">Click me!</oj-button>
+    <br><br>
+
+    <label for="button2">HTML button element</label>
+    <br>
+    <button id="button2" on-click="[[clickListener2]]">Click me!</button>
+    <br><br>
+
+    <div style="font-weight:bold;color:#ea5b3f;">
+        <oj-bind-text value="[[message]]"></oj-bind-text>
+    </div>
+</div>
+
+</body>
+</html>
