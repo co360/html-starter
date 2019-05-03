@@ -17,7 +17,7 @@ define(
         self.composite = context.element;
 
         //Example observable
-        self.messageText = ko.observable('Hello from Example Component');
+        self.messageText = ko.observable('Hi from comp-hello');
         self.properties = context.properties;
         self.res = componentStrings['comp-hello'];
         // Example for parsing context properties
