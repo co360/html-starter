@@ -15,6 +15,7 @@
                     this.message = ko.observable();
 
                     this.clickListener1 = function (event, data, bindingContext) {
+                        // NOTE: The 'data' is the "viewModel" object!
                         console.log("clickListener1");
                         console.log(event);
                         console.log(data);
