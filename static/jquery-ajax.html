@@ -9,8 +9,13 @@
             // List of countries
             // https://restcountries.eu/rest/v2
 
-            // Get a country info
-            $.getJSON("https://restcountries.eu/rest/v2/alpha/usa", function(data) {
+            // // Get a country info
+            // $.getJSON("https://restcountries.eu/rest/v2/alpha/usa", function(data) {
+            //     $("pre").text(JSON.stringify(data));
+            // });
+
+            // Get GitHubRepositories
+            $.getJSON("https://api.github.com/repositories", function(data) {
                 $("pre").text(JSON.stringify(data));
             });
         });
