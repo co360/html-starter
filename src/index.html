@@ -1,28 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>OJET Starter</title>
-  <link rel="icon" href="/css/images/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <title>OJET Starter</title>
+    <link rel="icon" href="/css/images/favicon.ico" type="image/x-icon"/>
 
-  <!--  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>-->
+    <!--  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>-->
 
-  <!-- This is the main css file for the default Alta theme -->
-  <!-- injector:theme -->
-  <link rel="stylesheet" href="css/libs/oj/v6.2.0/alta/oj-alta-min.css" type="text/css"/>
-  <!-- endinjector -->
+    <!-- This is the main css file for the default Alta theme -->
+    <!-- injector:theme -->
+    <link rel="stylesheet" href="css/libs/oj/v6.2.0/alta/oj-alta-min.css" type="text/css"/>
+    <!-- endinjector -->
 
-  <script type="text/javascript" src="js/libs/require/require.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <script>
-    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function(ko){
-      function AppViewModel() {
-        let self = this;
-        self.helloMessage = "Hello World";
-      }
-      ko.applyBindings(new AppViewModel());
-    });
-  </script>
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function (ko) {
+            function AppViewModel() {
+                let self = this;
+                self.helloMessage = "Hello World";
+            }
+
+            ko.applyBindings(new AppViewModel());
+        });
+    </script>
 </head>
 <body>
 

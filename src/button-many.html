@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OJET Starter</title>
+  <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function(ko){
+      function AppViewModel() {
+        let self = this;
+
+        self.button2Text = "Button 2";
+
+        self.clickedButton = ko.observable("(None clicked yet)");
+        self.buttonClick = function(event){
+          self.clickedButton(event.currentTarget.id);
+          return true;
+        };
+
+        self.buttonLabel = ko.observable("My Button");
+      }
+
+      ko.applyBindings(new AppViewModel());
+    });
+  </script>
+</head>
+<body>
+
+<h1>Buttons Demo</h1>
+<div id='buttons-container'>
+  <oj-button id='button1' on-oj-action='[[buttonClick]]'>Button 1</oj-button>
+  <oj-button id='button2' on-oj-action='[[buttonClick]]'>
+    <span><oj-bind-text value="[[button2Text]]"></oj-bind-text></span>
+  </oj-button>
+  <oj-button id='button3' on-oj-action='[[buttonClick]]' display='icons'>
+    <img slot="startIcon"
+         src="css/images/avatar_24px.png"
+         alt="Button 3"
+         width="16" height="16"/>Button 3
+  </oj-button>
+  <p>
+  <p id="last" class="bold">ID of last button to be clicked:
+    <span id="results"><oj-bind-text value="[[clickedButton]]"></oj-bind-text></span>
+  </p>
+</div>
+
+<h1>Label Demo</h1>
+<div id='button-container'> <oj-button id='button1'>
+  <span><oj-bind-text value="[[buttonLabel]]"></oj-bind-text></span> </oj-button>
+  <br><br>
+  <oj-label for="text-input">Update Button Label:</oj-label>
+  <oj-input-text id="text-input" value="{{buttonLabel}}"></oj-input-text>
+</div>
+
+</body>
+</html>
