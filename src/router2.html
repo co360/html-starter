@@ -13,6 +13,12 @@
         require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout',
                 'ojs/ojtoolbar', 'ojs/ojbutton', 'ojs/ojrouter'],
             function (oj, ko, $) {
+
+                // NOTE: If we default to pathParamAdapter, this demo will error that
+                // initial "router.stateId" = router2.html, and not "pref". Using urlAdapter
+                // fix this problem.
+                oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+
                 // Change the router base URL value. This is needed when using the path URL
                 // adapter because the default base URL value of '/' doesn't match this
                 // application path. Use the value set on the <base> tag of this page.
@@ -48,9 +54,13 @@
 </head>
 <body>
 
+
 <div id="sampleDemo" style="" class="demo-padding demo-container">
     <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
         <div id="routing-container">
+
+            {{router.stateId}} = <oj-bind-text value="[[router.stateId]]"></oj-bind-text>
+
             <oj-toolbar id='buttons-container'>
                 <oj-buttonset-one class="oj-buttonset-width-auto" value="{{router.stateId}}" focus-management="none">
                     <!-- ko foreach: router.states -->
