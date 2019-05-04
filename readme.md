@@ -29,3 +29,9 @@ another file?
 
 For now, if we are to use anything other than main.js, we
 would need to manually apply the paths setup in "requirejs.config".
+
+## Quick Tips
+
+`[[...]]` One way binding
+
+`{{..}}` Two ways binding
