@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OJET Starter</title>
+    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        // Require module ojrouter
+        require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout',
+                'ojs/ojnavigationlist', 'ojs/ojrouter', 'ojs/ojmodule'
+            ],
+            function (oj, ko, $) {
+
+                // Change default URL adapter
+                oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+
+                // Retrieve the router static instance and configure the states
+                var router = oj.Router.rootInstance;
+                router.configure(
+                    {
+                        'preface': {label: 'Home', value: 'router-ojmodule/home', isDefault: true},
+                        'chapter2': {label: 'Book', value: 'router-ojmodule/book'},
+                        'chapter3': {label: 'Table', value: 'router-ojmodule/table'}
+                    });
+                /**
+                 * The view model
+                 */
+                var viewModel =
+                    {
+                        router: router
+                    };
+
+                $(function () {
+                    ko.applyBindings(viewModel, document.getElementById('routing-container'));
+                    oj.Router.sync();
+                });
+            });
+    </script>
+</head>
+<body>
+
+
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+
+        <div id="routing-container">
+            <oj-tab-bar edge="top" selection="{{router.stateId}}">
+                <ul data-bind="foreach: router.states">
+                    <li data-bind="attr: {id: id}">
+                        <span data-bind="text: label"></span>
+                    </li>
+                </ul>
+            </oj-tab-bar>
+
+            <div data-bind="ojModule: router.moduleConfig">
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
