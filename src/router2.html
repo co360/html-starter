@@ -16,7 +16,8 @@
                 // Change the router base URL value. This is needed when using the path URL
                 // adapter because the default base URL value of '/' doesn't match this
                 // application path. Use the value set on the <base> tag of this page.
-                var base = document.getElementsByTagName('base')[0].getAttribute('href');
+                //var base = document.getElementsByTagName('base')[0].getAttribute('href');
+                var base = window.location.origin;
                 oj.Router.defaults['baseUrl'] = base;
 
                 // Retrieve the router static instance and configure the states
@@ -49,7 +50,6 @@
 
 <div id="sampleDemo" style="" class="demo-padding demo-container">
     <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
-
         <div id="routing-container">
             <oj-toolbar id='buttons-container'>
                 <oj-buttonset-one class="oj-buttonset-width-auto" value="{{router.stateId}}" focus-management="none">
