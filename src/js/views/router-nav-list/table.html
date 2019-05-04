@@ -1,0 +1,5 @@
+<div id="dataContent" data-bind="if: table()">
+    <div role="main" class="demo-page-content-area">
+        <oj-table id="dataGrid" data="[[table().getDataSource()]]" columns-default.sortable="disabled" columns="[[table().getColumns()]]"></oj-table>
+    </div>
+</div>
