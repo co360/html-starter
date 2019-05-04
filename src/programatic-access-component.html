@@ -9,10 +9,27 @@
   <script type="text/javascript" src="js/libs/require/require.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script>
-    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function (ko) {
+    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojbutton'], function (ko, oj) {
       function AppViewModel() {
         let self = this;
 
+        console.log("oj:");
+        console.log(oj);
+
+        let busyContext = oj.Context.getPageContext().getBusyContext();
+        busyContext.whenReady().then(function () {
+          let button1 = document.querySelector("#button1");
+          console.log("button1:");
+          console.log(button1);
+
+          console.log("button1 props:");
+          for (let x in button1) { console.log(x); }
+
+          console.log("Invoking button1.refresh() explicitly.");
+          button1.refresh();
+        });
+
+        // Button ViewModel impl
         self.clickedButton = ko.observable("(None clicked yet)");
         self.buttonClick = function (event) {
           self.clickedButton(event.currentTarget.id);
