@@ -3,7 +3,7 @@ define([
     'knockout',
     'jquery',
     'ojs/ojknockout', 'ojs/ojrouter', 'ojs/ojinputtext', 'ojs/ojdialog'
-], function(oj, ko, $) {
+], function (oj, ko, $) {
 
     var chapters, viewModel;
 
@@ -29,7 +29,7 @@ unlike prosperously regarding shameful when and extravagant that then cat contag
     viewModel = {
         router: undefined,
 
-        handleActivated: function(params) {
+        handleActivated: function (params) {
             var parentRouter;
 
             if (this.router) {
@@ -41,7 +41,7 @@ unlike prosperously regarding shameful when and extravagant that then cat contag
             this.router = parentRouter.getChildRouter('chapter');
 
             // The RouterState value property is used to hold the chapter data
-            this.router.states.forEach(function(state) {
+            this.router.states.forEach(function (state) {
                 state.value = chapters[state.id];
             });
 

@@ -8,7 +8,7 @@ define(['ojs/ojcore',
     'promise',
     'ojs/ojtable',
     'ojs/ojnavigationlist'
-], function(oj, ko, $) {
+], function (oj, ko, $) {
 
     var DeptDataTable,
         EmpDataTable;
@@ -21,11 +21,11 @@ define(['ojs/ojcore',
         var dataSource = new oj.ArrayTableDataSource(dataArray, {idAttribute: idAttribute});
 
         return {
-            getColumns: function() {
+            getColumns: function () {
                 return columnsArray;
             },
 
-            getDataSource: function() {
+            getDataSource: function () {
                 return dataSource;
             }
         };
@@ -43,22 +43,22 @@ define(['ojs/ojcore',
             {id: 40, name: 'Operations', loc: 'Boston'}
         ], 'id');
 
-        EmpDataTable =  new DataTable([
+        EmpDataTable = new DataTable([
             {headerText: 'Id', field: 'id'},
             {headerText: 'Name', field: 'name'},
             {headerText: 'Job', field: 'job'},
             {headerText: 'Salary', field: 'sal'},
             {headerText: 'Dept', field: 'deptno'}
         ], [
-            {id:7369, name: 'Smith', job: 'Clerk', sal: 800, deptno: 20},
-            {id:7499, name: 'Allen', job: 'Salesman', sal: 1600, deptno: 30},
-            {id:7521, name: 'Ward', job: 'Salesman', sal: 1250, deptno: 30},
-            {id:7566, name: 'Jones', job: 'Manager', sal: 2975, deptno: 20},
-            {id:7654, name: 'Martin', job: 'Salesman', sal: 1250, deptno: 30},
-            {id:7698, name: 'Blake', job: 'Manager', sal: 2850, deptno: 30},
-            {id:7782, name: 'Clark', job: 'Manager', sal: 2450, deptno: 10},
-            {id:7788, name: 'Scott', job: 'Analyst', sal: 3000, deptno: 20},
-            {id:7839, name: 'King', job: 'President', sal: 5000, deptno: 10}
+            {id: 7369, name: 'Smith', job: 'Clerk', sal: 800, deptno: 20},
+            {id: 7499, name: 'Allen', job: 'Salesman', sal: 1600, deptno: 30},
+            {id: 7521, name: 'Ward', job: 'Salesman', sal: 1250, deptno: 30},
+            {id: 7566, name: 'Jones', job: 'Manager', sal: 2975, deptno: 20},
+            {id: 7654, name: 'Martin', job: 'Salesman', sal: 1250, deptno: 30},
+            {id: 7698, name: 'Blake', job: 'Manager', sal: 2850, deptno: 30},
+            {id: 7782, name: 'Clark', job: 'Manager', sal: 2450, deptno: 10},
+            {id: 7788, name: 'Scott', job: 'Analyst', sal: 3000, deptno: 20},
+            {id: 7839, name: 'King', job: 'President', sal: 5000, deptno: 10}
         ], 'id');
     };
 
@@ -68,7 +68,7 @@ define(['ojs/ojcore',
     var viewModel = {
         router: undefined,
 
-        handleActivated: function(params) {
+        handleActivated: function (params) {
             var parentRouter;
 
             if (this.router) {
@@ -80,11 +80,10 @@ define(['ojs/ojcore',
             this.router = parentRouter.getChildRouter('tables');
 
             // The RouterState value property is used to hold the table data
-            this.router.states.forEach(function(state) {
+            this.router.states.forEach(function (state) {
                 if (state.id === 'dept') {
                     state.value = DeptDataTable;
-                }
-                else if (state.id === 'emp') {
+                } else if (state.id === 'emp') {
                     state.value = EmpDataTable;
                 }
             });

@@ -1,7 +1,7 @@
 /**
  * Home content module, example of singleton view model object.
  */
-define(['knockout', 'ojs/ojknockout'], function(ko) {
+define(['knockout', 'ojs/ojknockout'], function (ko) {
     return {
         title: 'Welcome to the JET Router demo',
         description: [{
