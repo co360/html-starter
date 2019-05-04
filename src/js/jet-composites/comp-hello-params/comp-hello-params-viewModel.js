@@ -8,7 +8,8 @@ define(
     
     function ExampleComponentModel(context) {
         var self = this;
-        //console.log(context);
+        console.log("Component props:");
+        console.log(context.properties);
     };
 
     return ExampleComponentModel;
