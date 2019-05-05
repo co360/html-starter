@@ -15,10 +15,10 @@
     <script type="text/javascript" src="js/libs/require/require.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script>
-        require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function (ko) {
+        require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function (ko, oj) {
             function AppViewModel() {
                 let self = this;
-                self.helloMessage = "Hello World";
+                self.helloMessage = "Hello OJET " + oj.version;
             }
 
             ko.applyBindings(new AppViewModel());
