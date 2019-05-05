@@ -18,7 +18,7 @@
         require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function (ko, oj) {
             function AppViewModel() {
                 let self = this;
-                self.helloMessage = "Hello OJET " + oj.version;
+                self.helloMessage = `Hello OJET ${oj.version} (${oj.revision})`;
             }
 
             ko.applyBindings(new AppViewModel());

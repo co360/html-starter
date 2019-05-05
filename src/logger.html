@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OJET Starter</title>
+    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function (ko, oj) {
+            function AppViewModel() {
+                // Logger default level is set to LEVEL_ERROR: 1
+                oj.Logger.error(oj.Logger);
+                oj.Logger.error(oj.Logger.option);
+
+                let self = this;
+                self.helloMessage = "Hello OJET " + oj.version;
+
+                // Turn on INFO level logger
+                oj.Logger.option("level",  oj.Logger.LEVEL_INFO);
+                oj.Logger.info("helloMessage %s", self.helloMessage);
+                oj.Logger.warn("Beware of bugs", "in the above code");
+                oj.Logger.info("AppViewModel.this:", this);
+            }
+
+            ko.applyBindings(new AppViewModel());
+        });
+    </script>
+</head>
+<body>
+
+<div id="container">
+    <oj-bind-text value="[[helloMessage]]">Hi</oj-bind-text>
+</div>
+
+</body>
+</html>
