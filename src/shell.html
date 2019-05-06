@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OJET Starter</title>
+    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+    <link rel="stylesheet" href="css/demo-alta-site-min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        require(['knockout', 'ojs/ojcore', 'ojs/ojknockout',
+            'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar'],
+            function (ko, oj) {
+            function AppViewModel() {
+                let self = this;
+                self.userLogin = "user.name@test.oracle.com";
+            }
+            ko.applyBindings(new AppViewModel());
+        });
+    </script>
+</head>
+<body class="oj-web-applayout-body">
+
+<div id="globalBody" class="oj-web-applayout-page">
+    <div id="container">
+        <header role="banner" class="oj-web-applayout-header">
+            <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+                <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
+                    <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
+                    <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name">
+                        <oj-bind-text value="KM Test Shell"></oj-bind-text>
+                    </h1>
+                </div>
+                <div class="oj-flex-bar-end">
+                    <!-- Responsive Toolbar -->
+                    <oj-toolbar>
+                        <oj-menu-button id="userMenu" display="all" chroming="half">
+                            <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
+                            <span slot="endIcon"
+                                  :class="oj-component-icon oj-button-menu-dropdown-icon"></span>
+                            <oj-menu id="menu1" slot="menu" style="display:none">
+                                <oj-option id="pref" value="pref">Preferences</oj-option>
+                                <oj-option id="help" value="help">Help</oj-option>
+                                <oj-option id="about" value="about">About</oj-option>
+                                <oj-option id="out" value="out">Sign Out</oj-option>
+                            </oj-menu>
+                        </oj-menu-button>
+                    </oj-toolbar>
+                </div>
+            </div>
+        </header>
+        <div role="main" class="oj-web-applayout-max-width oj-web-applayout-content">
+        </div>
+        <footer class="oj-web-applayout-footer" role="contentinfo">
+            <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
+                <ul>
+                    <li><a href="http://www.oracle.com/us/corporate/index.html#menu-about">About Oracle</a></li>
+                    <li><a href="http://www.oracle.com/us/corporate/contact/index.html">Contact Us</a></li>
+                    <li><a href="http://www.oracle.com/us/legal/terms/index.html">Terms Of Use</a></li>
+                </ul>
+            </div>
+            <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
+                Copyright © 2019 Oracle and/or its affiliates All rights reserved.
+            </div>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>
