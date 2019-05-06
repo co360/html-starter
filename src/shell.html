@@ -5,23 +5,10 @@
     <title>OJET Starter</title>
     <link rel="icon" href="css/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
-    <link rel="stylesheet" href="css/demo-alta-site-min.css" type="text/css"/>
     <link rel="stylesheet" href="css/app.css" type="text/css"/>
-
-
-    <script type="text/javascript" src="js/libs/require/require.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script>
-        require(['knockout', 'ojs/ojcore', 'ojs/ojknockout',
-            'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar'],
-            function (ko, oj) {
-            function AppViewModel() {
-                let self = this;
-                self.userLogin = "user.name@test.oracle.com";
-            }
-            ko.applyBindings(new AppViewModel());
-        });
-    </script>
+    <style>
+        .content-body { min-height: 400px; }
+    </style>
 </head>
 <body class="oj-web-applayout-body">
 
@@ -54,8 +41,8 @@
             </div>
         </header>
         <div role="main" class="oj-web-applayout-max-width oj-web-applayout-content">
-            <div class="content" style="min-height: 450px;">
-                <p>HELLO</p>
+            <div class="content-body">
+                <p>Hello Shell.</p>
             </div>
         </div>
         <footer class="oj-web-applayout-footer" role="contentinfo">
@@ -72,6 +59,20 @@
         </footer>
     </div>
 </div>
+
+<script type="text/javascript" src="js/libs/require/require.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script>
+    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout',
+            'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar'],
+        function (ko, oj) {
+            function AppViewModel() {
+                let self = this;
+                self.userLogin = "user.name@test.oracle.com";
+            }
+            ko.applyBindings(new AppViewModel());
+        });
+</script>
 
 </body>
 </html>
