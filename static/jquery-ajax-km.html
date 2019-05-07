@@ -21,9 +21,6 @@
                 url : this.baseUrl + endpoint,
                 method: "GET",
                 dataType: 'json',
-                beforeSend: function (xhr) {
-                    // xhr.setRequestHeader ("Access-Control-Allow-Origin", "*");
-                },
                 success: function(kmResponse) {
                     console.log(`Fetch ${endpoint} result:`);
                     console.log(kmResponse);
@@ -38,7 +35,6 @@
                 method: "GET",
                 dataType: 'json',
                 beforeSend: function (xhr) {
-                    // xhr.setRequestHeader ("Access-Control-Allow-Origin", "*");
                     xhr.setRequestHeader ("Authorization", "Basic " + btoa(this.userName + ":" + this.userPassword));
                 },
                 success: function(kmResponse) {
