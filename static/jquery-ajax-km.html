@@ -7,38 +7,36 @@
     <script>
         $(function() {
             // KM Parameters
-            this.baseUrl = "https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest";
-            this.userName = "kmtest1";
-            this.userPassword = "Welcome1";
+            baseUrl = "https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest";
+            userName = "kmtest1";
+            userPassword = "Welcome1";
 
             // NOTE: We will use sync mode to perform REST call!
             let endpoint;
 
             // Fetch Data Example 1
-            endpoint = "/content";
             $.ajax({
                 async: false,
-                url : this.baseUrl + endpoint,
+                url : baseUrl + "/content",
                 method: "GET",
                 dataType: 'json',
                 success: function(kmResponse) {
-                    console.log(`Fetch ${endpoint} result:`);
+                    console.log("REST result:");
                     console.log(kmResponse);
                 }
             });
 
-            // Fetch Data Example 2 - Requires Auth
-            endpoint = "/users/300100092862180";
+            // // Fetch Data Example 2 - Requires Auth
             $.ajax({
                 async: false,
-                url : this.baseUrl + endpoint,
+                url : baseUrl + "/users/300100092862180",
                 method: "GET",
                 dataType: 'json',
                 beforeSend: function (xhr) {
-                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(this.userName + ":" + this.userPassword));
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(userName + ":" + userPassword));
                 },
                 success: function(kmResponse) {
-                    console.log(`Fetch ${endpoint} result:`);
+                    console.log("REST result:");
                     console.log(kmResponse);
                 }
             });
