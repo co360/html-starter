@@ -5,13 +5,10 @@
 'use strict';
 define(
     ['knockout', 'jquery', 'ojL10n!./resources/nls/my-resource-comp-consumer-strings',
-        'my-resource-comp/mylib'
+        'my-resource-comp-consumer/loader', 'my-resource-comp/mylib'
     ],
-    function (ko, $, componentStrings, myResourceCompMyLib) {
+    function (ko, $, componentStrings, myResourceComp, myResourceCompMyLib) {
 
-        console.log("myResourceCompMyLib:");
-        console.log(myResourceCompMyLib);
-    
     function ExampleComponentModel(context) {
         var self = this;
         
@@ -30,6 +27,10 @@ define(
         // if (context.properties.name) {
         //     parse the context properties here
         // }
+
+        self.upperMessage = ko.computed(function() {
+            return myResourceCompMyLib.toUpper(self.messageText);
+        });
 
         //Once all startup and async activities have finished, relocate if there are any async activities
         self.busyResolve();
