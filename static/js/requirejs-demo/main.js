@@ -1,3 +1,3 @@
 requirejs.config({
-    baseUrl: "../js/requirejs-demo"
+    // "baseUrl" is implicitly set when this is loaded with "data-main" attribution.
 });
