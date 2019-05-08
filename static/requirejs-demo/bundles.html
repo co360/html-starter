@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="../../web/js/libs/require/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: "../js/requirejs-demo",
+            bundles: {
+                'primary': ['main2', 'util2', 'text2', 'text!template.html'],
+                'secondary': ['text!secondary.html']
+            }
+        });
+        require(['main2', 'text2'], function(main2, text) {
+            console.log("Module loaded=");
+            console.log(main2);
+            console.log(text);
+
+            main2.start();
+        });
+    </script>
+</head>
+<body>
+<!-- Check console output -->
+</body>
+</html>

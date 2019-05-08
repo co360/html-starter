@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script data-main="../js/requirejs-demo/main.js" src="../../web/js/libs/require/require.js"></script>
+    <script>
+        require(['text!text-plugin-example.html', 'text!text-plugin-example.css'],
+            function(html, css){
+                console.log("text-plugin-example.html=");
+                console.log(html);
+                console.log("text-plugin-example.css=");
+                console.log(css);
+        });
+    </script>
+</head>
+<body>
+<!-- Check console output -->
+</body>
+</html>
