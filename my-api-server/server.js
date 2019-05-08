@@ -6,7 +6,7 @@ app.listen(3000, () => {
         res.json("Hello World".split(""));
     });
     app.get("/countries", (req, res) => {
-        var countries = fs.readFileSync('static/json-samples/countries.json', 'utf8');
+        var countries = fs.readFileSync('my-api-server/json-samples/countries.json', 'utf8');
         res.json(JSON.parse(countries));
     });
     app.get("/json", (req, res) => {
