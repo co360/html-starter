@@ -30,7 +30,7 @@ define(
 
         self.upperMessage = ko.computed(function() {
             return myResourceComp.mylib.toUpper(self.messageText());
-        }, this);
+        });
 
         //Once all startup and async activities have finished, relocate if there are any async activities
         self.busyResolve();
