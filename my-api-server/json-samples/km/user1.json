@@ -1,0 +1,315 @@
+{
+  "recordId": 300100092862180,
+  "name": "autocsoadm1 svc",
+  "email": "sendmail-test-discard@oracle.com",
+  "externalType": "ACCOUNT",
+  "links": [
+    {
+      "rel": "canonical",
+      "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180",
+      "mediaType": "application/json, application/xml",
+      "method": "GET"
+    },
+    {
+      "rel": "collection",
+      "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users",
+      "mediaType": "application/json, application/xml",
+      "method": "GET",
+      "profile": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/metadata-catalog/users"
+    }
+  ],
+  "isActive": true,
+  "isLocked": false,
+  "adminUser": true,
+  "banUser": false,
+  "dateAdded": "2018-05-18T16:00:49+0000",
+  "dateModified": "2019-05-08T15:36:44+0000",
+  "firstName": "autocsoadm1",
+  "isDefaultAdministrator": false,
+  "lastName": "svc",
+  "login": "autocsoadm1",
+  "canReceiveEmailNotificationsForAssignedTasks": true,
+  "canReceiveEmailNotificationsForTasksICanPerform": true,
+  "reputationPoints": -1,
+  "showEmail": false,
+  "showName": false,
+  "subscribeOnTopicCreation": false,
+  "subscribeOnTopicReply": false,
+  "subscriptionSchedule": 1,
+  "views": [
+    {
+      "recordId": "FBA17E28CAAB4A7387A44BEE77240E33",
+      "referenceKey": "TENANT",
+      "name": "Knowledge",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/views/FBA17E28CAAB4A7387A44BEE77240E33",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "BBA181DFB52148779A416184A191B2AF",
+      "referenceKey": "SERVICE",
+      "name": "Service",
+      "stripeCD": "ORA_SVC_CRM",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/views/BBA181DFB52148779A416184A191B2AF",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "8505D16920C32F98E05323BDF20A9B62",
+      "referenceKey": "ORA_SVC_ISR",
+      "name": "Internal Help Desk",
+      "stripeCD": "ORA_SVC_ISR",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/views/8505D16920C32F98E05323BDF20A9B62",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "B6AD9BA886A743D2B5CB9A1DE2CE7D00",
+      "referenceKey": "HCM",
+      "name": "HCM",
+      "stripeCD": "ORA_SVC_HCM",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/views/B6AD9BA886A743D2B5CB9A1DE2CE7D00",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    }
+  ],
+  "skills": [],
+  "defaultView": {
+    "recordId": "FBA17E28CAAB4A7387A44BEE77240E33",
+    "referenceKey": "TENANT",
+    "name": "Knowledge",
+    "links": [
+      {
+        "rel": "canonical",
+        "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/views/FBA17E28CAAB4A7387A44BEE77240E33",
+        "mediaType": "application/json, application/xml",
+        "method": "GET"
+      }
+    ]
+  },
+  "customKeyValues": [
+    {
+      "recordId": "5CE0C5EAF92F49DDBA3706F4E06EE84E",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180/userKeyValues/5CE0C5EAF92F49DDBA3706F4E06EE84E",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "CA0B5D0427294602B227C6D2805037A8",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180/userKeyValues/CA0B5D0427294602B227C6D2805037A8",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "771ADE1B14674188B7172AC3FDED301D",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180/userKeyValues/771ADE1B14674188B7172AC3FDED301D",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "67DA9C7F61D141DD97666DEE7BF44896",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180/userKeyValues/67DA9C7F61D141DD97666DEE7BF44896",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    }
+  ],
+  "contentLocales": [
+    {
+      "recordId": "ar_AE",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/ar_AE",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "ar_EG",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/ar_EG",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "ar_SA",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/ar_SA",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "de_DE",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/de_DE",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "en_US",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/en_US",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "es_ES",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/es_ES",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "fr_FR",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/fr_FR",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "ja_JP",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/ja_JP",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "ko_KR",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/ko_KR",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    }
+  ],
+  "securityRoles": [
+    {
+      "recordId": "4AA6F9B78BC64CA0A2AD8356B1E83C44",
+      "referenceKey": "KNOWLEDGE_ANALYST_ROLE",
+      "roleType": "CONSOLE_ROLE",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/roles/4AA6F9B78BC64CA0A2AD8356B1E83C44",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "70DF435CB7044E92BF4B2A6E9E82B3DD",
+      "referenceKey": "KNOWLEDGE_MANAGER_ROLE",
+      "roleType": "CONSOLE_ROLE",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/roles/70DF435CB7044E92BF4B2A6E9E82B3DD",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "55A12E3022190A19E0538BD3F00AB73E",
+      "referenceKey": "SALES_ADMIN_ROLE",
+      "roleType": "CONSOLE_ROLE",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/roles/55A12E3022190A19E0538BD3F00AB73E",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "recordId": "5A5EA452F8B349FE9974C8611FDE76AB",
+      "referenceKey": "APP_IMPL_CONSULTANT_ROLE",
+      "roleType": "CONSOLE_ROLE",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/roles/5A5EA452F8B349FE9974C8611FDE76AB",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    }
+  ],
+  "subscriptions": [],
+  "dataFormNotifications": [],
+  "workTeams": [],
+  "userType": "CONSOLE_USER"
+}

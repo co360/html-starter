@@ -1,0 +1,138 @@
+{
+  "recordId": "2299094906414FBF8692CBB2AE466248",
+  "versionId": "D79AE6D5299446EBB92E886A99962657",
+  "documentId": "FAQ178",
+  "title": "Details For The Weblogic User Groups In ASAP",
+  "version": "4.0",
+  "answerId": 1018146,
+  "locale": {
+    "recordId": "en_US",
+    "links": [
+      {
+        "rel": "canonical",
+        "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/locales/en_US",
+        "mediaType": "application/json, application/xml",
+        "method": "GET"
+      }
+    ]
+  },
+  "dateModified": "2019-05-02T02:00:41+0000",
+  "links": [
+    {
+      "rel": "canonical",
+      "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/content/2299094906414FBF8692CBB2AE466248",
+      "mediaType": "application/json, application/xml",
+      "method": "GET"
+    },
+    {
+      "rel": "collection",
+      "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/content",
+      "mediaType": "application/json, application/xml",
+      "method": "GET",
+      "profile": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/metadata-catalog/content"
+    }
+  ],
+  "contentType": {
+    "recordId": "98055D055BA8467B8097FB0B52923FD2",
+    "referenceKey": "FAQ",
+    "name": "FAQ",
+    "description": "A simple template containing a common question and answer on a specific topic",
+    "stripeCd": "ORA_SVC_CRM",
+    "links": [
+      {
+        "rel": "canonical",
+        "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/contentTypes/98055D055BA8467B8097FB0B52923FD2",
+        "mediaType": "application/json, application/xml",
+        "method": "GET"
+      }
+    ]
+  },
+  "priority": "PRIORITY_0",
+  "createDate": "2019-04-29T14:46:39+0000",
+  "lastModifiedDate": "2019-04-29T14:46:39+0000",
+  "dateAdded": "2019-05-02T02:00:41+0000",
+  "displayStartDate": "1900-01-01T00:00:00+0000",
+  "displayEndDate": "9999-12-31T00:00:00+0000",
+  "owner": {
+    "recordId": 300100092862180,
+    "name": "autocsoadm1 svc",
+    "email": "********",
+    "externalType": "ACCOUNT",
+    "links": [
+      {
+        "rel": "canonical",
+        "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180",
+        "mediaType": "application/json, application/xml",
+        "method": "GET"
+      }
+    ]
+  },
+  "lastModifier": {
+    "recordId": 300100092862180,
+    "name": "autocsoadm1 svc",
+    "email": "********",
+    "externalType": "ACCOUNT",
+    "links": [
+      {
+        "rel": "canonical",
+        "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180",
+        "mediaType": "application/json, application/xml",
+        "method": "GET"
+      }
+    ]
+  },
+  "creator": {
+    "recordId": 300100092862180,
+    "name": "autocsoadm1 svc",
+    "email": "********",
+    "externalType": "ACCOUNT",
+    "links": [
+      {
+        "rel": "canonical",
+        "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/300100092862180",
+        "mediaType": "application/json, application/xml",
+        "method": "GET"
+      }
+    ]
+  },
+  "published": true,
+  "pending": false,
+  "publishDate": "2019-05-02T02:00:41+0000",
+  "checkedOut": false,
+  "publishedVersion": "4.0",
+  "xml": "<FAQ><SUMMARY><![CDATA[Details For The Weblogic User Groups In ASAP]]></SUMMARY><QUESTION>&lt;h2 class=\"km\"&gt;&lt;a name=\"GOAL\"&gt;&lt;/a&gt;Goal&lt;/h2&gt; \n&lt;p&gt;Can you provide the details of the following users/groups in ASAP BEA WLS Domain?&lt;/p&gt; \n&lt;p&gt;Administrators&lt;br&gt;ASAP_Monitors&lt;br&gt;ASAP_Operators&lt;br&gt;ASAP_VNOS&lt;br&gt;Deployers&lt;br&gt;Monitors&lt;br&gt;Operators&lt;br&gt;AppTesters&lt;br&gt;ASAP_Guests&lt;br&gt;everyone&lt;/p&gt;</QUESTION><ANSWER>&lt;h2 class=\"km\"&gt;&lt;a name=\"FIX\"&gt;&lt;/a&gt;Fix&lt;/h2&gt; \n&lt;p&gt;Below is a list of the users/groups created using the ASAP domain template \"ASAPDomain_for_WLS92.jar\" under the asap_utils directory (see the ASAP Setup Guide for additional info):&lt;/p&gt; \n&lt;p&gt;&lt;br&gt;&lt;strong&gt;1) BEA USERS/GROUPS WITH ASAP DOMAIN TEMPLATE &lt;/strong&gt;&lt;br&gt;&lt;br&gt;USERS - ASAP-admin, ASAP_monitor,ASAP_operator &lt;br&gt;&lt;br&gt;GROUPS - ASAP_Guests, ASAP_Monitor, ASAP_Operator, ASAP_VNOS, everyone &lt;br&gt;&lt;br&gt;ASAP Documentation - ASAP Admin Guide - User security section &lt;br&gt;&lt;br&gt;GUI interface security:&lt;br&gt;ASAP GUI interface security is managed through the WebLogic Server Management Console. &lt;br&gt;There are two default ASAP groups: &lt;br&gt;&lt;strong&gt;&lt;em&gt;ASAP_Operator&lt;/em&gt;&lt;/strong&gt; creates orders, manages fallout orders, performs some AIMS &lt;br&gt;configuration procedures, and views audit logs and reports (in AIMS and the OCA client). &lt;br&gt;&lt;em&gt;&lt;strong&gt;ASAP_Monitor&lt;/strong&gt;&lt;/em&gt; view audit logs and reports (in AIMS and the OCA client).&lt;/p&gt; \n&lt;p&gt;&lt;em&gt;&lt;strong&gt;ASAP_VNOS&lt;/strong&gt;&lt;/em&gt; the ASAP administrator must create a unique VNO group name or ID in &lt;br&gt;BEA. The VNO group ID must be included as a member of &lt;strong&gt;&lt;em&gt;ASAP_VNOS&lt;/em&gt;&lt;/strong&gt; group. The &lt;br&gt;group will be the parent of all VNO groups. This group enables the OCA client to identify &lt;br&gt;and recognize a group ID as VNO group ID and therefore authorize a user as VNO user. &lt;br&gt;Default users are assigned to one of these default ASAP groups. &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;2) BEA WLS DEFAULT USERS/GROUPS WITHOUT ASAP &lt;br&gt;&lt;/strong&gt;&lt;br&gt;USERS - Weblogic \"user created when creating the domain\" &lt;br&gt;&lt;br&gt;GROUPS - Administrators, AppTesters, Deployers, Monitors, Operators&lt;br&gt;&lt;br&gt;&lt;/p&gt; \n&lt;div class=\"kmnotebox\"&gt;\n  Related BEA WLS 9.2 Links \n &lt;br&gt; \n &lt;br&gt; \n &lt;a href=\"http://e-docs.bea.com/wls/docs91/security.html%20\"&gt;http://e-docs.bea.com/wls/docs91/security.html &lt;/a&gt; \n &lt;br&gt; \n &lt;br&gt; \n &lt;a href=\"http://e-docs.bea.com/wls/docs91/secintro/realm_chap.html%20\"&gt;http://e-docs.bea.com/wls/docs91/secintro/realm_chap.html &lt;/a&gt; \n &lt;br&gt; \n &lt;br&gt; \n &lt;a href=\"http://e-docs.bea.com/wls/docs91/secintro/realm_chap.html#1035969%20\"&gt;http://e-docs.bea.com/wls/docs91/secintro/realm_chap.html#1035969 &lt;/a&gt; \n &lt;br&gt; \n &lt;br&gt; \n &lt;a href=\"http://e-docs.bea.com/wls/docs91/secwlres/secroles.html\"&gt;http://e-docs.bea.com/wls/docs91/secwlres/secroles.html&lt;/a&gt; \n&lt;/div&gt; \n&lt;hr&gt;</ANSWER></FAQ>",
+  "resourcePath": "$STAGING_RESOURCE_HOST_URL/fusion/content/draft/2299094906414FBF8692CBB2AE466248/D79AE6D5299446EBB92E886A99962657/",
+  "isForEdit": false,
+  "categories": [],
+  "userGroups": [
+    {
+      "recordId": "-5",
+      "referenceKey": "EVERYONE",
+      "name": "Everyone",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/userGroups/-5",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "recordId": "BBA181DFB52148779A416184A191B2AF",
+      "referenceKey": "SERVICE",
+      "name": "Service",
+      "stripeCD": "ORA_SVC_CRM",
+      "links": [
+        {
+          "rel": "canonical",
+          "href": "https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/views/BBA181DFB52148779A416184A191B2AF",
+          "mediaType": "application/json, application/xml",
+          "method": "GET"
+        }
+      ]
+    }
+  ]
+}
