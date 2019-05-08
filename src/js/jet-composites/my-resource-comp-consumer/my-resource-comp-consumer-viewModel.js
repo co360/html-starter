@@ -5,9 +5,9 @@
 'use strict';
 define(
     ['knockout', 'jquery', 'ojL10n!./resources/nls/my-resource-comp-consumer-strings',
-        'my-resource-comp-consumer/loader', 'my-resource-comp/mylib'
+        'my-resource-comp/loader', 'my-resource-comp-consumer/loader'
     ],
-    function (ko, $, componentStrings, myResourceComp, myResourceCompMyLib) {
+    function (ko, $, componentStrings, myResourceComp) {
 
     function ExampleComponentModel(context) {
         var self = this;
@@ -29,8 +29,8 @@ define(
         // }
 
         self.upperMessage = ko.computed(function() {
-            return myResourceCompMyLib.toUpper(self.messageText);
-        });
+            return myResourceComp.mylib.toUpper(self.messageText());
+        }, this);
 
         //Once all startup and async activities have finished, relocate if there are any async activities
         self.busyResolve();

@@ -1,5 +1,5 @@
 define([], function() {
     return {
-        toUpper: function(text) { text.toUpperCase(); }
+        toUpper: function(text) { return text.toUpperCase(); }
     }
 });
