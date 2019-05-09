@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OJET Starter</title>
+  <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/alta/6.2.0/web/alta.css"/>
+
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function(ko){
+      function AppViewModel() {
+        let self = this;
+        self.helloMessage = "Hello World";
+        self.textDirection = "rtl";
+        self.textStyleText = "color: green;";
+        self.textStyleColor = "blue";
+        self.textStyleObj = {color: "red"};
+      }
+      ko.applyBindings(new AppViewModel());
+    });
+  </script>
+</head>
+<body>
+
+<div id="container" :dir="[[textDirection]]">
+
+  <!--
+  NOTE: The ":style" and ":class" attributes must be an object, or you will
+  need the "dot.attr" notation for single value.
+  -->
+  <p :style="[[textStyleObj]]"><oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text></p>
+  <p :style.color="[[textStyleColor]]"><oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text></p>
+
+  <!--  KO style of html attribute still works, just like OJET use ":attr" instead. -->
+  <p data-bind="attr: {style: textStyleText}"><oj-bind-text value="[[helloMessage]]">Hi</oj-bind-text></p>
+</div>
+
+</body>
+</html>
