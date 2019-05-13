@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="../../web/js/libs/require/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: "../js/requirejs-demo"
+        });
+        require(['commonjs-require-module3'], function(demo){
+            console.log("commonjs-require-module2 module loaded:");
+            console.log(demo);
+        });
+    </script>
+</head>
+<body>
+<h1>RequireJS Demo</h1>
+<p>Check console output</p>
+</body>
+</html>
