@@ -6,9 +6,9 @@
         requirejs.config({
             baseUrl: "../js/requirejs-demo"
         });
-        require(['hello'], function(hello){
-            console.log("Module loaded:");
-            console.log(hello);
+        require(['commonjs-require-module2'], function(demo){
+            console.log("commonjs-require-module2 module loaded:");
+            console.log(demo);
         });
     </script>
 </head>
