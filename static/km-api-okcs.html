@@ -7,93 +7,38 @@
     <script>
         $(function() {
             // KM Parameters
-            let baseUrl = "https://day380-19201-sql-249h-irs.dq.lan/km/api/latest";
-            let siteName = "day380_19201_sql_249h";
-            let integrationUserToken;
-            let endUserToken;
-            let integrationLogin = "iu_agent_desktop";
-            let integationPassword = "03D7E12D329A4B38AA34AC4454D3C6A4";
-            let userName = "administrator";
-            let userPassword = "Welcome@123";
+            baseUrl = "https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest";
+            userName = "kmtest1";
+            userPassword = "Welcome1";
 
             // NOTE: We will use sync mode to perform REST call!
+            let endpoint;
 
-            // KM Integration Auth
+            // Fetch Data Example 1
             $.ajax({
                 async: false,
-                url : baseUrl + "/auth/integration/authorize",
-                method: "POST",
-                dataType: 'json',
-                contentType: 'application/json',
-                headers: {
-                    'kmauthtoken' : JSON.stringify({
-                        siteName : siteName
-                    })
-                },
-                data: JSON.stringify({
-                    "login" : integrationLogin,
-                    "password" : integationPassword
-                })
-            }).done(integrationData => {
-                console.log(integrationData);
-                integrationUserToken = integrationData.authenticationToken;
-            });
-
-            // KM User Auth
-            $.ajax({
-                async: false,
-                url: baseUrl + "/auth/authorize",
-                method: "POST",
-                dataType: 'json',
-                contentType: false,
-                headers: {
-                    'kmauthtoken': JSON.stringify({
-                        "siteName": siteName,
-                        "integrationUserToken": integrationUserToken
-                    })
-            },
-            data: {
-                "userName" : userName,
-                "password" : userPassword,
-                "userExternalType" : "ACCOUNT",
-                "siteName" : siteName
-            }
-            }).done(endUserData => {
-                console.log(endUserData);
-                let tokenResponse = endUserData.authenticationToken;
-                let parsedToken = JSON.parse(tokenResponse);
-                endUserToken = parsedToken.userToken;
-            })
-
-            // Auth Successful
-            console.log("KM Login Successful: endUserToken=" + endUserToken);
-            console.log("kmauthtoken:");
-            // console.log({
-            //     siteName : siteName,
-            //     userToken : endUserToken,
-            //     integrationUserToken: integrationUserToken
-            // });
-            console.log(JSON.stringify({
-                siteName : siteName,
-                userToken : endUserToken,
-                integrationUserToken: integrationUserToken
-            }));
-
-            // Fetch Data
-            $.ajax({
                 url : baseUrl + "/content",
                 method: "GET",
                 dataType: 'json',
-                headers: {
-                    'kmauthtoken' : JSON.stringify({
-                        siteName : siteName,
-                        userToken : endUserToken,
-                        integrationUserToken: integrationUserToken
-                    })
+                success: function(kmResponse) {
+                    console.log("REST result:");
+                    console.log(kmResponse);
                 }
-            }).done(kmResponse => {
-                console.log("REST result:");
-                console.log(kmResponse);
+            });
+
+            // // Fetch Data Example 2 - Requires Auth
+            $.ajax({
+                async: false,
+                url : baseUrl + "/users/300100092862180",
+                method: "GET",
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", "Basic " + btoa(userName + ":" + userPassword));
+                },
+                success: function(kmResponse) {
+                    console.log("REST result:");
+                    console.log(kmResponse);
+                }
             });
         });
     </script>
