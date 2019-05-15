@@ -1,0 +1,80 @@
+## Fusion API
+#    protected baseUrl = "https://day380-19201-sql-249h-irs.dq.lan/km/api/latest";
+#    protected siteName = "day380_19201_sql_249h";
+#    private integrationLogin: string = "iu_agent_desktop";
+#    private integationPassword: string = "03D7E12D329A4B38AA34AC4454D3C6A4";
+#    private userName: string = "administrator";
+#    private userPassword: string = "Welcome@123";
+
+# == 2 step Login
+
+# Response example:
+#{
+#  "authenticationToken": "ZGF5MzgwXzE5MjAxX3NxbF8yNDloOlBZZzYrTk5jdjB3T0pXQ05LcFIxOTB0R3ZMcWhkUnNyTTZ3UzNTdmRsK0VrNWo3c3FqVEw5Y2d4by9sMURmVEZCaGN2QUVHOFUycHMwRk5Xc3hNR2NSVWoxTzlpdlkyT0xSRit1WUFuZWx1aHhtSHpQZVZXNE1zMzhGZ3NpZHR6cjdKUUI4bEtzalhTc0tMdlozTTZPTkZKZXg0WlA5MnNQWVpUa05VSkZrMXpMeGpucjB6eXFNUjFDa2hMUVp2Sg=="
+#}
+
+POST https://day380-19201-sql-249h-irs.dq.lan/km/api/latest/auth/integration/authorize
+kmauthtoken: {"siteName" : "day380_19201_sql_249h"}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "login": "iu_agent_desktop",
+  "password": "03D7E12D329A4B38AA34AC4454D3C6A4"
+}
+
+> {% client.global.set("integrationUserToken", response.body.json.authenticationToken); %}
+
+###
+
+# Response example:
+#{
+#  "authenticationToken": "{\"localeId\":\"en_US\",\"knowledgeInteractionId\":null,\"appId\":null,\"siteName\":\"day380_19201_sql_249h\",\"interfaceId\":null,\"requiresBillable\":null,\"captureAnalytics\":null,\"integrationUserToken\":null,\"userToken\":\"ereVIRkgCtK87w7t7SgOC4V4rbZy2vztsRL74/3EGW/oL1cnnedT7Vz2Ozy4gwc0FgeOP562IeiR35ar6qjvj07ebGwHRl+01FDCcJnBX8tUZZqOberh4hI0YDx6pBMwt5wKW5XDHIAA58ytdGGkwA==\",\"referrer\":null,\"querySource\":null,\"clientIP\":null,\"localeOverride\":null}",
+#  "user": {
+#    "isActive": true,
+#    "isLocked": false,
+#    "adminUser": true,
+#    "banUser": false,
+#    "dateAdded": "2019-03-12T14:27:27-0600",
+#    "dateModified": "2019-05-08T12:51:20-0600",
+#    "firstName": "Administrator",
+#    "isDefaultAdministrator": false,
+#    "lastName": "-",
+#    "login": "administrator",
+#    "canReceiveEmailNotificationsForAssignedTasks": false,
+#    "canReceiveEmailNotificationsForTasksICanPerform": false,
+#    "reputationPoints": 249,
+#    "showEmail": false,
+#    "showName": false,
+#    "subscribeOnTopicCreation": false,
+#    "subscribeOnTopicReply": false,
+#    "subscriptionSchedule": 0,
+#    "defaultLocale": {
+#      "recordId": "en_US"
+#    },
+#    "recordId": "C501B10710FF46B98B9BC5F4A63EAEAF",
+#    "name": "Administrator -",
+#    "externalId": 1,
+#    "externalType": "ACCOUNT"
+#  }
+#}
+#
+POST https://day380-19201-sql-249h-irs.dq.lan/km/api/latest/auth/authorize
+kmauthtoken: {"siteName" : "day380_19201_sql_249h", "integrationUserToken": "ZGF5MzgwXzE5MjAxX3NxbF8yNDloOlBZZzYrTk5jdjB3T0pXQ05LcFIxOTB0R3ZMcWhkUnNyTTZ3UzNTdmRsK0VrNWo3c3FqVEw5Y2d4by9sMURmVEZCaGN2QUVHOFUycHMwRk5Xc3hNR2NSVWoxTzlpdlkyT0xSRit1WUFuZWx1aHhtSHpQZVZXNE1zMzhGZ3NpZHR6cjdKUUI4bEtzalhTc0tMdlozTTZPTkZKZXg0WlA5MnNQWVpUa05VSkZrMXpMeGpucjB6eXFNUjFDa2hMUVp2Sg=="}
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+userName=administrator&password=Welcome@123&userExternalType=ACCOUNT&siteName=day380_19201_sql_249h
+
+> {% client.global.set("authenticationToken", response.body.json.authenticationToken); %}
+###
+
+# == Fetch content
+GET https://day380-19201-sql-249h-irs.dq.lan/km/api/latest/content/D1FE85F51F2445DC96931C4EBCCCBE4B
+kmauthtoken: {"siteName":"day380_19201_sql_249h", "integrationUserToken":"ZGF5MzgwXzE5MjAxX3NxbF8yNDloOlBZZzYrTk5jdjB3T0pXQ05LcFIxOTB0R3ZMcWhkUnNyTTZ3UzNTdmRsK0VrNWo3c3FqVEw5Y2d4by9sMURmVEZCaGN2QUVHOFUycHMwRk5Xc3hNR2NSVWoxTzlpdlkyT0xSRit1WUFuZWx1aHhtSHpQZVZXNE1zMzhGZ3NpZHR6cjdKUUI4bEtzalhTc0tMdlozTTZPTkZKZXg0WlA5MnNQWVpUa05VSkZrMXpMeGpucjB6eXFNUjFDa2hMUVp2Sg==", "userToken":"ereVIRkgCtK87w7t7SgOC4V4rbZy2vztsRL74/3EGW/oL1cnnedT7Vz2Ozy4gwc0FgeOP562IeiR35ar6qjvj07ebGwHRl+01FDCcJnBX8tUZZqOberh4hI0YDx6pBMwt5wKW5XDHIAA58ytdGGkwA=="}
+Accept: application/json
+
+###
+
+
+
