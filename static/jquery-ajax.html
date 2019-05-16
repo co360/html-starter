@@ -14,9 +14,21 @@
             //     $("pre").text(JSON.stringify(data));
             // });
 
-            // Get GitHubRepositories
-            $.getJSON("https://api.github.com/repositories", function(data) {
-                $("pre").text(JSON.stringify(data));
+            // // Get GitHubRepositories
+            // $.getJSON("https://api.github.com/repositories", function(data) {
+            //     $("pre").text(JSON.stringify(data));
+            // });
+
+            var url = "https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest/categories";
+            $.ajax({
+                crossDomain: true,
+                url : url,
+                method: "GET",
+                dataType: 'json',
+                success: function(kmResponse) {
+                    console.log("REST result:");
+                    console.log(kmResponse);
+                }
             });
         });
     </script>

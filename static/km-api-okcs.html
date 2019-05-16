@@ -14,22 +14,23 @@
             // NOTE: We will use sync mode to perform REST call!
             let endpoint;
 
-            // Fetch Data Example 1
+            // // Fetch Data Example 1
+            // $.ajax({
+            //     async: false,
+            //     url : baseUrl + "/content",
+            //     method: "GET",
+            //     dataType: 'json',
+            //     success: function(kmResponse) {
+            //         console.log("REST result:");
+            //         console.log(kmResponse);
+            //     }
+            // });
+
+            // // Fetch Data Example 2 - Requires Auth
+            // example: url : baseUrl + "/users/300100092862180",
             $.ajax({
                 async: false,
                 url : baseUrl + "/content",
-                method: "GET",
-                dataType: 'json',
-                success: function(kmResponse) {
-                    console.log("REST result:");
-                    console.log(kmResponse);
-                }
-            });
-
-            // // Fetch Data Example 2 - Requires Auth
-            $.ajax({
-                async: false,
-                url : baseUrl + "/users/300100092862180",
                 method: "GET",
                 dataType: 'json',
                 beforeSend: function (xhr) {
