@@ -1,16 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Starter</title>
-    <script src="../web/js/libs/jquery/jquery-3.3.1.js"></script>
+    <script src="../web/js/libs/require/require.js"></script>
     <script>
-        $(function() {
-            $("#msg").text("Hello World");
+        /*
+        We will use RequireJS to load JS script file. And we will use the
+        RequireJS text plugin to load json file and use it to render a
+        example list. The "examples.json" file can be generated.
+
+        See "generate-examples.js".
+         */
+        require.config({
+            baseUrl: 'js/',
+            paths: {
+                'jquery': '../../web/js/libs/jquery/jquery-3.3.1',
+                'text': 'requirejs-demo/text'
+            }
+        });
+        require(['require', 'jquery', 'text!examples.json'], function(require, $, examplesText) {
+            $(function() {
+                var examples = JSON.parse(examplesText);
+                var exampleList = $("#examples");
+                for (var name of examples) {
+                    exampleList.append(`<li><a href="${name}">${name}</a></li>`);
+                };
+            });
         });
     </script>
 </head>
 <body>
-<p id="msg">Hello</p>
+<h1>Hello HTML/CSS/JavaScript</h1>
+<ul id="examples">
+</ul>
 </body>
 </html>
