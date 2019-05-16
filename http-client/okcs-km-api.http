@@ -2,15 +2,10 @@
 https://fuscdrmsmc119-fa-ext.us.oracle.com/km/api/latest/content
 Accept: application/json
 
-<> 2019-05-08T120034.200.json
-<> 2019-05-02T085114.200.json
-
 ###
 
 https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/content/2299094906414FBF8692CBB2AE466248
 Accept: application/json
-
-<> 2019-05-02T091032.200.json
 
 ###
 
@@ -19,5 +14,3 @@ https://fuscdrmsmc119-fa-ext.us.oracle.com:443/km/api/latest/users/3001000928621
 Authorization: Basic kmtest1 Welcome1
 Accept: application/json
 
-<> 2019-05-08T120131.200.json
-<> 2019-05-02T090050.200.json

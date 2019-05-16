@@ -3,14 +3,10 @@
 http://den01foh:8080/km/api/latest/content
 Accept: application/json
 
-<> 2019-05-15T082924.502.html
-
 
 ### With full hostname
 http://den01foh.us.oracle.com:8080/km/api/latest/content
 Accept: application/json
-
-<> 2019-05-15T083318.200.json
 
 ###
 
