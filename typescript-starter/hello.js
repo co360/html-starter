@@ -1,10 +1,9 @@
-var Hello = /** @class */ (function () {
-    function Hello() {
+class Hello {
+    constructor() {
         this.name = "World";
     }
-    Hello.prototype.greeting = function () {
-        console.log("Hello " + this.name);
-    };
-    return Hello;
-}());
+    greeting() {
+        console.log(`Hello ${this.name}`);
+    }
+}
 new Hello().greeting();

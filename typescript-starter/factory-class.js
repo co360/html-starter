@@ -1,32 +1,28 @@
-var Util = /** @class */ (function () {
-    function Util() {
-    }
+class Util {
     // Poor man impl of UUID generator
     //   https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-    Util.uuidv4 = function () {
+    static uuidv4() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
-    };
-    return Util;
-}());
+    }
+}
 // A singleton app manager
-var AppManager = /** @class */ (function () {
-    function AppManager() {
+class AppManager {
+    constructor() {
         this.id = Util.uuidv4();
     }
-    AppManager.getInstance = function () {
+    static getInstance() {
         if (AppManager.INSTANCE == null) {
             AppManager.INSTANCE = new AppManager();
         }
         return AppManager.INSTANCE;
-    };
-    AppManager.prototype.toString = function () {
-        return "AppManager@" + this.id;
-    };
-    return AppManager;
-}());
+    }
+    toString() {
+        return `AppManager@${this.id}`;
+    }
+}
 // Test code
 // console.log(new AppManager()); // can not compile
 // Same instance of singleton.
