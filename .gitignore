@@ -24,4 +24,4 @@ src/js/style-test.html
 # Ignore typescript cached build files
 .tscache/
 *.js.map
-typescript-example/**/*.js*
+typescript-starter/**/*.js*
