@@ -4,7 +4,7 @@ export interface StringValidator {
 
 export const numberRegexp = /^[0-9]+$/;
 
-export class ZipCodeValidator implements StringValidator {
+export class ZipCodeValidatorImpl implements StringValidator {
     isAcceptable(s: string) {
         return s.length === 5 && numberRegexp.test(s);
     }
