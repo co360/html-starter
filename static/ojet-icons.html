@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <link rel="stylesheet" href="../themes/alta/web/alta.css">
+    <style>
+        @font-face {
+            font-family: 'AppFont';
+            src: url("../web/css/fonts/App_iconfont.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .app-icon-font, .app-icon-font-24 {
+            font-family: AppFont;
+            font-size: 16px;
+            line-height: 1;
+            display: inline-block;
+            font-weight: normal;
+            speak: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            text-align: center;
+            box-sizing: content-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .app-icon-font:before, .app-icon-font-24:before {
+            display: inline-block;
+        }
+
+        .app-icon-font-24 {
+            font-size: 24px;
+        }
+
+        .app-bookmark-icon-16:before {
+            content: "\e606";
+        }
+
+        .app-grid-icon-16:before {
+            content: "\e607";
+        }
+
+        .app-list-icon-16:before {
+            content: "\e608";
+        }
+
+        .app-gear-icon-16:before {
+            content: "\e609";
+        }
+
+        .app-filter-icon-16:before {
+            content: "\e907";
+        }
+
+        .app-share-icon-16:before {
+            content: "\e90a";
+        }
+
+
+        .app-home-icon-24:before {
+            content: "\e600";
+        }
+
+        .app-education-icon-24:before {
+            content: "\e601";
+        }
+
+        .app-catalog-icon-24:before {
+            content: "\e602";
+        }
+
+        .app-palette-icon-24:before {
+            content: "\e603";
+        }
+
+        .app-library-icon-24:before {
+            content: "\e604";
+        }
+
+        .app-chat-icon-24:before {
+            content: "\e605";
+        }
+
+        .app-edit-icon-24:before {
+            content: "\e906";
+        }
+
+        .app-fire-icon-24:before {
+            content: "\e908";
+        }
+
+        .app-person-icon-24:before {
+            content: "\e909";
+        }
+
+        .app-signout-icon-24:before {
+            content: "\e90b";
+        }
+
+        .app-info-icon-24:before {
+            content: "\e900";
+        }
+
+        .app-copy-icon-24:before {
+            content: "\e901";
+        }
+
+        .app-people-icon-24:before {
+            content: "\e902";
+        }
+
+        .app-chart-icon-24:before {
+            content: "\e903";
+        }
+
+        .app-garbage-icon-24:before {
+            content: "\e904";
+        }
+
+        .app-download-icon-24:before {
+            content: "\e905";
+        }
+
+        .app-location-icon-24:before {
+            content: "\e90d";
+        }
+
+        .app-jet-icon-24:before {
+            content: "\e90c";
+        }
+
+        .app-camera-icon-24:before {
+            content: "\e90e";
+        }
+
+        .app-dropbox-icon-24:before {
+            content: "\e90f";
+        }
+
+        .app-facebook-icon-24:before {
+            content: "\e910";
+        }
+
+        .app-documents-icon-24:before {
+            content: "\e912";
+        }
+
+        .app-email-icon-24:before {
+            content: "\e913";
+        }
+
+        .app-oracle-icon {
+            width: 137px;
+            height: 18px;
+        }
+
+        .app-oracle-icon:before {
+            content: url("../web/css/images/oracle_logo.svg");
+        }
+
+        html:not([dir="rtl"]) .app-oracle-icon {
+            padding-right: 4px;
+        }
+
+        html[dir="rtl"] .app-oracle-icon {
+            padding-left: 4px;
+        }
+
+        .app-oracle-icon:before {
+            display: inline;
+        }
+
+        .app-avatar-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .app-avatar-icon:before {
+            content: url("../web/css/images/avatar_24px.png");
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+            .app-avatar-icon:before {
+                content: url("../web/css/images/avatar_24px_2x.png");
+                transform: translate(-25%, -25%) scale(0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>TEST</h1>
+<span class="app-icon-font-24 app-facebook-icon-24">TEST</span>
+
+<h1>16px Icons</h1>
+<span class="app-icon-font app-bookmark-icon-16">app-bookmark-icon-16</span>
+<span class="app-icon-font app-grid-icon-16">app-grid-icon-16</span>
+<span class="app-icon-font app-list-icon-16">app-list-icon-16</span>
+<span class="app-icon-font app-gear-icon-16">app-gear-icon-16</span>
+<span class="app-icon-font app-filter-icon-16">app-filter-icon-16</span>
+<span class="app-icon-font app-share-icon-16">app-share-icon-16</span>
+
+<h1>24px Icons</h1>
+<span class="app-icon-font-24 app-home-icon-24">app-home-icon-24</span>
+<span class="app-icon-font-24 app-education-icon-24">app-education-icon-24</span>
+<span class="app-icon-font-24 app-catalog-icon-24">app-catalog-icon-24</span>
+<span class="app-icon-font-24 app-palette-icon-24">app-palette-icon-24</span>
+<span class="app-icon-font-24 app-library-icon-24">app-library-icon-24</span>
+<span class="app-icon-font-24 app-chat-icon-24">app-chat-icon-24</span>
+<span class="app-icon-font-24 app-edit-icon-24">app-edit-icon-24</span>
+<span class="app-icon-font-24 app-fire-icon-24">app-fire-icon-24</span>
+<span class="app-icon-font-24 app-person-icon-24">app-person-icon-24</span>
+<span class="app-icon-font-24 app-signout-icon-24">app-signout-icon-24</span>
+<span class="app-icon-font-24 app-info-icon-24">app-info-icon-24</span>
+<span class="app-icon-font-24 app-copy-icon-24">app-copy-icon-24</span>
+<span class="app-icon-font-24 app-people-icon-24">app-people-icon-24</span>
+<span class="app-icon-font-24 app-chart-icon-24">app-people-icon-24</span>
+<span class="app-icon-font-24 app-garbage-icon-24">app-garbage-icon-24</span>
+<span class="app-icon-font-24 app-download-icon-24">app-download-icon-24</span>
+
+<!--WHY THESE ARE NOT WORKING???-->
+<span class="app-icon-font-24 app-location-icon-24">app-location-icon-24</span>
+<span class="app-icon-font-24 app-jet-icon-24">app-jet-icon-24</span>
+<span class="app-icon-font-24 app-camera-icon-24">app-camera-icon-24</span>
+<span class="app-icon-font-24 app-dropbox-icon-24">app-dropbox-icon-24</span>
+<span class="app-icon-font-24 app-facebook-icon-24">app-facebook-icon-24</span>
+<span class="app-icon-font-24 app-documents-icon-24">app-documents-icon-24</span>
+<span class="app-icon-font-24 app-email-icon-24">app-email-icon-24</span>
+
+<h1>Special Icons</h1>
+<span class="app-icon-font-24 app-oracle-icon">app-oracle-icon</span>
+<span class="app-icon-font-24 app-avatar-icon">app-avatar-icon</span>
+
+</body>
+</html>
