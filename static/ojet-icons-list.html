@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <link rel="stylesheet" href="../themes/alta/web/alta.css">
+    <style>
+        @font-face {
+            font-family: 'AppFont';
+            src: url("../web/css/fonts/App_iconfont.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .app-icon-font {
+            font-family: AppFont;
+            width: 24px;
+            height: 24px;
+            line-height: 1;
+            display: inline-block;
+            font-weight: normal;
+            speak: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            text-align: center;
+            box-sizing: content-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Fonts</h1>
+<div id="fonts"></div>
+
+<script>
+    // NOT Working Yet
+    var fonts = document.getElementById("fonts");
+    for (var i = 0xe600; i < 0xe999; i++) {
+        var e = document.createElement("span");
+        e.setAttribute("class", "app-icon-font ::before{ content:'\\" + i.toString(16) + "'}");
+        e.innerText = i.toString(16) + " ";
+        fonts.appendChild(e);
+    }
+</script>
+</body>
+</html>
