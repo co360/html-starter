@@ -8,11 +8,7 @@
     <script src="js/requirejs-config-ojet.js"></script>
     <script>
         require(['knockout', 'ojet-hello', 'ojs/ojcore', 'ojs/ojknockout'], function(ko, app) {
-            function AppViewModel() {
-                let self = this;
-                self.helloMessage = ko.observable("Hello OJET World");
-            }
-            ko.applyBindings(new AppViewModel());
+            ko.applyBindings(app);
         });
     </script>
 </head>
