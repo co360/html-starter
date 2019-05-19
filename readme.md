@@ -1,6 +1,8 @@
 ## About `ojet-starter` Project
 
-This project is setup to explore Oracle JET framework.
+This project is setup to explore Oracle JET framework. 
+(mostly in `src` folder). And few other front end libraries (
+mostly in `static` folder.)
 
 - http://oraclejet.org
 - https://www.oracle.com/webfolder/technetwork/jet/index.html
