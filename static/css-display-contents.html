@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- https://www.w3schools.com/cssref/tryit.asp?filename=trycss_display_contents -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <style>
+        /*
+        Why "display: contents" makes other properties
+        invalid?
+         */
+        .a {
+            display: contents;
+            border: 1px solid red;
+            background-color: lightgreen;
+            padding: 10px;
+            width: 200px;
+        }
+        .a2 {
+            display: block;
+            border: 1px solid red;
+            background-color: lightgreen;
+            padding: 10px;
+            width: 200px;
+        }
+        .a3 {
+            display: inline;
+            border: 1px solid red;
+            background-color: lightgreen;
+            padding: 10px;
+            width: 200px;
+        }
+        .a4 {
+            display: inline-block;
+            border: 1px solid red;
+            background-color: lightgreen;
+            padding: 10px;
+            width: 200px;
+        }
+
+        .b {
+            border: 1px solid blue;
+            background-color: lightblue;
+            padding: 10px;
+        }
+        .b2 {
+            display: inline;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<h1>The display Property</h1>
+
+<h2>display: contents:</h2>
+<div class="a">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Etiam semper diam at erat pulvinar, at pulvinar felis blandit.
+    <div class="b">HELLO WORLD!</div> Vestibulum volutpat tellus diam,
+    consequat gravida libero rhoncus ut.
+</div>
+
+<p>display: contents does not work in Edge/Internet Explorer.</p>
+
+</body>
+</html>
