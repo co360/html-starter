@@ -1,30 +1,10 @@
 ## Why this `static` folder?
 
-We want to quickly test static HTML, but with some libraries loaded.
-We will reference "../web/js" folder for libraries. These libraries
-will not exists until you run "ojet build" once.
+We want to quickly test static HTML/CSS/JavaScript quickly, but only with 
+minimal libraries loaded. We will reference `../web` (this is generated when
+you ran `ojet build` on parent directory.) folder for many demos. These 
+files `../web` contains libraries that comes built-in for JET development.
 
-The difference between this "static" folder vs "src" is that
-this folder is not intended to use "node" to "build" the project.
-We simply want a quick static folder to test out any html pages.
-
-However some libraries such as "requirejs" or "ojet" requires
-some local "js" files to be loaded, in that case we will use "static/js", but it will not be "build" like in "src" folder. 
-
-## REST API Samples
-
-----
-Countries Examples
-
-https://restcountries.eu/rest/v2
-https://restcountries.eu/rest/v2/alpha/usa
-----
-
-----
-GitHub API https://developer.github.com
-
-curl -i https://api.github.com/repositories
-
-curl -i https://api.github.com/repos/jquery/jquery
-curl -i https://api.github.com/repos/jquery/jquery/commits?page=2&per_page=10
-----
+The difference between this `static` folder vs `src` is that
+this folder is not intended to use `ojet` command as full JET project.
+We simply want to load a quick static file to test a single features.
