@@ -47,3 +47,13 @@ would need to manually apply the paths setup in "requirejs.config".
 `[[...]]` One way binding
 
 `{{..}}` Two ways binding
+
+### OJET CSS Reset
+
+The JET CSS reset is based on 
+`/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */` and 
+you can use it by simply importing:
+
+```
+../themes/alta/web/alta.css
+```
