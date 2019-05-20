@@ -7,27 +7,27 @@ The difference between this `static` folder vs `src` is that
 this folder is not intended to use with `ojet` command as full JET project.
 We simply want to load a quick static file to test a single features.
 
-## What Are The `../web` and `../themes` Folders For?
+## What Are The `/ojet-starter/web` and `/ojet-starter/themes` Folders For?
 
 We often want to quickly test static HTML/CSS/JavaScript, but only with 
 minimal libraries loaded. Most of the demo in this folder are standalone.
-Some we will load some libraries from `../web` folder. This `../web` folder
-is generated after we run `ojet build` in the parent directory for JET 
-development. We can focus one static, standalone file to explore each
-of those dependencies libraries here.
+Some we will load some libraries from `/ojet-starter/web` folder. This 
+`/ojet-starter/web` folder is generated after we run `ojet build` in the parent 
+directory for JET development. We can focus one static, standalone file to 
+explore each of those dependencies libraries here.
 
 Here are few important third party libraries to explore:
 
-* `../web/js/libs/require/`
-* `../web/js/libs/jquery/`
-* `../web/js/libs/knockout/`
-* `../web/js/libs/oj/`
+* `/ojet-starter/web/js/libs/require/`
+* `/ojet-starter/web/js/libs/jquery/`
+* `/ojet-starter/web/js/libs/knockout/`
+* `/ojet-starter/web/js/libs/oj/`
 
 The OJET comes with some CSS themes that we may explore:
 
-* `../themes/alta/web/alta.css`
-* `../themes/alta/web/fonts`
-* `../themes/alta/web/images`
+* `/ojet-starter/themes/alta/web/alta.css`
+* `/ojet-starter/themes/alta/web/fonts`
+* `/ojet-starter/themes/alta/web/images`
 
 ## How To Setup Web Server For Testing
 
@@ -42,7 +42,7 @@ path set to this project's parent directory. For example:
 
 ```
 cd ojet-starter
-python3 -m http.server -d ../
+python3 -m http.server -d /ojet-starter/
 open http://localhost:8000/ojet-starter/static/ojet-html/ojet-hello.html
 ```
 
