@@ -18,8 +18,7 @@ temp/
 .idea/
 
 # Ignore test files
-test.*
-src/js/style-test.html
+test*.*
 
 # Ignore typescript cached build files
 .tscache/
