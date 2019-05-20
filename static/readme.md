@@ -28,3 +28,18 @@ The OJET comes with some CSS themes that we may explore:
 * `../themes/alta/web/alta.css`
 * `../themes/alta/web/fonts`
 * `../themes/alta/web/images`
+
+## How to test with a web server
+
+The `WebStorm` IDE comes with builtin web server that can test any of
+html page immediately. However, it is hosted in relative to project parent (eg:
+`http://localhost:63342/oject-starter`). Hence, all the examples under `static`
+are setup relative to this path! If you are not running with this IDE
+then you need to setup a web server with path set to this project's parent
+directory. For example:
+
+```
+cd ojet-starter
+python3 -m http.server -d ../
+open http://localhost:8000/ojet-starter/static/ojet-html/ojet-hello.html
+```
