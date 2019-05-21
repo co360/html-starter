@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <style>
+        #container {
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #inner {
+            float: left;
+        }
+
+        .child {
+            float: left;
+        }
+        .child:nth-child(1) {
+            background-color: lightgray;
+            width: 30%;
+        }
+        .child:nth-child(2) {
+            background-color: lightgreen;
+            width: 60%;;
+        }
+        .child:nth-child(3) {
+            background-color: lightgray;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="inner">
+        <div class="child">ONE</div>
+        <div class="child">TWO</div>
+        <div class="child">THREE</div>
+    </div>
+</div>
+
+</body>
+</html>
