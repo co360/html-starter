@@ -79,10 +79,16 @@
                 endUserToken = parsedToken.userToken;
             });
 
-            // Auth Successful
+            // // == Test Only
+            // // We can also manually setup Token for testing
+            // integrationUserToken = "ZnVzaW9uOnRlTWxQZjVidDduejdONHB6OFF3K0I0Y0JRcUxnbXVUcktTQVdjODJUR3k0SEVBMlJkRlpjYVlvS0dnS0NiK3RSMGs1bzFpejRRNkswdEJqT3FlMGhCWTVtUkI3TWVveVhNNC95RDhFUEJsOERKZThKenVvam5xMnBpSVFaVlh3Nzgyb1AwclUzdStOVVlITmNTZjc0NExhaE9lY3k0MHZZOUNSYkFjM1BIVEgwdW83U0l4dXdJdEQrWTh5cWVWMA==";
+            // endUserToken = "f5wDY3ju8Ctd+DFlnhKx/DtT+1L2HQaxE7wcyg+B62iYQKuiubgYj1LO3Z1IRDea/bExu+C/8eZkbixfVj9s42fuAxTwHmtZ2IsopxHZI8GY5ww5GzUlv/LkkAPWc0bn1CMhSu/kTbFOV9fxfcTDpA==";
+            // // == Test Only
+
+            // Create kmauthtoken
             let kmauthtoken = JSON.stringify({
                 siteName : restParams.siteName,
-                userToken : restParams.endUserToken,
+                userToken : endUserToken,
                 integrationUserToken: integrationUserToken
             });
             console.log("KM HEADER kmauthtoken:", kmauthtoken);
