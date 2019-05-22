@@ -8,7 +8,7 @@
         $(function() {
             // KM Parameters
             let restParamsMap = {
-                day380_19201_sql_249h: {
+                "day380_19201_sql_249h": {
                     baseUrl: "https://day380-19201-sql-249h-irs.dq.lan/km/api/latest",
                     siteName: "day380_19201_sql_249h",
                     integrationLogin: "iu_agent_desktop",
@@ -16,7 +16,7 @@
                     userName: "administrator",
                     userPassword: "Welcome@123"
                 },
-                den00omm: {
+                "den00omm": {
                     baseUrl: "http://den00omm.us.oracle.com:7202/km/api/latest",
                     siteName: "fusion",
                     integrationLogin: "iu_fusion",
@@ -27,7 +27,7 @@
             };
 
             // Perform KM Auth and then Get Content
-            let restParams = restParamsMap['day380_19201_sql_249h'];
+            let restParams = restParamsMap["den00omm"];
             let integrationUserToken = "";
             let endUserToken = "";
 
@@ -59,7 +59,7 @@
                 url: restParams.baseUrl + "/auth/authorize",
                 method: "POST",
                 dataType: 'json',
-                contentType: false,
+                contentType: "application/x-www-form-urlencoded",
                 headers: {
                     'kmauthtoken': JSON.stringify({
                         "siteName": restParams.siteName,
