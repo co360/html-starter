@@ -7,92 +7,94 @@
     <script>
         $(function() {
             // KM Parameters
-            let baseUrl = "https://day380-19201-sql-249h-irs.dq.lan/km/api/latest";
-            let siteName = "day380_19201_sql_249h";
-            let integrationUserToken;
-            let endUserToken;
-            let integrationLogin = "iu_agent_desktop";
-            let integationPassword = "03D7E12D329A4B38AA34AC4454D3C6A4";
-            let userName = "administrator";
-            let userPassword = "Welcome@123";
+            let restParamsMap = {
+                day380_19201_sql_249h: {
+                    baseUrl: "https://day380-19201-sql-249h-irs.dq.lan/km/api/latest",
+                    siteName: "day380_19201_sql_249h",
+                    integrationLogin: "iu_agent_desktop",
+                    integrationPassword: "03D7E12D329A4B38AA34AC4454D3C6A4",
+                    userName: "administrator",
+                    userPassword: "Welcome@123"
+                },
+                den00omm: {
+                    baseUrl: "http://den00omm.us.oracle.com:7202/km/api/latest",
+                    siteName: "fusion",
+                    integrationLogin: "iu_fusion",
+                    integrationPassword: "Welcome1",
+                    userName: "provisioning",
+                    userPassword: "Welcome1"
+                }
+            };
 
-            // NOTE: We will use sync mode to perform REST call!
+            // Perform KM Auth and then Get Content
+            let restParams = restParamsMap['den00omm'];
+            let integrationUserToken = "";
+            let endUserToken = "";
 
             // KM Integration Auth
+            // NOTE: We will use sync mode to perform REST call!
             $.ajax({
                 async: false,
-                url : baseUrl + "/auth/integration/authorize",
+                url : restParams.baseUrl + "/auth/integration/authorize",
                 method: "POST",
                 dataType: 'json',
                 contentType: 'application/json',
                 headers: {
                     'kmauthtoken' : JSON.stringify({
-                        siteName : siteName
+                        siteName : restParams.siteName
                     })
                 },
                 data: JSON.stringify({
-                    "login" : integrationLogin,
-                    "password" : integationPassword
+                    "login" : restParams.integrationLogin,
+                    "password" : restParams.integrationPassword
                 })
             }).done(integrationData => {
-                console.log(integrationData);
+                console.log("Result /auth/integration/authorize", integrationData);
                 integrationUserToken = integrationData.authenticationToken;
             });
 
             // KM User Auth
             $.ajax({
                 async: false,
-                url: baseUrl + "/auth/authorize",
+                url: restParams.baseUrl + "/auth/authorize",
                 method: "POST",
                 dataType: 'json',
                 contentType: false,
                 headers: {
                     'kmauthtoken': JSON.stringify({
-                        "siteName": siteName,
+                        "siteName": restParams.siteName,
                         "integrationUserToken": integrationUserToken
                     })
             },
             data: {
-                "userName" : userName,
-                "password" : userPassword,
+                "userName" : restParams.userName,
+                "password" : restParams.userPassword,
                 "userExternalType" : "ACCOUNT",
-                "siteName" : siteName
+                "siteName" : restParams.siteName
             }
             }).done(endUserData => {
-                console.log(endUserData);
+                console.log("Result /auth/authorize", endUserData);
                 let tokenResponse = endUserData.authenticationToken;
                 let parsedToken = JSON.parse(tokenResponse);
                 endUserToken = parsedToken.userToken;
-            })
+            });
 
             // Auth Successful
-            console.log("KM Login Successful: endUserToken=" + endUserToken);
-            console.log("kmauthtoken:");
-            // console.log({
-            //     siteName : siteName,
-            //     userToken : endUserToken,
-            //     integrationUserToken: integrationUserToken
-            // });
-            console.log(JSON.stringify({
-                siteName : siteName,
-                userToken : endUserToken,
+            let kmauthtoken = JSON.stringify({
+                siteName : restParams.siteName,
+                userToken : restParams.endUserToken,
                 integrationUserToken: integrationUserToken
-            }));
+            });
+            console.log("KM HEADER kmauthtoken:", kmauthtoken);
 
             // Fetch Data
             $.ajax({
-                url : baseUrl + "/content",
+                url : restParams.baseUrl + "/content",
                 method: "GET",
                 dataType: 'json',
-                headers: {
-                    'kmauthtoken' : JSON.stringify({
-                        siteName : siteName,
-                        userToken : endUserToken,
-                        integrationUserToken: integrationUserToken
-                    })
-                }
+                headers: { 'kmauthtoken' : kmauthtoken }
             }).done(kmResponse => {
-                console.log("REST result:");
+                console.log("Result /content");
                 console.log(kmResponse);
             });
         });
