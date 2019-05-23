@@ -5,11 +5,17 @@
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../../web/js/libs/require/require.js"></script>
     <script>
+        /*
+        By default the RequireJS will set baseUrl set relative to where the HTML that loaded
+        the require.js! In this case, it's the "static/requirejs-learn"
+        */
         // requirejs.config({
-        //     baseUrl: "" /* Default to "static/requirejs-learn" folder, which is where this html sits. */
+        //     baseUrl: ""
         // });
+
+        // We can change the baseUrl. "js" means point to "static/requirejs-learn/js".
         requirejs.config({
-            baseUrl: "js" /* Set to "static/js" */
+            baseUrl: "js"
         });
         require(['hello'], function(hello){
             console.log("Module loaded:");
