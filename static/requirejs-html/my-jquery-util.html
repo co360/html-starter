@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <script src="/ojet-starter/web/js/libs/require/require.js"></script>
+    <meta charset="UTF-8">
+    <script src="../../web/js/libs/require/require.js"></script>
     <script>
         requirejs.config({
-            baseUrl: "/ojet-starter/static/js/requirejs-demo",
+            baseUrl: "../js/requirejs-demo",
             paths: {
-                "jquery": "../../../web/js/libs/jquery/jquery-3.3.1"
+                "text": "../requirejs-plugins/text",
+                "jquery": "../../web/js/libs/jquery/jquery-3.3.1"
             }
         });
         require(['my-jquery-util'], function(util){

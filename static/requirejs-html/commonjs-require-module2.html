@@ -1,10 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <script src="/ojet-starter/web/js/libs/require/require.js"></script>
+    <meta charset="UTF-8">
+    <script src="../../web/js/libs/require/require.js"></script>
     <script>
         requirejs.config({
-            baseUrl: "/ojet-starter/static/js/requirejs-demo"
+            baseUrl: "../js/requirejs-demo",
+            paths: {
+                "text": "../requirejs-plugins/text"
+            }
         });
         require(['commonjs-require-module2'], function(demo){
             console.log("commonjs-require-module2 module loaded:");

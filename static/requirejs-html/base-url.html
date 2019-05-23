@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <script src="../../web/js/libs/require/require.js"></script>
     <script>
+        // requirejs.config({
+        //     baseUrl: "" /* Default to "static/requirejs-html" folder, which is where this html sits. */
+        // });
         requirejs.config({
-            baseUrl: "../js/requirejs-demo"
+            baseUrl: "../js" /* Set to "static/js" */
         });
-        require(['mymod1/hello'], function(hello){
+        require(['hello'], function(hello){
             console.log("Module loaded:");
             console.log(hello);
         });

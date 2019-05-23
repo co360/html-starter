@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <script src="/ojet-starter/web/js/libs/require/require.js"></script>
+    <meta charset="UTF-8">
+    <script src="../../web/js/libs/require/require.js"></script>
     <script>
         requirejs.config({
-            baseUrl: "/ojet-starter/static/js/requirejs-demo"
+            baseUrl: "../js"
         });
-        require(['hello'], function(hello){
+        require(['requirejs-demo/hello'], function(hello){
             console.log("Module loaded:");
             console.log(hello);
         });
