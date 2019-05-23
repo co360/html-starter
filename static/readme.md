@@ -33,18 +33,22 @@ The OJET comes with some CSS themes that we may explore:
 
 The `WebStorm` IDE comes with builtin web server that can test any of
 `static` html page immediately. However, it is hosted in relative to project 
-parent (eg: `http://localhost:63342/oject-starter/static`). Hence, all the 
-examples under `static` are setup relative to this path or using absolute path
-base on this! 
+parent (eg: `http://localhost:63342/oject-starter/static`). So to reference
+resources, we have two options:
 
-If you are not running with this IDE then you need to setup a web server with 
-path set to this project's parent directory. For example:
+Option1: Use absolute path (eg: "/oject-starter/static/js/hello.js"), or 
+Option2: Use relative path to where the "html" file is located. Most of the
+         examples are using this setup.
 
+If you are not running with this IDE, then you may also try
+running this project root directory as a plain web server hosted with root 
+folder.
+
+Here is an example using Python built-in web server.
 ```
 cd ojet-starter
-python3 -m http.server -d /ojet-starter/
+python3 -m http.server
 open http://localhost:8000/ojet-starter/static/ojet-html/ojet-hello.html
 ```
 
-NOTE: This only affect `static`. The `src` folder is for full OJET and when
-running `ojet serve`, it should function as normal JET project.
+NOTE: These will only work for "static" folder.
