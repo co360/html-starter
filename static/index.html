@@ -22,11 +22,11 @@
         });
         require(['require', 'jquery', 'text!js/examples.json'], function(require, $, examplesText) {
             $(function() {
-                var examples = JSON.parse(examplesText);
-                var exampleList = $("#examples");
-                for (var name of examples) {
-                    exampleList.append(`<li><a href="web-html/${name}">web-html/${name}</a></li>`);
-                }
+                // var examples = JSON.parse(examplesText);
+                // var exampleList = $("#examples");
+                // for (var name of examples) {
+                //     exampleList.append(`<li><a href="web-html/${name}">web-html/${name}</a></li>`);
+                // }
                 exampleList.append(`<li><a href="about.html">about.html</a></li>`);
                 exampleList.append(`<li><a href="readme.md">readme.md</a></li>`);
             });
