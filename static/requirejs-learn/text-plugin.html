@@ -2,16 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script data-main="../js/requirejs-demo/main.js" src="../../web/js/libs/require/require.js"></script>
+    <script data-main="js/main.js" src="../../web/js/libs/require/require.js"></script>
     <script>
-        // TODO: Why can't this be loaded by "data-main"?
-        requirejs.config({
-            baseUrl: "../js/requirejs-demo",
-            paths: {
-                "text": "../requirejs-plugins/text"
-            }
-        });
-
         require(['text!text-plugin-example.html', 'text!text-plugin-example.css'],
             function(html, css){
                 console.log("text-plugin-example.html=");

@@ -5,9 +5,9 @@
     <script src="../../web/js/libs/require/require.js"></script>
     <script>
         requirejs.config({
-            baseUrl: "../js"
+            baseUrl: "js"
         });
-        require(['requirejs-demo/hello'], function(hello){
+        require(['hello'], function(hello){
             console.log("Module loaded:");
             console.log(hello);
         });

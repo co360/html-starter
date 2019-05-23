@@ -1,6 +1,6 @@
 requirejs.config({
-    baseUrl: "../js/requirejs-demo",
+    baseUrl: "js",
     paths: {
-        "text": "../requirejs-plugins/text"
+        "text": "../../../web/js/libs/require/text"
     }
 });
