@@ -14,10 +14,9 @@
         See "generate-examples.js".
          */
         require.config({
-            baseUrl: './',
+            baseUrl: 'js',
             paths: {
-                'jquery': '../web/js/libs/jquery/jquery-3.3.1',
-                'text': 'js/requirejs-plugins/text'
+                'jquery': '../web/js/libs/jquery/jquery-3.3.1'
             }
         });
         require(['require', 'jquery', 'text!js/examples.json'], function(require, $, examplesText) {
