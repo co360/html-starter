@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<!--
-This will load js/main.js with script tag.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
-    <script data-main="js/main" src="../../web/js/libs/require/require.js"></script>
+    <script src="../../web/js/libs/require/require.js"></script>
+    <script src="js/main.js" ></script>
     <script>
         require(['text!text-plugin-example.html', 'text!text-plugin-example.css'],
             function(html, css){
@@ -14,7 +12,7 @@ This will load js/main.js with script tag.
                 console.log(html);
                 console.log("text-plugin-example.css=");
                 console.log(css);
-        });
+            });
     </script>
 </head>
 <body>

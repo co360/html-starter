@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <script src="../../web/js/libs/require/require.js" data-main="js/config" ></script>
+    <script>
+        require(['knockout', 'hello'], function(ko, app) {
+            ko.applyBindings(app);
+        });
+    </script>
+</head>
+<body>
+
+<p data-bind="text: helloMessage">HI</p>
+</body>
+</html>
+
