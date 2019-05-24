@@ -89,12 +89,8 @@ you can use it by simply importing:
 
 #### What Are The `/ojet-starter/web` and `/ojet-starter/themes` Folders For?
 
-We often want to quickly test static HTML/CSS/JavaScript, but only with 
-minimal libraries loaded. Most of the demo in this folder are standalone.
-Some we will load some libraries from `/ojet-starter/web` folder. This 
-`/ojet-starter/web` folder is generated after we run `ojet build` in the parent 
-directory for JET development. We can focus one static, standalone file to 
-explore each of those dependencies libraries here.
+These `web` and `theme` folders are generated after we run `ojet build`. 
+Exploring these folders reveal what comes with OJET.
 
 Here are few important third party libraries to explore:
 

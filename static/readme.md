@@ -38,3 +38,9 @@ The `ojet-starter/src` contains a full OJET project, as a full project structure
 `ojet-starter/static/ojet-learn` is a folder for each `html` file that can 
 be run independently. You do not need to run `ojet serve` to run it. This mean
 I have setup the RequireJS `paths` expliclity. This is done for quick testing purpose.
+
+
+## Where are these `/ojet-starter/web` and `/ojet-starter/themes` folders?
+
+Many examples in this `static` folder referencese libraries from these folders.
+These `web` and `theme` folders are generated after we run `ojet build`.
