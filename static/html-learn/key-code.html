@@ -8,7 +8,7 @@
         // event.key and event.code instead.
         window.addEventListener("keydown", function(event) {
             let str = "KeyboardEvent: key='" + event.key + "' | code='" +
-                event.code + "' | keyCode=''" + event.keyCode + "'";
+                event.code + "' | (Deprecated keyCode=''" + event.keyCode + "')";
             let el = document.createElement("span");
             el.innerHTML = str + "<br/>";
 
