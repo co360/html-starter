@@ -9,6 +9,9 @@ We simply want to load a quick static file to test a single features.
 
 ## How To Setup Web Server For Testing
 
+Most of the examples should open by just opening them in your browser as 
+local file!
+
 The `WebStorm` IDE comes with builtin web server that can test any of
 `static` html page immediately. However, it is hosted in relative to project 
 parent (eg: `http://localhost:63342/oject-starter/static`). So to reference
