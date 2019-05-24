@@ -40,7 +40,8 @@ be run independently. You do not need to run `ojet serve` to run it. This mean
 I have setup the RequireJS `paths` expliclity. This is done for quick testing purpose.
 
 
-## Where are these `/ojet-starter/web` and `/ojet-starter/themes` folders?
+## Where are these `../../web` and `../../themes` folders from?
 
 Many examples in this `static` folder referencese libraries from these folders.
 These `web` and `theme` folders are generated after we run `ojet build`.
+See `../readme.md` file for more info.
