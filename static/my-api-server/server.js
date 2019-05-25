@@ -6,6 +6,7 @@ let fileUpload = require('express-fileupload');
 let serveIndex = require('serve-index');
 let app = express();
 
+app.use('/', express.static(staticDir + "/public"));
 app.use('/json-samples', express.static(staticDir + "/json-samples"));
 app.use('/json-samples', serveIndex(staticDir + "/json-samples"));
 app.use('/my-data', express.static(staticDir + "/my-data"));
@@ -27,15 +28,15 @@ app.listen(port, () => {
 
         // The name of the input field (i.e. "filename") is used to retrieve the uploaded file
         let filename = req.files.filename;
+        //console.log("Got filename", filename);
 
         // Use the mv() method to place the file somewhere on your server
-        filename.mv(staticDir + '/uploads', function(err) {
+        filename.mv(staticDir + '/uploads/' + filename.name, function(err) {
             if (err) {
                 return res.status(500).send(err);
             }
             res.send('File uploaded!');
         });
-        res.send('File uploaded failed!');
     });
 
     // == API Demo: /api/hello
