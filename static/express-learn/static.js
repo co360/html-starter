@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
@@ -7,7 +8,9 @@ const port = 3000;
 app.use(express.static("public"));
 
 // Setup 2nd directory with a virtual path
-app.use('/files', express.static("files"));
+//app.use('/files', express.static("files"));
+app.use('/files', express.static(path.join(__dirname, "files")));
+
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
