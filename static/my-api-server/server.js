@@ -3,22 +3,44 @@ var staticDir = ".";
 
 var express = require("express");
 var serveIndex = require('serve-index');
-var fs = require('fs');
+var fileUpload = require('express-fileupload');
 var app = express();
 
 app.use(express.static(staticDir));
 app.use(serveIndex(staticDir));
+app.use(fileUpload());
 
 app.listen(port, () => {
-    //app.use('/', express.static(__dirname + '/index.html'));
+    // == File Upload Demo
+    app.post('/file-upload/post', (req, res) => {
+        console.log("Processing file upload.");
 
+        if (Object.keys(req.files).length == 0) {
+            return res.status(400).send('No files were uploaded.');
+        }
 
+        // The name of the input field (i.e. "filename") is used to retrieve the uploaded file
+        let filename = req.files.filename;
+
+        // Use the mv() method to place the file somewhere on your server
+        filename.mv(staticDir + '/uploads', function(err) {
+            if (err) {
+                return res.status(500).send(err);
+            }
+            res.send('File uploaded!');
+        });
+    });
+
+    // == API Demo: /api/hello
     app.get("/api/hello", (req, res) => {
         res.json({"message": "Hello World"});
     });
 
-    // These are no longer needed since we start using "serverIndex" to allow
+    // == API Demo: /api/samles
+    //
+    // Deprecated: These are no longer needed since we start using "serverIndex" to allow
     // directory listing.
+    //
     // app.get("/api/countries", (req, res) => {
     //     var countries = fs.readFileSync('my-api-server/json-samples/countries.json', 'utf8');
     //     res.json(JSON.parse(countries));
@@ -29,5 +51,6 @@ app.listen(port, () => {
     //     res.json(JSON.parse(content));
     // });
 
+    // == Done Setup
     console.log("Server running on http://localhost:" + port);
 });
