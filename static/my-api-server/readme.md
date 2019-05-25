@@ -6,9 +6,7 @@ for local testing.
 ## How to Run
 
 ```bash
+npm install
 node server.js
-
-open http://localhost:3000
-open http://localhost:3000/countries
-open http://localhost:3000?file=my-api-server/json-samples/countries-usa.json
+open http://localhost:3000/
 ```
