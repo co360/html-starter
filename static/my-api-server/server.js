@@ -1,21 +1,27 @@
-var port = 3000;
-var staticDir = ".";
+let port = 3000;
+let staticDir = __dirname;
 
-var express = require("express");
-var serveIndex = require('serve-index');
-var fileUpload = require('express-fileupload');
-var app = express();
+let express = require("express");
+let fileUpload = require('express-fileupload');
+let serveIndex = require('serve-index');
+let app = express();
 
-app.use(express.static(staticDir));
-app.use(serveIndex(staticDir));
-app.use(fileUpload());
+app.use('/json-samples', express.static(staticDir + "/json-samples"));
+app.use('/json-samples', serveIndex(staticDir + "/json-samples"));
+app.use('/my-data', express.static(staticDir + "/my-data"));
+app.use('/file-upload', fileUpload());
 
 app.listen(port, () => {
+    // == Home
+    app.get("/", (req, res) => {
+        res.sendFile(staticDir + "/index.html");
+    });
+
     // == File Upload Demo
     app.post('/file-upload/post', (req, res) => {
         console.log("Processing file upload.");
 
-        if (Object.keys(req.files).length == 0) {
+        if (!req.files || Object.keys(req.files).length == 0) {
             return res.status(400).send('No files were uploaded.');
         }
 
@@ -29,6 +35,7 @@ app.listen(port, () => {
             }
             res.send('File uploaded!');
         });
+        res.send('File uploaded failed!');
     });
 
     // == API Demo: /api/hello
@@ -36,18 +43,18 @@ app.listen(port, () => {
         res.json({"message": "Hello World"});
     });
 
-    // == API Demo: /api/samles
+    // == API Demo: /api/samples
     //
     // Deprecated: These are no longer needed since we start using "serverIndex" to allow
     // directory listing.
     //
     // app.get("/api/countries", (req, res) => {
-    //     var countries = fs.readFileSync('my-api-server/json-samples/countries.json', 'utf8');
+    //     let countries = fs.readFileSync('my-api-server/json-samples/countries.json', 'utf8');
     //     res.json(JSON.parse(countries));
     // });
     // app.get("/api/samples", (req, res) => {
-    //     var file = req.query.name;
-    //     var content = fs.readFileSync(file, 'utf8');
+    //     let file = req.query.name;
+    //     let content = fs.readFileSync(file, 'utf8');
     //     res.json(JSON.parse(content));
     // });
 
