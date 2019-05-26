@@ -6,6 +6,7 @@
     "@oracle/oraclejet": "~6.2.0",
     "@types/jquery": "^3.3.29",
     "express": "^4.16.4",
+    "jquery": "^3.4.1",
     "text": "github:requirejs/text"
   },
   "devDependencies": {
