@@ -1,3 +1,4 @@
+// The classic hello world web server that NodeJS tutorial provided
 const http = require('http');
 
 const hostname = '127.0.0.1';

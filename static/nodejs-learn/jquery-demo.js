@@ -1,4 +1,7 @@
+
+// We need to run "npm install jquery" first before we can import this
 var $ = require('jquery');
+
 var http = require('http');
 
 var options = {
