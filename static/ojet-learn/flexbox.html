@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <link rel="stylesheet" href="../../themes/alta/web/alta.css">
+    <style>
+        section > div {
+            border: 1px solid black;
+            margin-bottom: 5px;
+        }
+
+        .oj-flex div {
+            border: 1px solid blue;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body class="oj-web-applayout-body">
+
+<div class="oj-web-applayout-page">
+    <header class="oj-web-applayout-header">
+        ONE TWO THREE
+    </header>
+    <section class="oj-web-applayout-content">
+        <div id="ex1">
+            <h1>oj-flex</h1>
+            <div class="oj-flex">
+                <div class="oj-flex-item">AAA</div>
+                <div class="oj-flex-item">BBB</div>
+                <div class="oj-flex-item">CCC</div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">AAA</div>
+                <div class="oj-flex-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="oj-flex-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis eligendi facilis provident! Adipisci alias assumenda et excepturi explicabo magnam, molestias natus officia, officiis pariatur quibusdam reprehenderit sed unde voluptates?</div>
+            </div>
+        </div>
+
+        <div id="ex2">
+            <h1>oj-flex-bar</h1>
+            <div class="oj-flex">
+                <div class="oj-flex-bar">AAA</div>
+                <div class="oj-flex-bar">BBB</div>
+                <div class="oj-flex-bar">CCC</div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-bar">AAA</div>
+                <div class="oj-flex-bar">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="oj-flex-bar">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deleniti, ducimus fuga id ipsam laborum magni nam nemo obcaecati odio qui reiciendis rem! Ad itaque labore porro quas similique voluptatum.</div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-bar-start">AAA</div>
+                <div class="oj-flex-bar-middle">BBB</div>
+                <div class="oj-flex-bar-end">CCC</div>
+            </div>
+            <div class="oj-flex">
+                <!-- mix order -->
+                <div class="oj-flex-bar-middle">AAA</div>
+                <div class="oj-flex-bar-end">BBB</div>
+                <div class="oj-flex-bar-start">CCC</div>
+            </div>
+        </div>
+    </section>
+    <footer class="oj-web-applayout-footer">
+        ONE TWO THREE
+    </footer>
+</div>
+
+</body>
+</html>
