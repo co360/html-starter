@@ -7,13 +7,16 @@
     <script src="../../web/js/libs/require/require.js"></script>
     <script src="js/config.js"></script>
     <script>
-        require(['knockout', 'ojet-hello', 'ojs/ojcore', 'ojs/ojknockout'], function(ko, app) {
-            ko.applyBindings(app);
+        require(['ojs/ojknockout'], function(ko) {
         });
     </script>
 </head>
-<body>
+<body class="oj-web-applayout-body">
 
-<p><oj-bind-text value="{{helloMessage}}">Hi</oj-bind-text></p>
+<div id="globalBody" class="oj-web-applayout-page">
+    <h1>Oracle Alta CSS</h1>
+    <p>Hello World.</p>
+</div>
+
 </body>
 </html>
