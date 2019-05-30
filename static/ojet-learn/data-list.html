@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
     <link rel="stylesheet" href="../../themes/alta/web/alta.css">
+    <style>
+        .avatar
+        {
+            border-radius: 50%;
+            background-size: 35px 35px;
+            width: 35px; height: 35px;
+            display: inline-block;
+        }
+
+        .container
+        {
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: top;
+        }
+
+        .name
+        {
+            font-weight: bold;
+        }
+    </style>
+
     <script src="../../web/js/libs/require/require.js"></script>
     <script src="js/config.js"></script>
     <script>
-        require(['knockout', 'ojs/ojkeyset', 'ojs/ojknockout', 'ojs/ojlistview'],
-            function(ko, keySet) {
-                function viewModel() {
-                    this.itemOnly = function (context) {
-                        return context['leaf'];
-                    };
-                    this.expanded = new keySet.KeySetImpl(['a', 'b', 'c']);
-                }
+        require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojlistview'],
+            function(oj, ko, $)
+            {
+                ko.applyBindings(null, document.getElementById('listview'));
             });
     </script>
 </head>
