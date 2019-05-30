@@ -104,3 +104,13 @@ The OJET comes with some CSS themes that we may explore:
 * `/ojet-starter/themes/alta/web/alta.css`
 * `/ojet-starter/themes/alta/web/fonts`
 * `/ojet-starter/themes/alta/web/images`
+
+#### What is `dvt` folder for?
+
+The `DVT` term is from legacy Oracle App that allow customer user styling.
+
+    The Dynamic Visitor Tools ("DVT") feature includes tools that allow end 
+    users to customize the appearance, behavior, and content of Oracle 
+    WebLogic Portal applications.
+
+https://docs.oracle.com/cd/E15919_01/wlp.1032/e14243/dvt.htm#CIHHBEFF

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <link rel="stylesheet" href="../../themes/alta/web/alta.css">
+    <script src="../../web/js/libs/require/require.js"></script>
+    <script src="js/config.js"></script>
+    <script>
+        require(['knockout', 'ojs/ojkeyset', 'ojs/ojknockout', 'ojs/ojlistview'],
+            function(ko, keySet) {
+                function viewModel() {
+                    this.itemOnly = function (context) {
+                        return context['leaf'];
+                    };
+                    this.expanded = new keySet.KeySetImpl(['a', 'b', 'c']);
+                }
+            });
+    </script>
+</head>
+<body class="demo-disable-bg-image">
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+
+        <oj-list-view id="listview" aria-label="list with static data" selection-mode="multiple" data-oj-binding-provider="none">
+            <ul>
+                <li id="amybartlet">
+                    <span class="avatar" style="background-image: url('images/dvt/1.png')"></span>
+                    <div class="container">
+                        <div>
+                            <span class="name">Amy Bartlet</span>
+                        </div>
+                        <div>
+                            <span class="oj-text-xs oj-text-secondary-color">Vice President</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="andyjones">
+                    <span class="avatar" style="background-image: url('images/dvt/10.png')"></span>
+                    <div class="container">
+                        <div>
+                            <span class="name">Andy Jones</span>
+                        </div>
+                        <div>
+                            <span class="oj-text-xs oj-text-secondary-color">Director</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="andrewbugsy">
+                    <span class="avatar" style="background-image: url('images/dvt/11.png')"></span>
+                    <div class="container">
+                        <div>
+                            <span class="name">Andrew Bugsy</span>
+                        </div>
+                        <div>
+                            <span class="oj-text-xs oj-text-secondary-color">Individual Contributer</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="annettbarnes">
+                    <span class="avatar" style="background-image: url('images/dvt/2.png')"></span>
+                    <div class="container">
+                        <div>
+                            <span class="name">Annett Barnes</span>
+                        </div>
+                        <div>
+                            <span class="oj-text-xs oj-text-secondary-color">Individual Contributer</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="bobjones">
+                    <span class="avatar" style="background-image: url('images/dvt/12.png')"></span>
+                    <div class="container">
+                        <div>
+                            <span class="name">Bob Jones</span>
+                        </div>
+                        <div>
+                            <span class="oj-text-xs oj-text-secondary-color">Salesman</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="bartbuckler">
+                    <span class="avatar" style="background-image: url('images/dvt/13.png')"></span>
+                    <div class="container">
+                        <div>
+                            <span class="name">Bart Buckler</span>
+                        </div>
+                        <div>
+                            <span class="oj-text-xs oj-text-secondary-color">Purchasing</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="bobbyfisher">
+                    <span class="avatar" style="background-image: url('images/dvt/14.png')"></span>
+                    <div class="container">
+                        <div>
+                            <span class="name">Bobby Fisher</span>
+                        </div>
+                        <div>
+                            <span class="oj-text-xs oj-text-secondary-color">Individual Contributer</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </oj-list-view>
+
+
+    </div>
+</div>
+</body>
+</html>

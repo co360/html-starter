@@ -7,7 +7,7 @@
     <script src="../../web/js/libs/require/require.js"></script>
     <script src="js/config.js"></script>
     <script>
-        require(['knockout', 'ojs/ojknockout'], function(ko) {
+        require(['knockout', 'ojs/ojcore', 'ojs/ojknockout'], function(ko) {
             function AppViewModel() {
                 let self = this;
                 self.helloMessage = ko.observable("Hello OJET World");
