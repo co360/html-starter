@@ -1,4 +1,4 @@
-SASS - Sassy CSS
+SASS - syntactically awesome style sheets (Sass) 
 
 https://sass-lang.com/guide
 
