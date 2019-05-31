@@ -1,8 +1,0 @@
-comp-hello-params:not(.oj-complete){
-  visibility: hidden;
-}
-
-comp-hello-params{
-	min-height: 50px;
-	width: 50px;
-}

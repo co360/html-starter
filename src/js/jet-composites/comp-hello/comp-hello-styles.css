@@ -1,8 +1,0 @@
-comp-hello:not(.oj-complete){
-  visibility: hidden;
-}
-
-comp-hello{
-	min-height: 50px;
-	width: 50px;
-}

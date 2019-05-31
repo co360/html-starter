@@ -1,8 +1,0 @@
-my-resource-comp-consumer:not(.oj-complete){
-  visibility: hidden;
-}
-
-my-resource-comp-consumer{
-	min-height: 50px;
-	width: 50px;
-}
