@@ -1,23 +1,19 @@
-## Why This `static` Folder Exists?
+## About `html-starter` Project
 
-The `static` folder is intended to explore standalone HTML/CSS/JavaScript
-features.
-
-The difference between this `static` folder vs `src` is that
-this folder is not intended to use with `ojet` command as full JET project.
-We simply want to load a quick static file to test a single features.
+The Git repository is named `ojet-starter`, but we created this branch for 
+exploring standalone HTML/CSS/JavaScript features. If you want to see OJET
+related demo, see the `master` branch instead.
 
 ## How To Setup Web Server For Testing
 
 Most of the examples should open by just opening them in your browser as 
 local file!
 
-The `WebStorm` IDE comes with builtin web server that can test any of
-`static` html page immediately. However, it is hosted in relative to project 
-parent (eg: `http://localhost:63342/oject-starter/static`). So to reference
-resources, we have two options:
+The `WebStorm` IDE comes with builtin web server that can test any of html page immediately. 
+However, it is hosted in relative to project parent folder 
+(eg: `http://localhost:63342/oject-starter`). So to reference resources, we have two options:
 
-Option1: Use absolute path (eg: "/oject-starter/static/js/hello.js"), or
+Option1: Use absolute path (eg: "/oject-starter/html-learn/js/hello.js"), or
  
 Option2: Use relative path to where the "html" file is located. Most of the 
 examples are using this setup.
@@ -27,24 +23,16 @@ running this project root directory as a plain web server hosted with root
 folder.
 
 Here is an example using Python built-in web server.
+
+```
+cd ojet-starter
+python3 -m http.server -b localhost
+open http://localhost:8000/
+```
+
+If you want the web server to serve parent root directory, you may try this:
 ```
 cd ojet-starter
 python3 -m http.server -b localhost -d ".."
-open http://localhost:8000/ojet-starter/static/html-learn/hello.html
+open http://localhost:8000/ojet-starter/
 ```
-
-NOTE: These will only work for "static" folder.
-
-## What is difference between files in `ojet-starter/static/ojet-learn` vs `ojet-starter/src`?
-
-The `ojet-starter/src` contains a full OJET project, as a full project structure. The 
-`ojet-starter/static/ojet-learn` is a folder for each `html` file that can 
-be run independently. You do not need to run `ojet serve` to run it. This mean
-I have setup the RequireJS `paths` expliclity. This is done for quick testing purpose.
-
-
-## Where are these `../../web` and `../../themes` folders from?
-
-Many examples in this `static` folder referencese libraries from these folders.
-These `web` and `theme` folders are generated after we run `ojet build`.
-See `../readme.md` file for more info.
