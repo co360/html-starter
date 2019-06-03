@@ -5,16 +5,24 @@
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../resources/js/libs/require/require.js"></script>
     <script>
+        // The "requirejs" is also alias for "require"
+        // But only certain properties exists in "requirejs"!
         requirejs.config({
             baseUrl: "js"
         });
         require(['require', 'hello'], function(require){
             console.log("require object", require);
+
+            // Generate URLs relative to module
             console.log("require.toUrl('hello'):", require.toUrl("hello"));
 
             // Note that in order to call require('hello'), we need to add
             // the "hello" to define function!
             console.log("require('hello'):", require('hello'));
+
+            // We can "undefine" a module!
+            // NOTE that it's from "requirejs" object only, not "require"!
+            console.log("require.undef('hello'):", requirejs.undef("hello"));
         });
     </script>
 </head>
