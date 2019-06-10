@@ -1,0 +1,5 @@
+
+# Ignore typescript cached build files
+.tscache/
+*.js
+*.js.map

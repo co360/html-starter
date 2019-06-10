@@ -8,9 +8,3 @@ temp/
 
 # Ignore test files
 test*.*
-
-# Ignore typescript cached build files
-.tscache/
-*.js.map
-typescript-learn/*.js
-typescript-learn/*.js.map
