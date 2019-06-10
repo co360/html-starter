@@ -12,5 +12,5 @@ test*.*
 # Ignore typescript cached build files
 .tscache/
 *.js.map
-typescript-learn/**/*.js
-typescript-learn/**/*.js.map
+typescript-learn/*.js
+typescript-learn/*.js.map
