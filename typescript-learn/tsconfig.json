@@ -1,7 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "AMD",
+    "target": "ES6",
     "sourceMap": false
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "amd-examples",
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
