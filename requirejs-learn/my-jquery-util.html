@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../resources/js/libs/require/require.js"></script>
+    <script src="js/main-config.js"></script>
     <script>
-        requirejs.config({
-            baseUrl: "js",
-            paths: {
-                "text": "../../resources/js/libs/require/text",
-                "jquery": "../../resources/js/libs/jquery/jquery-3.4.1"
-            }
-        });
         require(['my-jquery-util'], function(util){
             console.log("my-jquery-util Module loaded:");
             console.log(util);
@@ -23,7 +17,7 @@
         console.log("my-jquery-util2 Module loaded:");
         console.log(util);
     });
-</script>
+    </script>
 </head>
 <body>
 <div id="hello-div">

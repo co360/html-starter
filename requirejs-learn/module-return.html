@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../resources/js/libs/require/require.js"></script>
+    <script src="js/main-config.js"></script>
     <script>
-        requirejs.config({
-            baseUrl: "js",
-            paths: {
-                "text": "../../resources/js/libs/require/text"
-            }
-        });
         require(['module-return'], function(mod){
             console.log("Module loaded:");
             console.log(mod);

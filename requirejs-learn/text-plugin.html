@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../resources/js/libs/require/require.js"></script>
-    <script src="js/main.js" ></script>
+    <script src="js/main-config.js"></script>
     <script>
-        require(['text!text-plugin-example.html', 'text!text-plugin-example.css'],
+        require(
+            ['text!text-plugin-example.html', 'text!text-plugin-example.css'],
             function(html, css){
                 console.log("text-plugin-example.html=");
                 console.log(html);
                 console.log("text-plugin-example.css=");
                 console.log(css);
-            });
+            }
+        );
     </script>
 </head>
 <body>
