@@ -10,15 +10,32 @@
         requirejs.config({
             baseUrl: "js"
         });
-        require(['require', 'hello'], function(require){
-            console.log("require object", require);
+
+        // // Loading a module that's not defined in require() would fail
+        // var mymod = require("mymod");
+        // console.log("mymod loaded: ", mymod);
+
+        // NOTE: Each require() methods might load modules at different
+        // speed! So the output in console might not be in this order!
+        require(['require', "mymod"], function(req) {
+            // Loading a module that's not defined in require() would fail
+            var mymod = req("mymod");
+            console.log("mymod loaded: ", mymod);
+        });
+
+        require(['require', 'hello'], function(req){
+            console.log("require object", req);
 
             // Generate URLs relative to module
-            console.log("require.toUrl('hello'):", require.toUrl("hello"));
+            console.log("req.toUrl('hello'):", req.toUrl("hello"));
 
             // Note that in order to call require('hello'), we need to add
             // the "hello" to define function!
-            console.log("require('hello'):", require('hello'));
+            console.log("req('hello'):", req('hello'));
+
+            // // Loading a module that's not defined in require() would fail
+            // var mymod = require("mymod");
+            // console.log("mymod loaded: ", mymod);
 
             // We can "undefine" a module!
             // NOTE that it's from "requirejs" object only, not "require"!
