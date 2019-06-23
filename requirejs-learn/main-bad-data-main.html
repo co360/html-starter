@@ -2,11 +2,13 @@
 <!--
 Note that the "data-main" attribute value is without the ".js" extension!
 
-WARNING: if you were to use "data-main" attribute, you can not assume that it
-will be loaded BEFORE you start using require() right in this HTML! This
-will resulted in NO ERROR during load, but it will not find the modules you
-setup in your config options in "data-main"! The best way is NOT to do this
-and use load by script-tag to define the config option instead.
+WARNING: RequireJS will load modules asynchronously in define() method! If you
+were to use "data-main" attribute, you can not assume that it
+will be loaded BEFORE you start using require() right in this HTML with script
+tag! This will resulted in NO ERROR during load, but it will not find the
+modules you setup in your config options in "data-main"! The best way is
+NOT to do this mixture and use only script-tag to define the config option
+instead.
 
 See https://requirejs.org/docs/api.html#data-main
 -->
