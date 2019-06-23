@@ -7,13 +7,16 @@
     <script src="js/main-config.js"></script>
     <script>
         require(['hello'], function(hello){
-            console.log("Module loaded:");
-            console.log(hello);
+            var modStr = JSON.stringify(hello);
+            var output = document.querySelector("#output");
+            output.innerHTML = `
+            Module loaded: ${modStr}
+            `;
         });
     </script>
 </head>
 <body>
 <h1>RequireJS Demo</h1>
-<p>Check console output</p>
+<div id="output">OUTPUT</div>
 </body>
 </html>

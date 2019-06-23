@@ -11,14 +11,17 @@ This will load js/main.js with script tag instead of "data-main" attribute.
     <script>
         require(['hello', 'jquery'], function(hello, $){
             $(function() {
-                console.log("Module loaded:");
-                console.log(hello);
+                var modStr = JSON.stringify(hello);
+                var output = document.querySelector("#output");
+                output.innerHTML = `
+                Module loaded: ${modStr}
+                `;
             });
         });
     </script>
 </head>
 <body>
 <h1>RequireJS Demo</h1>
-<p>Check console output</p>
+<div id="output">OUTPUT</div>
 </body>
 </html>
