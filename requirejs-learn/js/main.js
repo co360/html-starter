@@ -17,7 +17,6 @@ requirejs.config({
 });
 
 require(['jquery', 'text!template.html'], function($, helloMessage){
-    console.log(helloMessage);
     $(function(){
         $("#main").html(helloMessage);
     });
