@@ -1,5 +1,5 @@
 define(["jquery"], function($) {
    return {
-       helloDiv: $("hello-div")
+       helloDiv: $("#hello-div")
    }
 });
