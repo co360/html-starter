@@ -6,6 +6,11 @@
     <script src="../../resources/js/libs/require/require.js"></script>
     <script>
 
+        //
+        // NOTE that the default "baseUrl" is set to relative to where this .html file is,
+        // and not where any .js files are from.
+        //
+
         function getAbsPath(path) {
             var link = document.createElement("a");
             link.href = path;
