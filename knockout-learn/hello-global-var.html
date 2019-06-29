@@ -9,7 +9,7 @@
         require(['knockout'], function(ko) {
             // Then try update later in console:
             //   vm.helloMessage("Hello Zemian")
-            window.vm = {
+            globalThis.vm = {
                 helloMessage: ko.observable("Hello World")
             };
             ko.applyBindings(vm);

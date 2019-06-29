@@ -3,35 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../resources/js/libs/require/require.js"></script>
-    <script src="js/main-config.js"></script>
-    <script>
-        // A todo list like functionality using people data model
-        // https://knockoutjs.com/documentation/foreach-binding.html
-        require(['knockout', 'domReady'], function(ko) {
-            function AppViewModel() {
-                var self = this;
-
-                self.people = ko.observableArray([
-                    { name: 'Bert' },
-                    { name: 'Charles' },
-                    { name: 'Denise' }
-                ]);
-
-                self.addPerson = function() {
-                    self.people.push({ name: "New at " + new Date() });
-                };
-
-                self.removePerson = function() {
-                    console.log("Removing:", this);
-                    // NOTE: The 'this' is bound to the array element!
-                    self.people.remove(this);
-                }
-            }
-
-            ko.applyBindings(new AppViewModel());
-        });
-    </script>
+    <script src="../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
 </head>
 <body>
 
@@ -44,6 +16,32 @@
         <a href="#" data-bind="click: $parent.removePerson">Remove</a>
     </li>
 </ul>
+
+<script>
+    // A todo list like functionality using people data model
+    // https://knockoutjs.com/documentation/foreach-binding.html
+    function AppViewModel() {
+        var self = this;
+
+        self.people = ko.observableArray([
+            { name: 'Bert' },
+            { name: 'Charles' },
+            { name: 'Denise' }
+        ]);
+
+        self.addPerson = function() {
+            self.people.push({ name: "New at " + new Date() });
+        };
+
+        self.removePerson = function() {
+            console.log("Removing:", this);
+            // NOTE: The 'this' is bound to the array element!
+            self.people.remove(this);
+        }
+    }
+
+    ko.applyBindings(new AppViewModel());
+</script>
 
 </body>
 </html>
