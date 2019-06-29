@@ -6,9 +6,7 @@
     <script src="../resources/js/libs/require/require.js"></script>
     <script src="js/main-config.js"></script>
     <script>
-        // KO does not need to wait for DOM to be ready to work, but many
-        // other libraries might have this restriction, so you might want
-        // to wait for ready event then apply KO binding.
+        // KO should use applyBinding() only after the DOM is ready.
         //
         // There are few easy ways to wait for DOM ready event.
         // Option1: Use RequireJS 'domReady' plugin
