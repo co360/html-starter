@@ -6,11 +6,8 @@
     <script src="../resources/js/libs/require/require.js"></script>
     <script src="js/config.js"></script>
     <script>
-        require(['knockout'], function(ko) {
-            var vm = {
-                helloMessage: ko.observable("Hello World")
-            };
-            ko.applyBindings(vm);
+        require(['knockout', 'hello'], function(ko, app) {
+            ko.applyBindings(app);
         });
     </script>
 </head>

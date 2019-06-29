@@ -1,8 +1,9 @@
 requirejs.config({
     baseUrl: 'js',
     paths: {
-        'knockout': '../../../web/js/libs/knockout/knockout-3.4.2.debug',
-        'jquery': '../../../web/js/libs/jquery/jquery-3.3.1',
-        'text': '../../../web/js/libs/require/text'
+        'knockout': '../../resources/js/libs/knockout/knockout-3.4.2.debug',
+        'jquery': '../../resources/js/libs/jquery/jquery-3.4.1',
+        'text': '../../resources/js/libs/require/text',
+        'css': '../../resources/js/libs/require-css/css'
     }
 });
