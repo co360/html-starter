@@ -7,11 +7,11 @@
     <script src="js/debug-requirejs-loading.js"></script>
     <script src="js/main-config.js"></script>
     <script>
-        require(['hello', 'domReady'], function(hello){
+        require(['hello', 'mymod', 'domReady'], function(hello, $){
             var modStr = JSON.stringify(hello);
             var output = document.querySelector("#output");
             output.innerHTML = `
-            Module loaded after DOM is ready: ${modStr}
+            Module loaded: ${modStr}
             `;
         });
     </script>
