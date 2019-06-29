@@ -3,27 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../resources/js/libs/require/require.js"></script>
-    <script src="js/main-config.js"></script>
-    <script>
-        // NOTE: The "using" binding is only available in KO 3.5.0+
-        var vm;
-        require(['knockout'], function(ko) {
-            vm = {
-                helloMessage: ko.observable()
-            };
-            ko.applyBindings(vm);
-
-            console.log("Init value of helloMessage: ", vm.helloMessage());
-
-            // Change value by timer
-            console.log("Setup delay timer to update helloMessage");
-            setTimeout(function(){
-                vm.helloMessage({greeting: "Hello", name: "World"});
-                console.log("Later value of helloMessage: ", vm.helloMessage());
-            }, 3000);
-        });
-    </script>
+    <script src="../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
 </head>
 <body>
 <p>A message should appear after 3 seconds:</p>
@@ -41,6 +21,25 @@ you need to use "if" binding to guard it first.
 <div data-bind="using: helloMessage">
     <p data-bind="text: greeting + ' ' + name">Hi2</p>
 </div>
+
+
+<script>
+    // NOTE: The "using" binding is only available in KO 3.5.0+
+    var vm = {
+        helloMessage: ko.observable()
+    };
+    ko.applyBindings(vm);
+
+    console.log("Init value of helloMessage: ", vm.helloMessage());
+
+    // Change value by timer
+    console.log("Setup delay timer to update helloMessage");
+    setTimeout(function(){
+        vm.helloMessage({greeting: "Hello", name: "World"});
+        console.log("Later value of helloMessage: ", vm.helloMessage());
+    }, 3000);
+</script>
+
 </body>
 </html>
 

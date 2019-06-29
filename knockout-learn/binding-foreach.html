@@ -3,29 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../resources/js/libs/require/require.js"></script>
-    <script src="js/main-config.js"></script>
-    <script>
-        var vm;
-        require(['knockout'], function(ko) {
-            // We will create an empty observable
-            // Note that observable does not need to be defined first!
-            // However it might affect the usage of it in the view.
-            vm = {
-                mylist: [4,3,2,1,5,6,7],
-                mymap: {
-                    a: 'one',
-                    b: 'two',
-                    c: 'three'
-                }
-            };
-            ko.applyBindings(vm);
-
-            console.log("Init value of vm: ", vm);
-        });
-    </script>
+    <script src="../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
 </head>
 <body>
+
 <h1>List#0 - Original List</h1>
 <ul data-bind="foreach: mylist">
     <li data-bind="text: $data"></li>
@@ -50,6 +31,24 @@
     -->
     <li><span data-bind="text: mykey"></span> <span data-bind="text: $parent.mymap[mykey]"></span></li>
 </ul>
+
+<script>
+    // We will create an empty observable
+    // Note that observable does not need to be defined first!
+    // However it might affect the usage of it in the view.
+    var viewModel = {
+        mylist: [4,3,2,1,5,6,7],
+        mymap: {
+            a: 'one',
+            b: 'two',
+            c: 'three'
+        }
+    };
+    ko.applyBindings(viewModel);
+
+    console.log("Init value of vm: ", viewModel);
+</script>
+
 </body>
 </html>
 
