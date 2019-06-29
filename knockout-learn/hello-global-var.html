@@ -7,7 +7,9 @@
     <script src="js/main-config.js"></script>
     <script>
         require(['knockout'], function(ko) {
-            var vm = {
+            // Then try update later in console:
+            //   vm.helloMessage("Hello Zemian")
+            window.vm = {
                 helloMessage: ko.observable("Hello World")
             };
             ko.applyBindings(vm);
