@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <script src="../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    The name is <span data-bind="text: fullName"></span>
+
+    <script>
+        function AppViewModel() {
+            this.firstName = ko.observable('Bob');
+            this.lastName = ko.observable('Smith');
+
+            this.fullName = ko.computed(function() {
+                return this.firstName() + " " + this.lastName();
+            }, this);
+        }
+        var viewModel = new AppViewModel();
+        ko.applyBindings(viewModel);
+    </script>
+</div>
+
+</body>
+</html>
+
