@@ -6,13 +6,16 @@
     <script src="../resources/js/libs/require/require.js"></script>
     <script src="js/main-config.js"></script>
     <script>
+        // Text plugin load files relative to the "baseUrl" path.
         require(
-            ['text!text-plugin-example.html', 'text!text-plugin-example.css'],
-            function(html, css){
+            ['text!text-plugin-example.html', 'css!text-plugin-example.css', 'text!../hello.html'],
+            function(html, css, helloHtml){
                 console.log("text-plugin-example.html=");
                 console.log(html);
                 console.log("text-plugin-example.css=");
                 console.log(css);
+                console.log("../hello.html");
+                console.log(helloHtml);
             }
         );
     </script>
