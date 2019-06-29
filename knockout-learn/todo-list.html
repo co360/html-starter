@@ -23,6 +23,8 @@
                 };
 
                 self.removePerson = function() {
+                    console.log("Removing:", this);
+                    // NOTE: The 'this' is bound to the array element!
                     self.people.remove(this);
                 }
             }
