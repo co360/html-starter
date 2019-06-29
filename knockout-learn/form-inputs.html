@@ -7,7 +7,7 @@
     <script src="js/main-config.js"></script>
     <script>
         require(['knockout'], function(ko) {
-            var viewModel = {
+            globalThis.viewModel = {
                 userName: ko.observable(""),        // Initially blank
                 userPassword: ko.observable("abc"), // Prepopulate
             };
@@ -20,6 +20,7 @@
 <div id="demo">
     <p>Login name: <input data-bind="value: userName" /></p>
     <p>Password: <input type="password" data-bind="value: userPassword" /></p>
+    <p>NOTE: Use Console to inspect inputs.</p>
 </div>
 
 </body>
