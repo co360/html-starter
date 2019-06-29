@@ -12,8 +12,8 @@
          */
         require(['knockout'], function(ko) {
             globalThis.viewModel = {
-                userName: ko.observable(""),        // Initially blank
-                userPassword: ko.observable("abc"), // Prepopulate
+                countries: ['Japan', 'Bolivia', 'New Zealand'],
+                selectedCountry: ko.observable('Latvia')
             };
             ko.applyBindings(viewModel);
         });
@@ -22,8 +22,13 @@
 <body>
 
 <div id="demo">
-    <p>Login name: <input data-bind="value: userName" /></p>
-    <p>Password: <input type="password" data-bind="value: userPassword" /></p>
+    <p>
+        Select a country:
+        <select data-bind="options: countries,
+                       optionsCaption: 'Choose one...',
+                       value: selectedCountry,
+                       valueAllowUnset: true"></select>
+    </p>
     <p>NOTE: Use Console to inspect inputs.</p>
 </div>
 
