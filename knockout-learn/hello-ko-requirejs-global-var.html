@@ -9,14 +9,16 @@
         require(['knockout'], function(ko) {
             // Then try update later in console:
             //   vm.helloMessage("Hello Zemian")
-            globalThis.vm = {
+            globalThis.viewModel = {
                 helloMessage: ko.observable("Hello World")
             };
-            ko.applyBindings(vm);
+            ko.applyBindings(viewModel);
         });
     </script>
 </head>
 <body>
+
+<p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
 
 <p data-bind="text: helloMessage">Hi</p>
 </body>

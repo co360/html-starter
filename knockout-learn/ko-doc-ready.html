@@ -15,16 +15,19 @@
 
         // Here we use RequireJS way
         require(['knockout', 'domReady'], function(ko) {
-            var vm = {
+            var viewModel = {
                 helloMessage: ko.observable("Hello World")
             };
-            ko.applyBindings(vm);
+            ko.applyBindings(viewModel);
         });
     </script>
 </head>
 <body>
 
+<p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
+
 <p data-bind="text: helloMessage">Hi</p>
+
 </body>
 </html>
 

@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
+
 <div>
     The name is <span data-bind="text: personName"></span>, and he is
     <!--ko text: personAge--><!--/ko-->.
@@ -16,11 +18,11 @@
 <script>
 
     // Try open in browser and then modify the name "myViewModel.personName('Zemian');"
-    var myViewModel = {
+    var viewModel = {
         personName: ko.observable('Bob'),
         personAge: 123
     };
-    ko.applyBindings(myViewModel);
+    ko.applyBindings(viewModel);
 
 </script>
 
