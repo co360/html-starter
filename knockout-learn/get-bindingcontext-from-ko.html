@@ -9,6 +9,7 @@
 
 <p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
 <pre>
+    var viewModel = ko.contextFor(document.body).$data;
     viewModel.helloMessage("Hi again");
 </pre>
 
@@ -16,10 +17,9 @@
     <p data-bind="text: helloMessage">Hi</p>
 
     <script>
-        var viewModel = {
+        ko.applyBindings({
             helloMessage: ko.observable("Hello World")
-        };
-        ko.applyBindings(viewModel);
+        });
     </script>
 </div>
 
