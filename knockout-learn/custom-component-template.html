@@ -7,6 +7,16 @@
 </head>
 <body>
 
+<template id="my-template">
+    <div class="like-or-dislike" data-bind="visible: !chosenValue()">
+        <button data-bind="click: like">Like it</button>
+        <button data-bind="click: dislike">Dislike it</button>
+    </div>
+    <div class="result" data-bind="visible: chosenValue">
+        You <strong data-bind="text: chosenValue"></strong> it
+    </div>
+</template>
+
 <p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
 
 <div id="demo">
@@ -23,25 +33,11 @@
                 // Data: value is either null, 'like', or 'dislike'
                 this.chosenValue = params.value;
 
-                // // Behaviors
-                // this.like = function() { this.chosenValue('like'); }.bind(this);
-                // this.dislike = function() { this.chosenValue('dislike'); }.bind(this);
-
-                // Above behaviors is same as these:
-                // NOTE: The "bind" method is a JS built-int function to bind object to "this"
-                //       in a function!
                 var self = this;
                 self.like = function() { self.chosenValue('like'); };
                 self.dislike = function() { self.chosenValue('dislike'); };
             },
-            template:
-                '<div class="like-or-dislike" data-bind="visible: !chosenValue()">\
-                    <button data-bind="click: like">Like it</button>\
-                    <button data-bind="click: dislike">Dislike it</button>\
-                </div>\
-                <div class="result" data-bind="visible: chosenValue">\
-                    You <strong data-bind="text: chosenValue"></strong> it\
-                </div>'
+            template: { element: 'my-template' }
         });
 
         function Product(name, rating) {
