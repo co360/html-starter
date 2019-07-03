@@ -1,0 +1,13 @@
+{
+  "name": "min-web-custom-libs",
+  "version": "1.0.0",
+  "dependencies": {
+    "requirejs": "2.3.6",
+    "knockout": "3.5.0",
+    "jquery": "3.4.1"
+  },
+  "devDependencies": {
+    "grunt": "1.0.4",
+    "grunt-copy-deps": "1.4.0"
+  }
+}
