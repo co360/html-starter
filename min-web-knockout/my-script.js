@@ -5,8 +5,8 @@
 
 requirejs.config({
     paths: {
-        'knockout': 'https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min',
-        'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min'
+        'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min',
+        'knockout': 'https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min'
     }
 });
 
