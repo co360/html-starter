@@ -1,8 +1,21 @@
-// NOTE: This script is written as normal "NodeJS" script, hence we use
-// the require("module") to bring in dependencies. But this script will
-// be packaged by build process that will be used in browser env.
+// NOTE: We are in browser env, so DOM API and all global "window" vars are available
 
-console.log(ko);
-$(function() {
-    $("#demo").text("Hello World.");
+// This script is loaded by index.html, which include the following libraries
+// - RequireJS, Knockout and jQuery. So we are free to use these.
+
+requirejs.config({
+    baseUrl: './',
+    paths: {
+        'knockout': 'web/js/libs/knockout/knockout-latest',
+        'jquery': 'web/js/libs/jquery.min'
+    }
+});
+
+require(['jquery', 'knockout'], function($, ko) {
+    $(function() {
+        var viewModel = {
+            helloMessage: ko.observable("Hello World")
+        };
+        ko.applyBindings(viewModel);
+    });
 });
