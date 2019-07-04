@@ -1,19 +1,22 @@
 // TODO Why it only copies 'jquery.js' and not other deps?
+// The work around is to use "include"!
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         copydeps: {
             options: {
-                minified: true,
-                unminified: true,
-                css: true,
-                js: true
+                include: {
+                    js: {
+                        'requirejs/require.js': 'requirejs',
+                        'knockout/build/output/**/*.js': 'knockout',
+                        'jquery/jquery/dist/**/*.js': 'jquery',
+                    }
+                }
             },
             build: {
                 pkg: 'package.json',
                 dest: {
-                    css: 'web/css/',
-                    js: 'web/js/'
+                    js: 'web/js/libs'
                 }
             }
         }
