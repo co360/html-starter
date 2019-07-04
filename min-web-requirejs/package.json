@@ -1,5 +1,5 @@
 {
-  "name": "min-web-custom-libs",
+  "name": "min-web-requirejs",
   "version": "1.0.0",
   "dependencies": {
     "requirejs": "2.3.6",
