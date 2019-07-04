@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -e my-script.js -o bundle.js"
+    "build": "browserify -e main.js -o bundle.js"
   },
   "dependencies": {
     "jquery": "3.4.1",

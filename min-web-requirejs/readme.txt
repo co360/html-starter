@@ -5,5 +5,4 @@ see how it works in a browser env.
 NOTE: The "web" folder is generated!
 
 npm install
-grunt copydeps
-open web/
+npm run build
