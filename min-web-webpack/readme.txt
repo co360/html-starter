@@ -6,7 +6,7 @@ NOTE the dist/main.js will be automatically generated!
 
 https://webpack.js.org/guides/getting-started/
 
-npx webpack
-
+npm install
 npm run build
+
 

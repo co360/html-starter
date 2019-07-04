@@ -4,5 +4,5 @@ a self contained "bundle.js".
 
 NOTE the bundle.js will be automatically generated!
 
-npm install -g browserify
-npm install -g watchify
+npm install
+npm run build

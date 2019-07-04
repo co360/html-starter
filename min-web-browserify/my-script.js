@@ -3,6 +3,11 @@
 // be packaged by build process that will be used in browser env.
 
 var $ = require('jquery');
+var ko = require("knockout");
+
 $(function() {
-    $("#demo").text("Hello World.");
+    var viewModel = {
+        helloMessage: ko.observable("Hello World")
+    };
+    ko.applyBindings(viewModel);
 });
