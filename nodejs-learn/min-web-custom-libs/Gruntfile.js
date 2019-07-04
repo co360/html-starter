@@ -1,5 +1,7 @@
+// TODO Why it only copies 'jquery.js' and nother deps?
 module.exports = function(grunt) {
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         copydeps: {
             options: {
                 minified: true,
@@ -7,7 +9,7 @@ module.exports = function(grunt) {
                 css: true,
                 js: true
             },
-            target: {
+            build: {
                 pkg: 'package.json',
                 dest: {
                     css: 'web/css/',
@@ -20,5 +22,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-copy-deps');
 
     // Default task(s).
-    grunt.registerTask('default', ['copydeps']);
+    grunt.registerTask('default', ['copydeps:build']);
 };
