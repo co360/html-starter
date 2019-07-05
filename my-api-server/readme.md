@@ -7,6 +7,6 @@ for local testing.
 
 ```bash
 npm install
-node server.js
+node start
 open http://localhost:3000/
 ```
