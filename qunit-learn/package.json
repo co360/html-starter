@@ -4,5 +4,8 @@
   "description": "Exploring qunit testing.",
   "scripts": {
     "test": "qunit"
+  },
+  "devDependencies": {
+    "qunit": "^2.9.2"
   }
 }
