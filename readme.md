@@ -35,3 +35,11 @@ cd ojet-starter
 python3 -m http.server -b localhost -d ".."
 open http://localhost:8000/html-starter/
 ```
+
+## Why your repository is full of "Update" commit messages?
+
+Well, I am lazy. :)
+
+I know commit message should be descriptive and etc... but this repository is 
+just my pet project and wasn't intended to share to the public! But since now you 
+have asked nicely, I have shared with you. Now just move on!
