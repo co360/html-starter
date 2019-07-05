@@ -9,6 +9,6 @@ Option 1:
 
 Option 2:
 
-  npm install -g qunit
+  npm install
   npm test
 
