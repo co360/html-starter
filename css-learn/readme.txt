@@ -4,3 +4,6 @@ CSS:
 
 Layout:
 - https://learnlayout.com/
+
+Font/Icon:
+- https://fontawesome.com/

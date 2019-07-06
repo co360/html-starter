@@ -43,3 +43,35 @@ Well, I am lazy. :)
 I know commit message should be descriptive and etc... but this repository is 
 just my pet project and wasn't intended to share to the public! But since now you 
 have asked nicely, I have shared with you. Now just move on!
+
+## Study Materials, Tools and References
+
+HTML/CSS/JavaScript:
+- https://developer.mozilla.org/en-US/docs/Web/
+- https://learn.shayhowe.com/html-css/
+- https://html-css-js.com/
+- https://www.w3schools.com/html/default.asp
+
+CDN:
+- https://cdnjs.com 
+- https://developers.google.com/speed/libraries
+
+Tools
+- https://www.jetbrains.com/webstorm/
+- https://www.sublimetext.com/
+- https://jsfiddle.net/
+- https://codepen.io/
+
+Frameworks:
+- https://knockoutjs.com/
+- https://requirejs.org/
+- https://jquery.com/
+- https://getbootstrap.com/
+- https://vuejs.org/
+- https://nodejs.org/
+- https://www.typescriptlang.org/
+
+Reading Materials:
+- https://developers.google.com/web
+- https://css-tricks.com/guides/
+- http://reddit.com/r/javascript

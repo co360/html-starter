@@ -1,1 +1,1 @@
-Some interesting HTML/JS examples collected from online by other talented folks.
+Some interesting HTML/CSS/JS examples collected from online by other talented folks.
