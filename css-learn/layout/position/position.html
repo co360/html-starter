@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
+https://learnlayout.com/position.html
+-->
+<html>
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML/CSS/JavaScript Starter</title>
+    </head>
+</head>
+<body>
+
+<h1>position: static</h1>
+
+<p>An element with "position: static;" is not positioned in any special way; it is
+    always positioned according to the normal flow of the page:</p>
+
+<h2>Demo1: static position</h2>
+
+<div id="demo1">
+    <style>
+        .demo1 {
+            position: static;
+            border: 3px solid tomato;
+        }
+    </style>
+    <div class="demo1">
+        This div element has "position: static;"
+    </div>
+</div>
+
+<h2>Demo2: without set "display"</h2>
+<div id="demo2">
+    <style>
+        .demo2 {
+            border: 3px solid green;
+        }
+    </style>
+    <div class="demo2">
+        This div element has "position: static;"
+    </div>
+</div>
+
+<h2>Demo3: static position within static</h2>
+<div id="demo3">
+    <style>
+        .demo3 {
+            position: static;
+            border: 3px solid blue;
+        }
+    </style>
+
+    <div class="demo1">
+        <div class="demo3">
+            This div element has "position: static;" and it's inside another div  with
+            "position: static;".
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
