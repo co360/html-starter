@@ -5,14 +5,14 @@ HTML/CSS/JavaScript features.
 
 ## How To Setup Web Server For Testing
 
-Most of the examples should open by just opening them in your browser as 
+Most of the examples should open by just viewing them in your browser as 
 local file!
 
 The `WebStorm` IDE comes with builtin web server that can test any of html page immediately. 
 However, it is hosted in relative to project parent folder 
 (eg: `http://localhost:63342/html-starter`). So to reference resources, we have two options:
 
-Option1: Use absolute path (eg: "/html-starter/html-learn/js/hello.js"), or
+Option1: Use absolute path (eg: "/html-starter/html-learn/hello.html"), or
  
 Option2: Use relative path to where the "html" file is located. Most of the 
 examples are using this setup.
@@ -29,7 +29,8 @@ python3 -m http.server -b localhost
 open http://localhost:8000/
 ```
 
-If you want the web server to serve parent root directory, you may try this:
+If you want the web server to serve parent root directory (eg:
+like the WebStorm would do), then you may try this:
 ```
 cd html-starter
 python3 -m http.server -b localhost -d ".."
@@ -67,7 +68,6 @@ Frameworks:
 - https://requirejs.org/
 - https://jquery.com/
 - https://getbootstrap.com/
-- https://vuejs.org/
 - https://nodejs.org/
 - https://www.typescriptlang.org/
 
