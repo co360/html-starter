@@ -31,7 +31,7 @@ open http://localhost:8000/
 
 If you want the web server to serve parent root directory, you may try this:
 ```
-cd ojet-starter
+cd html-starter
 python3 -m http.server -b localhost -d ".."
 open http://localhost:8000/html-starter/
 ```
