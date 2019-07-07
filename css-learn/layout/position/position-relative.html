@@ -6,27 +6,26 @@
         <title>HTML/CSS/JavaScript Starter</title>
     </head>
     <style>
-        div.parent {
-            position: relative; /* NOTE That "left" will not work without setting the "position"! */
-            left: 130px;
-            border: 3px solid red;
-        }
-        div.relative {
-            position: relative;
-            left: 30px;
-            border: 3px solid #73AD21;
+        .wrapper {
+            border: 1px solid tomato;
+            width: 300px;
+            height: 100px;
         }
     </style>
 </head>
 <body style="margin: 20px;">
 
-<h2>position: relative;</h2>
+<h1>position: relative;</h1>
 
-<p>An element with position: relative; is positioned relative to its normal position:</p>
+<p>An element with position: relative; is positioned relative to its "self", or
+    normal position.</p>
 
-<div class="parent">
-    <div class="relative">
-        This div element has position: relative;
+<h2>Demo1: relative with 10px offset.</h2>
+<div id="demo1">
+    <div class="wrapper">
+        <div style="border: 1px solid green; width: 300px; height:100px; position: relative; left: 10px; top: 10px;">
+            This div element has position relative to wrapper;
+        </div>
     </div>
 </div>
 
