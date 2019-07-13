@@ -10,13 +10,13 @@
 <div id="demo">
 
     <p>INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
-    <pre>Examples: viewModel.helloMessage("Hi again");</pre>
+    <pre>Examples: viewModel.message("Hi again");</pre>
 
-    <p>Message: <span data-bind="text: helloMessage">Hi</span></p>
+    <p>Message: <span data-bind="text: message">Hi</span></p>
 
     <script>
         let viewModel = {
-            helloMessage: ko.observable("Hello World")
+            message: ko.observable("Hello World")
         };
         ko.applyBindings(viewModel, document.getElementById("demo"));
     </script>
