@@ -8,41 +8,39 @@
 <body>
 
 <div id="demo">
-    <p data-bind="ifnot: firstName">
-        Waiting <code>viewModel.firstName</code> to be set.
+    <p data-bind="ifnot: myData">
+        Waiting <code>viewModel.myData</code> to be set.
         Use console to change the value.
-        Example: <code>viewModel.firstName("Hello").lastName("World");</code>
+        Example: <code>viewModel.myData("Hello");</code>
     </p>
 
-    <div data-bind="if: firstName">
-        <p>The name is <span data-bind="text: fullName"></span></p>
+    <div data-bind="if: myData">
+        <p>The name is <span data-bind="text: myComputedData"></span></p>
     </div>
 </div>
 
 <script>
     /**
      * BUG? The KO docs (3.5.0) says "if" will not render the DOM elements if the condition
-     * is false, but yet the "fullName" computed attribute is invoked despite this?
+     * is false, but yet the "myComputedData" computed attribute is invoked despite this?
      *
-     * Notice this example has "if" binding guarded the usage of "fullName"
+     * Notice this example has "if" binding guarded the usage of "myComputedData"
      * which is a computed method. But even if "if" condition is false, the
      * computed function WILL BE INVOKED! This mean you must check
      * the observable being computed on before usage!
      *
-     * Another option is guard the UI with "if" on the "fullName" computed
+     * Another option is guard the UI with "if" on the "myComputedData" computed
      * attribute instead. This makes the problem occur more earlier and obvious
      * if not handled properly.
      */
     function AppViewModel() {
         let self = this;
-        self.firstName = ko.observable();
-        self.lastName = ko.observable();
-
-        self.fullName = ko.computed(function() {
-            console.log("Computed fullName is invoked.");
-            if (!self.firstName())
+        self.myData = ko.observable();
+        self.myComputedData = ko.computed(function() {
+            console.log("myComputedData is invoked.");
+            if (!self.myData())
                 return;
-            return self.firstName() + " " + self.lastName();
+            return "Computed" + self.myData();
         });
     }
     let viewModel = new AppViewModel();
