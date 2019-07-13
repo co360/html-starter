@@ -5,10 +5,10 @@
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
     <script>
+        let viewModel = {
+            message: ko.observable("Hello World")
+        };
         window.onload = function() {
-            let viewModel = {
-                message: ko.observable("Hello World")
-            };
             ko.applyBindings(viewModel, document.getElementById("demo"));
         };
     </script>
