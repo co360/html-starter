@@ -7,19 +7,18 @@
 </head>
 <body>
 
-<p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
-<pre>
-    viewModel.helloMessage("Hi again");
-</pre>
-
 <div id="demo">
-    <p data-bind="text: helloMessage">Hi</p>
+
+    <p>INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
+    <pre>Examples: viewModel.helloMessage("Hi again");</pre>
+
+    <p>Message: <span data-bind="text: helloMessage">Hi</span></p>
 
     <script>
-        var viewModel = {
+        let viewModel = {
             helloMessage: ko.observable("Hello World")
         };
-        ko.applyBindings(viewModel);
+        ko.applyBindings(viewModel, document.getElementById("demo"));
     </script>
 </div>
 
