@@ -8,21 +8,26 @@
 <body>
 
 <div id="demo">
-    <p>INSTRUCTION: Change the message to see action.</p>
-
-    <p>Message: <input data-bind="textInput: message" size="25"></p>
-    <p>Result: <span data-bind="text: message"></span></p>
+    <p><button data-bind="click: onClick">Click Me</button></p>
+    <div data-bind="if: employee">
+    <p>Employee Name: <span data-bind="text: employee().name"></span></p>
+    <p>Employee Role: <span data-bind="text: employee().role"></span></p>
+    </div>
 
     <script>
-        var viewModel = {
-            message: ko.observable()
-        };
-        console.log("DEBUG: viewModel", viewModel);
-        console.log("DEBUG: viewModel.message()", viewModel.message());
-        ko.applyBindings(viewModel, document.getElementById("demo"));
+        function ViewModel() {
+            let self = this;
+            self.employee = ko.observable();
+            self.onClick = function() {
+                self.employee({
+                    "name": "Zemian",
+                    "role": "Developer"
+                });
+            };
+        }
+        ko.applyBindings(new ViewModel(), document.getElementById("demo"));
     </script>
 </div>
 
 </body>
 </html>
-
