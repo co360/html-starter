@@ -12,7 +12,13 @@
          */
         define('myModule', [], () => {
             console.log("Module is initialized: " + new Date());
-            return { message: "Hello" };
+
+            // NOTE: The name of the class is not even matter to user!
+            function SingletonContainer(msg) {
+                console.log("SingletonContainer constructor.");
+                this.message = msg;
+            }
+            return new SingletonContainer("Hello World");
         });
 
         // Use it 10 times, and we expect module only initialize once.
