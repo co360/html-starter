@@ -17,7 +17,7 @@
     </div>
 </template>
 
-<p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
+<p>INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
 
 <div id="demo">
     <ul data-bind="foreach: products">
@@ -32,6 +32,10 @@
             viewModel: function(params) {
                 // Data: value is either null, 'like', or 'dislike'
                 this.chosenValue = params.value;
+
+                // NOTE: That the params.value is passing in as an observable object!
+                // See "Product" constructor function.
+                console.log("this.chosenValue =", this.chosenValue);
 
                 var self = this;
                 self.like = function() { self.chosenValue('like'); };
