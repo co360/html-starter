@@ -1,0 +1,33 @@
+<!--
+TODO: Not working ??
+https://split.js.org/
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .split, .gutter.gutter-horizontal {
+            float: left;
+        }
+        .gutter.gutter-horizontal {
+            cursor: ew-resize;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.11/split.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Split(['#one', '#two']);
+        });
+    </script>
+</head>
+<body>
+
+<div>
+    <div class="split" id="one">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus architecto at beatae consequuntur culpa dolore, enim error est hic illo inventore libero modi pariatur quam qui quisquam repellat velit! Nobis.</div>
+    <div class="split" id="two">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsam non nulla quasi! Asperiores aspernatur debitis, dicta dolores esse excepturi inventore ipsum labore magnam neque nihil quidem repellat voluptatem voluptatibus?</div>
+</div>
+
+</body>
+</html>
