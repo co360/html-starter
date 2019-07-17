@@ -26,40 +26,40 @@
             <like-widget params="value: userRating"></like-widget>
         </li>
     </ul>
-
-    <script>
-        ko.components.register('like-widget', {
-            viewModel: function(params) {
-                // Data: value is either null, 'like', or 'dislike'
-                this.chosenValue = params.value;
-
-                // NOTE: That the params.value is passing in as an observable object!
-                // See "Product" constructor function.
-                console.log("this.chosenValue =", this.chosenValue);
-
-                var self = this;
-                self.like = function() { self.chosenValue('like'); };
-                self.dislike = function() { self.chosenValue('dislike'); };
-            },
-            template: { element: 'my-template' }
-        });
-
-        function Product(name, rating) {
-            this.name = name;
-            this.userRating = ko.observable(rating || null);
-        }
-
-        function MyViewModel() {
-            this.products = [
-                new Product('Garlic bread'),
-                new Product('Pain au chocolat'),
-                new Product('Seagull spaghetti', 'like') // This one was already 'liked'
-            ];
-        }
-
-        ko.applyBindings(new MyViewModel());
-    </script>
 </div>
+
+<script>
+    ko.components.register('like-widget', {
+        viewModel: function(params) {
+            // Data: value is either null, 'like', or 'dislike'
+            this.chosenValue = params.value;
+
+            // NOTE: That the params.value is passing in as an observable object!
+            // See "Product" constructor function.
+            console.log("this.chosenValue =", this.chosenValue);
+
+            var self = this;
+            self.like = function() { self.chosenValue('like'); };
+            self.dislike = function() { self.chosenValue('dislike'); };
+        },
+        template: { element: 'my-template' }
+    });
+
+    function Product(name, rating) {
+        this.name = name;
+        this.userRating = ko.observable(rating || null);
+    }
+
+    function MyViewModel() {
+        this.products = [
+            new Product('Garlic bread'),
+            new Product('Pain au chocolat'),
+            new Product('Seagull spaghetti', 'like') // This one was already 'liked'
+        ];
+    }
+
+    ko.applyBindings(new MyViewModel());
+</script>
 
 </body>
 </html>

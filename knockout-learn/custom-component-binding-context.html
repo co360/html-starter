@@ -43,25 +43,6 @@
     <p>Widget component:</p>
     <like-widget params="value: ko.observable(null)"></like-widget>
 
-    <script>
-        ko.components.register('like-widget', {
-            viewModel: function(params) {
-                // Data: value is either null, 'like', or 'dislike'
-                this.chosenValue = params.value;
-
-                var self = this;
-                self.like = function() { self.chosenValue('like'); };
-                self.dislike = function() { self.chosenValue('dislike'); };
-            },
-            template: { element: 'my-template' }
-        });
-
-        function MyViewModel() {
-        }
-
-        ko.applyBindings(new MyViewModel());
-    </script>
-
     <h2>Container Page: Binding Context Variables</h2>
     <ul>
         <!--
@@ -81,6 +62,24 @@
         -->
     </ul>
 </div>
+<script>
+    ko.components.register('like-widget', {
+        viewModel: function(params) {
+            // Data: value is either null, 'like', or 'dislike'
+            this.chosenValue = params.value;
+
+            var self = this;
+            self.like = function() { self.chosenValue('like'); };
+            self.dislike = function() { self.chosenValue('dislike'); };
+        },
+        template: { element: 'my-template' }
+    });
+
+    function MyViewModel() {
+    }
+
+    ko.applyBindings(new MyViewModel());
+</script>
 
 </body>
 </html>

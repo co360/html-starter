@@ -28,30 +28,30 @@
             </tr>
         </table>
     </div>
-
-    <script>
-        function ViewModel() {
-            let self = this;
-            self.textAreaData = ko.observable(JSON.stringify({
-                "name": "Zemian",
-                "role": "Developer"
-            }, null, 2));
-
-            self.tableData = ko.observable();
-
-            self.onUpdate = function(event) {
-                console.log("On update action: ", event);
-                let rows = [];
-                let tableObj = JSON.parse(self.textAreaData());
-                for (let key in tableObj) {
-                    rows.push({"rowKey": key, "rowValue": tableObj[key]});
-                }
-                self.tableData(rows);
-            }
-        }
-        ko.applyBindings(new ViewModel(), document.getElementById("demo"));
-    </script>
 </div>
+
+<script>
+    function ViewModel() {
+        let self = this;
+        self.textAreaData = ko.observable(JSON.stringify({
+            "name": "Zemian",
+            "role": "Developer"
+        }, null, 2));
+
+        self.tableData = ko.observable();
+
+        self.onUpdate = function(event) {
+            console.log("On update action: ", event);
+            let rows = [];
+            let tableObj = JSON.parse(self.textAreaData());
+            for (let key in tableObj) {
+                rows.push({"rowKey": key, "rowValue": tableObj[key]});
+            }
+            self.tableData(rows);
+        }
+    }
+    ko.applyBindings(new ViewModel(), document.getElementById("demo"));
+</script>
 
 </body>
 </html>

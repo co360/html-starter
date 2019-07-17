@@ -17,28 +17,28 @@
     <div data-bind="foreach: anotherObservableArray">
         <p data-bind="text: $data.name + ' ' + $data.type"></p>
     </div>
-
-    <script>
-        var myObservableArray = ko.observableArray();    // Initially an empty array
-        myObservableArray.push('Some value');            // Adds the value and notifies observers
-
-        // This observable array initially contains three objects
-        var anotherObservableArray = ko.observableArray([
-            { name: "Bungle", type: "Bear" },
-            { name: "George", type: "Hippo" },
-            { name: "Zippy", type: "Unknown" }
-        ]);
-
-        var viewModel = {
-            myObservableArray: myObservableArray,
-            anotherObservableArray: anotherObservableArray
-        };
-        ko.applyBindings(viewModel);
-
-        // alert('The length of the array is ' + myObservableArray().length);
-        // alert('The first element is ' + myObservableArray()[0]);
-    </script>
 </div>
+
+<script>
+    var myObservableArray = ko.observableArray();    // Initially an empty array
+    myObservableArray.push('Some value');            // Adds the value and notifies observers
+
+    // This observable array initially contains three objects
+    var anotherObservableArray = ko.observableArray([
+        { name: "Bungle", type: "Bear" },
+        { name: "George", type: "Hippo" },
+        { name: "Zippy", type: "Unknown" }
+    ]);
+
+    var viewModel = {
+        myObservableArray: myObservableArray,
+        anotherObservableArray: anotherObservableArray
+    };
+    ko.applyBindings(viewModel);
+
+    // alert('The length of the array is ' + myObservableArray().length);
+    // alert('The first element is ' + myObservableArray()[0]);
+</script>
 
 </body>
 </html>

@@ -12,16 +12,16 @@
 
     <p>Message: <input data-bind="textInput: message" size="25"></p>
     <p>Result: <span data-bind="text: message"></span></p>
-
-    <script>
-        var viewModel = {
-            message: ko.observable()
-        };
-        console.log("DEBUG: viewModel", viewModel);
-        console.log("DEBUG: viewModel.message()", viewModel.message());
-        ko.applyBindings(viewModel, document.getElementById("demo"));
-    </script>
 </div>
+
+<script>
+    var viewModel = {
+        message: ko.observable()
+    };
+    console.log("DEBUG: viewModel", viewModel);
+    console.log("DEBUG: viewModel.message()", viewModel.message());
+    ko.applyBindings(viewModel, document.getElementById("demo"));
+</script>
 
 </body>
 </html>

@@ -5,9 +5,11 @@
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
     <script>
-        let viewModel = {
-            message: ko.observable("Hello World")
-        };
+        function ViewModel() {
+            let self = this;
+            self.message = ko.observable("Hello World");
+        }
+        let viewModel = new ViewModel();
         window.onload = function() {
             ko.applyBindings(viewModel, document.getElementById("demo"));
         };

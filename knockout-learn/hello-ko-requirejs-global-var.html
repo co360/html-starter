@@ -6,13 +6,16 @@
     <script src="../resources/js/libs/require/require.js"></script>
     <script src="js/main-config.js"></script>
     <script>
-        require(['knockout'], function(ko) {
+        require(['jquery', 'knockout'], function($, ko) {
             // Then try update later in console:
             //   vm.helloMessage("Hello Zemian")
             globalThis.viewModel = {
                 helloMessage: ko.observable("Hello World")
             };
-            ko.applyBindings(viewModel);
+
+            $(function() {
+                ko.applyBindings(viewModel);
+            });
         });
     </script>
 </head>
