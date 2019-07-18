@@ -79,6 +79,31 @@ See https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html
 
 - The `/// <reference path="..." />` directive is the most common of this group. It serves as a 
 declaration of dependency between files.
+- The `/// <reference types="node" />` directive declares a dependency on a package.
 - The `/// <amd-module /> #` directive allows passing an optional module name to the compiler.
 - The `/// <amd-dependency path="x" />` informs the compiler about a non-TS module dependency 
 that needs to be injected in the resulting module’s require call.
+
+## How to import variables used in RequireJS that has no .d.ts file
+
+Option 1:
+```
+    /// <amd-dependency path="ojs/ojcore" name="oj">
+    declare var oj: any;
+```
+
+Option 2:
+```
+    declare module "ojL10n!*" {
+        let resource: {[key: string]: any};
+        export = resource;
+    }
+    declare module "text!*" {
+        let resource: string;
+        export = resource;
+    }
+    declare module "css!*" {
+        let resource: string;
+        export = resource;
+    }
+```
