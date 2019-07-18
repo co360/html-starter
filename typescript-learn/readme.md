@@ -72,3 +72,13 @@ that you intend to target to use.
     for AMD modules in Web applications.
     - In TypeScript, just as in ECMAScript 2015, any file containing a top-level 
     import or export is considered a module. 
+
+## Using Triple Slashes Directives
+
+See https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html
+
+- The `/// <reference path="..." />` directive is the most common of this group. It serves as a 
+declaration of dependency between files.
+- The `/// <amd-module /> #` directive allows passing an optional module name to the compiler.
+- The `/// <amd-dependency path="x" />` informs the compiler about a non-TS module dependency 
+that needs to be injected in the resulting module’s require call.
