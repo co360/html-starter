@@ -1,5 +1,9 @@
+/*
+The "export =" is TS way of exporting single object in module.
+To use it, you muse use the "import module = require("module")" form.
+ */
 class Hello3 {
-    message = "World3";
+    message = "Hello World";
     greeting() {
         console.log(this.message);
     }
