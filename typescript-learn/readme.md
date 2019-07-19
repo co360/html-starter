@@ -102,6 +102,8 @@ For example: if you want to use RequireJS "text" plugin and assign that as varia
 See also https://www.typescriptlang.org/docs/handbook/declaration-files/templates.html)
 
 Step1: Create `src/index.d.ts`
+NOTE: Ensure tsconfig.json has "paths" setup correctly with "*" where this "index.d.ts"
+file is located.
 ```
     declare module "text!*" {
         let resource: string;
