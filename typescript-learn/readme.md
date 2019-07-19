@@ -105,20 +105,20 @@ Step1: Create `src/@types/index.d.ts`
 NOTE: Ensure tsconfig.json has "paths" setup correctly with "*" where this "index.d.ts"
 file is located.
 ```
-    declare module "text!*" {
-        let resource: string;
-        export default resource;
-    }
-    declare module "css!*" {
-        let resource: string;
-        export default resource;
-    }
+declare module "text!*" {
+    let resource: string;
+    export = resource;
+}
+declare module "css!*" {
+    let resource: string;
+    export = resource;
+}
 ```
 
 Step2: In your code (consumer), you can add the following:
 
 ```
-import fileContent from "text!xyz.txt";
-import cssContent from "css!http://example.com/my.css";
+import * as fileContent from "text!xyz.txt";
+import * as cssContent from "css!http://example.com/my.css";
 console.log(fileContent, cssContent);
 ```

@@ -1,8 +1,8 @@
 declare module "text!*" {
     let resource: string;
-    export default resource;
+    export = resource;
 }
 declare module "css!*" {
     let resource: string;
-    export default resource;
+    export = resource;
 }
