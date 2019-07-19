@@ -101,23 +101,21 @@ For example: if you want to use RequireJS "text" plugin and assign that as varia
  (See also 
 See also https://www.typescriptlang.org/docs/handbook/declaration-files/templates.html)
 
-Step1: Create `src/requirejs-plugins.d.ts`
+Step1: Create `src/index.d.ts`
 ```
     declare module "text!*" {
         let resource: string;
-        export = resource;
+        export default resource;
     }
     declare module "css!*" {
         let resource: string;
-        export = resource;
+        export default resource;
     }
 ```
 
 Step2: In your code (consumer), you can add the following:
 
 ```
-/// <reference> requirejs-plugins.d.ts
-
 import fileContent from "text!xyz.txt";
 import cssContent from "css!http://example.com/my.css";
 console.log(fileContent, cssContent);
