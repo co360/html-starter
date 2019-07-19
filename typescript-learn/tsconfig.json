@@ -5,7 +5,7 @@
     "module": "AMD",
     "sourceMap": false,
     "paths": {
-      "*" : ["mytypes/*", "amd-examples"]
+      "*" : ["mytypes", "amd-examples"]
     }
   },
   "include": [
