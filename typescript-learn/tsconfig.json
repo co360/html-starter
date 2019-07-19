@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./amd-examples",
     "target": "ES6",
     "module": "AMD",
     "sourceMap": false,
     "paths": {
-      "*" : ["amd-examples"]
+      "*" : ["*"]
     }
   },
   "include": [

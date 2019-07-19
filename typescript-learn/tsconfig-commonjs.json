@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./commonjs-examples",
     "target": "ES5",
     "module": "CommonJS",
     "sourceMap": false,
     "paths": {
-      "*" : ["commonjs-examples"]
+      "*" : ["*"]
     }
   },
   "include": [
