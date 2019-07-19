@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ES6",
-    "sourceMap": false
+    "module": "AMD",
+    "sourceMap": false,
+    "paths": {
+      "*" : ["mytypes/*", "amd-examples"]
+    }
   },
   "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "amd-examples",
-    "node_modules",
-    "**/*.spec.ts"
+    "amd-examples/**/*"
   ]
 }

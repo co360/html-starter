@@ -1,7 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ES5",
     "module": "CommonJS",
-    "sourceMap": false
-  }
+    "sourceMap": false,
+    "paths": {
+      "*" : ["mytypes/*"]
+    }
+  },
+  "include": [
+    "commonjs-examples/**/*"
+  ]
 }
+

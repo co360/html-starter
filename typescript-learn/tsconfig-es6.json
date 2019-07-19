@@ -1,7 +1,14 @@
-git{
+{
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ES6",
-    "module": "CommonJS",
-    "sourceMap": false
-  }
+    "module": "ES6",
+    "sourceMap": false,
+    "paths": {
+      "*" : ["mytypes/*"]
+    }
+  },
+  "include": [
+    "es6-examples/**/*"
+  ]
 }

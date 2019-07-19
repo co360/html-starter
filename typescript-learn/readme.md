@@ -24,6 +24,10 @@ tsc hello.ts
 node hello.js
 ```
 
+## How to build with different tsconfig.js file?
+
+`tsc --build tsconfig-es6.json`
+
 ## Namespaces vs Modules
 
 TypeScript (TS) has two ways to organize codes: "namespace" and "module".
@@ -80,24 +84,25 @@ See https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html
 - The `/// <reference path="..." />` directive is the most common of this group. It serves as a 
 declaration of dependency between files.
 - The `/// <reference types="node" />` directive declares a dependency on a package.
-- The `/// <amd-module /> #` directive allows passing an optional module name to the compiler.
+- The `/// <reference lib="..." />` directive allows a file to explicitly include an existing built-in lib file.
+- The `/// <amd-module name="x"/> #` directive allows passing an optional module name to the compiler.
 - The `/// <amd-dependency path="x" />` informs the compiler about a non-TS module dependency 
 that needs to be injected in the resulting module’s require call.
 
-## How to import variables used in RequireJS that has no .d.ts file
+## How to manually define your own .d.ts file to handle plain JS file
 
-Option 1:
-```
-    /// <amd-dependency path="ojs/ojcore" name="oj">
-    declare var oj: any;
-```
+In TS, this is called "Ambient Modules":
 
-Option 2:
+    http://www.typescriptlang.org/docs/handbook/modules.html
+
+For example: if you want to use RequireJS "text" plugin and assign that as variable
+ in the define() function, and yet this "text" plugin does not have TS declaration
+ file provided for you. Then you need to do the following:
+ (See also 
+See also https://www.typescriptlang.org/docs/handbook/declaration-files/templates.html)
+
+Step1: Create `src/requirejs-plugins.d.ts`
 ```
-    declare module "ojL10n!*" {
-        let resource: {[key: string]: any};
-        export = resource;
-    }
     declare module "text!*" {
         let resource: string;
         export = resource;
@@ -106,4 +111,14 @@ Option 2:
         let resource: string;
         export = resource;
     }
+```
+
+Step2: In your code (consumer), you can add the following:
+
+```
+/// <reference> requirejs-plugins.d.ts
+
+import fileContent from "text!xyz.txt";
+import cssContent from "css!http://example.com/my.css";
+console.log(fileContent, cssContent);
 ```
