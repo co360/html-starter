@@ -7,14 +7,20 @@
 </head>
 <body>
 
-<div data-bind="visible: shouldShowMessage">
+<div data-bind="if: shouldShowMessageComputed">
     You will see this message only when "shouldShowMessage" holds a true value.
 </div>
 
 <script type="text/javascript">
-    var viewModel = {
-        shouldShowMessage: ko.observable(true); // Message initially visible
-    };
+    function ViewModel() {
+        let self = this;
+        self.shouldShowMessage = ko.observable(true); // Message initially visible
+
+        self.shouldShowMessageComputed = ko.computed(function(){
+            return self.shouldShowMessage();
+        });
+    }
+    let viewModel = new ViewModel();
 
     // Auto hide/show
     function toggleMessage() {
