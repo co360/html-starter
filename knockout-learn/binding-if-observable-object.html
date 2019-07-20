@@ -34,6 +34,9 @@
         // NOTE: This is tricky and bad way to initialize observable to empty object,
         // because if you modify the object property, it will not trigger notification
         // of change!
+        //
+        // The proper way to do this is to actually replace the observable value, not
+        // the properties of its object.
         self.employees = ko.observable({});
 
         // Test Case 1: This computed object WILL NOT get call when you update "employees"!
