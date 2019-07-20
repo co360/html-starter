@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div data-bind="if: shouldShowMessageComputed">
+<div id="demo" data-bind="if: shouldShowMessageComputed">
     You will see this message only when "shouldShowMessage" holds a true value.
 </div>
 
@@ -19,20 +19,20 @@
         self.shouldShowMessageComputed = ko.computed(function(){
             return self.shouldShowMessage();
         });
+
+        // Auto hide/show
+        self.toggleMessage = function() {
+            console.log("Will toggle message in 3 seconds. Current value: " + viewModel.shouldShowMessage());
+            setTimeout(function() {
+                viewModel.shouldShowMessage(!viewModel.shouldShowMessage());
+                self.toggleMessage();
+            }, 3000);
+        }
     }
     let viewModel = new ViewModel();
+    viewModel.toggleMessage();
 
-    // Auto hide/show
-    function toggleMessage() {
-        console.log("Will toggle message in 3 seconds. Current value: " + viewModel.shouldShowMessage());
-        setTimeout(function() {
-            viewModel.shouldShowMessage(!viewModel.shouldShowMessage());
-            toggleMessage();
-        }, 3000);
-    }
-    toggleMessage();
-
-    ko.applyBindings(viewModel);
+    ko.applyBindings(viewModel, document.getElementById("demo"));
 </script>
 
 </body>

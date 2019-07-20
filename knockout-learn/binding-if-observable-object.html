@@ -7,24 +7,26 @@
 </head>
 <body>
 
-<h1>shouldShowMessageComputed</h1>
-<div data-bind="if: shouldShowMessageComputed">
-    You will see this message only when "shouldShowMessage" holds a true value.
-</div>
+<div id="demo">
+    <h1>shouldShowMessageComputed - broken</h1>
+    <div data-bind="if: shouldShowMessageComputed">
+        You will see this message only when "employees" object has updates.
+    </div>
 
-<h1>shouldShowMessageComputed2</h1>
-<div data-bind="if: shouldShowMessageComputed2">
-    You will see this message only when "shouldShowMessage" holds a true value.
-</div>
+    <h1>shouldShowMessageComputed2 - broken</h1>
+    <div data-bind="if: shouldShowMessageComputed2">
+        You will see this message only when "employees" object has updates.
+    </div>
 
-<h1>shouldShowMessageComputed2b</h1>
-<div data-bind="if: shouldShowMessageComputed2b">
-    You will see this message only when "shouldShowMessage" holds a true value.
-</div>
+    <h1>shouldShowMessageComputed2b - broken</h1>
+    <div data-bind="if: shouldShowMessageComputed2b">
+        You will see this message only when "employees" object has updates.
+    </div>
 
-<h1>shouldShowMessageComputed3</h1>
-<div data-bind="if: shouldShowMessageComputed3">
-    You will see this message only when "shouldShowMessage" holds a true value.
+    <h1>shouldShowMessageComputed3 - works!</h1>
+    <div data-bind="if: shouldShowMessageComputed3">
+        You will see this message only when "employees" object has updates.
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -71,31 +73,35 @@
             },
             deferEvaluation: true
         });
+
+        // Auto hide/show
+        self.toggleMessage = function() {
+            let emp = self.employees();
+            console.log("Will toggle message in 3 seconds. Current value: " + JSON.stringify(emp));
+            setTimeout(function() {
+                // For Test Case 1 & 2
+                if (emp['zemian']) {
+                    delete emp['zemian'];
+                } else {
+                    // NOTE: The "observableFlag" property will not be visible in "JSON.stringify(emp)".
+                    // TODO: But why? Is it because it's a observable function?
+                    emp['zemian'] = {role: "Developer", foo: "bar", observableFlag: ko.observable(true)};
+                }
+
+                // For Test Case 3
+                console.log(emp['e1']);
+                if (emp['e1'].observableFlag()) {
+                    emp['e1'].observableFlag(false);
+                } else {
+                    emp['e1'].observableFlag(true);
+                }
+                self.toggleMessage();
+            }, 3000);
+        }
     }
     let viewModel = new ViewModel();
 
-    // Auto hide/show
-    function toggleMessage() {
-        console.log("Will toggle message in 3 seconds. Current value: " + JSON.stringify(viewModel.employees()));
-        setTimeout(function() {
-            // For Test Case 1 & 2
-            if (viewModel.employees()['zemian']) {
-                delete viewModel.employees()['zemian'];
-            } else {
-                viewModel.employees()['zemian'] = {role: "Developer", foo: "bar", observableFlag: ko.observable(true)};
-            }
-
-            // For Test Case 3
-            console.log(viewModel.employees()['e1']);
-            if (viewModel.employees()['e1'].observableFlag()) {
-                viewModel.employees()['e1'].observableFlag(false);
-            } else {
-                viewModel.employees()['e1'].observableFlag(true);
-            }
-            toggleMessage();
-        }, 3000);
-    }
-    toggleMessage();
+    viewModel.toggleMessage();
 
     ko.applyBindings(viewModel);
 </script>

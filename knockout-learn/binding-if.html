@@ -7,26 +7,28 @@
 </head>
 <body>
 
-<div data-bind="if: shouldShowMessage">
+<div id="demo" data-bind="if: shouldShowMessage">
     You will see this message only when "shouldShowMessage" holds a true value.
 </div>
 
 <script type="text/javascript">
-    var viewModel = {
-        shouldShowMessage: ko.observable(true); // Message initially visible
-    };
+    function ViewModel() {
+        let self = this;
+        self.shouldShowMessage = ko.observable(true); // Message initially visible
 
-    // Auto hide/show
-    function toggleMessage() {
-        console.log("Will toggle message in 3 seconds. Current value: " + viewModel.shouldShowMessage());
-        setTimeout(function() {
-            viewModel.shouldShowMessage(!viewModel.shouldShowMessage());
-            toggleMessage();
-        }, 3000);
+        // Auto hide/show
+        self.toggleMessage = function() {
+            console.log("Will toggle message in 3 seconds. Current value: " + viewModel.shouldShowMessage());
+            setTimeout(function() {
+                viewModel.shouldShowMessage(!viewModel.shouldShowMessage());
+                self.toggleMessage();
+            }, 3000);
+        }
     }
-    toggleMessage();
+    let viewModel = new ViewModel();
+    viewModel.toggleMessage();
 
-    ko.applyBindings(viewModel);
+    ko.applyBindings(viewModel, document.getElementById("demo"));
 </script>
 
 </body>
