@@ -1,6 +1,7 @@
 /*
 The "export =" is TS way of exporting single object in module.
-To use it, you muse use the "import module = require("module")" form.
+To use it, you must use the "import myModule = require("my-module")" form.
+Note: that "myModule" can be any name!
  */
 class Hello3 {
     message = "Hello World";
@@ -11,4 +12,7 @@ class Hello3 {
 //
 // NOTE if you forget to use "export =" here, then the generated JS script
 // will not error, but will not have the "define()" part wrapper!
+//
+// And if you forget just the "=" part, then generated JS will use the
+// "exports" variable.
 export = Hello3;
