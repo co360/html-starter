@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": "./amd-examples",
-    "target": "ES2015",
+
+    /*
+    ES6 = ES2015
+    ES5 = ES2013
+    */
+    "target": "ES5",
     "module": "AMD",
     "sourceMap": false,
     "paths": {
