@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./amd-examples",
-    "target": "ES6",
+    "target": "ES2015",
     "module": "AMD",
     "sourceMap": false,
     "paths": {
