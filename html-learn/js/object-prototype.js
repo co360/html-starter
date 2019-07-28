@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
+
 // == JS has many ways to create "objects"
 const o1 = {};
 const o2 = new Object();
