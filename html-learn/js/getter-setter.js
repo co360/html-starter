@@ -1,3 +1,4 @@
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Defining_getters_and_setters
 var o = {
     a: 7,
     get b() {
