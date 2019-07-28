@@ -16,3 +16,12 @@ class MyClass2 {
 }
 console.log(new MyClass2());
 // console.log(MyClass2()); // TypeError, you can't do this!
+
+// == "this" can exists on object literal as well
+const a = {
+    name: "Zemian",
+    greeting: function () {
+        return "Hello " + this.name;
+    }
+};
+console.log(a.greeting());
