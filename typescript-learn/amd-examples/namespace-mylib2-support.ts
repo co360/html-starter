@@ -1,8 +1,8 @@
-import * as nsmylib from "./namespace-mylib";
+import * as nsmylib2 from "./namespace-mylib2";
 export class NsMyLibHello {
     name = "World"
     greeting() {
         return "Hello " + this.name;
     }
 }
-nsmylib.context.NsMyLibHello = NsMyLibHello;
+nsmylib2.NsMyLibHello = NsMyLibHello;
