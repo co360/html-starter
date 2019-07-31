@@ -10,18 +10,18 @@
 <div id="demo">
     <p><button data-bind="click: onClick">Click Me</button></p>
     <p>Clicked Count: <span data-bind="text: clickCount">Hi</span></p>
-
-    <script>
-        function ViewModel() {
-            let self = this;
-            self.clickCount = ko.observable(0);
-            self.onClick = function() {
-                self.clickCount(self.clickCount() + 1);
-            };
-        }
-        ko.applyBindings(new ViewModel(), document.getElementById("demo"));
-    </script>
 </div>
+
+<script>
+    function ViewModel() {
+        let self = this;
+        self.clickCount = ko.observable(0);
+        self.onClick = function() {
+            self.clickCount(self.clickCount() + 1);
+        };
+    }
+    ko.applyBindings(new ViewModel(), document.getElementById("demo"));
+</script>
 
 </body>
 </html>

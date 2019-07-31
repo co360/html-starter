@@ -5,50 +5,50 @@
     <title>HTML/CSS/JavaScript Starter</title>
     <script src="../resources/js/libs/require/require.js"></script>
     <script src="js/main-config.js"></script>
-    <script>
-        // KO should use applyBinding() only after the DOM is ready.
-        // Here we can use jquery DOM ready method.
-        require(['jquery', 'knockout', 'hello'], function($, ko, app) {
-            $(function() {
-                ko.applyBindings(app);
-            });
-        });
-
-        // NOTE: Alternative to NOT use jquery is like this:
-        /*
-            window.onload = function() {
-                require(['knockout', 'hello'], function(ko, app) {
-                  ko.applyBindings(app);
-                });
-            };
-        */
-
-        // NOTE: You can not place "window.onload" inside require()!
-        // This will not work!
-        /*
-            require(['knockout', 'hello'], function(ko, app) {
-                window.onload = function() {
-                    ko.applyBindings(app);
-                };
-            });
-        */
-
-        // Another method we can activate KO is to use RequireJS 'domReady' plugin.
-        /*
-            require(['knockout', 'domReady'], function(ko) {
-                var viewModel = {
-                    helloMessage: ko.observable("Hello World")
-                };
-                ko.applyBindings(viewModel);
-            });
-         */
-    </script>
 </head>
 <body>
 
 <p data-bind="text: helloMessage">HI</p>
 
 <script>
+
+    // KO should use applyBinding() only after the DOM is ready.
+    // Here we can use jquery DOM ready method.
+    require(['jquery', 'knockout', 'hello'], function($, ko, app) {
+        $(function() {
+            ko.applyBindings(app);
+        });
+    });
+
+    // NOTE: Alternative to NOT use jquery is like this:
+    /*
+     window.onload = function() {
+     require(['knockout', 'hello'], function(ko, app) {
+     ko.applyBindings(app);
+     });
+     };
+     */
+
+    // NOTE: You can not place "window.onload" inside require()!
+    // This will not work!
+    /*
+     require(['knockout', 'hello'], function(ko, app) {
+     window.onload = function() {
+     ko.applyBindings(app);
+     };
+     });
+     */
+
+    // Another method we can activate KO is to use RequireJS 'domReady' plugin.
+    /*
+     require(['knockout', 'domReady'], function(ko) {
+     var viewModel = {
+     helloMessage: ko.observable("Hello World")
+     };
+     ko.applyBindings(viewModel);
+     });
+     */
+
     /*
     Another way to activate KO is simply place <script> tag at the end of the
     document here:
