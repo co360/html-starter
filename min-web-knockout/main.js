@@ -11,10 +11,11 @@ requirejs.config({
 });
 
 require(['jquery', 'knockout'], function($, ko) {
+    var viewModel = {
+        helloMessage: ko.observable("Hello World")
+    };
+
     $(function() {
-        var viewModel = {
-            helloMessage: ko.observable("Hello World")
-        };
         ko.applyBindings(viewModel);
     });
 });
