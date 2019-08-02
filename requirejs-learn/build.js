@@ -28,12 +28,22 @@ r.js -o build.js optimize=none
 ({
     baseUrl: "js",
     paths: {
-        'jquery': 'empty:',
         'text': '../../resources/js/libs/require/text',
         'css': '../../resources/js/libs/require-css/css',
-        'domReady': '../../resources/js/libs/require/domReady'
+        'domReady': '../../resources/js/libs/require/domReady',
+        //'jquery': 'empty:',
+        'jquery': '../../resources/js/libs/jquery/jquery-3.4.1',
+        'ckeditor': '../../resources/js/libs/ckeditor/classic/ckeditor'
     },
-    name: "main",
+
+    shim: {
+        "ckeditor": {
+            exports: "ckeditor"
+        }
+    },
+
+    // name: "build-main",
+    name: "build-ckeditor-demo",
     out: "temp-main.js"
 })
 
