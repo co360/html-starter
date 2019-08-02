@@ -7,4 +7,4 @@ temp/
 .idea/
 
 # Ignore test files
-test*.*
+temp*.*
