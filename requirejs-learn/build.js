@@ -25,6 +25,26 @@ r.js -o build.js optimize=none
 
 
 /* Example of build.js */
+
+/*
+// TODO: When building with ckeditor we get error:
+ zedeng-mac:requirejs-learn zedeng$ r.js -o build.js
+
+ Tracing dependencies for: build-ckeditor-demo
+ Error: Parse error using esprima for file: /Users/zedeng/src/vbcs/html-starter/resources/js/libs/ckeditor/classic/ckeditor.js
+ TypeError: Cannot read property 'type' of undefined
+ In module tree:
+ build-ckeditor-demo
+
+ Error: Error: Parse error using esprima for file: /Users/zedeng/src/vbcs/html-starter/resources/js/libs/ckeditor/classic/ckeditor.js
+ TypeError: Cannot read property 'type' of undefined
+ In module tree:
+ build-ckeditor-demo
+
+ at /usr/local/lib/node_modules/requirejs/bin/r.js:27728:47
+
+ Solution? Need to use CKEditor for ES5 instead?
+*/
 ({
     baseUrl: "js",
     paths: {
