@@ -9,9 +9,7 @@
         require(['hello'], function(hello){
             var modStr = JSON.stringify(hello);
             var output = document.querySelector("#output");
-            output.innerHTML = `
-            Module loaded: ${modStr}
-            `;
+            output.innerHTML = `Module loaded: ${modStr}`;
         });
     </script>
 </head>
