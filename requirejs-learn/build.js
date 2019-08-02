@@ -28,7 +28,7 @@ r.js -o build.js optimize=none
 ({
     baseUrl: "js",
     paths: {
-        'jquery': '../../resources/js/libs/jquery/jquery-3.4.1',
+        'jquery': 'empty:',
         'text': '../../resources/js/libs/require/text',
         'css': '../../resources/js/libs/require-css/css',
         'domReady': '../../resources/js/libs/require/domReady'
