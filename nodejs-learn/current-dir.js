@@ -5,7 +5,7 @@ console.log("__filename = ", __filename);
 
 console.log("__dirname = ", __dirname);
 // same as:
-path = require("path");
+let path = require("path");
 console.log("path.dirname(__filename) = ", path.dirname(__filename));
 
 // Convert "." to absolute path
