@@ -14,4 +14,5 @@ See https://docs.npmjs.com/misc/scripts
     npm run <stage>
 
 For example:
-    npm run hello
+    npm run hello # Our custom script
+    npm start     # Run node server.js (if you have the file)
