@@ -1,7 +1,9 @@
 {
   "name": "dependency-demo",
   "version": "1.0.0",
-  "main": "index.js",
+  "scripts": {
+    "hello": "node hello.js"
+  },
   "dependencies": {
     "underscore": "^1.9.1"
   }
