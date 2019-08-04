@@ -3,8 +3,6 @@ What is grunt-contrib-watch?
 
     Run predefined tasks whenever watched file patterns are added, changed or deleted
 
-We will use the watch plugin to learn more on how grunt specify files patterns
-
 See
 - https://github.com/gruntjs/grunt-contrib-watch
 - https://gruntjs.com/configuring-tasks#files
