@@ -10,6 +10,9 @@ https://gruntjs.com/getting-started
   # the following to get a list of all available tasks
   grunt --help
 
+  # We can run different gruntfile for demo purpose
+  grunt --gruntfile Gruntfile2.js
+
 ## Available Plugins
 
 https://www.npmjs.com/search?q=keywords:gruntplugin
