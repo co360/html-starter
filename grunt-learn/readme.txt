@@ -10,9 +10,6 @@ https://gruntjs.com/getting-started
   # the following to get a list of all available tasks
   grunt --help
 
-  # We can run different gruntfile for demo purpose
-  grunt --gruntfile Gruntfile2.js
-
 ## Available Plugins
 
 https://www.npmjs.com/search?q=keywords:gruntplugin
@@ -77,3 +74,9 @@ and you configure them like this:
 ## More examples
 
 - See ../min-web/min-web-requirejs for custom web package using grunt.
+
+## Writing Tasks
+
+You can run grunt with different grunt file. For example:
+
+  grunt --gruntfile HelloGruntfile.js

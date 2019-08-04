@@ -1,4 +1,3 @@
-// Run: grunt log
 module.exports = function(grunt) {
     grunt.initConfig({
         log: {
