@@ -5,17 +5,17 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         copydeps: {
-            options: {
-                ignore: [ 'jquery' ],
-                include: {
-                    js: {
-                        'requirejs/require.js': 'requirejs',
-                        'knockout/build/output/**/*.js': 'knockout',
-                        'jquery/dist/jquery.js': 'jquery',
+            buildweb: {
+                options: {
+                    ignore: [ 'jquery' ],
+                    include: {
+                        js: {
+                            'requirejs/require.js': 'requirejs',
+                            'knockout/build/output/**/*.js': 'knockout',
+                            'jquery/dist/jquery.js': 'jquery',
+                        }
                     }
-                }
-            },
-            build: {
+                },
                 pkg: 'package.json',
                 dest: {
                     js: 'web/js/libs'
@@ -25,5 +25,5 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['copydeps:build']);
+    grunt.registerTask('default', ['copydeps:buildweb']);
 };
