@@ -33,6 +33,44 @@ https://www.npmjs.com/search?q=keywords:gruntplugin
     # Run it
     grunt clean
 
+## How to configure grunt plugin task
+
+See ttps://gruntjs.com/configuring-tasks
+
+Task configuration is specified in your Gruntfile via the grunt.initConfig method.
+
+    grunt.initConfig({
+      concat: {
+        // concat task configuration goes here.
+      },
+      uglify: {
+        // uglify task configuration goes here.
+      },
+      // Arbitrary non-task-specific properties.
+      my_property: 'whatever',
+      my_src_files: ['foo/*.js', 'bar/*.js'],
+    });
+
+A task may contains sub-tasks called targets. You invoke them by task:target format,
+and you configure them like this:
+
+    grunt.initConfig({
+      concat: {
+        foo: {
+          // concat task "foo" target options and files go here.
+        },
+        bar: {
+          // concat task "bar" target options and files go here.
+        },
+      },
+      uglify: {
+        bar: {
+          // uglify task "bar" target options and files go here.
+        },
+      },
+    });
+    # Invoke with "grunt concat:foo"
+
 ## More examples
 
 - See ../min-web/min-web-requirejs for custom web package using grunt.

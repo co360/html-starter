@@ -4,7 +4,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-copy-deps');
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
         copydeps: {
             options: {
                 ignore: [ 'jquery' ],
