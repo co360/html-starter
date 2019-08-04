@@ -67,7 +67,8 @@ module.exports = function(grunt) {
     grunt.registerTask('errorbar', 'My "errorbar" task.', function() {
       var done = this.async();
       setTimeout(function() {
-        // Fail asynchronously.
+        // Fail asynchronously
+        // Note that passing false to the done() function tells Grunt that the task has failed.
         done(false);
       }, 3000);
     });
