@@ -77,6 +77,12 @@ and you configure them like this:
 
 ## Writing Tasks
 
+See
+- https://gruntjs.com/creating-tasks#custom-tasks
+- https://gruntjs.com/api/grunt
+
 You can run grunt with different grunt file. For example:
 
+  cd writing-tasks
+  npm install
   grunt --gruntfile HelloGruntfile.js
