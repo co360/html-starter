@@ -1,6 +1,8 @@
 // TODO Why it only copies 'jquery.min.js' and not other deps?
 // The work around is to use "include" and "ignore"!
 module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-copy-deps');
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         copydeps: {
@@ -22,8 +24,6 @@ module.exports = function(grunt) {
             }
         }
     });
-
-    grunt.loadNpmTasks('grunt-copy-deps');
 
     // Default task(s).
     grunt.registerTask('default', ['copydeps:build']);
