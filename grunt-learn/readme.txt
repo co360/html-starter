@@ -51,7 +51,7 @@ Task configuration is specified in your Gruntfile via the grunt.initConfig metho
       my_src_files: ['foo/*.js', 'bar/*.js'],
     });
 
-A task may contains sub-tasks called targets. You invoke them by task:target format,
+A task may contains sub-tasks (or multi-tasks) called targets. You invoke them by task:target format,
 and you configure them like this:
 
     grunt.initConfig({
