@@ -1,23 +1,14 @@
-/*
-Example usage:
-
-grunt copydeps:build
-grunt clean
-
- */
 module.exports = function(grunt) {
-    grunt.loadNpmTasks('grunt-copy-deps');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.initConfig({
-        copydeps: {
-            options: {
-                minified: false,
-                unminified: true
-            },
+        copy: {
             build: {
-                pkg: 'package.json',
-                dest: 'build/js/dependencies/'
+                files: [
+                    {src: 'src/**', dest: 'build/', expand: true, flatten: true},
+                    {src: 'node_modules/underscore/underscore.js', dest: 'build/', expand: true, flatten: true}
+                ]
             }
         },
         clean: {
@@ -25,6 +16,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', 'A hello task.', ['copydeps:build']);
+    grunt.registerTask('default', 'Clean build and copy files.', ['clean', 'copy:build']);
 
 };

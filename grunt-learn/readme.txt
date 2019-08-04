@@ -71,9 +71,9 @@ and you configure them like this:
     });
     # Invoke with "grunt concat:foo"
 
-## More examples
+## Grunt files, src, dest configuration
 
-- See ../min-web/min-web-requirejs for custom web package using grunt.
+https://gruntjs.com/configuring-tasks#files
 
 ## Writing Tasks
 
