@@ -6,8 +6,11 @@ module.exports = function(grunt) {
         copy: {
             build: {
                 files: [
-                    {src: 'src/**', dest: 'build/', expand: true, flatten: true},
-                    {src: 'node_modules/underscore/underscore.js', dest: 'build/', expand: true, flatten: true}
+                    {src: 'src/**', dest: 'build/', expand: true, flatten: true, filter: 'isFile'},
+                    {
+                        src: ['node_modules/underscore/**/*.js', '!node_modules/underscore/**/*min.js*'],
+                        dest: 'build/', expand: true,  flatten: true
+                    }
                 ]
             }
         },
