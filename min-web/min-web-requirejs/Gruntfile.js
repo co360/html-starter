@@ -1,31 +1,18 @@
 module.exports = function(grunt) {
-    grunt.loadNpmTasks('grunt-copy-deps');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.initConfig({
-        copydeps: {
+        copy: {
             buildweb: {
-                options: {
-                    minified: false,
-                    unminified: true,
-                    // Note the task will only copy 'jquery' into parent directory
-                    // and not th requirejs and knockout.
-                    // Workaround is to ignore 'jquery', and manually include
-                    // dependency for copying.
-                    ignore: [ 'jquery' ],
-                    include: {
-                        js: {
-                            'requirejs/require.js': 'requirejs',
-                            'knockout/build/output/**/*.js': 'knockout',
-                            'jquery/dist/jquery.js': 'jquery',
-                        }
-                    }
-                },
-                pkg: 'package.json',
-                dest: 'web/js/libs'
+                files: [
+                    {cwd: 'node_modules', src: ['requirejs/require.js'], dest: 'web/js/libs/requirejs', expand: true, flatten: true},
+                    {cwd: 'node_modules', src: ['knockout/build/output/knockout-latest.debug.js'], dest: 'web/js/libs/knockout', expand: true, flatten: true},
+                    {cwd: 'node_modules', src: ['jquery/dist/jquery.js'], dest: 'web/js/libs/jquery', expand: true, flatten: true}
+                ]
             }
         }
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['copydeps:buildweb']);
+    grunt.registerTask('default', ['copy:buildweb']);
 };

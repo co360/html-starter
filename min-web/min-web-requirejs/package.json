@@ -11,6 +11,6 @@
   },
   "devDependencies": {
     "grunt": "1.0.4",
-    "grunt-copy-deps": "1.4.0"
+    "grunt-contrib-copy": "^1.0.0"
   }
 }
