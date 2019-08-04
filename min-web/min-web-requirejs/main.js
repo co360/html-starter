@@ -7,7 +7,7 @@ requirejs.config({
     baseUrl: './',
     paths: {
         'jquery': 'web/js/libs/jquery/jquery',
-        'knockout': 'web/js/libs/knockout/knockout-latest'
+        'knockout': 'web/js/libs/knockout/knockout-latest.debug'
     }
 });
 
