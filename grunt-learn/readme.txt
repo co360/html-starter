@@ -86,3 +86,8 @@ You can run grunt with different grunt file. For example:
   cd writing-tasks
   npm install
   grunt --gruntfile HelloGruntfile.js
+
+## Creating Plugins
+
+See https://gruntjs.com/creating-plugins
+
