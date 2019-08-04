@@ -91,3 +91,9 @@ You can run grunt with different grunt file. For example:
 
 See https://gruntjs.com/creating-plugins
 
+- Install grunt-init with npm install -g grunt-init
+- Install the gruntplugin template with git clone git://github.com/gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin (%USERPROFILE%\.grunt-init\gruntplugin on Windows).
+- Run grunt-init gruntplugin in an empty directory.
+- Run npm install to prepare the development environment.
+- Author your plugin.
+- Run npm publish to publish the Grunt plugin to npm!

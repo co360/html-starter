@@ -2,8 +2,7 @@
   "name": "min-web-requirejs",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "grunt copydeps"
+    "build": "grunt copydeps:buildweb"
   },
   "dependencies": {
     "requirejs": "2.3.6",

@@ -1,5 +1,3 @@
-// TODO Why it only copies 'jquery.min.js' and not other deps?
-// The work around is to use "include" and "ignore"!
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-copy-deps');
 
@@ -7,6 +5,12 @@ module.exports = function(grunt) {
         copydeps: {
             buildweb: {
                 options: {
+                    minified: false,
+                    unminified: true,
+                    // Note the task will only copy 'jquery' into parent directory
+                    // and not th requirejs and knockout.
+                    // Workaround is to ignore 'jquery', and manually include
+                    // dependency for copying.
                     ignore: [ 'jquery' ],
                     include: {
                         js: {
@@ -17,9 +21,7 @@ module.exports = function(grunt) {
                     }
                 },
                 pkg: 'package.json',
-                dest: {
-                    js: 'web/js/libs'
-                }
+                dest: 'web/js/libs'
             }
         }
     });
