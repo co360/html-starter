@@ -21,11 +21,32 @@
                 function ViewModel() {
                     let self = this;
 
-                    self.scoreInput = ko.observable('zemian vs onur 2-0');
+                    // ScoreInput forms:
+                    //   zemian vs onur [2-0]
+                    //   zemian onur [2-0]
+                    //   zemian vs onur 21-16,21-17
+                    //   yuliang vs zemian 21-19,21-9
+                    //self.scoreInput = ko.observable('yuliang vs zemian 21-19,21-9');
+                    self.scoreInput = ko.observable();
+                    self.scoreBoard = ko.observableArray();
                     self.updateScore = () => {
-                        let regex = /^(\w+)( vs ){0,1}(\w+?) (\d+)-(\d+)$/;
-                        let scores = regex.exec(self.scoreInput());
-                        console.log(scores);
+                        let regex = /(\w+)( vs){0,1} (\w+) (.+)/;
+                        let input = regex.exec(self.scoreInput());
+                        //console.log(input);
+                        let scoreInput = input[4], overallScore, gameScores;
+                        if (scoreInput.indexOf("[") >= 0) {
+                            overallScore = scoreInput.match(/\[(.+?)\]/)[1];
+                        } else {
+                            gameScores = scoreInput.split(",");
+                        }
+                        let score = {
+                            player1: input[1],
+                            player2: input[3],
+                            gameScores: gameScores,
+                            overallScore: overallScore
+                        };
+                        //console.log(score);
+                        self.scoreBoard.push(score);
                     };
                 }
                 ko.applyBindings(new ViewModel(), $('#tt-score-tracker-app').get(0));
@@ -38,7 +59,10 @@
 <div id="tt-score-tracker-app">
     Score: <input type="text" data-bind="value: scoreInput">
     <button data-bind="click: updateScore">Submit</button>
-    <ul class="scoreboard">
+    <ul id="scoreboard" data-bind="foreach: scoreBoard">
+        <li>
+            <span data-bind="text: JSON.stringify($data)"></span>
+        </li>
     </ul>
 </div>
 
