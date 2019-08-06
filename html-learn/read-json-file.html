@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../web/js/libs/require/require.js"></script>
+    <script src="../resources/js/libs/require/require.js"></script>
     <script>
         /*
         We will use RequireJS to load JS script file. And we will use the
@@ -16,16 +16,17 @@
         require.config({
             baseUrl: 'js',
             paths: {
-                'jquery': '../web/js/libs/jquery/jquery-3.3.1'
+                'jquery': '../../resources/js/libs/jquery/jquery-3.4.1',
+                'text': '../../resources/js/libs/require/text'
             }
         });
-        require(['require', 'jquery', 'text!js/examples.json'], function(require, $, examplesText) {
+        require(['require', 'jquery', 'text!read-json-file-examples.json'], function(require, $, examplesText) {
             $(function() {
-                // var examples = JSON.parse(examplesText);
-                // var exampleList = $("#examples");
-                // for (var name of examples) {
-                //     exampleList.append(`<li><a href="web-html/${name}">web-html/${name}</a></li>`);
-                // }
+                var examples = JSON.parse(examplesText);
+                var exampleList = $("#examples");
+                for (var name of examples) {
+                    exampleList.append(`<li><a href="web-html/${name}">web-html/${name}</a></li>`);
+                }
                 exampleList.append(`<li><a href="about.html">about.html</a></li>`);
                 exampleList.append(`<li><a href="readme.md">readme.md</a></li>`);
             });
