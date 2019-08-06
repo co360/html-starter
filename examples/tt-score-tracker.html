@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <style>
+        #tt-score-tracker-app input {
+            width: 30em;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script>
+        requirejs.config({
+            paths: {
+                'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min',
+                'knockout': 'https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min'
+            }
+        });
+        require(['jquery', 'knockout'], function($, ko){
+            $(function(){
+                function ViewModel() {
+                    let self = this;
+
+                    self.scoreInput = ko.observable('zemian vs onur 2-0');
+                    self.updateScore = () => {
+                        let regex = /^(\w+)( vs ){0,1}(\w+?) (\d+)-(\d+)$/;
+                        let scores = regex.exec(self.scoreInput());
+                        console.log(scores);
+                    };
+                }
+                ko.applyBindings(new ViewModel(), $('#tt-score-tracker-app').get(0));
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="tt-score-tracker-app">
+    Score: <input type="text" data-bind="value: scoreInput">
+    <button data-bind="click: updateScore">Submit</button>
+    <ul class="scoreboard">
+    </ul>
+</div>
+
+</body>
+</html>
