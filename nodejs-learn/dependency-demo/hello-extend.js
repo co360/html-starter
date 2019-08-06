@@ -15,6 +15,7 @@ function test() {
 }
 test();
 
+// TODO: How extends class with underscore?
 function testExtension() {
     let Employee = function() {};
     Employee = _.extend(Employee, Person);
