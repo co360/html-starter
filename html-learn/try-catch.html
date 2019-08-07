@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+</head>
+<body>
+
+<div id="demo">
+    <p>See console for details</p>
+</div>
+
+<script>
+    try {
+        nonExistentFunction();
+    }
+    catch(error) {
+        console.error(error);
+        // expected output: ReferenceError: nonExistentFunction is not defined
+        // Note - error messages will vary depending on browser
+    }
+</script>
+
+<script>
+    try {
+        console.log(1 / 0);
+    }
+    catch(error) {
+        console.error(error);
+    }
+</script>
+
+<script>
+    try {
+        throw new Error("bad code");
+    }
+    catch(error) {
+        console.error(error);
+    } finally {
+        console.log("Finally block here.");
+    }
+</script>
+</body>
+</html>
