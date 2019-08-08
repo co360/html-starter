@@ -27,6 +27,8 @@ console.log("generator result: ", ret);
 // == Generator Function
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function*
 
+// NOTE: A generator object is both, iterator and iterable:
+
 // Generator Function Statement
 function* foo() {
     yield 'a';
