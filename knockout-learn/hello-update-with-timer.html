@@ -8,14 +8,17 @@
 <body>
 
 <div id="demo">
-    <span data-bind="text: message">Hi</span></p>
+    <p>INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
+    <pre>Examples: viewModel.message("Hi again");</pre>
+    <p>Message: <span data-bind="text: message">Hi</span></p>
 </div>
 
 <script>
     function ViewModel() {
-        this.message = ko.observable("Hello World");
+        let self = this;
+        self.message = ko.observable("Hello World");
     }
-    var viewModel = new ViewModel();
+    let viewModel = new ViewModel();
     window.onload = function() {
         ko.applyBindings(viewModel, document.getElementById("demo"));
     };

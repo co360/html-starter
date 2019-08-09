@@ -12,8 +12,10 @@
 
 <script>
 
-    // KO should use applyBinding() only after the DOM is ready.
-    // Here we can use jquery DOM ready method.
+    // == KO should use applyBinding() only after the DOM is ready.
+
+
+    // Option1: Here we can use jquery DOM ready method.
     require(['jquery', 'knockout', 'hello'], function($, ko, app) {
         $(function() {
             ko.applyBindings(app);
@@ -38,6 +40,15 @@
      };
      });
      */
+
+    /*
+    // NOTE: This will also NOT work: use DOMContentLoaded event inside requireJS
+    require(['knockout', 'hello'], function($, ko, app) {
+        window.addEventListener('DOMContentLoaded', (event) => {
+            ko.applyBindings(app);
+        });
+    });
+    */
 
     // Another method we can activate KO is to use RequireJS 'domReady' plugin.
     /*
