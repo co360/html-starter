@@ -22,7 +22,7 @@
 <script>
     // A todo list like functionality using people data model
     // https://knockoutjs.com/documentation/foreach-binding.html
-    function AppViewModel() {
+    function ViewModel() {
         var self = this;
 
         self.people = ko.observableArray([
@@ -42,7 +42,7 @@
         }
     }
 
-    ko.applyBindings(new AppViewModel());
+    ko.applyBindings(new ViewModel());
 </script>
 
 </body>
