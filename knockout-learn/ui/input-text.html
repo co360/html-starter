@@ -8,17 +8,32 @@
 <body>
 
 <div id="demo">
-    <p>INSTRUCTION: Change the message to see action.</p>
-
-    <p>Message: <input data-bind="textInput: message" size="25"></p>
-    <p>Result: <span data-bind="text: message"></span></p>
+    <table>
+        <tr>
+            <td class="label">Text value (updates on change):</td>
+            <td><input data-bind="value: stringValue" /></td>
+            <td>Value: <span data-bind="text: stringValue"></span></td>
+        </tr>
+        <tr>
+            <td class="label">Text value (updates on keystroke):</td>
+            <td><input data-bind='value: stringValue2, valueUpdate: "afterkeydown"' /></td>
+            <td>Value: <span data-bind="text: stringValue2"></span></td>
+        </tr>
+        <tr>
+            <td class="label">Text value (multi-line):</td>
+            <td><textarea data-bind="value: stringValue3"> </textarea></td>
+            <td>Value: <span data-bind="text: stringValue3"></span></td>
+        </tr>
+    </table>
 </div>
 
 <script>
     var viewModel = {
-        message: ko.observable("Hello World")
+        stringValue : ko.observable("Hello"),
+        stringValue2 : ko.observable("Hello2"),
+        stringValue3 : ko.observable("Hello3")
     };
-    ko.applyBindings(viewModel, document.getElementById("demo"));
+    ko.applyBindings(viewModel);
 </script>
 
 </body>
