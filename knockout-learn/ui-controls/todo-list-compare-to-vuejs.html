@@ -41,7 +41,7 @@
             <label>
                 <input type="checkbox" data-bind="checked: todo.done">
                 <del data-bind="visible: todo.done, text: todo.text"></del>
-                <span data-bind="visible: !todo.done, text: todo.text"></span>
+                <span data-bind="hidden: todo.done, text: todo.text"></span>
             </label>
         </li>
     </ol>
@@ -51,20 +51,21 @@
 <script>
     // This demo will implement the same demo used in https://jsfiddle.net/boilerplate/vue for VueJS
     // that render a to-do list. We will do the same using KO instead.
+
+    // NOTE: There is no need to explicitly implements toggle method since our "done" flag is
+    // observable, and the HTML check/uncheck will auto update the value!
+    //
+    // NOTE: When designing KO and try to determine which field is needed to be observable, and which
+    // is not. Try to think on UI, which part of the data that's needed to be monitor and updated.
     function ViewModel() {
         var self = this;
         self.todos = [
-            { text: "Learn JavaScript", done: false },
-            { text: "Learn Vue", done: false },
-            { text: "Play around in JSFiddle", done: true },
-            { text: "Build something awesome", done: true }
+            { text: "Learn JavaScript", done: ko.observable(false) },
+            { text: "Learn Vue", done: ko.observable(false) },
+            { text: "Play around in JSFiddle", done: ko.observable(true) },
+            { text: "Build something awesome", done: ko.observable(true) }
         ];
-
-        self.toggle = function(todo){
-            todo.done = !todo.done
-        }
     }
-
     ko.applyBindings(new ViewModel());
 </script>
 
