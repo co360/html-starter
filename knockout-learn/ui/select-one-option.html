@@ -7,8 +7,6 @@
 </head>
 <body>
 
-<p>DEMO INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
-
 <div id="demo">
     <p>
         Select a country:
@@ -17,12 +15,12 @@
                        value: selectedCountry,
                        valueAllowUnset: true"></select>
     </p>
-    <p>NOTE: Use Console to inspect inputs.</p>
+    <p>Selected value: <span data-bind="text: selectedCountry"></span></p>
 </div>
 
 <script>
     var viewModel = {
-        countries: ['Japan', 'Bolivia', 'New Zealand'],
+        countries: ['Japan', 'Bolivia', 'New Zealand', 'Latvia'],
         selectedCountry: ko.observable('Latvia')
     };
     ko.applyBindings(viewModel);
