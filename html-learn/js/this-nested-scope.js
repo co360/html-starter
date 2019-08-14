@@ -29,3 +29,21 @@ var test = {
 console.log(test.func());
 // expected output: 42
 console.log(test.x);
+
+console.log("========================");
+var test2 = {
+    foo: "test",
+    fn: function() {
+        // this is test2
+        console.log("fn this: ", this);
+    },
+    bar: {
+        fn2: function() {
+            // this is "bar"
+            console.log("fn2 this: ", this);
+        }
+    }
+};
+console.log("test2", test2);
+console.log("test2 test2.fn(): ", test2.fn());
+console.log("test2 test2.bar.fn2(): ", test2.bar.fn2());

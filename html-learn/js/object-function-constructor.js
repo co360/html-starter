@@ -25,3 +25,12 @@ const a = {
     }
 };
 console.log(a.greeting());
+
+// == Anonymous function constructor
+var viewModel = new function(bindingContext) {
+  var self = this;
+  self.foo = "bar";
+  self.greeting = function(){ console.log('hi'); }
+};
+console.log(viewModel.foo);
+viewModel.greeting();
