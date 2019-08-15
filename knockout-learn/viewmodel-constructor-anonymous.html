@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OJET Starter</title>
+    <link rel="stylesheet" href="../../web/css/alta/6.2.0/web/alta.css">
+    <script src="../../web/js/libs/require/require.js"></script>
+    <script src="../js/level1/main-config.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <oj-bind-text value="[[message]]">Hi</oj-bind-text>
+</div>
+
+<script>
+    require(['knockout', 'ojs/ojknockout'], function(ko) {
+        var viewModel = function() {
+            this.message =  ko.observable("Hello World");
+        }();
+        ko.applyBindings(viewModel);
+    });
+</script>
+
+</body>
+</html>
