@@ -24,16 +24,22 @@ tsc hello.ts
 node hello.js
 ```
 
-## What are TypeScript Targets?
+## What are TypeScript Targets and Module Loader?
 
-The TypeScript transcompiler can convert .ts files into .js files. The format
-of these .js output files have to be target under certain deployment environment.
-There are few target environment that TS supports out of the box: 
+The TypeScript compiler can transcompile .ts files into .js files. 
 
-- es6      : JS files that comply to JS version ES6(ES2015) with export/import features. Any modern, new browsers can run this.
-- commonjs : JS files that comply to CommonJS spec. The NodeJS support this spec.
-- amd      : JS files that comply with AMD spec. The RequireJS support this spec.
+The output of these .js files are largely depend on two compiler options:
 
+"target" : Specify ECMAScript target version: 
+            - "ES3" (default) 
+            - "ES5" 
+            - "ES6"/"ES2015" 
+            - "ES2016"
+
+"module" : Specify module code generation:
+            - "CommonJS" : JS files that comply to CommonJS spec. The NodeJS support this spec.
+            - "AMD" : JS files that comply with AMD spec. The RequireJS support this spec.
+            - "ES2015" : JS files that comply to JS version ES2015 with export/import features. Any modern, new browsers can run this.
 
 ## How to build with different tsconfig.js file?
 
