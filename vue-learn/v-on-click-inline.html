@@ -8,20 +8,15 @@
 <body>
 
 <div id="example-1">
-    <input type="checkbox" v-on:click="onClick">Toggle</input>
-    <p>Value: {{toggleValue}}</p>
+    <button v-on:click="counter += 1">Add 1</button>
+    <p>The button above has been clicked {{ counter }} times.</p>
 </div>
 
 <script>
     var example1 = new Vue({
         el: '#example-1',
         data: {
-            toggleValue: false
-        },
-        methods: {
-            onClick: function(event) {
-                this.toggleValue = !this.toggleValue;
-            }
+            counter: 0
         }
     })
 </script>

@@ -10,6 +10,9 @@
 <div id="example-1">
     <input type="checkbox" v-on:click="onClick">Toggle</input>
     <p>Value: {{toggleValue}}</p>
+
+    <p v-if="toggleValue">ON</p>
+    <p v-else="toggleValue">OFF</p>
 </div>
 
 <script>
