@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <button v-on:click="add">Add</button>
+    <ul v-for="item in myList">
+        <li>{{item}}</li>
+    </ul>
+</div>
+
+<script>
+    var demo = new Vue({
+        el: "#demo",
+        data: {
+            myList: ["Zemian", "Yuliang", "Chewan", "Al"],
+            personCounter: 0
+        },
+        methods: {
+            add: function(event) {
+                console.log("Adding to list: ", event);
+                this.personCounter++;
+                this.myList.push("Person" + this.personCounter);
+            }
+        }
+    });
+
+    // TODO: How can we set this value inside the Object literal?
+    demo.personCounter = demo.myList.length;
+</script>
+
+</body>
+</html>

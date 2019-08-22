@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="example-1">
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+        Submit
+    </button>
+</div>
+
+<script>
+    var example1 = new Vue({
+        el: '#example-1',
+        methods: {
+            warn: function (message, event) {
+                // now we have access to the native event
+                if (event)
+                    event.preventDefault();
+                alert(message)
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
