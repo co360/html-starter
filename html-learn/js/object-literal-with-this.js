@@ -46,3 +46,7 @@ console.log("o3.myList", o3.myList);
 console.log("o3.a", o3.a());
 console.log("o3.b", o3.b(99));
 console.log("o3.c", o3.c());
+
+// For more reading on object literal, see:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
+// https://eslint.org/docs/rules/object-shorthand
