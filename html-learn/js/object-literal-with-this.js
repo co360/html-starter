@@ -34,3 +34,15 @@ console.log("o2.data.message4", o2.data.message4);
 console.log("o2.data.message5", o2.data.message5());
 console.log("o2.data.message6", o2.data.message6());
 console.log("o2.data.myListLen", o2.data.myListLen);
+
+var o3 = {
+    myList: [1, 2, 3],
+    a: () => "a11",
+    b: n => "b" + n,
+    /* c: () => this.myList.length THIS WILL NOT WORK! */
+    c: function(){ return this.myList.length }
+};
+console.log("o3.myList", o3.myList);
+console.log("o3.a", o3.a());
+console.log("o3.b", o3.b(99));
+console.log("o3.c", o3.c());
