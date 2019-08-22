@@ -36,13 +36,15 @@
 
 <div id="app">
     <h2>Todos:</h2>
-    <ol data-bind="foreach: {data: todos, as: 'todo'}">
+    <ol data-bind="foreach: todos">
         <li>
-            <label>
-                <input type="checkbox" data-bind="checked: todo.done">
-                <del data-bind="visible: todo.done, text: todo.text"></del>
-                <span data-bind="hidden: todo.done, text: todo.text"></span>
-            </label>
+            <input type="checkbox" data-bind="checked: done">
+            <del data-bind="if: done">
+                <span data-bind="text: text"></span>
+            </del>
+            <!-- ko ifnot: done -->
+            <span data-bind="text: text"></span>
+            <!-- /ko -->
         </li>
     </ol>
 </div>
@@ -56,16 +58,15 @@
     //
     // NOTE: When designing KO and try to determine which field is needed to be observable, and which
     // is not. Try to think on UI, which part of the data that's needed to be monitor and updated.
-    function ViewModel() {
-        var self = this;
-        self.todos = [
+    var viewModel = {
+        todos: [
             { text: "Learn JavaScript", done: ko.observable(false) },
             { text: "Learn Vue", done: ko.observable(false) },
             { text: "Play around in JSFiddle", done: ko.observable(true) },
             { text: "Build something awesome", done: ko.observable(true) }
-        ];
-    }
-    ko.applyBindings(new ViewModel(), document.getElementById("app"));
+        ]
+    };
+    ko.applyBindings(viewModel, document.getElementById("app"));
 </script>
 
 </body>
