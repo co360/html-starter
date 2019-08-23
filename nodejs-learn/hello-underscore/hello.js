@@ -7,12 +7,8 @@ npm run hello
 
 */
 
-// Using underscore libraries function
+// Using underscore library functions
 const _ = require("underscore");
-_.each([1, 2, 3], (num) => console.log(num));
-console.log(_.map([1, 2, 3], function(num){ return num * 3; }));
 
 // Print what's available in the "_" object.
-for (let k of _.keys(_)) {
-    console.log(k);
-}
+_.each(_.keys(_).sort(), k => console.log(k));
