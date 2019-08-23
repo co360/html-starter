@@ -60,3 +60,48 @@ _.range(0, -10, -1);
 _.range(0);
 // => []
 
+// == Object
+_.keys({one: 1, two: 2, three: 3});
+// => ["one", "two", "three"]
+
+_.values({one: 1, two: 2, three: 3});
+// => [1, 2, 3]
+
+// Like _.map but for object
+_.mapObject({start: 5, end: 12}, function(val, key) {
+    return val + 5;
+});
+// => {start: 10, end: 17}
+
+// Shallowly copy all of the properties in the source objects over to the destination object
+_.extend({name: 'moe'}, {age: 50});
+// => {name: 'moe', age: 50}
+
+// Create a shallow-copied clone of the provided plain object.
+_.clone({name: 'moe'});
+// => {name: 'moe'};
+
+// == Utility
+var underscore = _.noConflict();
+
+_.times(3, function(n){ genie.grantWishNumber(n); });
+
+_.random(0, 100);
+// => 42
+
+_.uniqueId('contact_');
+// => 'contact_104'
+
+_.escape('Curly, Larry & Moe');
+// => "Curly, Larry &amp; Moe"
+
+_.now();
+// => 1392066795351
+
+var compiled = _.template("hello: <%= name %>");
+compiled({name: 'moe'});
+// => "hello: moe"
+
+var template = _.template("<b><%- value %></b>");
+template({value: '<script>'});
+// => "<b>&lt;script&gt;</b>"
