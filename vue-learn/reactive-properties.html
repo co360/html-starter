@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<h1>Observe Reactive Properties</h1>
+<p>Use console to update properties: <code>vm.message = "Hi";</code></p>
+
+<div id="demo">
+    Message: {{ message }}
+</div>
+
+<script>
+    /*
+    NOTE: After data are binded, you need to reference data with "$data", or
+    simply without it. Example:
+
+        vm.message = "Hi again";
+        console.log(vm.message);
+        vm.message === vm.$data.message
+
+    NOTE: You can reference "vm.$el" as well.
+
+    NOTE: You can "watch" a property for change programmatically:
+
+        vm.$watch('message2', function(newValue, oldValue) {
+            console.log("Value changed ", newValue, oldValue);
+        });
+     */
+    var vm = new Vue({
+        el: "#demo",
+        data: {
+            message: "Hello World"
+        }
+    });
+</script>
+
+</body>
+</html>

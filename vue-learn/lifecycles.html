@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    {{ message }}
+</div>
+
+<script>
+    // https://vuejs.org/images/lifecycle.png
+    new Vue({
+        el: "#demo",
+        data: {
+            message: "Hello World"
+        },
+        created: function () {
+            // `this` points to the vm instance
+            console.log('created: ', this);
+        },
+        mounted: function () {
+            // `this` points to the vm instance
+            console.log('mounted: ', this);
+        },
+        updated: function () {
+            // `this` points to the vm instance
+            console.log('updated: ', this);
+        },
+        destroyed: function () {
+            // `this` points to the vm instance
+            console.log('destroyed: ', this);
+        }
+    });
+</script>
+
+</body>
+</html>
