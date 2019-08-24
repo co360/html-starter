@@ -35,6 +35,11 @@
 
     setTimeout(() => viewModel.currentProfit(-50), 2000); // Causes the DIV's contents to go red
     ko.applyBindings(viewModel);
+
+    /*
+    There is also the 'css' binding that will accept a JS object. The key is the
+    class name, and value is boolean to either add or remove it.
+     */
 </script>
 
 </body>
