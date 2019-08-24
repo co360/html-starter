@@ -13,14 +13,22 @@
 </div>
 
 <script type="text/javascript">
-    var viewModel = function () {
-        var self = this;
-        self.checkFlag = ko.observable(false);
-        self.textDecoration = ko.computed(function() {
-            return self.checkFlag() ? "line-through" : "initial";
-        });
-    }();
-    ko.applyBindings(viewModel);
+    // var vm = function () {
+    //     var self = this;
+    //     self.checkFlag = ko.observable(false);
+    //     self.textDecoration = ko.computed(function() {
+    //         return self.checkFlag() ? "line-through" : "initial";
+    //     });
+    // }();
+    // ko.applyBindings(vm);
+
+    var vm = {
+        checkFlag: ko.observable(false)
+    };
+    vm.textDecoration = ko.computed(function() {
+        return vm.checkFlag() ? "line-through" : "initial";
+    });
+    ko.applyBindings(vm);
 </script>
 
 </body>
