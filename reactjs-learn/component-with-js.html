@@ -12,8 +12,6 @@
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
 <script>
-    const e = React.createElement;
-
     class LikeButton extends React.Component {
         constructor(props) {
             super(props);
@@ -34,7 +32,7 @@
     }
 
     const domContainer = document.querySelector('#like_button_container');
-    ReactDOM.render(e(LikeButton), domContainer);
+    ReactDOM.render(React.createElement(LikeButton), domContainer);
 </script>
 </body>
 </html>
