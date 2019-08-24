@@ -7,28 +7,17 @@
 </head>
 <body>
 
-<div>
-    <input type="checkbox" data-bind="checked: checkFlag">
-    <span data-bind="style: {'text-decoration': textDecoration}">Toggle me.</span>
+<p>Text will turn red after 2 seconds.</p>
+<div data-bind="style: { color: currentProfit() < 0 ? 'red' : 'black' }">
+    Profit Information: <span data-bind="text: currentProfit"></span>
 </div>
 
 <script type="text/javascript">
-    // var vm = function () {
-    //     var self = this;
-    //     self.checkFlag = ko.observable(false);
-    //     self.textDecoration = ko.computed(function() {
-    //         return self.checkFlag() ? "line-through" : "initial";
-    //     });
-    // }();
-    // ko.applyBindings(vm);
-
-    var vm = {
-        checkFlag: ko.observable(false)
+    var viewModel = {
+        currentProfit: ko.observable(150000) // Positive value, so initially black
     };
-    vm.textDecoration = ko.computed(function() {
-        return vm.checkFlag() ? "line-through" : "initial";
-    });
-    ko.applyBindings(vm);
+    setTimeout(() => viewModel.currentProfit(-50), 2000); // Causes the DIV's contents to go red
+    ko.applyBindings(viewModel);
 </script>
 
 </body>
