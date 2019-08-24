@@ -15,9 +15,9 @@
 
 <script>
     require(['knockout', 'ojs/ojknockout'], function(ko) {
-        ko.applyBindings({
-            message: ko.observable("Hello World")
-        });
+        var viewModel = {};
+        viewModel.message = ko.observable("Hello World");
+        ko.applyBindings(viewModel);
     });
 </script>
 
