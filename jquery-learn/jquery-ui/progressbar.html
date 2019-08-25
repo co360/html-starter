@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Learning</title>
+    <link rel="stylesheet" href="../../resources/js/libs/jquery-ui/jquery-ui.min.css">
+
+    <script src="../../resources/js/libs/jquery/jquery-3.4.1.js"></script>
+    <script src="../../resources/js/libs/jquery-ui/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<div id="demo">
+</div>
+
+<script>
+    var progressVal = 0;
+    function update() {
+        progressVal += 5;
+        console.log("progressVal: ", progressVal);
+        $( "#demo" ).progressbar({value: progressVal});
+
+        if (progressVal < 100) {
+            setTimeout(update, 100);
+        }
+    }
+    update();
+</script>
+
+</body>
+</html>

@@ -7,6 +7,13 @@ https://api.jquery.com/
 
 == Quick Reference
 
-JQuery Selector
+jQuery Selector
 
 https://api.jquery.com/category/selectors/basic-css-selectors/
+
+== jQuery UI
+
+jQuery UI contains many widgets that maintain state and therefore may have a
+slightly different usage pattern than typical jQuery plugins you are already used
+to. While the initialization is the same as most jQuery plugins, jQuery UI's widgets
+are built on top of the Widget Factory which provides the same general API to all of them.
