@@ -15,15 +15,16 @@
 
 <script>
     var progressVal = 0;
-    // Init widge
-    $( "#demo" ).progressbar({value: progressVal});
+
+    // Init widget instance
+    var widget = $( "#demo" ).progressbar({value: progressVal});
 
     function update() {
         progressVal += 5;
         console.log("progressVal: ", progressVal);
 
         // Update widget
-        $( "#demo" ).progressbar("value", progressVal);
+        widget.progressbar("value", progressVal);
 
         if (progressVal < 100) {
             setTimeout(update, 100);
