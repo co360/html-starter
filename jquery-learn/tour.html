@@ -8,7 +8,20 @@
 <body>
 
 <div>
-<p id="msg">Hello</p>
+    <style>
+        a.test {
+            font-weight: bold;
+        }
+    </style>
+    <a href="http://jquery.com/">jQuery</a>
+</div>
+
+<div>
+    <a id="a_demo2" href="http://jquery.com/">jQuery</a>
+</div>
+
+<div>
+<p id="msg">Hello (click me!)</p>
 </div>
 
 <div>
@@ -27,6 +40,19 @@
 </ol>
 
 <script>
+
+    $( "a" ).click(function( event ) {
+        alert( "The link will no longer take you to jquery.com" );
+        event.preventDefault();
+    });
+    $( "a" ).addClass( "test" );
+    // $( "a" ).removeClass( "test" );
+
+    $( "#a_demo2" ).click(function( event ) {
+        event.preventDefault();
+        $( this ).hide( "slow" );
+    });
+
     $("#msg").text("Hello World");
 
     console.log("msg text:", $("#msg").text());
@@ -50,6 +76,10 @@
 
     $("#insert-demo").append('<li>Two</li>');
     $("#insert-demo2").html('<li>REPLACED</li><li>DONE</li>');
+
+    $.get( "readme.txt", function(data) {
+        console.log("data: ", data);
+    } );
 </script>
 
 </body>
