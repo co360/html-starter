@@ -4,3 +4,9 @@ Ajax much simpler with an easy-to-use API that works across a multitude of
 browsers.
 
 https://api.jquery.com/
+
+== Quick Reference
+
+JQuery Selector
+
+https://api.jquery.com/category/selectors/basic-css-selectors/
