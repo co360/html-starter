@@ -76,6 +76,11 @@ Reading Materials:
 - https://css-tricks.com/guides/
 - http://reddit.com/r/javascript
 
+API Test Sites:
+
+https://reqres.in
+
+
 ## JSFiddle.net Tool
 
 - https://jsfiddle.net
