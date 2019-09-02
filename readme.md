@@ -78,7 +78,9 @@ Reading Materials:
 
 API Test Sites:
 
-https://reqres.in
+https://reqres.in/api/users
+https://api.github.com/repositories
+https://www.npmjs.com/package/couchdb
 
 
 ## JSFiddle.net Tool
