@@ -1,23 +1,25 @@
-Simplified HTTP request client.
+var request = require('request');
+var url = "http://127.0.0.1:5984/hello/doc101";
 
-Request is designed to be the simplest way possible to make http calls.
-It supports HTTPS and follows redirects by default.
+request.get(url, (err, resp, body) => {
+    // console.log(body);
+    let doc = JSON.parse(body);
+    updateDoc(doc._rev);
+});
 
-https://github.com/request/request
-
-== For PUT/POS examples:
-
+function updateDoc(docRev) {
     var postData = {
-        name: 'test',
-        value: 'test'
+        "motto": "Updating doc101 for testing. ts=" + new Date(),
+        "_rev": docRev
     };
 
     var options = {
         method: 'PUT',
         body: postData,
         json: true,
-        url: 'http://api.example.com/doc101'
+        url: url
     };
+
     request(options, function (err, res, body) {
         if (err) {
             console.error('error posting json: ', err);
@@ -30,3 +32,4 @@ https://github.com/request/request
         console.log('body: ', body);
     });
 
+}
