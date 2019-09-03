@@ -1,5 +1,5 @@
 let request = require("request");
-let url = "http://127.0.0.1:5984/hello/doc101";
+let url = "http://localhost:5984/hello/doc101";
 request.get(url, (err, resp, body) => {
     console.log(body);
 

@@ -1,5 +1,5 @@
 var request = require('request');
-var url = "http://127.0.0.1:5984/hello/doc101";
+var url = "http://localhost:5984/hello/doc101";
 
 request.get(url, (err, resp, body) => {
     // console.log(body);
@@ -14,10 +14,10 @@ function updateDoc(docRev) {
     };
 
     var options = {
+        url: url,
         method: 'PUT',
         body: postData,
-        json: true,
-        url: url
+        json: true
     };
 
     request(options, function (err, res, body) {

@@ -36,11 +36,11 @@ List all docs
     curl http://localhost:5984/hello/_all_docs
 
 Create a documents
-    curl -X PUT 'http:/localhost:5984/hello/doc101' -d '{"motto": "I love gnomes"}'
-    curl -X PUT 'http:/localhost:5984/hello/doc102' -d '{"motto": "I love gnomes2"}'
-    curl -X PUT 'http:/localhost:5984/hello/doc103' -d '{"motto": "I love gnomes3"}'
+    curl -X PUT 'http://localhost:5984/hello/doc101' -d '{"motto": "I love gnomes"}'
+    curl -X PUT 'http://localhost:5984/hello/doc102' -d '{"motto": "I love gnomes2"}'
+    curl -X PUT 'http://localhost:5984/hello/doc103' -d '{"motto": "I love gnomes3"}'
 
-    curl -X POST 'http:/localhost:5984/hello' -H 'Content-Type: application/json' -d '{"motto": "Hello World"}'
+    curl -X POST 'http://localhost:5984/hello' -H 'Content-Type: application/json' -d '{"motto": "Hello World"}'
 
 Update document
     curl http://localhost:5984/hello/doc101
@@ -49,7 +49,7 @@ Update document
     curl http://localhost:5984/hello/doc101
 
 Delete document
-    curl -X DELETE 'http:/localhost:5984/hello/doc102?rev=1-ab65b70c932432cfd68d7928448b98cb'
+    curl -X DELETE 'http://localhost:5984/hello/doc102?rev=1-ab65b70c932432cfd68d7928448b98cb'
 
 
 == How to setup a sample database

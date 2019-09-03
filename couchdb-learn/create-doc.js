@@ -1,15 +1,14 @@
+// TODO: Why this will not work compare to "curl" command?
+
 let request = require("request");
-let url = "http://127.0.0.1:5984/hello";
+let url = "http://localhost:5984/hello";
 let options = {
-    method: 'POST',
+    url: url,
     headers: {
-        "Content-Type": "application/json"
+        "Content-Type": 'application/json'
     },
-    body: {
-        "motto": "JS is cool."
-    },
-    json: true,
-    url: url
+    method: 'POST',
+    body: '{"motto": "JS is cool."}',
 };
 request.put(options, (err, resp, body) => {
     //console.log(err, resp, body);
