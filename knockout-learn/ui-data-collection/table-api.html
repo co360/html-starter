@@ -15,7 +15,7 @@
             <td>Key</td>
             <td>Rev</td>
         </tr>
-        <!-- ko foreach: data -->
+        <!-- ko foreach: dataProvider -->
         <tr>
             <td data-bind="text: $data.id"></td>
             <td data-bind="text: $data.key"></td>
@@ -27,13 +27,13 @@
 
 <script>
     var vm = {
-        data: ko.observableArray()
+        dataProvider: ko.observableArray()
     };
     ko.applyBindings(vm, document.getElementById("demo"));
     
     $.ajax('http://localhost:5984/hello/_all_docs?limit=20').then(data => {
         console.log(data);
-        data.rows.forEach(item => vm.data.push(item));
+        data.rows.forEach(item => vm.dataProvider.push(item));
     });
 </script>
 

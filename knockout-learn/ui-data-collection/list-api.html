@@ -9,20 +9,20 @@
 <body>
 
 <div id="demo">
-    <ul data-bind="foreach: data">
+    <ul data-bind="foreach: dataProvider">
         <li data-bind="text: $data.id"></li>
     </ul>
 </div>
 
 <script>
     var vm = {
-        data: ko.observableArray()
+        dataProvider: ko.observableArray()
     };
     ko.applyBindings(vm, document.getElementById("demo"));
 
     $.ajax('http://localhost:5984/hello/_all_docs?limit=20').then(data => {
         //console.log(data);
-        data.rows.forEach(item => vm.data.push(item));
+        data.rows.forEach(item => vm.dataProvider.push(item));
     });
 </script>
 
