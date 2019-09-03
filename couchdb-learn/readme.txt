@@ -34,6 +34,8 @@ List all DBs:
 
 List all docs
     curl http://localhost:5984/hello/_all_docs
+    curl 'http://127.0.0.1:5984/hello/_all_docs?limit=5&offset=0'
+    curl 'http://127.0.0.1:5984/hello/_all_docs?limit=5&offset=20'
 
 Create a documents
     curl -X PUT 'http://localhost:5984/hello/doc101' -d '{"motto": "I love gnomes"}'
