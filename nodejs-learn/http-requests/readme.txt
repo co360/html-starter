@@ -7,14 +7,17 @@ https://github.com/request/request
 
 == For PUT/POS examples:
 
-    var postData = {
-        name: 'test',
-        value: 'test'
-    };
+    var postData =
 
     var options = {
         method: 'PUT',
-        body: postData,
+        body: {
+            name: 'test',
+            value: 'test'
+        },
+        headers: {
+            "foo": "bar"
+        },
         json: true,
         url: 'http://api.example.com/doc101'
     };

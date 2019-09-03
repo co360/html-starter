@@ -22,15 +22,15 @@ Create a database "hello" and then you can access it here:
 
 https://docs.couchdb.org/en/stable/intro/curl.html
 
+Generate UUIDs:
+    curl 'http://localhost:5984/_uuids?count=5'
+
 Get DB info:
     curl http://localhost:5984
     curl http://localhost:5984/hello
 
 List all DBs:
     curl http://localhost:5984/_all_dbs
-
-Generate UUIDs:
-    curl 'http://localhost:5984/_uuids?count=5'
 
 List all docs
     curl http://localhost:5984/hello/_all_docs
@@ -39,6 +39,8 @@ Create a documents
     curl -X PUT 'http:/localhost:5984/hello/doc101' -d '{"motto": "I love gnomes"}'
     curl -X PUT 'http:/localhost:5984/hello/doc102' -d '{"motto": "I love gnomes2"}'
     curl -X PUT 'http:/localhost:5984/hello/doc103' -d '{"motto": "I love gnomes3"}'
+
+    curl -X POST 'http:/localhost:5984/hello' -H 'Content-Type: application/json' -d '{"motto": "Hello World"}'
 
 Update document
     curl http://localhost:5984/hello/doc101
