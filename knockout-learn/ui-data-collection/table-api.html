@@ -9,6 +9,7 @@
 <body>
 
 <div id="demo">
+    <button data-bind="click: loadMore">Load More</button>
     <table>
         <tr>
             <td>Id</td>
@@ -27,14 +28,23 @@
 
 <script>
     var vm = {
-        dataProvider: ko.observableArray()
+        dataProvider: ko.observableArray(),
+        offset: 0,
+        limit: 20
     };
+    vm.loadMore = function(event) {
+        var url = 'http://localhost:5984/hello/_all_docs?limit=' + vm.limit + "&skip=" + vm.offset;
+        console.log("Fetching " + url);
+        $.ajax(url).then(data => {
+            console.log(data);
+            data.rows.forEach(item => vm.dataProvider.push(item));
+            vm.offset += vm.limit;
+        });
+    };
+
     ko.applyBindings(vm, document.getElementById("demo"));
-    
-    $.ajax('http://localhost:5984/hello/_all_docs?limit=20').then(data => {
-        console.log(data);
-        data.rows.forEach(item => vm.dataProvider.push(item));
-    });
+
+    vm.loadMore();
 </script>
 
 </body>
