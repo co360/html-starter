@@ -58,3 +58,6 @@ Delete document
 
 == How to setup a sample database
 
+Use 'couchdb-learn/create-doc-batch.js' to generate dummy data.
+
+Any real world database?
