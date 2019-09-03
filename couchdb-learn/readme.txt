@@ -34,6 +34,8 @@ List all DBs:
 
 List all docs
     curl http://localhost:5984/hello/_all_docs
+
+    # NOTE: You need to quote query parameters!
     curl 'http://127.0.0.1:5984/hello/_all_docs?limit=5&offset=0'
     curl 'http://127.0.0.1:5984/hello/_all_docs?limit=5&offset=20'
 
