@@ -82,10 +82,9 @@ for (var i = -180; i <= 180; i+=45) {
 
 
 // Random numbers between range
-var min = 0, max = 10;
+var min = 1, max = 10;
 for (var i = 0; i < 10; i++)
     console.log("Random decimals 1-10: ", Math.random() * (max - min) + min);
 
 for (var i = 0; i < 10; i++)
     console.log("Random with Math.floor 1-10: ", Math.floor(Math.random() * (max - min + 1)) + min);
-
