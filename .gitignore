@@ -6,6 +6,8 @@ Thumbs.db
 
 .idea/
 
+.vscode/
+
 # Ignore test files
 temp/
 temp.*
