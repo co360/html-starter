@@ -16,6 +16,12 @@
         <li><input type="checkbox"><span>TWO</span> <a href="#">test</a></li>
         <li><input type="checkbox"><span>THREE</span> <a href="#">test</a></li>
         <li><input type="checkbox" checked><span>FOUR</span> <a href="#">test</a></li>
+        <li>
+            <ol>
+                <li>ONE</li>
+                <li>TWO</li>
+            </ol>
+        </li>
     </ul>
 </div>
 
@@ -81,6 +87,7 @@
 
 
     console.log("== Query pseudo-class"); // NOTE: You can't have space between ':'
+    console.log("querySelector pseudo-class #demo li:first-child", document.querySelectorAll("#demo li:first-child"));
     console.log("querySelector pseudo-class #demo li:nth-child(2)", document.querySelectorAll("#demo li:nth-child(2)")); /* Only the 2nd item */
     console.log("querySelector pseudo-class #demo li:nth-child(2n)", document.querySelectorAll("#demo li:nth-child(2n)")); /* every other 2n items */
     console.log("querySelector pseudo-class #demo :checked", document.querySelectorAll("#demo input[type = 'checkbox']:checked"));
