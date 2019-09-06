@@ -23,6 +23,11 @@
             </ol>
         </li>
     </ul>
+
+    <div id="text-input-demo">
+        <label>Name</label>
+        <input name="name" value="">
+    </div>
 </div>
 
 <script>
@@ -91,7 +96,7 @@
     console.log("querySelector pseudo-class #demo li:nth-child(2)", document.querySelectorAll("#demo li:nth-child(2)")); /* Only the 2nd item */
     console.log("querySelector pseudo-class #demo li:nth-child(2n)", document.querySelectorAll("#demo li:nth-child(2n)")); /* every other 2n items */
     console.log("querySelector pseudo-class #demo :checked", document.querySelectorAll("#demo input[type = 'checkbox']:checked"));
-
+    //console.log("querySelector pseudo-class #text-input-demo input:focus", document.querySelectorAll("#text-input-demo input:focus"));
 </script>
 
 </body>
