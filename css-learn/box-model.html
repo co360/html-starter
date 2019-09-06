@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
     <style>
-        #demo {
-            background-color: gray;
-            height: 200px;
+        .box {
+            background-color: tomato;
+            width: 100px;
+            height: 100px;
 
-            margin: 20px;
-            border: 3px solid green;
-            padding: 30px;
+            margin: 30px; /* outside of border */
+            border: 10px solid black;
+            padding: 10px; /* inside border */
         }
     </style>
 </head>
 <body>
 
-<div id="demo">
-    Hello
+<div id="demo" style="width: 200px; height: 200px; border: 1px solid black;">
+    <div class="box">Hello</div>
+</div>
+
+<div id="demo2" style="width: 200px; height: 200px; border: 1px solid black; margin-top: 10px;">
+    <div class="box" style="overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at in iusto possimus velit. At, cumque earum est nulla provident quasi sit sunt totam voluptatum. Accusantium facere molestiae natus quaerat.</div>
 </div>
 
 </body>
