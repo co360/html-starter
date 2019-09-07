@@ -24,7 +24,7 @@ var last = fruits.pop(); // remove Orange (from the end)
 var first = fruits.shift(); // remove Apple from the front
 // ["Banana"];
 
-var newLength = fruits.unshift('Strawberry') // add to the front
+var newLength = fruits.unshift('Strawberry'); // add to the front
 // ["Strawberry", "Banana"];
 
 fruits.push('Mango');
