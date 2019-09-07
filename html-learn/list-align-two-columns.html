@@ -6,14 +6,24 @@
 </head>
 <body>
 
+<style>
+    .col1 {
+        display: inline-block;
+        width: 70%;
+    }
+    .col2 {
+        display: inline-block;
+        width: 30%;
+    }
+</style>
 <div id="demo">
-    <p>See console for details</p>
+    <h2>TODO</h2>
+    <ul>
+        <li><span class="col1">Write Some JS Code.</span><a class="col2" href="#">Delete</a></li>
+        <li><span class="col1">Play Some Ping Pong</span><a class="col2" href="#">Delete</a></li>
+        <li><span class="col1">Play Some Music</span><a class="col2" href="#">Delete</a></li>
+    </ul>
 </div>
-
-<script>
-    console.log("Replacing demo text.");
-    document.querySelector("#demo").innerText = "Hello World";
-</script>
 
 </body>
 </html>
