@@ -7,8 +7,15 @@
 <body>
 
 <script>
-    console.log("Replacing demo text.");
-    document.querySelector("#demo").innerText = "Hello World";
+    function demo4() {
+        try {
+            console.log("Throwing error object");
+            throw new Error("oops");
+        } catch (e) {
+            console.log("Catched error: ", e);
+        }
+    }
+    demo4();
 </script>
 
 </body>

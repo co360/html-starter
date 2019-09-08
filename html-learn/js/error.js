@@ -34,7 +34,7 @@ function demo3() {
 }
 function demo4() {
     try {
-        console.log("Throwing error string");
+        console.log("Throwing error object");
         throw new Error("oops");
     } catch (e) {
         // console.log("Error attributes:");
