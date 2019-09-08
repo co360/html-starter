@@ -9,7 +9,11 @@
 
 <!--
 This demo will update VM from UI side after an observable is populated.
-NOTE: This will NOT WORK. You need a boolean flag to guard the update!
+
+NOTE: This demo will NOT WORK. The reason is we are guarding the UI rendering
+using "myList().length > 0". This becomes active as soon as there is first item
+in the list. And since the checkItem is looking for last item, it will fail!
+You need a separate boolean flag to guard the update!
 See update-view-model-from-binding-guarded-fix.html
 -->
 <div id="demo">
