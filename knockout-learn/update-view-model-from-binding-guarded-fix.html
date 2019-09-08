@@ -9,12 +9,10 @@
 
 <!--
 This demo will update VM from UI side after an observable is populated.
-NOTE: This will NOT WORK. You need a boolean flag to guard the update!
-See update-view-model-from-binding-guarded-fix.html
 -->
 <div id="demo">
-    <p data-bind="hidden: myList().length > 0">Will update list in a moment...</p>
-    <div data-bind="if: myList().length > 0">
+    <p data-bind="hidden: myListReady">Will update list in a moment...</p>
+    <div data-bind="if: myListReady">
         <ul data-bind="foreach: myList">
             <li data-bind="text: $data, attr: {id: 'item' + $index()}"></li>
         </ul>
@@ -26,6 +24,7 @@ See update-view-model-from-binding-guarded-fix.html
 <script>
     var vm = {
         myList: ko.observableArray(),
+        myListReady: ko.observable(false),
         checkItem: function(msg) {
             console.log("checkItem: " + msg);
             // Get the li item from UI to see if it exists.
@@ -48,6 +47,7 @@ See update-view-model-from-binding-guarded-fix.html
     setTimeout(() => {
         for (var i = 0; i < 1000; i++)
             vm.myList.push("item" + i);
+        vm.myListReady(true);
     }, 1000);
 </script>
 
