@@ -7,14 +7,22 @@
 </head>
 <body>
 
+<!--
+The with and using bindings create a new binding context, so that descendant
+elements are bound in the context of a specified object.
 
+These bindings differ in how they deal with a value of null or undefined:
+
+For the with binding, descendant elements will not be bound at all, but will instead be removed from the document.
+For the using binding, it is generally incorrect to supply a null or undefined value since it will try to use that value as the context for descendant elements.
+-->
 
 <p>A message should appear after 3 seconds:</p>
 
 <p data-bind="text: helloMessage">Hi</p>
 
 <!--
-This demo will give error!
+NOTE: This demo will give error!
 
 Note that we can't use helloMessage properties such as 'greeting' or 'name'
 with the "using" binding during initial construction of view, since they
