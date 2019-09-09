@@ -22,3 +22,8 @@ console.log(array1.sort((e1, e2) => e2 - e1)); // DES Order
 console.log("Shuffle: ", array1.sort((a, b) => Math.random() - 0.5));
 console.log("Shuffle: ", array1.sort((a, b) => Math.random() - 0.5));
 console.log("Shuffle: ", array1.sort((a, b) => Math.random() - 0.5));
+
+// Sort object by property values
+var months = [{name: 'March', value: 3}, {name: 'Jan', value: 1}, {name: 'Feb', value: 2}, {name: 'Dec', value: 12}];
+months.sort((a, b) => a.value - b.value);
+console.log(months);
