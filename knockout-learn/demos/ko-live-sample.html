@@ -10,12 +10,14 @@
 
 <div id="app">
     Choose a ticket class:
-    <select data-bind="options: tickets,
-                optionsCaption: 'Choose...',
-                optionsText: 'name',
-                value: chosenTicket"></select>
-    <button data-bind="enable: chosenTicket,
-                click: resetTicket">Clear</button>
+    <select data-bind="
+            options: tickets,
+            optionsCaption: 'Choose...',
+            optionsText: 'name',
+            value: chosenTicket"></select>
+    <button data-bind="
+            enable: chosenTicket,
+            click: resetTicket">Clear</button>
 
     <p data-bind="with: chosenTicket">
         You have choosen <b data-bind="text: name"></b>
