@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todo List</title>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', () => main());
+		function main() {
+		    // AddItem handler
+		    document.getElementById("add-item").addEventListener('click', event => {
+		        var todoItem = document.getElementById("todoItem");
+                var todoList = document.getElementById("todo-list");
+                var li = document.createElement("li");
+                console.log("Adding item: ", todoItem);
+                li.innerHTML = `
+					<input type="checkbox">
+					<span>${todoItem.value}</span>
+					<button>Delete</button>
+                `;
+                li.querySelector("input").addEventListener('click', event => checkOffItem(event));
+                li.querySelector("button").addEventListener('click', event => deleteItem(event));
+                todoList.appendChild(li);
+		    });
+      
+		    // Delete Handler
+		    var deleteItems = document.querySelectorAll("#todo-list li button");
+            deleteItems.forEach(li => {
+                li.addEventListener('click', event => deleteItem(event));
+            });
+			function deleteItem(event) {
+                var li = event.target.parentElement;
+                var todoList = document.getElementById("todo-list");
+                console.log("Removing item: ", li);
+                todoList.removeChild(li);
+			}
+			
+			// Checkbox Handler
+            var checkboxItems = document.querySelectorAll("#todo-list li input");
+            checkboxItems.forEach(checkbox => {
+                checkbox.addEventListener('click', event => checkOffItem(event));
+            });
+            function checkOffItem(event) {
+                var checkboxItem = event.target;
+                var todoItem = checkboxItem.nextElementSibling;
+                if (checkboxItem.checked)
+                    todoItem.style = 'text-decoration: line-through;';
+                else
+                    todoItem.style = 'text-decoration: initial;';
+            }
+		}
+	</script>
+</head>
+<body>
+
+<div>
+	<input id="todoItem" name="todoItem">
+	<button id="add-item">Add</button>
+</div>
+
+<div>
+	<ul id="todo-list">
+		<li>
+			<input type="checkbox">
+			<span>Write A Todo List</span>
+			<button>Delete</button>
+		</li>
+		<li>
+			<input type="checkbox">
+			<span>Play a match of Table Tennis</span>
+			<button>Delete</button>
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>
