@@ -2,72 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML/CSS/JavaScript Starter</title>
-    <style>
-        body {
-            background: #20262E;
-            padding: 20px;
-            font-family: Helvetica;
+    <title>KnockoutJS Todo List</title>
+    <script src="../../../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => main());
+        function main() {
+            var vm = {
+                newTodo: ko.observable(),
+                todoList: ko.observableArray([
+                    { text: "Write A Todo List", done: ko.observable(true) },
+                    { text: "Play a match of Table Tennis", done: ko.observable(false) }
+                ])
+            };
+            vm.addItem = function(event) {
+                var todoText = vm.newTodo();
+                console.log("Adding item: ", todoText);
+                vm.todoList.push({text: todoText, done: ko.observable(false)});
+            };
+            vm.deleteItem = function(todoItem) {
+                // NOTE: When you are inside foreach, the click handler will
+                // receive the loop item as argument
+                console.log("Removing item: ", todoItem);
+                vm.todoList.remove(todoItem);
+            };
+            
+            console.log("Initialing App: ", vm);
+            ko.applyBindings(vm, document.getElementById("app"));
         }
-
-        #app {
-            background: #fff;
-            border-radius: 4px;
-            padding: 20px;
-            transition: all 0.2s;
-        }
-
-        li {
-            margin: 8px 0;
-        }
-
-        h2 {
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        del {
-            color: rgba(0, 0, 0, 0.3);
-        }
-    </style>
-    <script src="../../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
+    </script>
 </head>
 <body>
 
 <div id="app">
-    <h2>Todos:</h2>
-    <ol data-bind="foreach: todos">
+    <div>
+        <input data-bind="textInput: newTodo">
+        <button data-bind="click: addItem">Add</button>
+    </div>
+    <ol data-bind="foreach: todoList">
         <li>
-            <input type="checkbox" data-bind="checked: done">
-            <del data-bind="if: done">
-                <span data-bind="text: text"></span>
-            </del>
-            <!-- ko ifnot: done -->
-            <span data-bind="text: text"></span>
-            <!-- /ko -->
+            <input data-bind="checked: done" type="checkbox">
+            <span data-bind="text: text, style: {'text-decoration': done() ? 'line-through' : 'initial'}"></span>
+            <button data-bind="click: $parent.deleteItem">Delete</button>
         </li>
     </ol>
 </div>
-
-<script>
-    // This demo will implement the same demo used in https://jsfiddle.net/boilerplate/vue for VueJS
-    // that render a to-do list. We will do the same using KO instead.
-
-    // NOTE: There is no need to explicitly implements toggle method since our "done" flag is
-    // observable, and the HTML check/uncheck will auto update the value!
-    //
-    // NOTE: When designing KO and try to determine which field is needed to be observable, and which
-    // is not. Try to think on UI, which part of the data that's needed to be monitor and updated.
-    var viewModel = {
-        todos: [
-            { text: "Learn JavaScript", done: ko.observable(false) },
-            { text: "Learn Vue", done: ko.observable(false) },
-            { text: "Play around in JSFiddle", done: ko.observable(true) },
-            { text: "Build something awesome", done: ko.observable(true) }
-        ]
-    };
-    ko.applyBindings(viewModel, document.getElementById("app"));
-</script>
 
 </body>
 </html>
