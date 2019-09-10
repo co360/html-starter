@@ -8,11 +8,13 @@
 <body>
 
 <p id="app">
-    <span id="msg">Hello</span>
+    <button>Test</button>
 </p>
 
 <script>
-    $("#msg").text("Hello World");
+    $("button").on('click', function(event) {
+        console.log(event);
+    });
 </script>
 
 </body>

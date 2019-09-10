@@ -2,48 +2,48 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Todo List</title>
+	<title>jQuery Todo List</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
 	<script>
-		document.addEventListener('DOMContentLoaded', () => main());
+		$(main); // Invoke main when DOM is ready
 		function main() {
 		    // AddItem handler
-		    document.getElementById("add-item").addEventListener('click', () => {
-		        var todoItem = document.getElementById("todoItem");
+		    $("#add-item").on('click', () => {
+		        var todoItem = $("#todoItem").val();
                 var li = document.createElement("li");
                 console.log("Adding item: ", todoItem);
                 li.innerHTML = `
 					<input type="checkbox">
-					<span>${todoItem.value}</span>
+					<span>${todoItem}</span>
 					<button>Delete</button>
                 `;
-                li.querySelector("input").addEventListener('click', event => checkOffItem(event));
-                li.querySelector("button").addEventListener('click', event => deleteItem(event));
-                var todoList = document.getElementById("todo-list");
-                todoList.appendChild(li);
+                $(li).find("input").on('click', event => checkOffItem(event));
+                $(li).find("button").on('click', event => deleteItem(event));
+                $("#todo-list").append(li);
 		    });
       
 		    // Delete Handler
-		    var deleteItems = document.querySelectorAll("#todo-list li button");
-            deleteItems.forEach(li => {
-                li.addEventListener('click', event => deleteItem(event));
-            });
+		    var deleteItems = $("#todo-list li button");
+            deleteItems.each((index, li) => $(li).on('click', event => deleteItem(event)));
 			function deleteItem(event) {
                 var li = event.target.parentElement;
                 console.log("Removing item: ", li);
-                var todoList = document.getElementById("todo-list");
-                todoList.removeChild(li);
+                $(li).remove();
 			}
 			
 			// Checkbox Handler
-            var checkboxItems = document.querySelectorAll("#todo-list li input");
-            checkboxItems.forEach(checkbox => {
-                checkbox.addEventListener('click', event => checkOffItem(event));
-                
+            var checkboxItems = $("#todo-list li input");
+            checkboxItems.each((index, checkbox) => {
+                var checkboxJQ = $(checkbox);
+                checkboxJQ.on('click', event => checkOffItem(event));
+
                 // Mark off initial todo item if it's checked
-	            if (checkbox.checked) {
-	                var event = new CustomEvent("click");
-	                event.target = checkbox;
+                if (checkbox.checked) {
+                    // $(checkbox).trigger('click'); // TODO: Why this will not work?
+	                
+                    var event = new CustomEvent("click");
+                    event.target = checkbox;
                     checkbox.dispatchEvent(event);
                 }
             });
