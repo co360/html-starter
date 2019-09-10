@@ -14,10 +14,10 @@ var o2 = {
         /* message2: `${message} World.`, This is invalid syntax! */
         message3: `${this.message} World.`, // This will resulted in "undefined World"!
         get message4() {
-            return `${this.message} World.`;
+            return `${this.message} World.`; // this is okay.
         },
         message5: function() {
-            return `${this.message} World again.`;
+            return `${this.message} World again.`; // this is okay.
         },
         message6: function() {
             return `${this.message4} nested.`;
@@ -39,13 +39,18 @@ var o3 = {
     myList: [1, 2, 3],
     a: () => "a11",
     b: n => "b" + n,
-    /* c: () => this.myList.length THIS WILL NOT WORK! */
-    c: function(){ return this.myList.length }
+    c: () => this.myList, /* THIS WILL NOT WORK because 'this.myList' is null! */
+    d: function() {
+        return () => this.myList; /* This is okay!*/
+    },
+    e: function(){ return this.myList } /* This is okay */
 };
 console.log("o3.myList", o3.myList);
 console.log("o3.a", o3.a());
 console.log("o3.b", o3.b(99));
 console.log("o3.c", o3.c());
+console.log("o3.d", o3.d()());
+console.log("o3.e", o3.e());
 
 // For more reading on object literal, see:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer

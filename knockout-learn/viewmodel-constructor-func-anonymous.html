@@ -24,10 +24,13 @@
 </div>
 
 <script>
-    function ViewModel() {
+    // NOTE: Do not forget to use "new" on this anonymous constructor function,
+    // or else your $parent will be "undefined" but other parts still works.
+    // This will lead to very hard to debug problem!
+    var vm = new function() {
         var self = this;
-        self.message = ko.observable("Hello");
-        self.myList = [{name: 'zemian'}, {name: 'kenny'}, {name: 'lily'}];
+        this.message = ko.observable("Hello");
+        this.myList = [{name: 'zemian'}, {name: 'kenny'}, {name: 'lily'}];
         
         self.upCase = function(str) {
             return str.toUpperCase();
@@ -44,12 +47,10 @@
         self.handleEventByLoop = function(data, event) {
             console.log("this, data, event, message", this, data, event, self.message());
         }
-    }
-    var vm = new ViewModel();
+    }();
     
     ko.applyBindings(vm);
 </script>
 
 </body>
 </html>
-
