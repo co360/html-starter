@@ -14,7 +14,7 @@
                     { text: "Play a match of Table Tennis", done: ko.observable(false) }
                 ])
             };
-            vm.addItem = function(event) {
+            vm.addItem = function() {
                 var todoText = vm.newTodo();
                 console.log("Adding item: ", todoText);
                 vm.todoList.push({text: todoText, done: ko.observable(false)});
