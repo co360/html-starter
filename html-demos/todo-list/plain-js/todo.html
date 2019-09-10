@@ -8,7 +8,7 @@
 		document.addEventListener('DOMContentLoaded', () => main());
 		function main() {
 		    // AddItem handler
-		    document.getElementById("add-item").addEventListener('click', event => {
+		    document.getElementById("add-item").addEventListener('click', () => {
 		        var todoItem = document.getElementById("todoItem");
                 var todoList = document.getElementById("todo-list");
                 var li = document.createElement("li");

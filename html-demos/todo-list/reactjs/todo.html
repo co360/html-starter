@@ -23,7 +23,7 @@
                     this.setState({newTodo: event.target.value});
                 };
                 
-                this.addItem = (event) => {
+                this.addItem = () => {
                     var newTodoText = this.state.newTodo;
                     console.log("Adding item: ", newTodoText);
                     this.setState(state => {

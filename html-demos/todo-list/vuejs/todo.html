@@ -18,7 +18,7 @@
                     ]
                 },
                 methods: {
-                    addItem: function(event) {
+                    addItem: function() {
                         var data = this.$data;
                         console.log("Adding item: ", data.newTodo);
                         data.todoList.push({ text: data.newTodo, done: false });
