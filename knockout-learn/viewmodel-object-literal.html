@@ -24,6 +24,11 @@
 </div>
 
 <script>
+    /*
+    Best Practice with Object Literal is:
+    1) Place all data inside the literal
+    2) Place all functions outside of the literal and add them as properties
+     */
     var vm = {
         message: ko.observable("Hello"),
         myList: [{name: 'zemian'}, {name: 'kenny'}, {name: 'lily'}],
