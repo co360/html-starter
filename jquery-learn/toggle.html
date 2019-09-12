@@ -1,4 +1,7 @@
 <!doctype html>
+<!--
+https://api.jquery.com/toggle/
+-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -12,9 +15,8 @@
 <p style="display: none">Good Bye</p>
 
 <script>
-    var flip = 0;
     $( "button" ).click(function() {
-        $( "p" ).toggle( flip++ % 2 === 0 );
+        $( "p" ).toggle();
     });
 </script>
 
