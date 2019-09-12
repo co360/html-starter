@@ -19,13 +19,27 @@
 		 syntaxes still work but are deprecated.
 		 */
         $(function () {
-            $("#msg").text("Hello World");
+            $("ol").append("<li>Document is ready!</li>");
+        });
+        
+        // == Using promise style with "$.ready"
+        $.when( $.ready ).then(function() {
+            $("ol").append("<li>Document is ready - with Promise method.</li>");
+        });
+
+        // == We can get data file ready and wait for DOM ready together before action
+        $.when(
+            $.getJSON( "ajax/test.json" ),
+            $.ready
+        ).then(function( data ) {
+            console.log("data", data);
+            $("ol").append("<li>Document is ready - with json data file.</li>");
         });
 	</script>
 </head>
 <body>
 
-<p id="msg">Hello</p>
+<ol></ol>
 
 </body>
 </html>
