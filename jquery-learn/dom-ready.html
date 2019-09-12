@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>JQuery Learning</title>
-    <script src="../resources/js/libs/jquery/jquery-3.4.1.js"></script>
-    <script>
-        /*
-         jQuery offers several ways to attach a function that will run when the DOM is ready. All of the following syntaxes are equivalent:
- 
-         $( handler )
-         $( document ).ready( handler )
-         $( "document" ).ready( handler )
-         $( "img" ).ready( handler )
-         $().ready( handler )
-         
-         As of jQuery 3.0, only the first syntax is recommended; the other syntaxes still work but are deprecated.
-         */
-        $(function() {
+	<meta charset="UTF-8">
+	<title>JQuery Learning</title>
+	<script src="../resources/js/libs/jquery/jquery-3.4.1.js"></script>
+	<script>
+		/*
+		 jQuery offers several ways to attach a function that will run when the
+		 DOM is ready. All of the following syntaxes are equivalent:
+		 
+		 $( handler )
+		 $( document ).ready( handler )
+		 $( "document" ).ready( handler )
+		 $( "img" ).ready( handler )
+		 $().ready( handler )
+		 
+		 As of jQuery 3.0, only the first syntax is recommended; the other
+		 syntaxes still work but are deprecated.
+		 */
+        $(function () {
             $("#msg").text("Hello World");
         });
-    </script>
+	</script>
 </head>
 <body>
 
