@@ -5,6 +5,10 @@ browsers.
 
 https://api.jquery.com/
 
+== Examples & Credits
+
+Many of the examples in this folder are directly from jquery documentation.
+
 == Quick Reference
 
 jQuery Selector
