@@ -16,7 +16,15 @@
     -->
     
     <!-- This hidden binding will act as if/else for KO -->
-    <p data-bind="hidden: myList().length > 0">List will appear soon...</p>
+    
+    <!--
+    NOTE: TO properly guard full myList() before rendering, you need to
+    do more than simply "myList().length > 0", else render will happen
+    as soon as first item is inserted, not when myList is full! To solve this
+    it's best to use separate ready flag.
+    -->
+    <p data-bind="hidden: myListReady">List will appear
+        soon...</p>
     <!--
     Alternate solution:
     <p data-bind="ifnot: myList().length > 0">List will appear soon...</p>
@@ -28,8 +36,14 @@
 </div>
 
 <script>
+    /*
+    NOTE: You should not use computed value for myExpectedListSize using myList.length
+    because we need to use myExpectedListSize as expected value to guard the myList
+    before usage.
+     */
     var vm = {
-        myList: ko.observableArray()
+        myList: ko.observableArray(),
+        myListReady: ko.observable(false)
     };
     ko.applyBindings(vm);
 
