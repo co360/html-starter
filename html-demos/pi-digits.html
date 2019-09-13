@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PI Digits</title>
+	
+	<script>
+		// http://ajennings.net/blog/a-million-digits-of-pi-in-9-lines-of-javascript.html
+		
+		// First thousand digits
+		// TO calculate a million digit, replace 1020n to 1000020n
+        let i = 1n;
+        let x = 3n * (10n ** 1020n);
+        let pi = x;
+        while (x > 0) {
+            x = x * i / ((i + 1n) * 4n);
+            pi += x / (i + 2n);
+            i += 2n;
+        }
+        console.log(pi / (10n ** 20n));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
