@@ -8,6 +8,13 @@
 <body>
 
 <div id="demo">
+    <!--
+    // NOTE: Default value of "ko.observableArray()" is already an empty array, so
+    // that mean you can't use "if" binding statement as empty object
+    // like data-bind="if: myObservableArray" but
+    // do data-bind="if: myObservableArray().length > 0" instead.
+    -->
+    
     <!-- This hidden binding will act as if/else for KO -->
     <p data-bind="hidden: myList().length > 0">List will appear soon...</p>
     <!--

@@ -20,8 +20,20 @@
 </div>
 
 <script>
-    var myObservableArray = ko.observableArray();    // Initially an empty array
+    var myObservableArray = ko.observableArray();    // Initially an empty array. Note that we
+                                                     // do not need to pass empty array!
+    
+    console.log("Initial myObservableArray()=", myObservableArray()); // => []
+    console.log("myObservableArray.length", myObservableArray().length); // => 0
+    console.log("myObservableArray", myObservableArray);
+    
     myObservableArray.push('Some value');            // Adds the value and notifies observers
+
+    console.log("After push myObservableArray()=", myObservableArray()); // => []
+    console.log("After push myObservableArray().length", myObservableArray().length); // => 0
+    
+    // NOTE: Do not do this! This is NOT the length of the array and give return 0!
+    console.log("After push myObservableArray.length", myObservableArray.length); // => 0
 
     // This observable array initially contains three objects
     var anotherObservableArray = ko.observableArray([
