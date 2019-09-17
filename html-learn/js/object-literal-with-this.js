@@ -55,3 +55,49 @@ console.log("o3.e", o3.e());
 // For more reading on object literal, see:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
 // https://eslint.org/docs/rules/object-shorthand
+
+// == Create member with existing and "this"
+
+// NOTE: This will not work!
+var o4 = {
+    foo: "one",
+    bar: "BIG " + this.foo
+};
+console.log("o4", o4); // { foo: 'one', bar: 'BIG undefined' }
+console.log("o4.bar", o4.bar); // BIG undefined
+
+// Solution#1
+var o4 = {
+    foo: "one",
+    get bar(){ return "BIG " + this.foo }
+};
+console.log("o4", o4); // { foo: 'one', bar: [Getter] }
+console.log("o4.bar", o4.bar); // BIG one
+
+// Solution#2
+var o4 = {
+    foo: "one",
+    bar: null
+};
+o4.bar = "BIG " + o4.foo;
+console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
+console.log("o4.bar", o4.bar); // BIG one
+
+// Solution#3
+var o4 = {
+    foo: "one",
+    bar: (() => "BIG " + this.foo)()
+};
+o4.bar = "BIG " + o4.foo;
+console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
+console.log("o4.bar", o4.bar); // BIG one
+
+// == "null" vs "undefined" as object properties
+var o5 = {foo: null, bar: undefined};
+console.log("o5", o5);
+console.log('o5.hasOwnProperty("foo")', o5.hasOwnProperty("foo"));
+console.log('o5.hasOwnProperty("bar")', o5.hasOwnProperty("bar"));
+console.log('o5.hasOwnProperty("baz")', o5.hasOwnProperty("baz"));
+console.log("o5.foo", o5.foo);
+console.log("o5.bar", o5.bar);
+console.log("o5.baz", o5.baz);
