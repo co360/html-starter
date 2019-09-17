@@ -92,7 +92,33 @@ o4.bar = "BIG " + o4.foo;
 console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
 console.log("o4.bar", o4.bar); // BIG one
 
+// Solution#3b - wrap code in a function wrapper
+console.log("== Solution#3b");
+(function () {
+    var o4 = {
+        foo: "one",
+        bar: (() => "BIG " + this.foo)()
+    };
+    o4.bar = "BIG " + o4.foo;
+    console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
+    console.log("o4.bar", o4.bar); // BIG one
+})();
+
+
+// Solution#3c - wrap code in a constructor function wrapper
+console.log("== Solution#3c");
+new function () {
+    var o4 = {
+        foo: "one",
+        bar: (() => "BIG " + this.foo)()
+    };
+    o4.bar = "BIG " + o4.foo;
+    console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
+    console.log("o4.bar", o4.bar); // BIG one
+};
+
 // == "null" vs "undefined" as object properties
+console.log('== "null" vs "undefined"');
 var o5 = {foo: null, bar: undefined};
 console.log("o5", o5);
 console.log('o5.hasOwnProperty("foo")', o5.hasOwnProperty("foo"));
