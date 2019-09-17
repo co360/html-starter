@@ -8,6 +8,7 @@
 <body>
 
 <div id="app">
+    <h1>DEMO1</h1>
     <div>upCase: <span data-bind="text: upCase('foo')"></span></div>
     <div>Message: <span data-bind="text: message"></span></div>
     <div>upCaseMessage: <span data-bind="text: upCaseMessage()"></span></div>
@@ -21,6 +22,11 @@
             </li>
         </ul>
     </div>
+</div>
+
+<div id="app2">
+    <h1>DEMO2</h1>
+    <span data-bind="text: dataListLength"></span>
 </div>
 
 <script>
@@ -48,8 +54,26 @@
             console.log("this, data, event, message", this, data, event, self.message());
         }
     }();
+    ko.applyBindings(vm, document.getElementById("app"));
     
-    ko.applyBindings(vm);
+    // == TEST
+    var o4 = {
+        foo: "one",
+        bar: (() => {console.log("bar this", this); return "bar BIG " + this.foo; })(),
+        baz: (() => {console.log("baz this", this); return "baz BIG " + this.foo; })(),
+        foobar: "foobar",
+    };
+    console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
+    console.log("o4.bar", o4.bar); // BIG one
+    console.log("o4.baz", o4.baz); // BIG2 undefined !!! ???
+    console.log("o4.foobar", o4.foobar); // foobar
+
+    // // == VM Model #2 demo
+    // var vm2 = {
+    //     dataList: ko.observableArray([1, 2, 3]),
+    //     dataListLength: (() => this.dataList().length)()
+    // };
+    // ko.applyBindings(vm2, document.getElementById("app2"));
 </script>
 
 </body>

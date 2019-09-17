@@ -66,7 +66,7 @@ var o4 = {
 console.log("o4", o4); // { foo: 'one', bar: 'BIG undefined' }
 console.log("o4.bar", o4.bar); // BIG undefined
 
-// Solution#1
+// Solution#1 - using getter
 var o4 = {
     foo: "one",
     get bar(){ return "BIG " + this.foo }
@@ -83,39 +83,23 @@ o4.bar = "BIG " + o4.foo;
 console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
 console.log("o4.bar", o4.bar); // BIG one
 
-// Solution#3
+// Solution#3 - This will NOT WORK!
+console.log("== Solution#3");
 var o4 = {
     foo: "one",
     bar: (() => "BIG " + this.foo)()
 };
-o4.bar = "BIG " + o4.foo;
+console.log("o4", o4); // { foo: 'one', bar: 'BIG undefined' }
+console.log("o4.bar", o4.bar); // BIG undefined
+
+// Solution#4 - constructor function
+console.log("== Solution#4");
+var o4 = new function (){
+    this.foo = "one";
+    this.bar = "BIG " + this.foo;
+};
 console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
 console.log("o4.bar", o4.bar); // BIG one
-
-// Solution#3b - wrap code in a function wrapper
-console.log("== Solution#3b");
-(function () {
-    var o4 = {
-        foo: "one",
-        bar: (() => "BIG " + this.foo)()
-    };
-    o4.bar = "BIG " + o4.foo;
-    console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
-    console.log("o4.bar", o4.bar); // BIG one
-})();
-
-
-// Solution#3c - wrap code in a constructor function wrapper
-console.log("== Solution#3c");
-new function () {
-    var o4 = {
-        foo: "one",
-        bar: (() => "BIG " + this.foo)()
-    };
-    o4.bar = "BIG " + o4.foo;
-    console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
-    console.log("o4.bar", o4.bar); // BIG one
-};
 
 // == "null" vs "undefined" as object properties
 console.log('== "null" vs "undefined"');
