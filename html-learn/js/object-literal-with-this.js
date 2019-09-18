@@ -111,3 +111,13 @@ console.log('o5.hasOwnProperty("baz")', o5.hasOwnProperty("baz"));
 console.log("o5.foo", o5.foo);
 console.log("o5.bar", o5.bar);
 console.log("o5.baz", o5.baz);
+
+// == Object literal function and "this"
+console.log('== Object literal function and "this"');
+var o6 = {
+  foo: "Foo"
+};
+o6.test = function() {
+   console.log("o6.test this should have access to 'foo' ", this.foo);
+};
+o6.test();
