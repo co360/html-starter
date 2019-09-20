@@ -55,3 +55,13 @@ new Employee2().greeting();
 //
 // When not to use fat arrow
 // https://dmitripavlutin.com/when-not-to-use-arrow-functions-in-javascript/
+
+console.log("== Using 'this' inside a prototype function");
+function MyFoo () {
+    this.foo = "Foo";
+}
+MyFoo.prototype.greeting = function () {
+    console.log("Hello " + this.foo);
+};
+var myFoo = new MyFoo();
+myFoo.greeting();
