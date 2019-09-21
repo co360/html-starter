@@ -139,3 +139,14 @@ import * as fileContent from "text!xyz.txt";
 import * as cssContent from "css!http://example.com/my.css";
 console.log(fileContent, cssContent);
 ```
+
+## JS Versions
+
+TS Targets
+    ES6 = ES2015
+    ES5 = ES2013
+    
+TS Module
+    AMD = RequireJS
+    CommonJS = NodeJS
+    ES6 = Plain JS
