@@ -7,6 +7,7 @@ class EventClickExample {
         document.getElementById("box1").addEventListener('click', this.myClickEvent);
         document.getElementById("box2").addEventListener('click', this.myClickEvent2);
         document.getElementById("box3").addEventListener('click', this.myClickEvent3);
+        document.getElementById("box4").addEventListener('click', EventClickExample.myClickEvent4(this));
     }
 
     myClickEvent (event) {
@@ -28,4 +29,14 @@ class EventClickExample {
         // will be pickup by nearby context, which is the class instance
         console.log(this.name + " myClickEvent3", event);
     };
+
+    static myClickEvent4 (ex: EventClickExample) {
+        // We are using myClickEvent4 as event handler factory so we can enclose parameter, in this
+        // case we want the class instance "ex"
+        //
+        // NOTE: To use this example myClickEvent4, you need to actually call it!
+        return function (event) {
+            console.log(ex.name + " myClickEvent4", event);
+        }
+    }
 }
