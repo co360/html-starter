@@ -18,6 +18,10 @@ var EventClickExample = /** @class */ (function () {
         document.getElementById("box2").addEventListener('click', this.myClickEvent2);
         document.getElementById("box3").addEventListener('click', this.myClickEvent3);
         document.getElementById("box4").addEventListener('click', EventClickExample.myClickEvent4(this));
+        var self = this;
+        document.getElementById("box5").addEventListener('click', function (event) {
+            console.log(self.name + " myClickEvent5", event);
+        });
     }
     EventClickExample.prototype.myClickEvent = function (event) {
         // BAD: The "this" is not bound to class instance! So output is "undefined"
@@ -31,7 +35,7 @@ var EventClickExample = /** @class */ (function () {
         //
         // NOTE: To use this example myClickEvent4, you need to actually call it!
         return function (event) {
-            console.log(ex.name + " myClickEvent", event);
+            console.log(ex.name + " myClickEvent4", event);
         };
     };
     return EventClickExample;

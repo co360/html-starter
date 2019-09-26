@@ -4,10 +4,16 @@ class EventClickExample {
 
     constructor () {
         console.log("Setup click listeners");
-        document.getElementById("box1").addEventListener('click', this.myClickEvent);
-        document.getElementById("box2").addEventListener('click', this.myClickEvent2);
-        document.getElementById("box3").addEventListener('click', this.myClickEvent3);
-        document.getElementById("box4").addEventListener('click', EventClickExample.myClickEvent4(this));
+        document.getElementById("box1").addEventListener('click', this.myClickEvent); // BAD
+        document.getElementById("box2").addEventListener('click', this.myClickEvent2); // BAD
+        document.getElementById("box3").addEventListener('click', this.myClickEvent3); // GOOD
+        document.getElementById("box4").addEventListener('click', EventClickExample.myClickEvent4(this)); // GOOD
+
+        // GOOD
+        let self = this;
+        document.getElementById("box5").addEventListener('click', function (event) {
+            console.log(self.name + " myClickEvent5", event);
+        });
     }
 
     myClickEvent (event) {
