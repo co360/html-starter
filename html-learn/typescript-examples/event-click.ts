@@ -27,5 +27,5 @@ class EventClickExample {
         // GOOD: This works because FAT arrow function does not affect "this", and it
         // will be pickup by nearby context, which is the class instance
         console.log(this.name + " myClickEvent3", event);
-    }
+    };
 }
