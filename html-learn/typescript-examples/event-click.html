@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML/CSS/JavaScript Starter</title>
+    <script src="event-click.js"></script>
 </head>
 <body>
 <style>
@@ -14,13 +15,12 @@
 <div id="demo">
     <h1>Click the Box</h1>
     <div id="box1" class="box">1</div>
+    <div id="box2" class="box">2</div>
+    <div id="box3" class="box">3</div>
+    <div id="box4" class="box">4</div>
 </div>
-
 <script>
-    document.getElementById("box1").addEventListener('click', function(event) {
-        console.log("click event received: event", event);
-    });
+    new EventClickExample();
 </script>
-
 </body>
 </html>
