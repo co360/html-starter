@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <input v-model.number="age" type="number">
+    <p>Message is: {{ age }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: "#demo",
+        data: {
+            age: 18
+        }
+    });
+</script>
+
+</body>
+</html>
