@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+</div>
+
+<script>
+    /*
+    When using multiple instance of components, each retain their data value.
+    This is the ready why 'data' needs to be a function in component.
+     */
+    Vue.component('button-counter', {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    });
+
+    new Vue({
+        el: "#app"
+    });
+</script>
+
+</body>
+</html>
