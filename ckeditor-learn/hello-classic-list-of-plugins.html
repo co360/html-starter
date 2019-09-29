@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../resources/js/libs/ckeditor/classic/ckeditor.js"></script>
+    <title>CKEditor Demo</title>
+</head>
+<body>
+
+<div id="editor">
+    See console for list of CKEditor plugins
+</div>
+<script>
+    ClassicEditor.builtinPlugins.forEach( (plugin, index) => {
+        console.log(index + 1, plugin.pluginName);
+    } );
+</script>
+
+</body>
+</html>
