@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <input v-model.trim="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+    <p>Message Length is: {{ message.length }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: "#demo",
+        data: {
+            message: "Hello World   "
+        }
+    });
+</script>
+
+</body>
+</html>
