@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    {{ message }}
+</div>
+
+<script>
+    /*
+    We will not define 'el' attr but use '$mount' explicitly to bind/mount the Vue instance to DOM template.
+     */
+    let vm = new Vue({
+        data: {
+            message: "Hello World"
+        }
+    });
+    vm.$mount('#app');
+</script>
+
+</body>
+</html>

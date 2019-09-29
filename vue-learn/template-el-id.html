@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    {{ message }}
+</div>
+
+<script>
+    /*
+    We use 'el' to select a DOM element as template that mount/bound to Vue instance.
+     */
+    new Vue({
+        el: '#app',
+        data: {
+            message: "Hello World"
+        }
+    });
+</script>
+
+</body>
+</html>

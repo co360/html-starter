@@ -1,123 +1,44 @@
-var o1 = {
-    el: '#app',
-    data: {
-        message: "Hello"
-    }
-};
-console.log("o1.data.message", o1.data.message);
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
-var o2 = {
-    el: '#app',
-    data: {
-        message: "Hello",
-        /* message2: `${message} World.`, This is invalid syntax! */
-        message3: `${this.message} World.`, // This will resulted in "undefined World"!
-        get message4() {
-            return `${this.message} World.`; // this is okay.
-        },
-        message5: function() {
-            return `${this.message} World again.`; // this is okay.
-        },
-        message6: function() {
-            return `${this.message4} nested.`;
-        },
-
-        myList: [1,2,3],
-        /* myListLen: this.myList.length THIS WILL NOT WORK! */
-        get myListLen() { return this.myList.length }
-    }
-};
-console.log("o2.data.message", o2.data.message);
-console.log("o2.data.message3", o2.data.message3);
-console.log("o2.data.message4", o2.data.message4);
-console.log("o2.data.message5", o2.data.message5());
-console.log("o2.data.message6", o2.data.message6());
-console.log("o2.data.myListLen", o2.data.myListLen);
-
-var o3 = {
-    myList: [1, 2, 3],
-    a: () => "a11",
-    b: n => "b" + n,
-    c: () => this.myList, /* THIS WILL NOT WORK because 'this.myList' is null! */
-    d: function() {
-        return () => this.myList; /* This is okay!*/
+console.log("== Accessing 'this' inside an object literal");
+let o1 = {
+    foo: "Foo",
+    functionAccessThis: function () {
+        return this.foo;
     },
-    e: function(){ return this.myList } /* This is okay */
+    fatArrayAccessThis: () => {
+        return this.foo;
+    }
 };
-console.log("o3.myList", o3.myList);
-console.log("o3.a", o3.a());
-console.log("o3.b", o3.b(99));
-console.log("o3.c", o3.c());
-console.log("o3.d", o3.d()());
-console.log("o3.e", o3.e());
+console.log("o1.functionAccessThis()", o1.functionAccessThis()); // Foo
+console.log("o1.fatArrayAccessThis()", o1.fatArrayAccessThis()); // Undefined
 
-// For more reading on object literal, see:
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
-// https://eslint.org/docs/rules/object-shorthand
-
-// == Create member with existing and "this"
-
-// NOTE: This will not work!
-var o4 = {
-    foo: "one",
-    bar: "BIG " + this.foo
+console.log("== Accessing 'this' inside an object literal with nested object");
+let o2 = {
+    foo: "Foo",
+    methods: {
+        functionAccessThis: function () {
+            return this.foo;
+        },
+        fatArrayAccessThis: () => {
+            return this.foo;
+        }
+    }
 };
-console.log("o4", o4); // { foo: 'one', bar: 'BIG undefined' }
-console.log("o4.bar", o4.bar); // BIG undefined
+console.log("o2.methods.functionAccessThis()", o2.methods.functionAccessThis()); // Undefined
+console.log("o2.methods.fatArrayAccessThis()", o2.methods.fatArrayAccessThis()); // Undefined
 
-// Solution#1 - using getter
-var o4 = {
-    foo: "one",
-    get bar(){ return "BIG " + this.foo }
-};
-console.log("o4", o4); // { foo: 'one', bar: [Getter] }
-console.log("o4.bar", o4.bar); // BIG one
-
-// Solution#2
-var o4 = {
-    foo: "one",
-    bar: null
-};
-o4.bar = "BIG " + o4.foo;
-console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
-console.log("o4.bar", o4.bar); // BIG one
-
-// Solution#3 - This will NOT WORK!
-console.log("== Solution#3");
-var o4 = {
-    foo: "one",
-    bar: (() => "BIG " + this.foo)()
-};
-console.log("o4", o4); // { foo: 'one', bar: 'BIG undefined' }
-console.log("o4.bar", o4.bar); // BIG undefined
-
-// Solution#4 - constructor function
-console.log("== Solution#4");
-var o4 = new function (){
-    this.foo = "one";
-    this.bar = "BIG " + this.foo;
-};
-console.log("o4", o4); // { foo: 'one', bar: 'BIG one' }
-console.log("o4.bar", o4.bar); // BIG one
-
-// == "null" vs "undefined" as object properties
-console.log('== "null" vs "undefined"');
-var o5 = {foo: null, bar: undefined};
-console.log("o5", o5);
-console.log('o5.hasOwnProperty("foo")', o5.hasOwnProperty("foo"));
-console.log('o5.hasOwnProperty("bar")', o5.hasOwnProperty("bar"));
-console.log('o5.hasOwnProperty("baz")', o5.hasOwnProperty("baz"));
-console.log("o5.foo", o5.foo);
-console.log("o5.bar", o5.bar);
-console.log("o5.baz", o5.baz);
-
-// == Object literal function and "this"
-console.log('== Object literal function and "this"');
-var o6 = {
+console.log("== Access 'this' in function defined outside of object literal");
+// This should have same affect as defining functions inside object literal (example o1).
+let o3 = {
   foo: "Foo"
 };
-o6.test = function() {
-   console.log("o6.test this should have access to 'foo' ", this.foo);
+o3.functionAccessThis = function() {
+    // We can use "this" in here, if this method is invoked by a class instance.
+    // NOTE: This does not work if this method is an event handler, which will not be
+    // called by class instance.
+   return this.foo;
 };
-o6.test();
+o3.fatArrayAccessThis = () => {
+    return this.foo;
+};
+console.log("o3.functionAccessThis()", o3.functionAccessThis()); // Foo
+console.log("o3.fatArrayAccessThis()", o3.fatArrayAccessThis()); // Undefined
