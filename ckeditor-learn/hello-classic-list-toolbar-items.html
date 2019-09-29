@@ -11,15 +11,19 @@
 <body>
 
 <div id="editor">
-    See console for list of CKEditor plugins
+    TEST
 </div>
 <script>
-    console.log("List of plugins");
-    ClassicEditor.builtinPlugins.forEach( (plugin, index) => {
-        console.log(index + 1, plugin.pluginName);
-    });
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(function (editor) {
+            console.log("List of toolbar items");
+            let items = Array.from( editor.ui.componentFactory.names() );
+            items.forEach((e, i) => {
+                console.log(i + 1, e);
+            });
+        });
 
-    ClassicEditor.create(document.querySelector('#editor'));
 </script>
 
 </body>
