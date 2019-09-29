@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <select v-model="selected">
         <option v-for="option in options" v-bind:value="option.value">
             {{ option.text }}
@@ -18,7 +18,7 @@
 
 <script>
     new Vue({
-        el: '#demo',
+        el: '#app',
         data: {
             selected: 'A',
             options: [

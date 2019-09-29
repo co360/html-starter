@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <button v-on:click="add">Add</button>
     <ul v-for="item in myList">
         <li>{{item}}</li>
@@ -16,7 +16,7 @@
 
 <script>
     var demo = new Vue({
-        el: "#demo",
+        el: "#app",
         data: {
             myList: ["Zemian", "Yuliang", "Chewan", "Al"],
             personCounter: 0
