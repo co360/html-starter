@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <select v-model="selected" multiple>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <br>
+    <span>Selected: {{ selected }}</span>
+</div>
+
+<script>
+    /*
+    The difference is 'selected' is array instead of single value.
+     */
+    new Vue({
+        el: "#demo",
+        data: {
+            selected: []
+        }
+    });
+</script>
+
+</body>
+</html>
