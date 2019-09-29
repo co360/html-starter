@@ -10,17 +10,13 @@
 </head>
 <body>
 
-<div id="editor">
-    TEST
+<div>
+    <textarea name="content" id="editor">
+    &lt;p&gt;Here goes the initial content of the editor.&lt;/p&gt;
+    </textarea>
 </div>
 <script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .then(editor => {
-            console.log("Editor is ready", editor);
-        }).catch(error => {
-            console.error(error);
-        });
+    ClassicEditor.create(document.querySelector('#editor'));
 </script>
 
 </body>
