@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<div id="example-1">
+<div id="app">
     <button v-on:click="counter += 1">Add 1</button>
     <p>The button above has been clicked {{ counter }} times.</p>
 </div>
 
 <script>
-    var example1 = new Vue({
-        el: '#example-1',
+    new Vue({
+        el: '#app',
         data: {
             counter: 0
         }

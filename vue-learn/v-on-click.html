@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<div id="example-1">
+<div id="app">
     <input type="checkbox" v-on:click="onClick">Toggle</input>
     <p>Value: {{toggleValue}}</p>
 </div>
 
 <script>
-    var example1 = new Vue({
-        el: '#example-1',
+    new Vue({
+        el: '#app',
         data: {
             toggleValue: false
         },
