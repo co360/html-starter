@@ -1,8 +1,7 @@
 // Case 1
 try {
     nonExistentFunction();
-}
-catch(error) {
+} catch (error) {
     console.error(error);
     // expected output: ReferenceError: nonExistentFunction is not defined
     // Note - error messages will vary depending on browser
@@ -11,16 +10,14 @@ catch(error) {
 // Case 2
 try {
     console.log(1 / 0);
-}
-catch(error) {
+} catch (error) {
     console.error(error);
 }
 
 // Case 3
 try {
     throw new Error("bad code");
-}
-catch(error) {
+} catch (error) {
     console.error(error);
 } finally {
     console.log("Finally block here.");
