@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+    ></blog-post>
+</div>
+
+<script>
+    Vue.component('blog-post', {
+        props: ['title'],
+        template: '<h3>{{ title }}</h3>'
+    });
+
+    new Vue({
+        el: "#app",
+        data: {
+            posts: [
+                { id: 1, title: 'My journey with Vue' },
+                { id: 2, title: 'Blogging with Vue' },
+                { id: 3, title: 'Why Vue is so fun' },
+                { id: 4, title: 'Hello Again' }
+            ]
+        }
+    });
+</script>
+
+</body>
+</html>
