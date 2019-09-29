@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Demo</title>
+    <script src="../../resources/js/libs/vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h2>See Console For Response</h2>
+    <child-component v-on:foo-signal="onFooSignal(event)"></child-component>
+</div>
+
+<script>
+    Vue.component('child-component', {
+        template: `<button v-on:click="$emit('foo-signal')">Send event from component</button>`
+    });
+
+    new Vue({
+        el: "#app",
+        methods: {
+            onFooSignal: function(event) {
+                console.log("Parent received event", event);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
