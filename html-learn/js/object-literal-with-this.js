@@ -43,7 +43,7 @@ o3.fatArrayAccessThis = () => { // BAD
 console.log("o3.functionAccessThis()", o3.functionAccessThis()); // Foo
 console.log("o3.fatArrayAccessThis()", o3.fatArrayAccessThis()); // undefined
 
-// == Self Object Literal Initializer
+// == Object Literal Initializer With "this"
 // More examples here: https://stackoverflow.com/questions/4616202/self-references-in-object-literals-initializers
 
 // console.log("== Accessing 'this' inside object literal properties - BAD");

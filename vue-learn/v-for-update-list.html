@@ -19,7 +19,12 @@
         el: "#app",
         data: {
             myList: ["Zemian", "Yuliang", "Chewan", "Al"],
-            personCounter: 0
+            personCounter: undefined
+        },
+        created: function() {
+            // JS does not let you use 'this' as object literal initializer on data properties,
+            // so we use Vue lifecycle 'create' to populate the value
+            this.personCounter = this.myList.length;
         },
         methods: {
             add: function(event) {
@@ -29,9 +34,6 @@
             }
         }
     });
-
-    // TODO: How can we set this value inside the Object literal?
-    demo.personCounter = demo.myList.length;
 </script>
 
 </body>
