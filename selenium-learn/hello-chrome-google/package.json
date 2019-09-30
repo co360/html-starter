@@ -1,7 +1,0 @@
-{
-  "name": "hello-chrome-google",
-  "version": "1.0.0",
-  "dependencies": {
-    "selenium-webdriver": "^4.0.0-alpha.4"
-  }
-}
