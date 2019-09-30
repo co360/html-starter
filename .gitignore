@@ -12,3 +12,6 @@ Thumbs.db
 temp/
 temp.*
 temp-*.*
+
+# Ignore git project in subdirectory
+ckeditor5-build-classic/
