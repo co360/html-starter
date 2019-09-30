@@ -1,14 +1,19 @@
+# Ignore NPM dep files
 node_modules/
 package-lock.json
 
+# Ignore MacOS files
 .DS_Store
 Thumbs.db
 
+# Ignore IDE files
 .idea/
-
 .vscode/
 
-# Ignore test files
+# Ignore build files
+dist/
+
+# Ignore temp files
 temp/
 temp.*
 temp-*.*
