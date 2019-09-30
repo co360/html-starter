@@ -34,3 +34,7 @@ See https://docs.npmjs.com/files/folders
 - Install it locally if you’re going to require() it.
 - Install it globally if you’re going to run it on the command line.
 - If you need both, then install it in both places, or use npm link.
+
+## Quick Npm Project Setup
+
+  mkdir hello && cd hello && npm init -y
