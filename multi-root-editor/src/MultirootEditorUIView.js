@@ -18,8 +18,8 @@ export default class MultirootEditorUIView extends EditorUIView {
      * @param {Object.<String,HTMLElement>} editableElements The list of editable elements, containing name and html element
      * for each editable.
      */
-    constructor( locale, editingView, editableElements ) {
-        super( locale );
+    constructor(locale, editingView, editableElements) {
+        super(locale);
 
         /**
          * The main toolbar of the decoupled editor UI.
@@ -27,7 +27,7 @@ export default class MultirootEditorUIView extends EditorUIView {
          * @readonly
          * @member {module:ui/toolbar/toolbarview~ToolbarView}
          */
-        this.toolbar = new ToolbarView( locale );
+        this.toolbar = new ToolbarView(locale);
 
         /**
          * The editables of the multi-root editor UI.
@@ -38,23 +38,23 @@ export default class MultirootEditorUIView extends EditorUIView {
         this.editables = [];
 
         // Create InlineEditableUIView instance for each editable.
-        for ( const editableName of Object.keys( editableElements ) ) {
-            const editable = new InlineEditableUIView( locale, editingView, editableElements[ editableName ] );
+        for (const editableName of Object.keys(editableElements)) {
+            const editable = new InlineEditableUIView(locale, editingView, editableElements[editableName]);
 
             editable.name = editableName;
-            this.editables.push( editable );
+            this.editables.push(editable);
         }
 
         // This toolbar may be placed anywhere in the page so things like font size need to be reset in it.
         // Also because of the above, make sure the toolbar supports rounded corners.
-        Template.extend( this.toolbar.template, {
+        Template.extend(this.toolbar.template, {
             attributes: {
                 class: [
                     'ck-reset_all',
                     'ck-rounded-corners'
                 ]
             }
-        } );
+        });
     }
 
     /**
@@ -63,7 +63,7 @@ export default class MultirootEditorUIView extends EditorUIView {
     render() {
         super.render();
 
-        this.registerChild( this.editables );
-        this.registerChild( [ this.toolbar ] );
+        this.registerChild(this.editables);
+        this.registerChild([this.toolbar]);
     }
 }

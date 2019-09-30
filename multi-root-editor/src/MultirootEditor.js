@@ -31,17 +31,17 @@ export default class MultirootEditor extends Editor {
      * for the created editor (on which the editor will be initialized).
      * @param {module:core/editor/editorconfig~EditorConfig} config The editor configuration.
      */
-    constructor( sourceElements, config ) {
-        super( config );
+    constructor(sourceElements, config) {
+        super(config);
 
         this.data.processor = new HtmlDataProcessor();
 
         // Create root and UIView element for each editable container.
-        for ( const rootName of Object.keys( sourceElements ) ) {
-            this.model.document.createRoot( '$root', rootName );
+        for (const rootName of Object.keys(sourceElements)) {
+            this.model.document.createRoot('$root', rootName);
         }
 
-        this.ui = new MultirootEditorUI( this, new MultirootEditorUIView( this.locale, this.editing.view, sourceElements ) );
+        this.ui = new MultirootEditorUI(this, new MultirootEditorUIView(this.locale, this.editing.view, sourceElements));
     }
 
     /**
@@ -53,21 +53,21 @@ export default class MultirootEditor extends Editor {
         // same as `ui.getEditableElement()` method will not return editables.
         const data = {};
         const editables = {};
-        const editablesNames = Array.from( this.ui.getEditableElementsNames() );
+        const editablesNames = Array.from(this.ui.getEditableElementsNames());
 
-        for ( const rootName of editablesNames ) {
-            data[ rootName ] = this.getData( { rootName } );
-            editables[ rootName ] = this.ui.getEditableElement( rootName );
+        for (const rootName of editablesNames) {
+            data[rootName] = this.getData({rootName});
+            editables[rootName] = this.ui.getEditableElement(rootName);
         }
 
         this.ui.destroy();
 
         return super.destroy()
-            .then( () => {
-                for ( const rootName of editablesNames ) {
-                    setDataInElement( editables[ rootName ], data[ rootName ] );
+            .then(() => {
+                for (const rootName of editablesNames) {
+                    setDataInElement(editables[rootName], data[rootName]);
                 }
-            } );
+            });
     }
 
     /**
@@ -78,28 +78,28 @@ export default class MultirootEditor extends Editor {
      * @param {module:core/editor/editorconfig~EditorConfig} config The editor configuration.
      * @returns {Promise} A promise resolved once the editor is ready. The promise returns the created multi-root editor instance.
      */
-    static create( sourceElements, config ) {
-        return new Promise( resolve => {
-            const editor = new this( sourceElements, config );
+    static create(sourceElements, config) {
+        return new Promise(resolve => {
+            const editor = new this(sourceElements, config);
 
             resolve(
                 editor.initPlugins()
-                    .then( () => editor.ui.init() )
-                    .then( () => {
+                    .then(() => editor.ui.init())
+                    .then(() => {
                         const initialData = {};
 
                         // Create initial data object containing data from all roots.
-                        for ( const rootName of Object.keys( sourceElements ) ) {
-                            initialData[ rootName ] = getDataFromElement( sourceElements[ rootName ] );
+                        for (const rootName of Object.keys(sourceElements)) {
+                            initialData[rootName] = getDataFromElement(sourceElements[rootName]);
                         }
 
-                        return editor.data.init( initialData );
-                    } )
-                    .then( () => editor.fire( 'ready' ) )
-                    .then( () => editor )
+                        return editor.data.init(initialData);
+                    })
+                    .then(() => editor.fire('ready'))
+                    .then(() => editor)
             );
-        } );
+        });
     }
 }
 
-mix( MultirootEditor, DataApiMixin );
+mix(MultirootEditor, DataApiMixin);

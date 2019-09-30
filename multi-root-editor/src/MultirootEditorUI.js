@@ -1,7 +1,7 @@
 import EditorUI from '@ckeditor/ckeditor5-core/src/editor/editorui';
 import enableToolbarKeyboardFocus from '@ckeditor/ckeditor5-ui/src/toolbar/enabletoolbarkeyboardfocus';
 import normalizeToolbarConfig from '@ckeditor/ckeditor5-ui/src/toolbar/normalizetoolbarconfig';
-import { enablePlaceholder } from '@ckeditor/ckeditor5-engine/src/view/placeholder';
+import {enablePlaceholder} from '@ckeditor/ckeditor5-engine/src/view/placeholder';
 
 /**
  * The multi-root editor UI class.
@@ -15,8 +15,8 @@ export default class MultirootEditorUI extends EditorUI {
      * @param {module:core/editor/editor~Editor} editor The editor instance.
      * @param {module:ui/editorui/editoruiview~EditorUIView} view The view of the UI.
      */
-    constructor( editor, view ) {
-        super( editor );
+    constructor(editor, view) {
+        super(editor);
 
         /**
          * The main (top–most) view of the editor UI.
@@ -32,7 +32,7 @@ export default class MultirootEditorUI extends EditorUI {
          * @type {Object}
          * @private
          */
-        this._toolbarConfig = normalizeToolbarConfig( editor.config.get( 'toolbar' ) );
+        this._toolbarConfig = normalizeToolbarConfig(editor.config.get('toolbar'));
     }
 
     /**
@@ -52,37 +52,37 @@ export default class MultirootEditorUI extends EditorUI {
         // (especially inputs) but the editable remains the "focus context" (e.g. link balloon
         // attached to a link in an editable). In this case, the editable should preserve visual
         // focus styles.
-        this.focusTracker.on( 'change:focusedElement', ( evt, name, focusedElement ) => {
-            for ( const editable of this.view.editables ) {
-                if ( editable.element === focusedElement ) {
+        this.focusTracker.on('change:focusedElement', (evt, name, focusedElement) => {
+            for (const editable of this.view.editables) {
+                if (editable.element === focusedElement) {
                     lastFocusedEditableElement = editable.element;
                 }
             }
-        } );
+        });
 
         // If the focus tracker loses focus, stop tracking the last focused editable element.
         // Wherever the focus is restored, it will no longer be in the context of that editable
         // because the focus "came from the outside", as opposed to the focus moving from one element
         // to another withing the editor UI.
-        this.focusTracker.on( 'change:isFocused', ( evt, name, isFocused ) => {
-            if ( !isFocused ) {
+        this.focusTracker.on('change:isFocused', (evt, name, isFocused) => {
+            if (!isFocused) {
                 lastFocusedEditableElement = null;
             }
-        } );
+        });
 
-        for ( const editable of this.view.editables ) {
+        for (const editable of this.view.editables) {
             // The editable UI element in DOM is available for sure only after the editor UI view has been rendered.
             // But it can be available earlier if a DOM element has been passed to DecoupledEditor.create().
             const editableElement = editable.element;
 
             // Register the editable UI view in the editor. A single editor instance can aggregate multiple
             // editable areas (roots) but the decoupled editor has only one.
-            this.setEditableElement( editable.name, editableElement );
+            this.setEditableElement(editable.name, editableElement);
 
             // Let the global focus tracker know that the editable UI element is focusable and
             // belongs to the editor. From now on, the focus tracker will sustain the editor focus
             // as long as the editable is focused (e.g. the user is typing).
-            this.focusTracker.add( editableElement );
+            this.focusTracker.add(editableElement);
 
             // Let the editable UI element respond to the changes in the global editor focus
             // tracker. It has been added to the same tracker a few lines above but, in reality, there are
@@ -91,17 +91,17 @@ export default class MultirootEditorUI extends EditorUI {
             // it isn't), e.g. by setting the proper CSS class, visually announcing focus to the user.
             // Doing otherwise will result in editable focus styles disappearing, once e.g. the
             // toolbar gets focused.
-            editable.bind( 'isFocused' ).to( this.focusTracker, 'isFocused', this.focusTracker, 'focusedElement',
-                ( isFocused, focusedElement ) => {
+            editable.bind('isFocused').to(this.focusTracker, 'isFocused', this.focusTracker, 'focusedElement',
+                (isFocused, focusedElement) => {
                     // When the focus tracker is blurred, it means the focus moved out of the editor UI.
                     // No editable will maintain focus then.
-                    if ( !isFocused ) {
+                    if (!isFocused) {
                         return false;
                     }
 
                     // If the focus tracker says the editor UI is focused and currently focused element
                     // is the editable, then the editable should be visually marked as focused too.
-                    if ( focusedElement === editableElement ) {
+                    if (focusedElement === editableElement) {
                         return true;
                     }
                     // If the focus tracker says the editor UI is focused but the focused element is
@@ -113,16 +113,16 @@ export default class MultirootEditorUI extends EditorUI {
                     else {
                         return lastFocusedEditableElement === editableElement;
                     }
-                } );
+                });
 
             // Bind the editable UI element to the editing view, making it an end– and entry–point
             // of the editor's engine. This is where the engine meets the UI.
-            editingView.attachDomRoot( editableElement, editable.name );
+            editingView.attachDomRoot(editableElement, editable.name);
         }
 
         this._initPlaceholder();
         this._initToolbar();
-        this.fire( 'ready' );
+        this.fire('ready');
     }
 
     /**
@@ -132,8 +132,8 @@ export default class MultirootEditorUI extends EditorUI {
         const view = this.view;
         const editingView = this.editor.editing.view;
 
-        for ( const editable of this.view.editables ) {
-            editingView.detachDomRoot( editable.name );
+        for (const editable of this.view.editables) {
+            editingView.detachDomRoot(editable.name);
         }
 
         view.destroy();
@@ -151,14 +151,14 @@ export default class MultirootEditorUI extends EditorUI {
         const view = this.view;
         const toolbar = view.toolbar;
 
-        toolbar.fillFromConfig( this._toolbarConfig.items, this.componentFactory );
+        toolbar.fillFromConfig(this._toolbarConfig.items, this.componentFactory);
 
-        enableToolbarKeyboardFocus( {
+        enableToolbarKeyboardFocus({
             origin: editor.editing.view,
             originFocusTracker: this.focusTracker,
             originKeystrokeHandler: editor.keystrokes,
             toolbar
-        } );
+        });
     }
 
     /**
@@ -170,20 +170,20 @@ export default class MultirootEditorUI extends EditorUI {
         const editor = this.editor;
         const editingView = editor.editing.view;
 
-        for ( const editable of this.view.editables ) {
-            const editingRoot = editingView.document.getRoot( editable.name );
-            const sourceElement = this.getEditableElement( editable.name );
+        for (const editable of this.view.editables) {
+            const editingRoot = editingView.document.getRoot(editable.name);
+            const sourceElement = this.getEditableElement(editable.name);
 
-            const placeholderText = editor.config.get( 'placeholder' )[ editable.name ] ||
-                sourceElement && sourceElement.tagName.toLowerCase() === 'textarea' && sourceElement.getAttribute( 'placeholder' );
+            const placeholderText = editor.config.get('placeholder')[editable.name] ||
+                sourceElement && sourceElement.tagName.toLowerCase() === 'textarea' && sourceElement.getAttribute('placeholder');
 
-            if ( placeholderText ) {
-                enablePlaceholder( {
+            if (placeholderText) {
+                enablePlaceholder({
                     view: editingView,
                     element: editingRoot,
                     text: placeholderText,
                     isDirectHost: false
-                } );
+                });
             }
         }
     }
