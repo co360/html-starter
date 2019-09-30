@@ -1,5 +1,8 @@
 == How to setup and build CKEditor5 from Framework
 
+This quick-start guide shows how to setup to build CKEditor5 classic build using
+the framework based packages.
+
 https://ckeditor.com/docs/ckeditor5/latest/framework/guides/quick-start.html
 
 ```
