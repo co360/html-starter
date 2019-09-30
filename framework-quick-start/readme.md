@@ -32,6 +32,7 @@ npm install --save \
 
 Next steps are need to package and build:
 1. Add `webpack.config.js`
-2. Add `app.js`
-3. Add `"script": { "build": "webpack --mode development"}`
-4. Run `npm run build`
+2. Add `src/app.js`
+3. Add `src/app.html`
+4. Add `"script": { "build": "webpack --mode development"}`
+5. Run `npm run build`
