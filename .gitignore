@@ -5,8 +5,8 @@ package-lock.json
 Thumbs.db
 
 .idea/
-
 .vscode/
+.tscache/
 
 # Ignore test files
 temp/

@@ -1,4 +1,5 @@
 node_modules/
 package-lock.json
 
-build/
+# We do not want ignore all "build" because we want to add application code there.
+#build/
