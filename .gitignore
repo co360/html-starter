@@ -10,13 +10,10 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Ignore build files
-dist/
+# Ignore TS files
+.tscache
 
 # Ignore temp files
 temp/
 temp.*
 temp-*.*
-
-# Ignore git project in subdirectory
-ckeditor5-build-classic/
