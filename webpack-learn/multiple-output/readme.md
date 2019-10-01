@@ -3,5 +3,5 @@
 ```
 npm install
 npm run build
-# Inspect "build" folder
+# Inspect "dist" folder
 ```

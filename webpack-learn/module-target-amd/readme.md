@@ -3,7 +3,7 @@
 ```
 npm install
 npm run build
-open build/index.html
+open dist/index.html
 ```
 
 ## Doc
