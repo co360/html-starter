@@ -1,4 +1,4 @@
-/******/ (function(modules) { // webpackBootstrap
+define("bundle", [], function() { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -81,20 +81,21 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/app.js":
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+/*! exports provided: Foo */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("function helloEventHandler (event) {\n    console.log(\"Received event\", event);\n}\n\n// Make function global\nwindow.helloEventHandler = helloEventHandler;\n\n\n//# sourceURL=webpack:///./src/app.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Foo\", function() { return Foo; });\nclass Foo {\n    constructor (name) {\n        this.name = name;\n    }\n    greeting () {\n        return \"Hello \" + this.name;\n    }\n}\n\n\n\n//# sourceURL=webpack://bundle/./src/main.js?");
 
 /***/ })
 
-/******/ });
+/******/ })});;

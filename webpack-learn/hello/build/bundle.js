@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/app.js":
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"Hello\");\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("function helloEventHandler (event) {\n    console.log(\"Received event\", event);\n}\n\n// Make function global\nwindow.helloEventHandler = helloEventHandler;\n\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 

@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = {
   mode: "production",
   entry: {
-    app: './src/app.js',
+    main: './src/main.js',
     search: './src/search.js'
   },
   output: {

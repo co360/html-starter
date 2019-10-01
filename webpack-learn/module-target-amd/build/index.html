@@ -11,9 +11,9 @@
     <p>See console</p>
 
     <script>
-        require(['main'], function (main) {
-            // console.log(main);
-            let foo = new main.Foo('World');
+        require(['bundle'], function (bundle) {
+            // console.log(bundle);
+            let foo = new bundle.Foo('World');
             console.log(foo.greeting());
         });
     </script>

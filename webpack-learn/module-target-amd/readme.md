@@ -16,7 +16,7 @@ To enable AMD, configure like this:
 
 ```
 output: {
-    library: 'main',
+    library: 'bundle',
     libraryTarget: 'amd'
 }
 ```
@@ -24,7 +24,7 @@ output: {
 Then you may use the generated main.js like this:
 
 ```
-require('main', function (main) {
+require('bundle', function (bundle) {
     // use main here.
 });
 ```
