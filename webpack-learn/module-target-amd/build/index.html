@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpack Demo</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="../../../resources/js/libs/require/require.js"></script>
+</head>
+<body>
+
+    <p>See console</p>
+
+    <script>
+        require(['main'], function (main) {
+            // console.log(main);
+            let foo = new main.Foo('World');
+            console.log(foo.greeting());
+        });
+    </script>
+</body>
+</html>
