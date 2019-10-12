@@ -1,5 +1,6 @@
 const mylib1 = require('mylib1');
 console.log("mylib1", mylib1);
+
 // console.log("mylib1.libname", mylib1.libname);
 // for (let i = 0; i < 10; i++) {
 //     console.log("Iteration#" + i);
