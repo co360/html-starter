@@ -1,9 +1,12 @@
 const _ = require('lodash');
-module.exports.PI = Math.PI;
-module.exports.random = function (min, max) {
-    return Math.floor(Math.random() * max) + min;
+module.exports = {
+    libname: "mylib1",
+    mydeps: ['lodash-' + _.VERSION],
+    PI: Math.PI,
+    random: function (min, max) {
+        return Math.floor(Math.random() * max) + min;
+    },
+    greeting: function (name) {
+        return "Hello " + name;
+    }
 };
-module.exports.greeting = function (name) {
-    return "Hello " + name;
-};
-module.exports.uniqueId = _.uniqueId;
