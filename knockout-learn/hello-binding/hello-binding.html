@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <script src="../../resources/js/libs/knockout/knockout-3.5.0.debug.js"></script>
+</head>
+<body>
+
+<h1>Custom Binding Demo</h1>
+<p>See console</p>
+
+<div id="app">
+    <div id='demo1' data-bind="hello: message"></div>
+    <div id='demo2' data-bind="hello: 'Hi', duration: 999"></div>
+</div>
+
+<script>
+    /*
+    NOTE: We might have multiple instances of binding handler, but only one instance of viewModel
+    is used within a single 'app'!
+     */
+    ko.bindingHandlers.hello = {
+        init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
+            // This will be called when the binding is first applied to an element
+            // Set up any initial state, event handlers, etc. here
+            console.log("hello.init: ", element);
+            console.log("viewModel.id", viewModel.id);
+
+            // This is the main value pass to binding, aside from extra parameters.
+            let val = ko.unwrap(valueAccessor());
+            console.log("hello.init: val", val);
+
+            let duration = allBindings.get('duration') || 400; // 400ms is default duration unless otherwise specified
+            console.log("hello.init: duration", duration);
+
+            // You can update the binding value using valueAccessor()
+            // Same thing can be done directly with the "viewModel"
+            if (typeof valueAccessor() == 'function') {
+                // The value is an observable! So we can update, else we can't update into the viewModel!
+                console.log("hello.init: Update message in 3 seconds...");
+                setTimeout(function () {
+                    console.log("hello.init: Update message in all caps.");
+                    let valueUpdater = valueAccessor();
+                    // console.log('valueUpdater', valueUpdater);
+                    valueUpdater(val.toUpperCase());
+                }, 3000);
+            }
+        },
+        update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
+            // This will be called once when the binding is first applied to an element,
+            // and again whenever any observables/computeds that are accessed change
+            // Update the DOM element based on the supplied values here.
+            console.log("hello.update");
+
+            let val = ko.unwrap(valueAccessor());
+            console.log("hello.update: val", val);
+
+            console.log("hello.update: updating element with value");
+            element.innerText = val;
+        }
+    };
+
+    let vm = {
+        id: Math.random(),
+        message: ko.observable("Hello World")
+    };
+
+    ko.applyBindings(vm);
+</script>
+
+</body>
+</html>
+
