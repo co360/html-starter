@@ -12,17 +12,17 @@
     <p data-bind="text: title"></p>
 </template>
 <div id="app">
-    <div data-bind="if: isDataReady">
-        <div data-bind='template: { name: "personTemplate",
+    <div data-bind='template: { if: isDataReady,
+                        name: "personTemplate",
                         data: myData,
                         afterRender: myPostProcessingLogic }'> </div>
-    </div>
 </div>
 
 <script>
     /*
     If you want 'myPostProcessingLogic' callback to be called after the delay data is ready,
-    ensure you protected the template with 'if' binding.
+    ensure you protected the template with 'if' binding. You can use "if" as part of "template"
+    binding itself!
      */
     function ViewModel() {
         this.isDataReady = ko.observable(false);
