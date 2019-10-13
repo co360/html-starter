@@ -7,11 +7,15 @@
 </head>
 <body>
 
-<div id="app">
+<div id="app" data-bind="childrenComplete: myPostProcessingLogic">
     <div data-bind="hello: message"></div>
 </div>
 
 <script>
+    /*
+    See more on
+    https://knockoutjs.com/documentation/binding-lifecycle-events.html
+     */
     ko.bindingHandlers.hello = {
         update: function (element, valueAccessor) {
             let val = ko.unwrap(valueAccessor());
@@ -20,6 +24,9 @@
     };
     function ViewModel() {
         this.message = ko.observable("Hello World");
+        this.myPostProcessingLogic = function () {
+            console.log("Post process after data-bind.");
+        };
     }
     ko.applyBindings(new ViewModel());
 </script>
