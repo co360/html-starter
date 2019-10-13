@@ -20,14 +20,12 @@
     https://knockoutjs.com/documentation/binding-lifecycle-events.html
      */
     ko.components.register('hello', {
+
         viewModel: function (params) {
             this.name = 'World';
             this.dispose = function () {
                 console.log("hello.dispose is called.");
-            }
-            this.afterRender = function () {
-                console.log("hello.afterRender is called.");
-            }
+            };
         },
         template: 'Hello <span data-bind="text: name"></span>'
     });
