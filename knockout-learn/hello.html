@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <span data-bind="text: message">Hi</span>
 </div>
 
@@ -15,10 +15,7 @@
     function ViewModel() {
         this.message = ko.observable("Hello World");
     }
-    var viewModel = new ViewModel();
-    window.onload = function() {
-        ko.applyBindings(viewModel, document.getElementById("demo"));
-    };
+    ko.applyBindings(new ViewModel(), document.getElementById("app"));
 </script>
 
 </body>
