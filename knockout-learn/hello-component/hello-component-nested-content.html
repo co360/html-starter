@@ -20,6 +20,7 @@
             createViewModel: function (params, componentInfo) {
                 console.log("hello-nested-content: params, componentInfo", params, componentInfo);
                 return {
+                    // componentInfo.templateNodes is the nested content DOM Nodes!
                     templateNodes: componentInfo.templateNodes
                 };
             }
