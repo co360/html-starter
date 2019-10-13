@@ -20,6 +20,15 @@ let o1 = {
 console.log("o1.functionAccessThis()", o1.functionAccessThis()); // Foo
 console.log("o1.fatArrayAccessThis()", o1.fatArrayAccessThis()); // undefined
 
+// Same should work even if the properties is calculated (not constant string):
+let o1b = {
+    objectId: Math.random().toString(16).substr(2, 6),
+    functionAccessThis: function () { // GOOD
+        return this.objectId;
+    }
+};
+console.log("o1b.functionAccessThis()", o1b.functionAccessThis());
+
 console.log("== Accessing 'this' inside an object literal functions with nested object");
 let o2 = {
     foo: "Foo",

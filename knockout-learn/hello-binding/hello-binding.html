@@ -68,12 +68,19 @@
     // => Yes same objectId is used! Only parameters passed in to init/update functions
     // will be different.
     let hello2Obj = {
-        objectId: Math.random().toString(16).substr(2, 6)
+        // objectId: Math.random().toString(16).substr(2, 6),
+        objectId: 'Foo',
+        init: function (element, valueAccessor) {
+            console.log("hello2Obj.init: object.objectId", this.objectId);
+            console.log("hello2Obj.init: value", valueAccessor());
+        }
     };
-    hello2Obj.init = function (element, valueAccessor) {
-        console.log("hello2Obj.init: object.objectId", hello2Obj.objectId);
-        console.log("hello2Obj.init: value", valueAccessor());
-    };
+
+    //console.log("TEST", hello2Obj.init('test', null));
+    // hello2Obj.init = function (element, valueAccessor) {
+    //     console.log("hello2Obj.init: object.objectId", hello2Obj.objectId);
+    //     console.log("hello2Obj.init: value", valueAccessor());
+    // };
     ko.bindingHandlers.hello2 = hello2Obj;
 
     let vm = {
