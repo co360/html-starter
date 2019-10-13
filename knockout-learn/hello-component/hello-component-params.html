@@ -8,13 +8,20 @@
 <body>
 
 <div id="app">
-    <hello></hello>
+    <hello id="demo1" params="{name: 'World'}"></hello>
+
+    <div id="demo2" data-bind="component: {name: 'hello', params: {name: 'Zemian'}}"></div>
+
+    <!-- demo3 -->
+    <!-- ko component: {name: 'hello', params: {name: 'World2'}} -->
+    <!-- /ko -->
 </div>
 
 <script>
     ko.components.register('hello', {
         viewModel: function (params) {
-            this.name = 'World';
+            console.log("hello: params", params);
+            this.name = params.name;
         },
         template: 'Hello <span data-bind="text: name"></span>'
     });
