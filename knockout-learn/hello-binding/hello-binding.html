@@ -70,17 +70,19 @@
     let hello2Obj = {
         // objectId: Math.random().toString(16).substr(2, 6),
         objectId: 'Foo',
-        init: function (element, valueAccessor) {
-            console.log("hello2Obj.init: object.objectId", this.objectId);
-            console.log("hello2Obj.init: value", valueAccessor());
-        }
+        // init: function (element, valueAccessor) {
+        //     // NOTE: The 'this' value is binded to 'window' object!!
+        //     console.log("hello2Obj.init: this", this);
+        //
+        //     // So that mean you can't do the following:
+        //     // console.log("hello2Obj.init: object.objectId", this.objectId);
+        // }
     };
 
-    //console.log("TEST", hello2Obj.init('test', null));
-    // hello2Obj.init = function (element, valueAccessor) {
-    //     console.log("hello2Obj.init: object.objectId", hello2Obj.objectId);
-    //     console.log("hello2Obj.init: value", valueAccessor());
-    // };
+    hello2Obj.init = function (element, valueAccessor) {
+        console.log("hello2Obj.init: object.objectId", hello2Obj.objectId);
+        console.log("hello2Obj.init: value", valueAccessor());
+    };
     ko.bindingHandlers.hello2 = hello2Obj;
 
     let vm = {
