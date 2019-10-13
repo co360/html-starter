@@ -21,3 +21,17 @@ let hexId = function () {
 };
 for (let i = 0; i < 10; i++)
     console.log("hexId", hexId());
+
+// == Floating ID
+let floatId = function () {
+    return Math.random();
+};
+for (let i = 0; i < 10; i++)
+    console.log("floatId", floatId());
+
+// == Hex ID #2
+let hexId2 = function () {
+    return Math.random().toString(16).substr(2, 6);
+};
+for (let i = 0; i < 10; i++)
+    console.log("hexId2", hexId2());

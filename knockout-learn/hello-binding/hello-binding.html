@@ -13,6 +13,9 @@
 <div id="app">
     <div id='demo1' data-bind="hello: message"></div>
     <div id='demo2' data-bind="hello: 'Hi', duration: 999"></div>
+
+    <div id='demo3' data-bind="hello2: 'one'"></div>
+    <div id='demo4' data-bind="hello2: 'two'"></div>
 </div>
 
 <script>
@@ -25,7 +28,7 @@
             // This will be called when the binding is first applied to an element
             // Set up any initial state, event handlers, etc. here
             console.log("hello.init: ", element);
-            console.log("viewModel.id", viewModel.id);
+            console.log("viewModel.objectId", viewModel.objectId);
 
             // This is the main value pass to binding, aside from extra parameters.
             let val = ko.unwrap(valueAccessor());
@@ -61,11 +64,22 @@
         }
     };
 
+    // Is same binding object is reused for multiple binding UI elements.
+    // => Yes same objectId is used! Only parameters passed in to init/update functions
+    // will be different.
+    let hello2Obj = {
+        objectId: Math.random().toString(16).substr(2, 6)
+    };
+    hello2Obj.init = function (element, valueAccessor) {
+        console.log("hello2Obj.init: object.objectId", hello2Obj.objectId);
+        console.log("hello2Obj.init: value", valueAccessor());
+    };
+    ko.bindingHandlers.hello2 = hello2Obj;
+
     let vm = {
-        id: Math.floor(Math.random() * 1_000_000).toString(16),
+        objectId: Math.random().toString(16).substr(2, 6),
         message: ko.observable("Hello World")
     };
-
     ko.applyBindings(vm);
 </script>
 
