@@ -8,8 +8,11 @@
 <body>
 
 <div id="app">
-    <hello params="{name: 'World'}"></hello>
+    <hello id="demo1" params="{name: 'World'}"></hello>
 
+    <div id="demo2" data-bind="component: {name: 'hello', params: {name: 'Zemian'}}"></div>
+
+    <!-- demo3 -->
     <!-- ko component: {name: 'hello', params: {name: 'World2'}} -->
     <!-- /ko -->
 </div>
@@ -20,7 +23,7 @@
             console.log("hello: params", params);
             this.name = params.name;
         },
-        template: '<div>Hello <span data-bind="text: name"></span></div>'
+        template: 'Hello <span data-bind="text: name"></span>'
     });
     ko.applyBindings({});
 </script>
