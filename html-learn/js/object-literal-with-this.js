@@ -1,3 +1,12 @@
+/*
+NOTE: The 'this' value inside a object literal function will reference to the same level
+of object where function is defined. This means that if you nave nested object literal
+then the 'this' value changes!
+
+NOTE2: Fat arrow function has not 'this' value of its own. It will take the
+nearest context of 'this'.
+ */
+
 console.log("== Accessing 'this' inside an object literal functions");
 let o1 = {
     foo: "Foo",
@@ -15,16 +24,21 @@ console.log("== Accessing 'this' inside an object literal functions with nested 
 let o2 = {
     foo: "Foo",
     methods: {
+        bar: "Bar",
         functionAccessThis: function () { // BAD
             return this.foo;
         },
         fatArrayAccessThis: () => { // BAD
             return this.foo;
-        }
+        },
+        functionAccessThisBar: function () { // GOOD
+            return this.bar;
+        },
     }
 };
 console.log("o2.methods.functionAccessThis()", o2.methods.functionAccessThis()); // undefined
 console.log("o2.methods.fatArrayAccessThis()", o2.methods.fatArrayAccessThis()); // undefined
+console.log("o2.methods.functionAccessThisBar()", o2.methods.functionAccessThisBar()); // 'Bar'
 
 console.log("== Access 'this' outside an object literal functions");
 // This should have same affect as defining functions inside object literal (example o1).
