@@ -11,3 +11,5 @@ Thumbs.db
 temp/
 temp.*
 temp-*.*
+
+nohup.out
