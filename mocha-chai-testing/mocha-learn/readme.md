@@ -11,7 +11,7 @@ https://mochajs.org/#getting-started
 
   npm test
 
-## Mocha Intefaces
+## Mocha Interfaces
 
 Mocha's "interface" system allows developers to choose their style of DSL. Mocha has BDD, TDD, 
 Exports, QUnit and Require-style interfaces.
@@ -23,3 +23,9 @@ Exports, QUnit and Require-style interfaces.
 - The QUnit-inspired interface matches the "flat" look of QUnit, where the test suite title is simply defined before 
   the test-cases. Like TDD, it uses suite() and test(), but resembling BDD, it also contains before(), after(), 
   beforeEach(), and afterEach().
+
+## Test directory
+
+If you have nested folders in `test` directory, you need to invoke Mocha with `--recursive` option!
+
+See test script in `package.json`.
