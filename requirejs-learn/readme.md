@@ -13,3 +13,30 @@ easy debugging. It can be used
 [simply to load existing JavaScript files](https://requirejs.org/docs/api.html#jsfiles),
 so you can add it to your existing project without having to re-write your
 JavaScript files.
+
+## The `require` function
+
+NOTE: The `require` function is also aliased with `requirejs` name!
+
+When you write a module, you can use `define()` to bring in `require` function. In fact
+you can write CommonJS like style. Example
+
+```
+define(function (require, exports, module){
+    // ...
+});
+```
+
+However when using the module, you can do not have the `exports` variable. Example:
+
+
+```
+require(['require', 'module'], function (require, module){
+    // ...
+});
+
+// Or
+requirejs(['require', 'module'], function (require, module){
+    // ...
+});
+```
