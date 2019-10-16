@@ -3,6 +3,9 @@
 Mocha - Test Runner Library
     https://mochajs.org/
     
+Chai - Test Asserting Library
+    https://www.chaijs.com/
+
 ## How to Run
 
   npm test

@@ -1,9 +1,9 @@
 {
-  "name": "hello-mocha",
+  "name": "hello-mocha-tdd",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --ui tdd"
   },
   "keywords": [],
   "author": "",
