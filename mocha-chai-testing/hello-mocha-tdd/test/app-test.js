@@ -1,8 +1,9 @@
-let app = require('../src/app');
+let mocha = require('mocha');
 let assert = require('assert');
+let app = require('../src/app');
 
-suite('app', function () {
-    test('app.greet', function () {
+mocha.suite('app', function () {
+    mocha.test('app.greet', function () {
         let result = app.greet("World");
         assert.strictEqual(result, "Hello World");
     });
