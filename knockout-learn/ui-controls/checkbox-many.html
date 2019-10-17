@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <h1>Options</h1>
     <button data-bind="click: clearAll">Clear All</button>
     <button data-bind="click: checkAll">Check All</button>
@@ -33,7 +33,7 @@
             self.checkedOptions.push(...self.options);
         };
     }
-    ko.applyBindings(new ViewModel(), document.getElementById("demo"));
+    ko.applyBindings(new ViewModel(), document.getElementById("app"));
 </script>
 
 </body>

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <button data-bind="click: loadMore">Load More</button>
     <table>
         <tr>
@@ -42,7 +42,7 @@
         });
     };
 
-    ko.applyBindings(vm, document.getElementById("demo"));
+    ko.applyBindings(vm, document.getElementById("app"));
 
     vm.loadMore();
 </script>

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <ul data-bind="foreach: dataProvider">
         <li data-bind="text: $data"></li>
     </ul>
@@ -18,7 +18,7 @@
         dataProvider: ko.observableArray(['html', 'head', 'body', 'div'])
     };
 
-    ko.applyBindings(vm, document.getElementById("demo"));
+    ko.applyBindings(vm, document.getElementById("app"));
 </script>
 
 </body>

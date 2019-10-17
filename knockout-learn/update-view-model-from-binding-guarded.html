@@ -16,7 +16,7 @@ in the list. And since the checkItem is looking for last item, it will fail!
 You need a separate boolean flag to guard the update!
 See update-view-model-from-binding-guarded-fix.html
 -->
-<div id="demo">
+<div id="app">
     <p data-bind="hidden: myList().length > 0">Will update list in a moment...</p>
     <div data-bind="if: myList().length > 0">
         <ul data-bind="foreach: myList">
@@ -44,7 +44,7 @@ See update-view-model-from-binding-guarded-fix.html
     // First check
     vm.checkItem("After vm is ready.");
 
-    ko.applyBindings(vm, document.getElementById("demo"));
+    ko.applyBindings(vm, document.getElementById("app"));
 
     vm.checkItem("After binding.");
 

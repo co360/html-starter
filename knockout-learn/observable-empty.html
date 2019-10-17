@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <p>INSTRUCTION: Change the message to see action.</p>
 
     <p>Message: <input data-bind="textInput: message" size="25"></p>
@@ -20,7 +20,7 @@
     };
     console.log("DEBUG: viewModel", viewModel);
     console.log("DEBUG: viewModel.message()", viewModel.message());
-    ko.applyBindings(viewModel, document.getElementById("demo"));
+    ko.applyBindings(viewModel, document.getElementById("app"));
 </script>
 
 </body>

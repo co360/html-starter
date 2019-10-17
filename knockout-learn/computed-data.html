@@ -7,13 +7,13 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <p>Use console to change the <code>viewModel</code>.</p>
     <p>The name is <span data-bind="text: fullName"></span></p>
 </div>
 
 <script>
-    function AppViewModel() {
+    function ViewModel() {
         let self = this;
         self.firstName = ko.observable('Bob');
         self.lastName = ko.observable('Smith');
@@ -22,7 +22,7 @@
             return self.firstName() + " " + self.lastName();
         });
     }
-    ko.applyBindings(new AppViewModel(), document.getElementById("demo"));
+    ko.applyBindings(new ViewModel(), document.getElementById("app"));
 </script>
 
 </body>

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <button data-bind="click: onClick">ClickMe</button>
     <input type="checkbox" data-bind="checked: checkedValue">
     <p data-bind="text: 'CheckedValue: ' + checkedValue()"></p>
@@ -21,7 +21,7 @@
             self.checkedValue(!self.checkedValue());
         }
     }
-    ko.applyBindings(new ViewModel(), document.getElementById("demo"));
+    ko.applyBindings(new ViewModel(), document.getElementById("app"));
 </script>
 
 </body>

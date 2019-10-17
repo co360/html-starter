@@ -10,7 +10,7 @@
 <!--
 This demo will update VM from UI side after an observable is populated.
 -->
-<div id="demo">
+<div id="app">
     <p data-bind="hidden: myListReady">Will update list in a moment...</p>
     <div data-bind="if: myListReady">
         <ul data-bind="foreach: myList">
@@ -39,7 +39,7 @@ This demo will update VM from UI side after an observable is populated.
     // First check
     vm.checkItem("After vm is ready.");
 
-    ko.applyBindings(vm, document.getElementById("demo"));
+    ko.applyBindings(vm, document.getElementById("app"));
 
     vm.checkItem("After binding.");
 

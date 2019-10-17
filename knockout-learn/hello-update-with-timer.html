@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <p>INSTRUCTION: Use console to change the <code>viewModel</code>.</p>
     <pre>Examples: viewModel.message("Hi again");</pre>
     <p>Message: <span data-bind="text: message">Hi</span></p>
@@ -20,7 +20,7 @@
     }
     let viewModel = new ViewModel();
     window.onload = function() {
-        ko.applyBindings(viewModel, document.getElementById("demo"));
+        ko.applyBindings(viewModel, document.getElementById("app"));
     };
 </script>
 

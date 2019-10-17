@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <p><button data-bind="click: onClick">Click Me</button></p>
     <div data-bind="if: employee">
     <p>Employee Name: <span data-bind="text: employee().name"></span></p>
@@ -40,7 +40,7 @@
             });
         };
     }
-    ko.applyBindings(new ViewModel(), document.getElementById("demo"));
+    ko.applyBindings(new ViewModel(), document.getElementById("app"));
 </script>
 
 </body>

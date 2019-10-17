@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <div data-bind="let: {foo: 'foo-var-override', bar: 'new-var', newMsg: helloMessage}">
         <ul>
             <li data-bind="text: foo"></li>
@@ -30,7 +30,7 @@
         helloMessage: "Hi"
     };
 
-    ko.applyBindings(vm, document.getElementById("demo"));
+    ko.applyBindings(vm, document.getElementById("app"));
 </script>
 
 </body>

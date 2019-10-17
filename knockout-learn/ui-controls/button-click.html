@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <p><button data-bind="click: onClick">Click Me</button></p>
     <p>Clicked Count: <span data-bind="text: clickCount">Hi</span></p>
 </div>
@@ -22,7 +22,7 @@
             self.clickCount(self.clickCount() + 1);
         };
     }
-    ko.applyBindings(new ViewModel(), document.getElementById("demo"));
+    ko.applyBindings(new ViewModel(), document.getElementById("app"));
 </script>
 
 </body>

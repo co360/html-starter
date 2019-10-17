@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="demo">
+<div id="app">
     <p data-bind="ifnot: myData">
         Waiting <code>viewModel.myData</code> to be set.
         Use console to change the value.
@@ -33,7 +33,7 @@
      * attribute instead. This makes the problem occur more earlier and obvious
      * if not handled properly.
      */
-    function AppViewModel() {
+    function ViewModel() {
         let self = this;
         self.myData = ko.observable();
         self.myComputedData = ko.computed(function() {
@@ -43,8 +43,8 @@
             return "Computed" + self.myData();
         });
     }
-    let viewModel = new AppViewModel();
-    ko.applyBindings(viewModel, document.getElementById("demo"));
+    let viewModel = new ViewModel();
+    ko.applyBindings(viewModel, document.getElementById("app"));
 </script>
 
 </body>
