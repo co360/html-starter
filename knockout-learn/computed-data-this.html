@@ -16,13 +16,13 @@
 
 <script>
     function ViewModel() {
-        let self = this;
-        self.firstName = ko.observable('Bob');
-        self.lastName = ko.observable('Smith');
+        this.firstName = ko.observable('Bob');
+        this.lastName = ko.observable('Smith');
 
-        self.fullName = ko.computed(function() {
-            return self.firstName() + " " + self.lastName();
-        });
+        // You need the 2nd parameter 'this' in order to use 'this' inside the function!
+        this.fullName = ko.computed(function() {
+            return this.firstName() + " " + this.lastName();
+        }, this);
     }
     ko.applyBindings(new ViewModel(), document.getElementById("app"));
 </script>
