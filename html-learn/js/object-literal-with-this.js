@@ -108,7 +108,7 @@ this.objId = Math.random().toString(16); // globalThis
 console.log("this again", this);
 let o7 = {
     objId: Math.random().toString(16),
-    thisObj: this, /* "this" is the globalThis"*/
+    thisObj: this, /* "this" is the globalThis" */
     propsString: function () {
         console.log("debug: thisObj", this.thisObj);
         return "thisObj=" + this.thisObj;
@@ -116,3 +116,24 @@ let o7 = {
 };
 console.log("o7", o7);
 console.log("o7.propsString()", o7.propsString());
+
+console.log("== Assign 'this' to object literal properties - nested");
+let o8 = {
+    objId: Math.random().toString(16),
+    thisObj: this, /* "this" is the globalThis" */
+    propsString: function () {
+        console.log("debug: thisObj", this.thisObj);
+        return "thisObj=" + this.thisObj;
+    },
+    nestedObj: {
+        objId: Math.random().toString(16),
+        thisObj: this, /* "this" is the globalThis", even though it's nested */
+        propsString: function () {
+            console.log("debug: nestedObj.thisObj", this.thisObj);
+            return "nestedObj.thisObj=" + this.thisObj;
+        }
+    }
+};
+console.log("o8", o8);
+console.log("o8.propsString()", o8.propsString());
+console.log("o8.nestedObj.propsString()", o8.nestedObj.propsString());
