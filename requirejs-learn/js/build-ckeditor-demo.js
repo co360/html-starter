@@ -8,7 +8,7 @@
 //     */
 //     paths: {
 //         'jquery': '../../resources/node_modules/jquery/dist/jquery',
-//         'text': '../../resources/node_modules/require-text/index',
+//         'text': '../../resources/node_modules/requirejs-text/text',
 //         'ckeditor': '../../resources/node_modules/ckeditor/classic/ckeditor'
 //     }
 // });
