@@ -101,3 +101,18 @@ let o6 = {
     get dataLength() { return this.data.length; }
 };
 console.log("o6.dataLength", o6.dataLength);
+
+console.log("== Assign 'this' to object literal properties");
+console.log("this", this);
+this.objId = Math.random().toString(16); // globalThis
+console.log("this again", this);
+let o7 = {
+    objId: Math.random().toString(16),
+    thisObj: this, /* "this" is the globalThis"*/
+    propsString: function () {
+        console.log("debug: thisObj", this.thisObj);
+        return "thisObj=" + this.thisObj;
+    }
+};
+console.log("o7", o7);
+console.log("o7.propsString()", o7.propsString());
