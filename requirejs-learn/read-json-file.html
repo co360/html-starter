@@ -16,8 +16,8 @@
         require.config({
             baseUrl: 'js',
             paths: {
-                'jquery': '../../resources/node_modules/jquery/jquery-3.4.1',
-                'text': '../../resources/node_modules/require/text'
+                'jquery': '../../resources/node_modules/jquery/dist/jquery',
+                'text': '../../resources/node_modules/require-text/index'
             }
         });
         require(['require', 'jquery', 'text!read-json-file-examples.json'], function(require, $, examplesText) {

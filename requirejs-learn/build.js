@@ -48,12 +48,12 @@ r.js -o build.js optimize=none
 ({
     baseUrl: "js",
     paths: {
-        'text': '../../resources/js/libs/require/text',
-        'css': '../../resources/js/libs/require-css/css',
-        'domReady': '../../resources/js/libs/require/domReady',
+        'text': '../../resources/node_modules/require-text/index',
+        'css': '../../resources/node_modules/require-css/css',
+        'domReady': '../../resources/node_modules/requirejs-domready/domReady',
         //'jquery': 'empty:',
-        'jquery': '../../resources/js/libs/jquery/jquery-3.4.1',
-        'ckeditor': '../../resources/js/libs/ckeditor/classic/ckeditor'
+        'jquery': '../../resources/node_modules/jquery/dist/jquery',
+        'ckeditor': '../../resources/node_modules/ckeditor/classic/ckeditor'
     },
 
     shim: {

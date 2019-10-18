@@ -2,9 +2,9 @@
 requirejs.config({
     baseUrl: "js",
     paths: {
-        'jquery': '../../resources/js/libs/jquery/jquery-3.4.1',
-        'text': '../../resources/js/libs/require/text',
-        'css': '../../resources/js/libs/require-css/css',
-        'domReady': '../../resources/js/libs/require/domReady'
+        'jquery': '../../resources/node_modules/jquery/dist/jquery',
+        'text': '../../resources/node_modules/require-text/index',
+        'css': '../../resources/node_modules/require-css/css',
+        'domReady': '../../resources/node_modules/requirejs-domready/domReady'
     }
 });

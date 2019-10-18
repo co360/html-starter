@@ -18,7 +18,9 @@
     "knockout": "^3.5.0",
     "qunit": "^2.9.3",
     "require-css": "^0.1.10",
+    "require-text": "0.0.1",
     "requirejs": "^2.3.6",
+    "requirejs-domready": "^2.0.3",
     "splitjs": "0.0.1",
     "underscore": "^1.9.1",
     "vue": "^2.6.10"

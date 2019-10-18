@@ -11,8 +11,8 @@ requirejs.config({
     NOTE these paths are in relative to the "baseUrl"!
     */
     paths: {
-        'jquery': '../../resources/js/libs/jquery/jquery-3.4.1',
-        'text': '../../resources/js/libs/require/text'
+        'jquery': '../../resources/node_modules/jquery/dist/jquery',
+        'text': '../../resources/node_modules/require-text/index'
     }
 });
 
