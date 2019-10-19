@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+</head>
+<body>
+
+<script>
+    // Immediately Invoked Function Expression
+    // http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+    let i = -1;
+    console.log("My var i outside of IIFE: ", i);
+    (function () {
+        let i = 99;
+        console.log("My var i inside of IIFE: ", i);
+    })();
+</script>
+
+</body>
+</html>
