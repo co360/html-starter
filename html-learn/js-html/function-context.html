@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+</head>
+<body>
+
+<script>
+    // Function Creates New Context!
+    // http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+
+    // Because this function returns another function that has access to the
+    // "private" var i, the returned function is, effectively, "privileged."
+
+    function makeCounter() {
+        // `i` is only accessible inside `makeCounter`.
+        var i = 0;
+
+        return function() {
+            console.log( ++i );
+        };
+    }
+
+    // Note that `counter` and `counter2` each have their own scoped `i`.
+
+    var counter = makeCounter();
+    counter(); // logs: 1
+    counter(); // logs: 2
+
+    var counter2 = makeCounter();
+    counter2(); // logs: 1
+    counter2(); // logs: 2
+</script>
+
+</body>
+</html>
