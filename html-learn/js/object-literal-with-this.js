@@ -156,4 +156,4 @@ console.log("== Assign 'this' to object literal properties - nested with 'use st
     console.log("o9", o9);
     o9.propsString();
     o9.nestedObj.propsString();
-})();
+}());
