@@ -103,37 +103,57 @@ let o6 = {
 console.log("o6.dataLength", o6.dataLength);
 
 console.log("== Assign 'this' to object literal properties");
-console.log("this", this);
-this.objId = Math.random().toString(16); // globalThis
-console.log("this again", this);
+this.objId = Math.random().toString(16); // assign to global 'this'
+console.log("global: this.objId", this.objId);
 let o7 = {
     objId: Math.random().toString(16),
-    thisObj: this, /* "this" is the globalThis" */
+    thisObj: this, /* "this" is the global 'this' because we are not using 'use strict'" */
     propsString: function () {
-        console.log("debug: thisObj", this.thisObj);
-        return "thisObj=" + this.thisObj;
+        console.log("debug: propsString: thisObj", this.thisObj); /* "this" is the o7 object instance ref, not globalThis */
     }
 };
 console.log("o7", o7);
-console.log("o7.propsString()", o7.propsString());
+o7.propsString();
 
 console.log("== Assign 'this' to object literal properties - nested");
+console.log("global: this.objId", this.objId);
 let o8 = {
     objId: Math.random().toString(16),
-    thisObj: this, /* "this" is the globalThis" */
+    thisObj: this, /* "this" is the global 'this' because we are not using 'use strict'" */
     propsString: function () {
-        console.log("debug: thisObj", this.thisObj);
-        return "thisObj=" + this.thisObj;
+        console.log("debug: propsString: this.objId", this.objId); /* "this" is the o8 object instance ref, not globalThis */
     },
     nestedObj: {
         objId: Math.random().toString(16),
-        thisObj: this, /* "this" is the globalThis", even though it's nested */
+        thisObj: this, /* "this" is the global 'this', even though it's nested. We are not in a function! */
         propsString: function () {
-            console.log("debug: nestedObj.thisObj", this.thisObj);
-            return "nestedObj.thisObj=" + this.thisObj;
+            console.log("debug: nestedObj: this.objId", this.objId); /* "this" is the nestedObj instance ref, not globalThis */
         }
     }
 };
 console.log("o8", o8);
-console.log("o8.propsString()", o8.propsString());
-console.log("o8.nestedObj.propsString()", o8.nestedObj.propsString());
+o8.propsString();
+o8.nestedObj.propsString();
+
+console.log("== Assign 'this' to object literal properties - nested with 'use strict'");
+(function () {
+    'use strict';
+    console.log("global: this", this); // undefined because we are using 'use strict'
+    let o9 = {
+        objId: Math.random().toString(16),
+        thisObj: this, /* "this" is the global 'this', which is undefined because we are using 'use strict'" */
+        propsString: function () {
+            console.log("debug: propsString: this.objId", this.objId); /* "this" is the o9 object instance ref, not globalThis */
+        },
+        nestedObj: {
+            objId: Math.random().toString(16),
+            thisObj: this, /* "this" is the global 'this', even though it's nested */
+            propsString: function () {
+                console.log("debug: nestedObj: this.objId", this.objId); /* "this" is the nestedObj instance ref, not globalThis */
+            }
+        }
+    };
+    console.log("o9", o9);
+    o9.propsString();
+    o9.nestedObj.propsString();
+})();
