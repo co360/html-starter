@@ -1,7 +1,6 @@
-// JS built-in vars in Browser env (see built-in-vars.html)
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
-// https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope
+// Try to run this with NodeJS and compare it to "built-in-vars.html" version.
 
+console.log("this", this);
 console.log("globalThis", globalThis);
 
 // Any properties inside the globalThis can be access by direct name
