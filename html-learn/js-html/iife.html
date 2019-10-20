@@ -14,7 +14,22 @@
     (function () {
         let i = 99;
         console.log("My var i inside of IIFE: ", i);
+    }());
+
+    // Example2: Placing the parens on the function first then invoke will also work too.
+    (function () {
+        let i = 98;
+        console.log("2nd: My var i inside of IIFE: ", i);
     })();
+
+    // NOTE: Function definition is not a expression, but a parens can turn it into expression.
+    //       We can only invoke expression on the same line!
+    // So this will not work
+    //   function () { }();     // Syntax error!
+    // It won't work on named function either
+    //   function foo() { }();  // Syntax error!
+    // But this is okay
+    //   (function () { }());
 </script>
 
 </body>
