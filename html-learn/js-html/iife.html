@@ -22,6 +22,7 @@
         console.log("2nd: My var i inside of IIFE: ", i);
     })();
 
+    // == How/why this will work?
     // NOTE: Function definition is not a expression, but a parens can turn it into expression.
     //       We can only invoke expression on the same line!
     // So this will not work
@@ -30,6 +31,8 @@
     //   function foo() { }();  // Syntax error!
     // But this is okay
     //   (function () { }());
+    //
+    // As for how JS can enclose and create namespace with this form, see "function-context.html"
 </script>
 
 </body>
