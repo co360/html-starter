@@ -58,10 +58,10 @@
     //  use call(), or apply() as in the following examples.
 
     // An object can be passed as the first argument to call or apply and this will be bound to it.
-    var obj = {a: 'Custom'};
+    let obj = {a: 'Custom'};
 
     // This property is set on the global object
-    var a = 'Global';
+    let a = 'Global';
 
     function whatsThis() {
         return this.a;  // The value of this is dependent on how the function is called
@@ -83,20 +83,20 @@
         return this.a;
     }
 
-    var g = f.bind({a: 'azerty'});
+    let g = f.bind({a: 'azerty'});
     console.log(g()); // azerty
 
-    var h = g.bind({a: 'yoo'}); // bind only works once!
+    let h = g.bind({a: 'yoo'}); // bind only works once!
     console.log(h()); // azerty
 
-    var o = {a: 37, f: f, g: g, h: h};
+    let o = {a: 37, f: f, g: g, h: h};
     console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
 
     // == Arrow Function
     // In arrow functions, this retains the value of the enclosing lexical context's this.
     // In global code, it will be set to the global object:
-    var globalObject = this;
-    var foo = (() => this);
+    let globalObject = this;
+    let foo = (() => this);
     console.log("foo() === globalObject", foo() === globalObject); // true
 
     // Arrow functions created inside other functions: their this remains that of the
@@ -114,7 +114,7 @@
     // == Object Function
     // When a function is called as a method of an object, its this is set to the object the
     // method is called on.
-    var o = {
+    let o = {
         prop: 37,
         f: function() {
             return this.prop;
@@ -124,7 +124,7 @@
     console.log("o.f()", o.f()); // 37
 
     // Same if we attach function later
-    var o = {prop: 37};
+    let o = {prop: 37};
 
     function independent() {
         return this.prop;
@@ -145,7 +145,7 @@
         this.a = 37;
     }
 
-    var o = new C();
+    let o = new C();
     console.log("Constructor function: o.a". o.a); // 37
 
     // == Event handler
