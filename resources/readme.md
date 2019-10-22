@@ -10,6 +10,6 @@ NOTE2: Not all node dependencies works directly as the browser script!
 For example, the "splitjs" need to manually download the browser script 
 version into "resources" folder.
 
-NOTE3: The "jquery-ui" from "node_modules" contains source code but it's not
-in a single file. We downloaded single script file into "resources/jquery-ui"
-for convenience instead.
+NOTE3: The "resources/node_modules/jquery-ui" contains source code but it's not
+in a single file (however they are good for amd/requirejs loading). We have another 
+version that has single script file in "resources/jquery-ui" for convenience as well.
