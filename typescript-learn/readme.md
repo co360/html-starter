@@ -5,11 +5,11 @@ JavaScript.
 
 ## How To Setup
 
-Install `TypeScript` compiler tool using NPM:
+Install `TypeScript` compiler tool using NPM in local `node_modules` directory:
 
 ```bash
-npm install -g typescript
-tsc --version
+npm install --no-save
+npx tsc --version
 ```
 
 ## How to Compile and Run Source File
@@ -20,7 +20,7 @@ echo 'class Hello {
 }
 console.log(new Hello().name + " World");
 ' > hello.ts
-tsc hello.ts
+npx tsc hello.ts
 node hello.js
 ```
 
