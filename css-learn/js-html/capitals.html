@@ -16,14 +16,18 @@
     require(['knockout', 'data/capitals'], function (ko, capitals) {
         function ViewModel() {
             this.capitals = capitals;
-            this.capitalByStates = ko.computed(function () {
-                let stateKeys = Object.keys(this.capitals);
-                return stateKeys.map((key) => {
-                    let state = this.capitals[key];
-                    return state.capital + ", " + state.name;
-                });
-            }, this);
+            this.capitalByStates = [];
+
+            this.init();
         }
+        ViewModel.prototype.init = function () {
+            let ret = Object.keys(this.capitals).map((key) => {
+                let state = this.capitals[key];
+                return state.capital + ", " + state.name;
+            });
+            this.capitalByStates.push(...ret);
+        };
+
         let vm = new ViewModel();
         ko.applyBindings(vm);
     });
