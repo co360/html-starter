@@ -26,14 +26,16 @@
 <script>
     require(['knockout', 'data/capitals'], function (ko, capitals) {
         function ViewModel() {
-            this.capitals = capitals;
             this.states = [];
 
-            this.init();
+            this.init(capitals);
         }
-        ViewModel.prototype.init = function () {
-            let ret = Object.keys(this.capitals).map((key) => this.capitals[key]);
-            this.states.push(...ret);
+        ViewModel.prototype.init = function (capitals) {
+            for (let key in capitals) {
+                let state = capitals[key];
+                state.shortName = key;
+                this.states.push(state);
+            }
         };
 
         let vm = new ViewModel();
