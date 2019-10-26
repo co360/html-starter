@@ -20,8 +20,8 @@
 <table>
     <thead>
     <tr>
-        <th data-bind="click: sortStates">State <span data-bind="class: stateSortDirection"></span></th>
-        <th data-bind="click: sortCapitals">Capital <span data-bind="class: capitalSortDirection"></span></th>
+        <th data-bind="click: sortStates">State <span data-bind="class: stateSortedDirection"></span></th>
+        <th data-bind="click: sortCapitals">Capital <span data-bind="class: capitalSortedDirection"></span></th>
         <th>Latitude</th>
         <th>Longitude</th>
     </tr>
@@ -37,11 +37,15 @@
 </table>
 
 <script>
+    /*
+    Each fields "SortedDirection" may have 3 states: sort-asc, sort-desc, or "".
+    These names are also used as css style class to show the direction arrow.
+     */
     require(['knockout', 'data/capitals'], function (ko, capitals) {
         function ViewModel() {
             this.states = ko.observableArray();
-            this.stateSortDirection = ko.observable("sort-asc");
-            this.capitalSortDirection = ko.observable("");
+            this.stateSortedDirection = ko.observable("sort-asc");
+            this.capitalSortedDirection = ko.observable("");
 
             this.init(capitals);
         }
@@ -53,31 +57,44 @@
             }
 
             // Sort states by name initially - "sort-asc"
-            this.states.sort((a, b) => a.name.localeCompare(a.name));
+            this.sortStateArray("name", false);
         };
-        ViewModel.prototype.sortStates = function () {
-            if (this.stateSortDirection() === "sort-asc") {
-                // If we already in ASC, then we sort DESC
-                this.states.sort((a, b) => b.name.localeCompare(a.name));
-                this.stateSortDirection("sort-desc");
-            } else if (this.stateSortDirection() === "" || this.stateSortDirection() === "sort-desc") {
-                // Reverse sorting
-                this.states.sort((a, b) => a.name.localeCompare(b.name));
-                this.stateSortDirection("sort-asc");
+
+        /*
+         * sortField => One of the property in "this.states" object to be sorted.
+         * reverse => false is for ASC sort, true is for DESC sort,
+         */
+        ViewModel.prototype.sortStateArray = function (sortField, reverse) {
+            if (reverse) {
+                this.states.sort((a, b) => b[sortField].localeCompare(a[sortField]));
+            } else {
+                this.states.sort((a, b) => a[sortField].localeCompare(b[sortField]));
             }
-            this.capitalSortDirection("");
+        };
+
+        ViewModel.prototype.sortStates = function () {
+            if (this.stateSortedDirection() === "sort-asc") {
+                // Desc sorting
+                this.sortStateArray("name", true);
+                this.stateSortedDirection("sort-desc");
+            } else if (this.stateSortedDirection() === "" || this.stateSortedDirection() === "sort-desc") {
+                // Asc sorting
+                this.sortStateArray("name", false);
+                this.stateSortedDirection("sort-asc");
+            }
+            this.capitalSortedDirection("");
         };
         ViewModel.prototype.sortCapitals = function () {
-            if (this.capitalSortDirection() === "sort-asc") {
-                // If we already in ASC, then we sort DESC
-                this.states.sort((a, b) => b.capital.localeCompare(a.capital));
-                this.capitalSortDirection("sort-desc");
-            } else if (this.capitalSortDirection() === "" || this.capitalSortDirection() === "sort-desc") {
-                // Reverse sorting
-                this.states.sort((a, b) => a.capital.localeCompare(b.capital));
-                this.capitalSortDirection("sort-asc");
+            if (this.capitalSortedDirection() === "sort-asc") {
+                // Desc sorting
+                this.sortStateArray("capital", true);
+                this.capitalSortedDirection("sort-desc");
+            } else if (this.capitalSortedDirection() === "" || this.capitalSortedDirection() === "sort-desc") {
+                // Asc sorting
+                this.sortStateArray("capital", false);
+                this.capitalSortedDirection("sort-asc");
             }
-            this.stateSortDirection("");
+            this.stateSortedDirection("");
         };
 
         let vm = new ViewModel();
