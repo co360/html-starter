@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS/JavaScript Starter</title>
+    <script src="../../resources/node_modules/requirejs/require.js"></script>
+    <script src="requirejs-config.js"></script>
+</head>
+<body>
+
+<style>
+    .sort-asc:after {
+        content: "▲"
+    }
+    .sort-desc:after {
+        content: "▼"
+    }
+</style>
+
+<table>
+    <thead>
+    <tr>
+        <th data-bind="click: sortStates">State <span data-bind="class: stateSortDirection"></span></th>
+        <th data-bind="click: sortCapitals">Capital <span data-bind="class: capitalSortDirection"></span></th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach: states">
+    <tr>
+        <td data-bind="text: $data.name"></td>
+        <td data-bind="text: $data.capital"></td>
+        <td data-bind="text: $data.lat"></td>
+        <td data-bind="text: $data.long"></td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    require(['knockout', 'data/capitals'], function (ko, capitals) {
+        function ViewModel() {
+            this.states = ko.observableArray();
+            this.stateSortDirection = ko.observable("sort-asc");
+            this.capitalSortDirection = ko.observable("");
+
+            this.init(capitals);
+        }
+        ViewModel.prototype.init = function (capitals) {
+            for (let key in capitals) {
+                let state = capitals[key];
+                state.shortName = key;
+                this.states.push(state);
+            }
+
+            // Sort states by name initially - "sort-asc"
+            this.states.sort((a, b) => a.name.localeCompare(a.name));
+        };
+        ViewModel.prototype.sortStates = function () {
+            if (this.stateSortDirection() === "sort-asc") {
+                // If we already in ASC, then we sort DESC
+                this.states.sort((a, b) => b.name.localeCompare(a.name));
+                this.stateSortDirection("sort-desc");
+            } else if (this.stateSortDirection() === "" || this.stateSortDirection() === "sort-desc") {
+                // Reverse sorting
+                this.states.sort((a, b) => a.name.localeCompare(b.name));
+                this.stateSortDirection("sort-asc");
+            }
+            this.capitalSortDirection("");
+        };
+        ViewModel.prototype.sortCapitals = function () {
+            if (this.capitalSortDirection() === "sort-asc") {
+                // If we already in ASC, then we sort DESC
+                this.states.sort((a, b) => b.capital.localeCompare(a.capital));
+                this.capitalSortDirection("sort-desc");
+            } else if (this.capitalSortDirection() === "" || this.capitalSortDirection() === "sort-desc") {
+                // Reverse sorting
+                this.states.sort((a, b) => a.capital.localeCompare(b.capital));
+                this.capitalSortDirection("sort-asc");
+            }
+            this.stateSortDirection("");
+        };
+
+        let vm = new ViewModel();
+        ko.applyBindings(vm);
+    });
+</script>
+
+</body>
+</html>
+
