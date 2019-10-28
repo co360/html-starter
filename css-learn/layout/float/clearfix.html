@@ -19,6 +19,9 @@
     The overflow:auto clearfix works well as long as you are able to keep control of your margins
     and padding (else you might see scrollbars). The new, modern clearfix hack however, is safer
     to use, and it is used for most webpages.
+
+    NOTE: clearfix hack uses 'display: table', and not 'display: block' because:
+    'display: block' can also be used, but it will not prevent collapsed margins.
     */
 
     .clearfix::after {
