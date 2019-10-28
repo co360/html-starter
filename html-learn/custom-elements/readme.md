@@ -1,6 +1,7 @@
 ## About
 
-https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
+- https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
+- https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
 
 HTML Custom elements provide a way for authors to build their own fully-featured DOM elements.
 
