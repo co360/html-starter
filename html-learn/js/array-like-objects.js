@@ -20,7 +20,7 @@ function test2() {
         0: "one",
         1: "two",
         2: "three"
-    }
+    };
 
     console.log("Convert Using Array.from()");
     for (let x of Array.from(myArrayLike))
