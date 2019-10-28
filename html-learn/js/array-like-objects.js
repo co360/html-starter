@@ -11,4 +11,19 @@ function test() {
     // Other array-like-objects are NodeList and HTMLCollection etc.
     // see "js-html/array-like-objects.html"
 }
-test(1, 2, 3);
+// test(1, 2, 3);
+
+// Write your own array-like-object
+function test2() {
+    let myArrayLike = {
+        length: 3,
+        0: "one",
+        1: "two",
+        2: "three"
+    }
+
+    console.log("Convert Using Array.from()");
+    for (let x of Array.from(myArrayLike))
+        console.log(x);
+}
+test2();
