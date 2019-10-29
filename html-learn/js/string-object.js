@@ -30,3 +30,28 @@ console.log('"Hello".includes("e")', "Hello".includes("e"));
 console.log('"Hello".includes("x")', "Hello".includes("x"));
 console.log('"Hello".endsWith("lo")', "Hello".endsWith("lo"));
 console.log('"Hello".startsWith("He")', "Hello".startsWith("He"));
+
+console.log("== String slice vs substring");
+// https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring
+console.log('"Hello".slice(3, 5)', "Hello".slice(3, 5));
+console.log('"Hello".substring(3, 5)', "Hello".substring(3, 5));
+
+console.log("== String replace");
+console.log('"Hello".replace("l", "L")', "Hello".replace("l", "L")); // Replace only 1 char!
+console.log('"Hello".replace(/l/g, "L")', "Hello".replace(/l/g, "L")); // Replace all chars!
+
+console.log("== String match vs matchAll");
+// https://developers.google.com/web/updates/2019/02/string-matchall
+let regex = /t(e)(st(\d?))/g;
+let string = 'test1test2';
+let results = string.match(regex);
+console.log(results);
+// → ['test1', 'test2']
+
+regex = /t(e)(st(\d?))/g;
+string = 'test1test2';
+matches = string.matchAll(regex);
+for (const match of matches) {
+    console.log(match);
+}
+
