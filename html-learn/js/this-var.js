@@ -1,3 +1,19 @@
+// What does function context (this) mean?
+//
+// Context in programming usually means the objects, variables or functions in a namescope
+// that are visible to the current thread of execution.
+//
+// JS has many context of namescope depending where the code (function) is executing. The Context
+// can be explicitly access with "this" variable.
+//
+// When a global function is executing, then it has the "Global Context" or
+// (globalThis/window object) visible.
+//
+// When a function inside a object is executing then the object is the context.
+//
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+//
+
 'use strict';  // Other mode are 'sloppy mode'
 
 // default "this" is the globalThis object in browser (See this-var.html)
