@@ -19,4 +19,4 @@ let car1b = new Car1();
 let car2a = new Car2();
 let car2b = new Car2();
 console.log('car1a.start === car1b.start', car1a.start === car1b.start);
-console.log('car2a.start === car2a.start', car2a.start === car2a.start);
+console.log('car2a.start === car2b.start', car2a.start === car2b.start);
