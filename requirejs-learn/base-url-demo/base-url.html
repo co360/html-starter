@@ -44,7 +44,15 @@
     </script>
 </head>
 <body>
-<h1>RequireJS Demo</h1>
-<p>Check console output</p>
+    <h1>RequireJS Demo</h1>
+    <p>Check console output</p>
+
+    <script src="nested-foo/requirejs-config.js"></script>
+    <script>
+        // Test - Set baseUrl from a .js that's out side fo current directory.
+        // Note this proves that RequireJS baseUrl is based on relative to where the HTML is loaded, not
+        // the JS file that contains the config!
+        console.log(`Explicitly set baseUrl from nested-foo/requirejs-config.js, path=${getAbsPath(require.toUrl(''))}`);
+    </script>
 </body>
 </html>
