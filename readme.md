@@ -26,21 +26,23 @@ https://github.com/tastejs/todomvc/tree/master/examples
 
 HTML/CSS/JavaScript:
 - https://developer.mozilla.org/en-US/docs/Web/
-- https://learn.shayhowe.com/html-css/
-- https://html-css-js.com/
 - https://www.w3schools.com/html/default.asp
+- https://developers.google.com/web/
+- https://css-tricks.com/guides/
+- http://reddit.com/r/javascript/
 
 CDN:
-- https://cdnjs.com 
-- https://developers.google.com/speed/libraries
+- https://www.jsdelivr.com/
+- https://cdnjs.com/
+- https://developers.google.com/speed/libraries/
 
-Tools
+IDE/Tools
 - https://www.jetbrains.com/webstorm/
 - https://www.sublimetext.com/
-- https://jsfiddle.net/
-- https://codepen.io/
+- https://code.visualstudio.com/
 
 Frameworks:
+- https://vuejs.org/
 - https://knockoutjs.com/
 - https://requirejs.org/
 - https://jquery.com/
@@ -48,19 +50,15 @@ Frameworks:
 - https://nodejs.org/
 - https://www.typescriptlang.org/
 
-Reading Materials:
-- https://developers.google.com/web
-- https://css-tricks.com/guides/
-- http://reddit.com/r/javascript
-
 API Test Sites:
+- https://reqres.in/api/users
+- https://api.github.com/repositories
+- https://www.npmjs.com/package/couchdb
 
-https://reqres.in/api/users
-https://api.github.com/repositories
-https://www.npmjs.com/package/couchdb
 
+## Online Web Editor/Test Tools
 
-## JSFiddle.net Tool
+- https://jsbin.com/
+- https://jsfiddle.net/
+- https://codepen.io/
 
-- https://jsfiddle.net
-- https://jsfiddle.net/api/user/zemian/demo/list.json
