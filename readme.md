@@ -55,6 +55,10 @@ API Test Sites:
 - https://api.github.com/repositories
 - https://www.npmjs.com/package/couchdb
 
+Image palace hodler
+- http://placekitten.com/200/300
+- https://via.placeholder.com/200x300
+
 
 ## Online Web Editor/Test Tools
 
