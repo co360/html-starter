@@ -22,10 +22,9 @@ function Service() {
         });
     };
 
-    this.run = () => {
+    this.run = (runId) => {
         let runFunc = () => {
-            let id = Math.random().toString(16);
-            console.log("Running service with id=" + id);
+            console.log("Running service with id=" + runId);
         };
 
         if (this.initPromise === null) {
@@ -46,12 +45,14 @@ function Service() {
 }
 
 let service = new Service();
-console.log("main: Invoking service.init for ", service);
+console.log("main: Invoking service.init for ");
 service.init();
-console.log("main: Invoke service.run right after init", service);
-service.run();
+console.log("main: Invoke service.run right after init");
+service.run(1);
+console.log("main: Invoke service.run right after init#2");
+service.run(2);
 setTimeout(()=> {
-    console.log("main-timer: Invoke service.run after 5s", service);
-    service.run();
+    console.log("main-timer: Invoke service.run after 5s");
+    service.run(3);
 }, 5000);
 console.log("main: Done.");
