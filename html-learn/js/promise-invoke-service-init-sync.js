@@ -17,7 +17,7 @@ function Service() {
             sleep(3000).then(() => {
                 console.log("Service is ready.");
                 this.hasInited = true; // We can use this.hasInited because we are using fat arrow.
-                resolve(); // It's important to call resolve, else signal is wrong!
+                resolve(true); // It's important to call resolve, else signal is wrong!
             });
         });
     };
@@ -37,8 +37,9 @@ function Service() {
             runFunc();
         } else {
             console.log("Invoking runFunc after initPromise");
-            this.initPromise.then(() => {
+            this.initPromise.then((result) => {
                 runFunc();
+                return result;
             });
         }
     };
