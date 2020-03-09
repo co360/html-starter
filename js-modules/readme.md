@@ -6,8 +6,14 @@
     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
     
 - RequireJS (AMD)
+    * https://requirejs.org
+    * https://requirejs.org/docs/commonjs.html
+    
 - NodeJS (CommonJS)
-    * What is require, exports, module
-    * Beaware of module.exports vs exports
+    * https://nodejs.org/docs/latest/api/modules.html
+    * Global vars: require, exports, module
+    * Be aware of module.exports vs exports
+    
 - UMD?
+
 - TypeScript import/export
