@@ -7,5 +7,7 @@
     
 - RequireJS (AMD)
 - NodeJS (CommonJS)
+    * What is require, exports, module
+    * Beaware of module.exports vs exports
 - UMD?
 - TypeScript import/export
