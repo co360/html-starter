@@ -14,6 +14,8 @@
     * Global vars: require, exports, module
     * Be aware of module.exports vs exports
     
-- UMD?
+- UMD
+    * https://github.com/umdjs/umd
+    * https://github.com/umdjs/umd/blob/master/templates/amdWeb.js
 
 - TypeScript import/export
