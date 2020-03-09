@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ES6",
+    "module": "CommonJS", /* CommonJS for Node or AMD for RequireJS */
+    "sourceMap": false,
+    "paths": {
+      "*" : ["*"]
+    }
+  },
+  "include": [
+    "**/*"
+  ]
+}
