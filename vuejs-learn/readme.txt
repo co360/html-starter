@@ -54,3 +54,10 @@ or better yet, use a computed filter to return sub list!
 ## User Input
 
 Use v-model for two-way binding between form input and app state.
+
+## Components
+
+A web custom element for reuse. It needs to be registered with Vue and use it
+as HTML element.
+
+The "data" in a component must be a function!
