@@ -18,6 +18,7 @@
         document.title = newValue;
     }
 
+    //https://stackoverflow.com/questions/2497200/how-to-listen-for-changes-to-the-title-element
     new MutationObserver(function(mutations) {
         let newValue = mutations[0].target.text;
         console.log("Title changed found:", newValue);
