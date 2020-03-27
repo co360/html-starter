@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>JQuery Learning</title>
-    <script src="../resources/node_modules/jquery/dist/jquery.js"></script>
-</head>
-<body>
+<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
 
 <div id="app">
-    <span id="msg">Hello</span>
+    <field>Name: <input id="name" value="World"></field>
+    <field><button id="submit">Submmit</button></field>
+    <div id="output"></div>
 </div>
 
 <script>
-    $("#msg").text("Hello World");
+    $("#submit").on('click', () =>{
+        let name = $("#name").val();
+        $("#output").text("Hello, " + name + "!");
+    });
 </script>
-
-</body>
-</html>
