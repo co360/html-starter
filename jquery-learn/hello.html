@@ -1,14 +1,8 @@
 <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
 
 <div id="app">
-    <field>Name: <input id="name" value="World"></field>
-    <field><button id="submit">Submmit</button></field>
-    <div id="output"></div>
 </div>
 
 <script>
-    $("#submit").on('click', () =>{
-        let name = $("#name").val();
-        $("#output").text("Hello, " + name + "!");
-    });
+    $("#app").text("Hello World!");;
 </script>
