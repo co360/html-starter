@@ -3,9 +3,12 @@
 <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
 <script src="https://unpkg.com/bootstrap@4.4.1/dist/js/bootstrap.js"></script>
 
-<div id="app">
-    <field>Name: <input id="name" value="World"></field>
-    <field><button id="submit">Submit</button></field>
+<div id="app" class="container" style="width: 18rem;">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" value="World" class="form-control">
+        <button id="submit" class="btn btn-primary">Submit</button>
+    </div>
     <div id="output"></div>
 </div>
 
