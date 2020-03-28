@@ -3,6 +3,10 @@
 This project contains many sub directories to exploring standalone 
 HTML/CSS/JavaScript features. 
 
+## Live Demos
+
+[Live Demo](https://raw.githubusercontent.com/zemian/html-starter/master/html-demos/index.html)
+
 ## How To Setup Web Server For Testing
 
 Use `web-server.sh` and then you may browse apps at 
