@@ -23,23 +23,24 @@
 </head>
 <body>
 
-<div id="app">
+<div id="app" class="container">
     <div id="info" class="notification is-info is-light" data-bind="visible: infoDisplay">
         <button class="delete" data-bind="click: closeInfo"></button>
         Enter JavaScript object literal, and see well format JSON output.
     </div>
     <div class="columns">
         <div class="column is-half">
-            <textarea id="jscode" data-bind="textInput: jsCode"></textarea>
+            <div id="jscode"></div>
         </div>
-        <div class="column">
-            <pre id="output" class="box has-background-grey-lighter"
-                 data-bind="text: jsonText"></pre>
+        <div class="column is-half">
+            <pre id="output" data-bind="text: jsonText"></pre>
         </div>
     </div>
 </div>
 <script>
-    // KO App
+    // KO App Instance
+    // NOTE that we will not use KO bind-data on textarea input because we are using CodeMirror change
+    // event for update, and then update the KO observable.
     let app = new function () {
         this.infoDisplay = ko.observable(true);
         this.jsCode = ko.observable('{name: "javascript", json: true}');
@@ -71,12 +72,13 @@
             // Make textarea input like a code editor
             // power by https://codemirror.net
             let jsCodeNode = document.getElementById("jscode");
-            let editor = CodeMirror.fromTextArea(jsCodeNode, {
+            let editor = CodeMirror(jsCodeNode, {
+                value: self.jsCode(),
                 lineNumbers: true,
                 mode: {name: "javascript", json: true},
                 viewportMargin: Infinity
             });
-            editor.on('inputRead', (codeMirror) => {
+            editor.on('change', (codeMirror) => {
                 self.jsCode(codeMirror.getValue());
             });
         };
