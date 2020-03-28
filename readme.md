@@ -5,7 +5,7 @@ HTML/CSS/JavaScript features.
 
 ## Live Demos
 
-[Live Demo](https://raw.githack.com/zemian/html-starter/master/html-demos/index.html)
+[Live Demo](https://raw.githack.com/zemian/html-starter/master/index.html)
 
 ## How To Setup Web Server For Testing
 
