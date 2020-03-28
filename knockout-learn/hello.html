@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../resources/node_modules/knockout/build/output/knockout-latest.js"></script>
-</head>
-<body>
+<script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
 
 <div id="app">
     <span data-bind="text: message">Hi</span>
 </div>
-
 <script>
-    function ViewModel() {
-        this.message = ko.observable("Hello World");
-    }
-    ko.applyBindings(new ViewModel(), document.getElementById("app"));
+    let app = {
+        message: ko.observable("Hello World")
+    };
+    ko.applyBindings(app);
 </script>
-
-</body>
-</html>
-
