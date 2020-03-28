@@ -27,13 +27,12 @@
 </div>
 <script>
     let app = {
-        jobs: ko.observableArray([
-            {id: 101, name: "Job1", schedule: "0 2 * * *", description: "Daily at 2am"},
-            {id: 102, name: "Job2", schedule: "0 5,17 * * *", description: "Twice a day"},
-            {id: 103, name: "Job3", schedule: "* * * * *", description: "Every minutes"},
-            {id: 104, name: "Job4", schedule: "0 17 * * sun", description: "Sunday at 5pm"},
-            {id: 105, name: "Job5", schedule: "*/10 * * * *", description: "Every 10 minutes"}
-        ])
+        jobs: ko.observableArray()
     };
     ko.applyBindings(app);
+
+    //Fetch data
+    fetch("https://api.myjson.com/bins/15syjc")
+        .then(response => response.json())
+        .then(data => app.jobs(data.items));
 </script>
