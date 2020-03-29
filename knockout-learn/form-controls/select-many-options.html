@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../../resources/node_modules/knockout/build/output/knockout-latest.js"></script>
-</head>
-<body>
+<script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
 
 <form data-bind="submit: addItem">
     New item:
     <input data-bind='value: itemToAdd, valueUpdate: "afterkeydown"' />
     <button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
     <p>Your items:</p>
-    <select multiple="multiple" width="50" size="10" style="width: 300px;" data-bind="options: items, selectedOptions: selectedItems"></select>
+    <select multiple
+            width="50" size="10" style="width: 300px;"
+            data-bind="options: items, selectedOptions: selectedItems"></select>
 
     <h1>Selected Values</h1>
     <ul data-bind="foreach: selectedItems">
@@ -36,7 +31,3 @@
 
     ko.applyBindings(new SimpleListModel(["Alpha", "Beta", "Gamma"]));
 </script>
-
-</body>
-</html>
-
