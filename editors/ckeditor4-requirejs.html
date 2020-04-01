@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
+</div>
+
+<script>
+    requirejs.config({
+        paths: {
+            ckeditor: 'https://cdn.jsdelivr.net/npm/ckeditor4@4.14.0/ckeditor'
+        },
+        shims: {
+            ckeditor: {
+                exports: 'CKEDITOR'
+            }
+        }
+    });
+    require(['ckeditor'], () => {
+        // Notice that CKEDITOR variable is automatically available due to our shims' export.
+        CKEDITOR.replace('editor1');
+    });
+</script>
+</body>
+</html>
