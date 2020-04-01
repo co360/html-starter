@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://unpkg.com/@ckeditor/ckeditor5-build-classic@18.0.0/build/ckeditor.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <div id="editor"></div>
+</div>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+</body>
+</html>
