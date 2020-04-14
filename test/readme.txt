@@ -1,12 +1,11 @@
 ## JS Testing Frameworks
 
-* Unit
-    ** assertion lib (  assert.equals(one, two); ) => expect lib => BDD "give I have two" => should output
-    ** test case setup (method)
-    ** mock service/test model
-    ** tests suite
-    ** test runner
-
+* What is Unit Testing
+** assertion lib (  assert.equals(one, two); ) => expect lib => BDD "give I have two" => should output
+** test case setup (method)
+** mock service/test model
+** tests suite
+** test runner
 
 There is SO many testing frameworks out there, it's super confusing to pick one to use. I will
 separate them into two categories: standalone (battery included) vs meta-framework (ones
