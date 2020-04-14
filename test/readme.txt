@@ -9,7 +9,7 @@ requires other libraries).
 * qUnit  (used by jQuery)
 * Jasmine (used by Knockout, Vue2)
 * Jest (used by Vue3)
-* Cucumber (BDD framework for JS/Java/Ruby etc)
+* Cucumber (BDD framework - Plain language testing)
 
 ## Meta-Framework/Testing Frameworks
 (It's flexible that it let you choose what you need. But you need to manage the dependencies.)
@@ -21,3 +21,7 @@ requires other libraries).
     ** Remote control tests
     ** Integrate with other test frameworks
     ** Code coverage generator
+
+## End to End Testing Framework
+* Selenium Web Driver
+* NightwatchJS
