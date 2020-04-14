@@ -30,6 +30,6 @@ requires other libraries).
     ** Integrate with other test frameworks
     ** Code coverage generator
 
-## End to End Testing Framework
+## End to End Testing Frameworks
 * Selenium Web Driver
 * NightwatchJS
