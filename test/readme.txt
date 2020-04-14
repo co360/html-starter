@@ -1,5 +1,13 @@
 ## JS Testing Frameworks
 
+* Unit
+    ** assertion lib (  assert.equals(one, two); ) => expect lib => BDD "give I have two" => should output
+    ** test case setup (method)
+    ** mock service/test model
+    ** tests suite
+    ** test runner
+
+
 There is SO many testing frameworks out there, it's super confusing to pick one to use. I will
 separate them into two categories: standalone (battery included) vs meta-framework (ones
 requires other libraries).
@@ -13,10 +21,10 @@ requires other libraries).
 
 ## Meta-Framework/Testing Frameworks
 (It's flexible that it let you choose what you need. But you need to manage the dependencies.)
-* Mocha
-    ** Chai - assertion lib
+* Mocha (test runner)
+    ** Chai - assertion lib (assert, expect, bdd style)
     ** SinonJS - mock and stub lib
-* Karma
+* Karma (integrate - Mocha Runner/Reporter/CI integration) - real devices testing (browser/mobile phone)
     ** Run tests on real Devices
     ** Remote control tests
     ** Integrate with other test frameworks
