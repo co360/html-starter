@@ -1,0 +1,56 @@
+<link href="https://unpkg.com/bulma@0.8.2/css/bulma.css" rel="stylesheet">
+<script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
+
+<div id="app" class="container">
+    <div class="form">
+        <div>
+            <label>Enter new activity</label>
+            <input data-bind="textInput: newAction">
+            <button data-bind="click: startTime">Start</button>
+        </div>
+    </div>
+    <table class="table" data-bind="hidden: activities().length === 0">
+        <thead>
+        <tr>
+            <td>Action</td>
+            <td>Start Time</td>
+            <td>Stop Time</td>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: activities">
+        <tr>
+            <td><span data-bind="text: action"></span></td>
+            <td><span data-bind="text: startTime"></span></td>
+            <td>
+                <!-- ko ifnot: stopTime -->
+                <button data-bind="click: $parent.stopTime">Stop</button>
+                <!-- /ko -->
+
+                <!-- ko if: stopTime -->
+                <span data-bind="text: stopTime"></span>
+                <!-- /ko -->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    let app = new function () {
+        this.activities = ko.observableArray([]);
+        this.newAction = ko.observable();
+
+        this.startTime = () => {
+            let entry = {
+                action: this.newAction(),
+                startTime: new Date(),
+                stopTime: ko.observable()
+            }
+            this.activities.push(entry);
+            this.newAction('');
+        };
+        this.stopTime = (data) => {
+            data.stopTime(new Date());
+        };
+    };
+    ko.applyBindings(app);
+</script>
