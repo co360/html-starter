@@ -20,14 +20,14 @@
         <tbody data-bind="foreach: activities">
         <tr>
             <td><span data-bind="text: action"></span></td>
-            <td><span data-bind="text: startTime"></span></td>
+            <td><span data-bind="text: startTime.toLocaleString()"></span></td>
             <td>
                 <!-- ko ifnot: stopTime -->
                 <button data-bind="click: $parent.stopTime">Stop</button>
                 <!-- /ko -->
 
                 <!-- ko if: stopTime -->
-                <span data-bind="text: stopTime"></span>
+                <span data-bind="text: stopTime().toLocaleString()"></span>
                 <!-- /ko -->
             </td>
         </tr>
