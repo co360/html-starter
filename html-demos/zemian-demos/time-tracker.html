@@ -2,36 +2,42 @@
 <script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
 
 <div id="app" class="container">
-    <div class="form">
-        <div>
-            <label>Enter new activity</label>
-            <input data-bind="textInput: newAction">
-            <button data-bind="click: startTime">Start</button>
+    <div class="section">
+        <h1 class="title">Activities Time Tracker</h1>
+        <div class="field has-addons">
+            <div class="control is-expanded">
+                <input class="input" data-bind="textInput: newAction" placeholder="Enter Activity">
+            </div>
+            <div class="control">
+                <button class="button is-primary" data-bind="click: startTime">Start</button>
+            </div>
         </div>
     </div>
-    <table class="table" data-bind="hidden: activities().length === 0">
-        <thead>
-        <tr>
-            <td>Action</td>
-            <td>Start Time</td>
-            <td>Stop Time</td>
-        </thead>
-        <tbody data-bind="foreach: activities">
-        <tr>
-            <td><span data-bind="text: action"></span></td>
-            <td><span data-bind="text: startTime.toLocaleString()"></span></td>
-            <td>
-                <!-- ko ifnot: stopTime -->
-                <button data-bind="click: $parent.stopTime">Stop</button>
-                <!-- /ko -->
-
-                <!-- ko if: stopTime -->
-                <span data-bind="text: stopTime().toLocaleString()"></span>
-                <!-- /ko -->
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="section">
+        <table class="table is-fullwidth" data-bind="hidden: activities().length === 0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Action</th>
+                    <th>Start Time</th>
+                    <th>Stop Time</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: activities">
+                <tr>
+                    <td data-bind="text: $index() + 1"></td>
+                    <td data-bind="text: action"></td>
+                    <td data-bind="text: startTime.toLocaleString()"></td>
+                    <td data-bind="if: stopTime">
+                        <span data-bind="text: stopTime().toLocaleString()"></span>
+                    </td>
+                    <td data-bind="ifnot: stopTime">
+                        <button class="button is-danger" data-bind="click: $parent.stopTime">Stop</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <script>
     let app = new function () {
