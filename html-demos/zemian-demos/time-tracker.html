@@ -29,7 +29,8 @@
                     <td data-bind="text: action"></td>
                     <td data-bind="text: startTime.toLocaleString()"></td>
                     <td data-bind="if: stopTime">
-                        <span data-bind="text: stopTime().toLocaleString()"></span>
+                        <!-- ko text: stopTime().toLocaleString() -->
+                        <!-- /ko -->
                     </td>
                     <td data-bind="ifnot: stopTime">
                         <button class="button is-danger" data-bind="click: $parent.onStop">Stop</button>
@@ -40,6 +41,13 @@
     </div>
 </div>
 <script>
+    /**
+     * Note KO does not allow "if" and "text" bindings to be used together!
+     * Because of this, we require to use virtual element to render the stopTime text
+     * above. Else, we need another container element to bind the text.
+     *
+     * Compare this to VueJS, they have a much cleaner syntax!
+     */
     let app = new function () {
         this.activities = ko.observableArray([]);
         this.newAction = ko.observable();
