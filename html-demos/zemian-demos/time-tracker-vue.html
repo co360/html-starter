@@ -9,7 +9,7 @@
                 <input class="input" v-model="newAction" placeholder="Enter Activity">
             </div>
             <div class="control">
-                <button class="button is-primary" @click="startTime">Start</button>
+                <button class="button is-primary" @click="onStart">Start</button>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
                     <td v-if="item.stopTime" v-text="item.stopTime.toLocaleString()">
                     </td>
                     <td v-else>
-                        <button class="button is-danger" @click="stopTime(item)">Stop</button>
+                        <button class="button is-danger" @click="onStop(item)">Stop</button>
                     </td>
                 </tr>
             </tbody>
@@ -45,7 +45,7 @@
             newAction: ''
         },
         methods: {
-            startTime() {
+            onStart() {
                 let entry = {
                     action: this.newAction,
                     startTime: new Date(),
@@ -54,7 +54,7 @@
                 this.activities.push(entry);
                 this.newAction = '';
             },
-            stopTime(data) {
+            onStop(data) {
                 data.stopTime = new Date();
             }
         }

@@ -9,7 +9,7 @@
                 <input class="input" data-bind="textInput: newAction" placeholder="Enter Activity">
             </div>
             <div class="control">
-                <button class="button is-primary" data-bind="click: startTime">Start</button>
+                <button class="button is-primary" data-bind="click: onStart">Start</button>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
                         <span data-bind="text: stopTime().toLocaleString()"></span>
                     </td>
                     <td data-bind="ifnot: stopTime">
-                        <button class="button is-danger" data-bind="click: $parent.stopTime">Stop</button>
+                        <button class="button is-danger" data-bind="click: $parent.onStop">Stop</button>
                     </td>
                 </tr>
             </tbody>
@@ -44,7 +44,7 @@
         this.activities = ko.observableArray([]);
         this.newAction = ko.observable();
 
-        this.startTime = () => {
+        this.onStart = () => {
             let entry = {
                 action: this.newAction(),
                 startTime: new Date(),
@@ -53,7 +53,7 @@
             this.activities.push(entry);
             this.newAction('');
         };
-        this.stopTime = (data) => {
+        this.onStop = (data) => {
             data.stopTime(new Date());
         };
     };
