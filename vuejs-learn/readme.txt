@@ -61,3 +61,9 @@ A web custom element for reuse. It needs to be registered with Vue and use it
 as HTML element.
 
 The "data" in a component must be a function!
+
+## Compare to KnockoutJS
+
+* There is no equivalent of KO's "with" binding in VueJS!
+    For example, you have to use an explicit current item name in a v-for binding
+    See https://stackoverflow.com/questions/47016786/how-can-i-specify-a-binding-context-in-vue-js-just-like-in-knockout-js-and-wpf
