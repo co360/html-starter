@@ -28,12 +28,19 @@
                     <td data-bind="text: $index() + 1"></td>
                     <td data-bind="text: action"></td>
                     <td data-bind="text: startTime.toLocaleString()"></td>
-                    <td data-bind="if: stopTime">
-                        <!-- ko text: stopTime().toLocaleString() -->
-                        <!-- /ko -->
-                    </td>
-                    <td data-bind="ifnot: stopTime">
-                        <button class="button is-danger" data-bind="click: $parent.onStop">Stop</button>
+                    <td>
+                        <!-- Note that KO does not have if/else binding. Also the Falsy condition
+                        will still render an extra "div" element!
+
+                        User needs to be aware not to bind to "td", or the False will still
+                        generate an extra "td" that will mess up your HTML table structure!
+                        -->
+                        <div data-bind="if: stopTime">
+                            <span data-bind="text: stopTime().toLocaleString()"></span>
+                        </div>
+                        <div data-bind="ifnot: stopTime">
+                            <button class="button is-danger" data-bind="click: $parent.onStop">Stop</button>
+                        </div>
                     </td>
                 </tr>
             </tbody>
