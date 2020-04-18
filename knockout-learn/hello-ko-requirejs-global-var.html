@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../resources/node_modules/requirejs/require.js"></script>
-    <script src="js/main-config.js"></script>
-    <script>
-        require(['jquery', 'knockout'], function($, ko) {
-            // Then try update later in console:
-            //   vm.helloMessage("Hello Zemian")
-            globalThis.viewModel = {
-                helloMessage: ko.observable("Hello World")
-            };
+<div>
+    <span data-bind="text: message"></span>
+</div>
 
-            $(function() {
-                ko.applyBindings(viewModel);
-            });
-        });
-    </script>
-</head>
-<body>
+<script src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
+<script>
+    requirejs.config({
+        paths: {
+            'knockout': 'https://unpkg.com/knockout@3.5.1/build/output/knockout-latest'
+        }
+    });
 
+    /*
+    Exposing "app" as global var allow you to modify the model in the Console.
+    */
+    let app;
+    require(['knockout'], function(ko) {
+        app = new function () {
+            this.message = ko.observable("Hello");
+        };
+        ko.applyBindings(app);
+    });
+</script>
 
-
-<p data-bind="text: message">Hi</p>
-</body>
-</html>
 

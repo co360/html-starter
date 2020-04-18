@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HTML/CSS/JavaScript Starter</title>
-    <script src="../resources/node_modules/requirejs/require.js"></script>
-    <script src="js/main-config.js"></script>
-    <script>
-        require(['jquery', 'knockout', 'hello'], function($, ko, app) {
-            $(function() {
-                ko.applyBindings(app);
-            });
-        });
-    </script>
-</head>
-<body>
-
-<div id="app">
-    <p data-bind="text: message">HI</p>
+<div>
+    <span data-bind="text: message"></span>
 </div>
 
-</body>
-</html>
+<script src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
+<script>
+    requirejs.config({
+        paths: {
+            'knockout': 'https://unpkg.com/knockout@3.5.1/build/output/knockout-latest'
+        }
+    });
+
+    require(['knockout'], function(ko) {
+        let app = new function () {
+            this.message = ko.observable("Hello");
+        };
+        ko.applyBindings(app);
+    });
+</script>
+
 
