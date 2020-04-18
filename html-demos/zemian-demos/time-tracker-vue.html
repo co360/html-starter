@@ -32,11 +32,21 @@
                     <!-- Notice that one one of "td" will be rendered. Compare to KO
                     the container element is removed if condition is Falsy in Vue, but KO
                     will keep the container element! Resulted in extra noise.
-                    -->
                     <td v-if="item.stopTime" v-text="item.stopTime.toLocaleString()">
                     </td>
                     <td v-else>
                         <button class="button is-danger" @click="onStop(item)">Stop</button>
+                    </td>
+                    -->
+
+                    <!-- Despite above is working, I think having one "td" is more clear -->
+                    <td>
+                        <div v-if="item.stopTime">
+                            <span v-text="item.stopTime.toLocaleString()"></span>
+                        </div>
+                        <div v-else>
+                            <button class="button is-danger" @click="onStop(item)">Stop</button>
+                        </div>
                     </td>
                 </tr>
             </tbody>
