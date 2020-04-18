@@ -1,23 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-
 <div id="app">
-    <h3>Welcome</h3>
-    <p>{{message}}</p>
+    <span v-text="message"></span>
 </div>
+
 <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 <script>
     let app = new Vue({
-        el: "#app",
         data: {
-            message: "Hello World!"
+            message: "Hello"
         }
     });
+    app.$mount("#app");
 </script>
-
-</body>
-</html>
