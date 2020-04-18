@@ -1,4 +1,9 @@
 <link href="https://unpkg.com/bulma@0.8.2/css/bulma.css" rel="stylesheet">
+<style>
+    .has-fixed-width {
+        width: 200px;
+    }
+</style>
 <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 
 <div id="app">
@@ -14,13 +19,13 @@
         </div>
     </div>
     <div class="section">
-        <table class="table is-fullwidth" v-show="activities.length > 0">
+        <table class="table is-hoverable is-fullwidth" v-show="activities.length > 0">
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Action</th>
-                    <th>Start Time</th>
-                    <th>Stop Time</th>
+                    <th class="has-fixed-width">Start Time</th>
+                    <th class="has-fixed-width">Stop Time</th>
                 </tr>
             </thead>
             <tbody>
