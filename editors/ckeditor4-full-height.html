@@ -5,6 +5,9 @@
 <script src="https://cdn.jsdelivr.net/npm/ckeditor4@4.14.0/ckeditor.js"></script>
 <script>
     // https://ckeditor.com/old/forums/CKEditor-3.x/Setting-editor-area-height-100?page=1
+    /*
+    Note that this demo on the height of the ckeditor will not resize when browser is resizing.
+     */
     var editorElem = document.getElementById("app");
     var editor = CKEDITOR.replace("editor", {
         on : {
