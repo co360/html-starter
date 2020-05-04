@@ -1,4 +1,4 @@
-export class Foo {
+export default class Greeter {
     constructor (name) {
         this.name = name;
     }
@@ -6,4 +6,3 @@ export class Foo {
         return "Hello " + this.name;
     }
 }
-

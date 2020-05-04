@@ -15,3 +15,5 @@ On top of webpack-demo, we will add the following:
     import Pic from './pic_trulli.jpg';
 
 NOTE: For images, it will be packaged and renamed with an uuid as file name!
+
+NOTE: How the main.css is also bundled inside the bundle.js!

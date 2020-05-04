@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Webpack Demo</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="../../../resources/node_modules/requirejs/require.js"></script>
+    <title>Getting Started</title>
 </head>
 <body>
 
-    <p>See console</p>
+<script src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
 
-    <script>
-        require(['bundle'], function (bundle) {
-            // console.log(bundle);
-            let foo = new bundle.Foo('World');
-            console.log(foo.greeting());
-        });
-    </script>
+<!-- You need this only if you have "libraryTarget: 'amd-require'" inside your webpack.config.js -->
+<script src="main.js"></script>
+
 </body>
 </html>

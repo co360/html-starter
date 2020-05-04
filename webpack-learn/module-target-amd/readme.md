@@ -1,12 +1,8 @@
-## Getting Started
+Webpack can be use to package different module systems. This exmaple will package the application for
+AMD base module output (for RequireJS). Note that you need to load RequireJS in your index manually to
+load the output of the webpack bundle!
 
-```
-npm install
-npm run build
-open dist/index.html
-```
-
-## Doc
+## Config docs
 
 https://webpack.js.org/configuration/output/#outputlibrary
 

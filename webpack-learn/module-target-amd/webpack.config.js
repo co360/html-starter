@@ -1,11 +1,9 @@
-const path = require("path");
+// NOTE:
+// If you want to use libraryTarget: 'amd', then you need to use index-amd.html instead.
+
 module.exports = {
-  mode: "production",
-  entry: "./src/main.js",
+  mode: "development",
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist/"),
-    library: 'bundle',
-    libraryTarget: 'amd'
+    libraryTarget: 'amd-require'
   }
 };
