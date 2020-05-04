@@ -12,7 +12,7 @@ To enable AMD, configure like this:
 
 ```
 output: {
-    library: 'bundle',
+    library: 'main',
     libraryTarget: 'amd'
 }
 ```
