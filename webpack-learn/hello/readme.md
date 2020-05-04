@@ -1,7 +1,5 @@
-## Getting Started
+On top of webpack-demo, we will add these:
 
-```
-npm install
-npm run build
-open dist/index.html
-```
+1. Use an explicit webpack.config.js file
+    * Change the output name to "bundle.js"
+2. Add "npm run build" config in package.json
