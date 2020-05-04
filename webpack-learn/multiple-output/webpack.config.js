@@ -8,9 +8,5 @@ module.exports = {
   entry: {
     main: './src/main.js',
     search: './src/search.js'
-  },
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist/")
   }
 };
