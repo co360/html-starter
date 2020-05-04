@@ -1,9 +1,6 @@
 {
   "name": "asset-mgmt",
   "version": "1.0.0",
-  "scripts": {
-    "build": "webpack --mode development"
-  },
   "devDependencies": {
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",

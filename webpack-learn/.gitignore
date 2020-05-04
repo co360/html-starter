@@ -3,5 +3,6 @@ package-lock.json
 
 # We do not want ignore all "build" because we want to add application code there.
 #build/
-/webpack-demo/dist/main.js
-/hello/dist/bundle.js
+/*/dist/main.js
+/*/dist/bundle.js
+/*/dist/*.jpg

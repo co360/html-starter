@@ -1,6 +1,9 @@
-function helloEventHandler (event) {
-    console.log("Received event", event);
+function component() {
+    const element = document.createElement('div');
+
+    element.innerHTML = ['Hello', 'webpack'].join(' ');
+
+    return element;
 }
 
-// Make function global
-window.helloEventHandler = helloEventHandler;
+document.body.appendChild(component());
