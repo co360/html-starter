@@ -1,5 +1,12 @@
 https://vuejs.org/
 
+## Using Vue-CLI
+
+Instantly serve a App.vue file:
+
+    npm install -g @vue/cli @vue/cli-service-global
+    vue serve App.vue
+
 ## Hello
 
 See hello.html
