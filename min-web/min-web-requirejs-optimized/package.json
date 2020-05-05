@@ -4,7 +4,7 @@
   "scripts": {},
   "dependencies": {
     "requirejs": "2.3.6",
-    "jquery": "3.4.1",
+    "jquery": "3.5.1",
     "knockout": "3.5.0"
   },
   "devDependencies": {
