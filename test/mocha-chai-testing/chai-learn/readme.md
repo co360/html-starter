@@ -6,5 +6,5 @@ https://www.chaijs.com/
 
 https://www.chaijs.com/guide/installation/
 
-Normally you would use Chai with a Test Runner library such as Mocha. After
-setup, you should able to run tests with `npm test`
+Normally you would use Chai with a Test Framewwork/Runner library such as Mocha.
+However this project will only focus on chai, which you can just run NodeJS with it.
