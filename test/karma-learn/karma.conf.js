@@ -10,7 +10,10 @@ module.exports = function(config) {
         plugins: [
             'karma-chrome-launcher',
             'karma-mocha',
-            'karma-chai'
-        ]
+            'karma-chai',
+            'karma-html-reporter'
+        ],
+        reporters: ['progress', 'html'],
+        browsers: ['ChromeHeadless']
     });
 };
