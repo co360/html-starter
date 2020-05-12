@@ -1,4 +1,4 @@
-expect = require('chai').expect;
+let expect = require('chai').expect;
 let app = require('../src/app');
 
 describe('app', function () {

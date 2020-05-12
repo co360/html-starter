@@ -1,4 +1,4 @@
-assert = require('chai').assert;
+let assert = require('chai').assert;
 let app = require('../src/app');
 
 describe('app', function () {
