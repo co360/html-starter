@@ -1,5 +1,3 @@
-let mocha = require('mocha');
-
 // The three major APIs from chai are: assert, expect, and should
 let assert = require('chai').assert;
 
