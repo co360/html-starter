@@ -1,21 +1,20 @@
 <link href="demos.css" rel="stylesheet">
 <div id="app">
-
     <div class="app-content">
-        <p>STRETCH - Flex item with block element that has no width and height</p>
-        <div class="app-columns">
+        <p>STRETCH - Flex item with block element that has full width and height</p>
+        <div class="app-columns" style="height: 75px;">
             <div class="app-column app-bg-3">
-                <div class="app-bg-1">A1</div>
+                <div class="app-bg-1 app-is-full">A1</div>
             </div>
             <div class="app-column app-bg-4">
-                <div class="app-bg-2">A2</div>
+                <div class="app-bg-2 app-is-full">A2</div>
             </div>
         </div>
     </div>
 
     <div class="app-content">
         <p>NO STRETCH - Flex item with inline element</p>
-        <div class="app-columns">
+        <div class="app-columns" style="height: 75px;">
             <div class="app-column app-bg-3">
                 <span class="app-bg-1">A1</span>
             </div>
@@ -26,8 +25,8 @@
     </div>
 
     <div class="app-content">
-        <p>NO STRETCH - Flex item with block element that HAS width and height</p>
-        <div class="app-columns">
+        <p>NO STRETCH - Flex item with block element that HAS specific width and height</p>
+        <div class="app-columns" style="height: 75px;">
             <div class="app-column app-bg-3">
                 <div class="app-bg-1 app-t-box-h1">A1</div>
             </div>
@@ -36,4 +35,5 @@
             </div>
         </div>
     </div>
+
 </div>
