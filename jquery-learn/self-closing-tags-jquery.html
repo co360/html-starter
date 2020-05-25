@@ -1,4 +1,3 @@
-
 <!-- Lesson Learned:
 
 * Just don't do "<div/>" in any .html files. It's just bad.
@@ -14,7 +13,8 @@ REF: https://html.spec.whatwg.org/multipage/syntax.html
 jQuery change the way they parse <div/> starting 3.5.0
 See https://jquery.com/upgrade-guide/3.5/
 
-The updated 3.5.1 doesn't make sense? But it does match to what the browser will do?
+The updated 3.5.1 will parse '<div/><span/>' into what your browser will do, which is '<div><span></span></div>'!
+Unlike in 3.4.1, it will parse into '<div></div><span></span>' instead.
 -->
 <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.js"></script>
 <!--<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>-->
@@ -24,19 +24,10 @@ The updated 3.5.1 doesn't make sense? But it does match to what the browser will
     }
 </style>
 <div id="app">
-
-    <!--    <div id="test-1">-->
-    <!--        &lt;!&ndash; NOTE: Simply use a self closing div will messup the HTML rendering in broswer!-->
-    <!--        We will see "test-2" inside this "test-1" div instead of outside? &ndash;&gt;-->
-    <!--        <div/>-->
-    <!--    </div>-->
-
-    <div id="test-2">
+    <div id="test">
     </div>
 </div>
 
 <script>
-    // $('#test-1').append('<p>Foo</p>');
-
-    $('<div/><span/>').appendTo('#test-2');
+    $('<div/><span/>').appendTo('#test');
 </script>
