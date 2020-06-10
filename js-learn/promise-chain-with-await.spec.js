@@ -1,20 +1,28 @@
-describe("await-promise-chain.spec", function () {
+describe("promise-chain-with-await.spec", function () {
     this.timeout(10000);
 
     it("test-promise-chain", async function () {
         console.log("Be patient! This test will take few seconds!");
 
+        // Both promise will start as concurrently!
+        // Last of the then() chain will return result.
         const p1 = new Promise(resolve => {
-            setTimeout(() => resolve(1), 3000);
+            setTimeout(() => resolve(1), 3500);
         });
         const p2 = new Promise(resolve => {
-            setTimeout(() => resolve(2), 3000);
+            setTimeout(() => resolve(2), 2500);
+        });
+        const p3 = new Promise(resolve => {
+            setTimeout(() => resolve(3), 1000);
         }).then(async () => {
             // Note the return keyword is a MUST!
             return await p1;
+        }).then(async () => {
+            // Note the return keyword is a MUST!
+            return await p2;
         });
 
-        const ret = await p2;
+        const ret = await p3;
         console.log(ret);
     });
 
