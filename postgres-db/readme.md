@@ -188,17 +188,40 @@ The database contains about 300,000 employee records with 2.8 million salary ent
 
 ## Postgres RESTFul API
 
-https://postgres.rest/configurations/
+https://postgres.rest
 
-	brew install prest
+Install and Setup:
 
-	PREST_DEBUG=true PREST_PG_USER=zemian PREST_PG_DATABASE=dvdrental PREST_PG_PORT=5432 PREST_HTTP_PORT=3010 prest
+	bash> brew install prest
+	bash> PREST_DEBUG=true PREST_PG_USER=postgres PREST_PG_DATABASE=postgres PREST_PG_PORT=5432 PREST_HTTP_PORT=3000 prest
 
-	http://localhost:3010/databases
-	http://localhost:3010/schemas
-	http://localhost:3010/dvdrental/public/film?_page=2&_page_size=10
-	http://localhost:3010/dvdrental/public/film?_count=*
-	http://localhost:3010/dvdrental/public/film?title=$like.%25Agent
-	http://localhost:3010/dvdrental/public/actor?first_name=$eq.Johnny
+Example REST Queries:
 
-NOTE: You need to use '%25' to enchode '%' for query.
+	http://localhost:3000/databases
+	http://localhost:3000/schemas
+	http://localhost:3000/tables
+	
+	http://localhost:3000/postgres/information_schema
+	http://localhost:3000/postgres/information_schema/tables
+	http://localhost:3000/postgres/information_schema/tables?_count=*
+	http://localhost:3000/postgres/information_schema/tables?_page=2&_page_size=20
+	http://localhost:3000/postgres/information_schema/tables?table_schema=public
+	http://localhost:3000/postgres/information_schema/tables?table_type=$like.%25VIEW
+
+NOTE: You need to use '%25' to encode '%' for LIKE operator query.
+
+To use a config file: "prest.toml" and allow CORS: (The file needs to be in directory where prest starts):
+
+```
+debug=true 
+
+[pg]
+host = "localhost"
+port = 5432
+database = "mydb"
+user = "mydb"
+pass = "test1"
+
+[cors]
+alloworigin = ["*"]
+```
