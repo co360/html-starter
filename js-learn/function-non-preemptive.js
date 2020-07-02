@@ -2,9 +2,12 @@
 This demo proves that despite the Promise and setTimeout behavior, they are simply event
 based asynchronous dispatching, not a "multi threaded" or preemptive execution.
 
-This mean the entire function will be executed in one go as soon as it gets pulled out of
+This means the entire function will be executed in one go as soon as it gets pulled out of
 the event queue for execution. No two function's inner code will ever gets run preemptively
 in a mixed order fashion.
+
+NOTE: If you really needs multi-threaded behavior in JS, you need to use WebWorker:
+see https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
  */
 
 const max = 1000;
